@@ -1,0 +1,72 @@
+<div class="container bottompx">
+  <section class="intro">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <h1 style="text-align: center">New Users</h1>
+
+        <div class="row" >
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of userdata | paginate: { itemsPerPage: pageSize, currentPage: p };"
+          >
+            <div class="card shadow-sm border" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Name</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.name }}</p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.username }}</p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sponsor ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  " > {{ item.sponsor }} </p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Contact No</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.c_id }}</p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Joning Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.created_at }}</p></div>
+                   </div>
+                </li>
+                
+                
+                
+              </ul>
+            </div>
+            
+          </div> 
+          <li class="list-group-item">
+            <div class="row">
+              <pagination-controls (pageChange)="p= $event"></pagination-controls>
+            </div>
+          </li>
+        </div>
+
+     
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- <svg class="wave" width="100%" height="110px" fill="">
+    <path fill=var(--background-color)>
+        <animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="10s"
+            values="
+        M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z;
+        M0 86.3149C316 86.315 444 159.155 884 51.1554C1324 -56.8446 1320.29 34.1214 1538 70.4063C1814 116.407 2156 188.408 2560 86.315V232.317L0 232.316V86.3149Z;
+        M0 53.6584C158 11.0001 213 0 363 0C513 0 855.555 115.001 1154 115.001C1440 115.001 1626 -38.0004 2560 53.6585V199.66L0 199.66V53.6584Z;
+        M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z">
+        </animate>
+    </path>
+  </svg> -->

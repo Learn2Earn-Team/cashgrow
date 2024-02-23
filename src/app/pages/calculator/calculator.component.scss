@@ -1,0 +1,29 @@
+/* src/app/calculator/calculator.component.css */
+/* src/app/calculator/calculator.component.css */
+.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    color: #333;
+  }
+  
+  .result input {
+    font-size: 1.5rem;
+    text-align: right;
+  }
+  
+  .buttons button {
+    font-size: 1.2rem;
+  }
+  
+  .btn-orange {
+    background-color: #ff8c00;
+    color: #fff;
+  }

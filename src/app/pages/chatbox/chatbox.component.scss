@@ -1,0 +1,43 @@
+.btn{
+
+background: var(--background-color);
+color: var(--text-color);
+}
+.container-fluid{
+    height: 100vh;
+  width: 100vw;
+}
+.msg{
+ font-weight: 600;
+ font-size:16px;
+}
+.icons{
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+
+}
+.date-text{
+  font-size: 10px;
+}
+.icons{
+  font-size: 25px;
+  color:white;
+  font-weight: bold;
+}
+.bbicon{
+  font-size: 20px;
+  color:white;
+}
+.bbicon .bi{
+  padding: 5px;
+
+}
+.form-control{
+  border-radius: 20px !important;
+}
+.icon{
+  font-size: 25px;
+  color: white;
+  margin-left: 70px;
+}

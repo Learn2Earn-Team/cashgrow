@@ -1,0 +1,89 @@
+.mbileveiwinerdiv{
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding-top: 10px;
+  }
+  .card34{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+  }
+  .card35{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    padding-top: 10px;
+  }
+  ::ng-deep 
+    .swiper-pagination-bullet {
+      background: white;
+    }
+    .swiper-pagination-bullet-active {
+    background: white;
+    }
+  .iconcard200{
+    width: 30px; height: 30px; background-color: white; border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .wokingtext{
+    position: absolute;
+    right: 30px;
+    margin-top: 3px;
+  }
+  .bottompx{
+    margin-bottom: 30px;
+   }
+   .bgcolor{
+    background-color: var(--background-color);
+    margin-top: 40px;
+  }
+  .borderradious{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  .avatar344{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    margin-top: -35px;
+    
+  }
+  .follo{
+    display: flex;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    color: white;
+  }
+  .btton{
+    background-color: white;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    color: black;
+    border: none;
+  }
+  .btntwo{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .addyour{
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }

@@ -1,0 +1,117 @@
+<div *ngIf="isUpdate">
+  <div class="content bottompx">
+    <section class="services">
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-md-4 col-lg-4 col-sm-6 d-flex align-items-stretch mt-4"
+            *ngFor="let item of YoutubeData"
+            data-aos="fade-up"
+          >
+            <div class="card shadow" style="width: 21rem">
+              <img
+                class="card-img-top"
+                src="{{ item.image }}"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <div class="card-details">
+                  <h5>{{ item.name }}</h5>
+                </div>
+                <hr />
+                <div [innerHTML]="item.description"></div>
+                <hr />
+  
+                <div class="row">
+                  <div class="col-md-6 col-6">
+                    <p style="text-align: left; margin-left: 10px">charges</p>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <p style="text-align: right; margin-right: 10px">
+                      {{ item.price }}
+                    </p>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <p style="text-align: left; margin-left: 10px">
+                      Deliver Days
+                    </p>
+                  </div>
+                  <div class="col-md-6 col-6">
+                    <p style="text-align: right; margin-right: 10px">
+                      {{ item.deliver_time }}
+                    </p>
+                  </div>
+                  <button class="btn read-more" (click)="goTonext(item)">
+                    Buy Now!
+                  </button>
+                  <button class="btn btn-success mt-1" *ngIf="userData.username == 'google'" (click)="activeUpdatePackage(item)">
+                    Edit Package
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <a
+    href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD"
+    target="_blank"
+  >
+    <!-- <i class="fa fa-whatsapp my-float"></i> -->
+    <img class="float" src="../../../assets/images/whatsapp.png" alt="">
+  </a>
+  
+  
+</div>
+
+
+
+
+<div *ngIf="!isUpdate">
+  <div class="container">
+    <div class="row">
+        <div class="col-xl-12" style="padding-bottom: 50px;">
+            <div class="card mb-4" style="margin-top: 30px;">
+                <div class="card-header">Update Package</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Package Name</label>
+                            <input class="form-control" type="text"         [(ngModel)]="packageData.name"
+                            [ngModelOptions]="{ standalone: true }" placeholder="Package Name">
+                        </div>
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-12 mt-3">
+                                <label class="small mb-1">Description</label>
+                               <textarea class="form-control"  placeholder="Description" [(ngModel)]="packageData.description"
+                               [ngModelOptions]="{ standalone: true }"  rows="3"></textarea>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="small mb-1 mt-2" for="inputUsername">Price</label>
+                                <input class="form-control" type="text" placeholder="Price" [(ngModel)]="packageData.price"
+                                [ngModelOptions]="{ standalone: true }">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class=" col-md-6 col-12">
+                                <label class="small mb-1" for="inputUsername">Deliver Days</label>
+                                <input class="form-control" type="text" placeholder="Deliver Days"         [(ngModel)]="packageData.deliver_time"
+                                [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-12 mt-4">
+                            <button class="btn btn-primary" type="button" (click)="updatePackage()">Update</button>
+                            <button class="btn btn-danger" style="margin-left: 5px;" type="button" (click)="cancelUpdate()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

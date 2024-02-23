@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12" style="padding-bottom: 50px;">
+            <div class="card mb-4" style="margin-top: 30px;">
+                <div class="card-header">Add Package</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="small mb-1">Agency</label>
+                            <select class="form-control"
+                            [(ngModel)]="packageData.type"
+                            [ngModelOptions]="{ standalone: true }">
+                                <option value="YouTube">YouTube</option>
+                                <option value="TikTok">TikTok</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="FaceBook">FaceBook</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Package Name</label>
+                            <input class="form-control" type="text"         [(ngModel)]="packageData.name"
+                            [ngModelOptions]="{ standalone: true }" placeholder="Package Name">
+                        </div>
+                        <div class="row gx-3 mb-3">
+                            <div class="col-md-12">
+                                <label class="small mb-1">Files</label>
+                                <input class="form-control" type="file" placeholder="Choose File" (change)="uploadImage($event)" value="0000000000">
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="small mb-1">Description</label>
+                               <textarea class="form-control"  placeholder="Description" [(ngModel)]="packageData.description"
+                               [ngModelOptions]="{ standalone: true }"  rows="3"></textarea>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="small mb-1 mt-2" for="inputUsername">Price</label>
+                                <input class="form-control" type="text" placeholder="Price" [(ngModel)]="packageData.price"
+                                [ngModelOptions]="{ standalone: true }">
+                            </div>
+                            <!-- <div class="col-md-6">
+                                <label class="small mb-1 mt-2" for="inputUsername" >Distribute Price</label>
+                                <input class="form-control" type="text" placeholder="Distribute Price"         [(ngModel)]="packageData"
+                                [ngModelOptions]="{ standalone: true }" >
+                            </div> -->
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="ckeditor form-control" name="description" style="visibility: hidden; display: none;" [(ngModel)]="packageData"
+                            [ngModelOptions]="{ standalone: true }"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Requirments</label>
+                            <input class="form-control" type="text" placeholder="Requirments"         [(ngModel)]="packageData.cat"
+                            [ngModelOptions]="{ standalone: true }">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class=" col-md-6 col-12">
+                                <label class="small mb-1" for="inputUsername">Deliver Days</label>
+                                <input class="form-control" type="text" placeholder="Deliver Days"         [(ngModel)]="packageData.deliver_time"
+                                [ngModelOptions]="{ standalone: true }">
+                            </div>
+                            <div class=" col-md-6 col-12">
+                                <label class="small mb-1" for="inputUsername">Meta Title</label>
+                                <input class="form-control" type="text" placeholder="Meta Title"         [(ngModel)]="packageData.meta_title"
+                                [ngModelOptions]="{ standalone: true }">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Meta Description</label>
+                            <input class="form-control" type="text" placeholder="Meta Description"         [(ngModel)]="packageData.meta_description"
+                            [ngModelOptions]="{ standalone: true }">
+                        </div>
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Key Word</label>
+                            <input class="form-control" type="text" placeholder="Key Word"         [(ngModel)]="packageData.meta_keyword"
+                            [ngModelOptions]="{ standalone: true }">
+                        </div>
+                        <div class="col-md-6 col-12 mt-4">
+                            <button class="btn btn-color" type="button" (click)="addSocailPackages()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
+    <!-- <i class="fa fa-whatsapp my-float"></i> -->
+    <img class="float" src="../../../assets/images/whatsapp.png" alt="">
+  </a>

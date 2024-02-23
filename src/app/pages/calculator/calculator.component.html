@@ -1,0 +1,62 @@
+<!-- src/app/calculator/calculator.component.html -->
+<div class="container mt-5">
+    <!-- src/app/calculator/calculator.component.html -->
+<div class="container mt-5">
+    <div class="header">
+      <h2>Maclink Calculator</h2>
+    </div>
+  
+    <div class="calculator">
+      <div class="result">
+        <input type="text" class="form-control" [(ngModel)]="result" readonly />
+      </div>
+      <div class="buttons">
+        <div class="row p-1">
+          <button class="col-4 btn btn-light" (click)="appendValue('7')">7</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('8')">8</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('9')">9</button>
+        </div>
+  
+        <div class="row p-1">
+          <button class="col-4 btn btn-light" (click)="appendValue('4')">4</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('5')">5</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('6')">6</button>
+        </div>
+  
+        <div class="row p-1">
+          <button class="col-4 btn btn-light" (click)="appendValue('1')">1</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('2')">2</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('3')">3</button>
+        </div>
+  
+        <div class="row p-1">
+          <button class="col-4 btn btn-light" (click)="appendValue('0')">0</button>
+          <button class="col-4 btn btn-light" (click)="appendValue('.')">.</button>
+          <button class="col-4 btn btn-danger" (click)="clear()">C</button>
+        </div>
+  
+        <div class="row p-1">
+          <div class="col-4">
+            <button class="btn btn-warning" (click)="appendValue('/')">/</button>
+          </div>
+          <div class="col-4">
+            <button class="btn btn-warning" (click)="appendValue('*')">*</button>
+          </div>
+          <div class="col-4">
+            <button class="btn btn-warning" (click)="appendValue('-')">-</button>
+          </div>
+        </div>
+  
+        <div class="row pt-1">
+          <button class="col-8 btn btn-success" (click)="appendValue('+')">+</button>
+          <button class="col-4 btn btn-success" (click)="calculate()">=</button>
+        </div>
+  
+        <div class="row pt-1">
+          <button class="col-12 btn btn-secondary" (click)="backspace()">⌫</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    </div>

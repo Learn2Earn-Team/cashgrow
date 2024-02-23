@@ -1,0 +1,28 @@
+h4{
+    color: black;
+  }
+  .btn{
+    width: 95px;
+    height: 30px;
+    background: var(--background-color);
+    color:white;
+    padding: 0;
+    margin:15px 10px 15px -15px;
+  }
+
+.aceptbtn{
+  margin:5px 5px 5px -15px;
+}
+  .nav-link{
+    cursor: pointer;
+  }
+
+  .colorinput{
+    background-color: var(--background-color);
+    color: white;
+    height: 50px;
+    border-radius: 30px;
+}
+::placeholder {
+  color: white; /* Replace with your desired color code */
+}

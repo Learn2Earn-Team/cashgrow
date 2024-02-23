@@ -1,0 +1,47 @@
+<!-- app-menu.component.html -->
+
+<div class="mobileapk">
+  <div class="menu bgmenu" style="overflow-y: auto;">
+    <div class="menu-header sidebarclr">
+      <a href="" [routerLink]="['/default/index']" class="menu-header-logo">
+        <h3 class="sidebarheader">Maclink</h3>
+  
+      </a>
+    </div>
+    <div class="menu-body sidebarclr">
+      <ul>
+        <li class="menu-close-btn mt-3" *ngFor="let item of sideMenuItems" routerLinkActive="active" (click)="emitSideMenu(item)">
+          <a class="menu-toggle-btn" (click)="goToNext(item.routerLink)" [routerLink]="item.routerLink">
+            <span class="nav-link-icon ">
+              <i [class]="item.icon"></i>
+            </span>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="mobileview">
+  <div class="menu bgmenu" style="overflow-y: auto;">
+    <div class="menu-header sidebarclr">
+      <a href="" [routerLink]="['/default/index']" class="menu-header-logo">
+        <h3 class="sidebarheader">Maclink</h3> </a>
+       <div class="menu-close-btn" style="background:transparent;">
+        <i class="bi bi-x "></i>
+       </div>
+    </div>
+    <div class="menu-body sidebarclr">
+      <ul>
+        <li class="menu-close-btn mt-3" *ngFor="let item of sideMenuItems" routerLinkActive="active" (click)="emitSideMenu(item)">
+          <a class="menu-toggle-btn" (click)="goToNext(item.routerLink)" [routerLink]="item.routerLink">
+            <span class="nav-link-icon ">
+              <i [class]="item.icon"></i>
+            </span>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

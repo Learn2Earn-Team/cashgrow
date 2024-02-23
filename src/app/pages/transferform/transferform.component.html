@@ -1,0 +1,90 @@
+<div class="content whitecolor">
+  <header id="header" class="fixed-top d-flex align-items-center headerclr">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <h1 class="text-light">
+          <a href="index.html"><span> Maclink shop</span></a>
+        </h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <button class="btn navbtn"><a href="#/default/index">Track</a></button>
+      </nav>
+    </div>
+  </header>
+  <div class="mt-5 backimg">
+    <form class="p-3">
+      <div class="col-md-6 mx-auto mt-5 m-3 p-3 form">
+        <h3 class="text-center mb-3">
+          Current Available Balance
+          <span style="color: red">{{ userBalance }}</span>
+        </h3>
+
+        <label class="form-label mt-1">Name</label>
+        <input
+          class="form-control"
+          value="{{ user.name }}"
+          placeholder="Name"
+          disabled
+        />
+        <label class="form-label mt-1">ID</label>
+        <input
+          class="form-control"
+          placeholder="ID"
+          value="{{ user.username }}"
+          disabled
+        />
+        <label class="form-label mt-1">Voucher Balance</label>
+        <input
+          class="form-control"
+          type="number"
+          [(ngModel)]="voucherBalance"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="Voucher Balance"
+          required
+        />
+        <!-- <label class="form-label mt-1">Security code</label>
+        <input
+          class="form-control"
+          type="password"
+          [(ngModel)]="userPin"
+          placeholder="Security code"
+          value="{{ userobj.pin }}"
+          [ngModelOptions]="{ standalone: true }"
+        /> -->
+
+        <br />
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-3">
+            <button (click)="userdata()" class="btn btn-clr mt-3">
+              Submit
+            </button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer
+  id="footer"
+  data-aos="fade-up"
+  data-aos-easing="ease-in-out"
+  data-aos-duration="500"
+  class="colr"
+>
+  <div class="container-fluid">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Maclink</span></strong
+      >. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="#">MackLink</a>
+    </div>
+  </div>
+</footer>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+  <!-- <i class="fa fa-whatsapp my-float"></i> -->
+  <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+</a>

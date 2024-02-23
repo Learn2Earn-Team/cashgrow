@@ -1,0 +1,220 @@
+#demo{
+    height: 100%;
+    width: 100%;
+
+}
+#head{
+    width: 100%;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between;
+
+}
+#divimg{
+    width: 60%;
+  }
+  #name{
+    font-size: 15px;
+    font-family: system-ui;
+    padding: 20px;
+}
+#userdetail{
+    font-size: 15px;
+    font-family: system-ui;
+    padding: 10px;
+}
+#ecoimg{
+    width: 170px;
+    height: 100px;
+}
+#pharmname{
+    color: #ff470d;
+    font-weight: 800;
+    /* font-style: italic; */
+}
+
+#ordername{
+    font-family: system-ui;
+}
+#orderstatus{
+    font-family: system-ui;
+}
+#bagdetail{
+    display: flex;
+}
+#custimg{
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+}
+#thcust{
+    font-family: system-ui;
+    font-size: 15px;
+    color: rgb(179, 177, 177);
+    display: flex;
+    flex-direction: row;
+}
+#img{
+    
+    width: 250px;
+    height: 80px;
+    
+}
+#oreder{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#divhd{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#slip{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+#tablediv{
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.125);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+#orderdiv{
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#table{
+    width: 100%;
+}
+#tdname{
+        text-align: left;
+        padding: 5;
+        height: 20px;
+}
+#tdname,#table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: inherit;
+}
+#table1{
+    width: 100%;
+    padding: 10px;
+}
+#testname{
+    font-style: italic;
+    font-size: 13px;
+    width: 200px;   
+    border: 1px solid black;
+}
+/* #th1,#td2,#table1{
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: inherit;
+} */
+#th1{
+    /* text-align: left; */
+    font-family: system-ui;
+    font-size: 15px;
+    color: rgb(179, 177, 177);
+    width: 25%;
+}
+#imgset{
+    width: 100px;
+    height: 100px;
+}
+#spanstatus{
+    font-family: system-ui;
+    font-size: 15px;
+    color: rgb(179, 177, 177);
+}
+#th2{
+    text-align: right;
+    font-family: system-ui;
+    font-size: 15px;
+    color: rgb(179, 177, 177);
+}
+#span{
+    margin-left: 20px;
+}
+#td2{
+    height: 30px;
+    padding: 5;
+}
+#td3,#td4,#td5,#th3,#table2{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+#table2{
+    width: 100%;
+    margin-top: 20px;
+}
+#th3{
+    text-align: left;
+    padding: 5;
+    height: 20px;
+    font-style: inherit;
+}
+#td3{
+    text-align: left;
+    padding: 5;
+    height: 20px;
+}
+#td4{
+    text-align: left;
+    padding: 5;
+    height: 40px;
+    padding-top: -5;
+}
+#sg1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#sintable{
+    width: 100%;
+    margin-top: 50px;
+}
+#carac{
+    text-align: right;
+    width: 10%;
+}
+#tdsin{
+    border-bottom: 1px solid black;
+    width: 20%;
+}
+#ptext{
+    font-family: system-ui;
+    text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+}
+#footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    
+}

@@ -1,0 +1,147 @@
+.headerclr{
+  background: var(--background-color);
+  color: white;
+}
+a{
+  color: white;
+}
+
+.imgborder{
+  border-radius: 8%;
+}
+.custom-card {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+@media screen and (max-width: 480px) {
+  .float {
+      display: none;
+  }
+}
+.custom-image {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.custom-input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.custom-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.custom-card:hover .custom-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-img-top{
+  width: auto;
+  height: 100%;
+  border-radius: 8%;
+}
+.card-body{
+  border-radius: 8%;
+  background-color: white;
+  color: black;
+ }
+.card-body{
+  margin-top: 5px;
+}
+ .card-body::after {
+   position: absolute;
+    z-index: -1;
+    opacity: 0;
+   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+   }
+  .card-body:hover {
+    transform: scale(1.02, 1.02);
+   -webkit-transform: scale(1.02, 1.02);
+    backface-visibility: hidden;
+   will-change: transform;
+   box-shadow: 0 1rem 3rem rgba(189, 189, 189, 0.75) !important;
+   }
+   .card-body:hover::after {
+   opacity: 1;
+   }
+   .card-body:hover .btn-outline-primary {
+   color: white;
+   background: #007bff;
+   }
+   .card{
+    border-radius: 8%;
+    background-color: white;
+    color: black;
+   }
+  .card{
+    margin-top: 5px;
+  }
+   .card::after {
+     position: absolute;
+      z-index: -1;
+      opacity: 0;
+     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+     }
+    .card:hover {
+      transform: scale(1.02, 1.02);
+     -webkit-transform: scale(1.02, 1.02);
+      backface-visibility: hidden;
+     will-change: transform;
+     box-shadow: 0 1rem 3rem rgba(189, 189, 189, 0.75) !important;
+     }
+     .card:hover::after {
+     opacity: 1;
+     }
+     .card:hover .btn-outline-primary {
+     color: white;
+     background: #007bff;
+     }
+   .btnr-color{
+    background-color:red;
+    color: white;
+   }
+   .btn-color{
+    background: var(--background-color);
+    color: white;
+   }
+   .fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+   }
+  
+#footer {
+  background: var(--background-color);
+  padding: 0 0 30px 0;
+  color: var( --text-color);
+  font-size: 14px;
+  bottom: 0;
+}
+  
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}

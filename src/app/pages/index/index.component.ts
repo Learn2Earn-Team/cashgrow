@@ -1,0 +1,282 @@
+import { Component, OnInit } from '@angular/core';
+
+import { Router } from '@angular/router';
+import { check } from 'src/app/localStorage/LocalStorage';
+import { ToastService } from 'src/app/services/toast.service';
+import { ApicallService } from 'src/app/services/apicall.service';
+import { Clipboard } from '@capacitor/clipboard';
+import Swiper from 'swiper';
+import SwiperCore from 'swiper';
+import Autoplay from 'swiper';
+const swiper = new Swiper('.swiper', {
+  autoplay: {
+    delay: 1000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+});
+// import SwiperCore , {
+//   Navigation,
+//   Pagination,
+//   Scrollbar,
+//   A11y,
+//   Virtual,
+//   Zoom,
+//   Autoplay,
+//   Thumbs,
+//   Controller,
+// } from 'swiper';
+// install Swiper components
+// SwiperCore.use([
+//   Navigation,
+//   Pagination,
+//   Scrollbar,
+//   A11y,
+//   Virtual,
+//   Zoom,
+//   Autoplay,
+//   Thumbs,
+//   Controller
+// ]);
+@Component({
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.scss'],
+})
+export class IndexComponent implements OnInit {
+  // config: SwiperOptions = {
+  //   slidesPerView: 3,
+  //   spaceBetween: 50,
+  //   navigation: true,
+  //   pagination: { clickable: true },
+  //   scrollbar: { draggable: true },
+  // };
+  public Agencycard: any = [
+    {
+      path: '/default/tiktokeagency',
+      bg: ' background-color: rgb(54, 54, 54);',
+      img: './../../../assets/images/tiketokelogo.avif',
+      text: 'TikTok Agency',
+    },
+    {
+      path: '/default/youtubeagency',
+      bg: 'background-color: rgb(255, 69, 69);',
+      img: './../../../assets/images/youtubelogo.avif',
+      text: 'Youtube Agency',
+    },
+    {
+      path: '/default/facebookagency',
+      bg: 'background-color: rgb(100, 100, 253);',
+      img: './../../../assets/images/facebooklogo.png',
+      text: 'FaceBook Agency',
+    },
+    {
+      path: '/default/instagramagency',
+      bg: 'background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+      img: './../../../assets/images/instalogo.png',
+      text: 'Instagram Agency',
+    },
+  ];
+  public card: any = [
+    // { icon: 'icon bi bi-person-heart', type: 'Sponsor', subtype: '',     today: '' , },
+    {
+      icon: 'icon bi bi-person-heart',
+      type: 'My Id',
+      subtype: '',
+      today: '' ,
+    },
+    {
+      icon: 'icon bi bi-wallet2',
+      type: 'Cash Balances',
+      subtype: '',
+      rs: 'Rs',
+      today: '' ,
+    },
+    {
+      icon: 'icon bi bi-cash-stack',
+      type: 'Profits',
+      subtype: '',
+      rs: 'Rs',
+      today: '' ,
+    },
+    // { icon: 'icon bi-share-fill', type: 'Direct Bonus', subtype: '', rs: 'Rs',
+    // today: '' , },
+    { icon: 'icon bi bi-trophy', type: 'Rewards', subtype: '' ,
+    today: '' ,},
+    { icon: 'icon bi bi-person-lines-fill', type: 'Partner', subtype: '' ,
+    today: '' ,},
+    { icon: 'icon bi bi-diagram-3-fill', type: 'Team', subtype: '' ,
+    today: '' ,},
+  ];
+  public Mobilecard: any = [
+    { icon: 'icon bi bi-person-heart', type: 'Sponsor', 
+    subtype: '' ,
+    today: '' ,
+  },
+    {
+      icon: 'icon bi bi-person-heart',
+      type: 'My Id',
+      subtype: '',
+      today: '' ,
+    },
+    {
+      icon: 'icon bi bi-wallet2',
+      type: 'Cash Balances',
+      subtype: '',
+      rs: 'Rs',
+      today: '' ,
+    },
+    {
+      icon: 'icon bi bi-cash-stack',
+      type: 'Total Earning',
+      subtype: '',
+      rs: 'Rs',
+      today: '' ,
+    },
+    
+    { icon: 'icon bi-share-fill', type: 'Direct Bonus', subtype: '', rs: 'Rs', 
+    today: '' ,},
+    { icon: 'icon bi bi-trophy', type: 'Rewards', subtype: '',    today: '' , },
+    { icon: 'icon bi bi-person-lines-fill', type: 'Partner', subtype: '' ,
+    today: '' ,},
+    { icon: 'icon bi bi-diagram-3-fill', type: 'Team', subtype: '' ,
+    today: '' ,},
+  ];
+
+  public directBonous : any = { icon: 'icon bi-share-fill', type: 'Direct Bonus', subtype: '', rs: 'Rs',
+  today: '' , }
+
+  public dashbaordData = {
+    username: '',
+    activePromotion: '',
+    status: '',
+    totalEarning: '',
+    totalCoins: '',
+    Rewards: '',
+    directBalance: '',
+    SocialMedia: '',
+    watchBalance: '',
+    subscribeBalance: '',
+  };
+  userData: any;
+  userobj: any;
+
+  constructor(
+    private route: Router,
+    private toast: ToastService,
+    private apicall: ApicallService
+  ) {
+    this.getUserData();
+    this.getUserDashoardData();
+    console.log(this.card)
+  }
+  ngOnInit() {
+    this.getUserData();
+    this.getUserDashoardData();
+    const swiper = new Swiper('.swiper-container', {
+      // Your Swiper configuration options here
+      autoplay: {
+        delay: 1000, // Set your desired autoplay delay
+      },
+    });
+  }
+
+  async getUserDashoardData() {
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+    console.log(userData.id);
+    this.apicall.api_getmyteam(userData.username).subscribe(team=>{
+      console.log(team)
+      this.apicall.getdashboardData(userData.id, team).subscribe((res) => {
+        console.log(res);
+        // this.card[0].subtype = res.sponsor;
+        this.card[0].subtype = res.username;
+        this.card[1].subtype = res.netBalance;
+        this.card[2].subtype = res.earning;
+        this.card[2].today = res.todayearning;
+        this.directBonous.subtype = res.directBalance;
+        this.directBonous.today = res.todaydirectBalance;
+        this.card[3].subtype = res.Rewards;
+        this.card[3].today = res.todayRewards;
+        this.card[4].subtype = res.totalDirectJoing;
+        this.card[4].today = res.todayDirectJoing;
+        this.card[5].subtype = res.totalIndirectJoining;
+        this.card[5].today = res.IndirectJoining;
+         console.log(this.card)
+      });
+    })
+
+  }
+
+  async getUserData() {
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+    this.userData = userData;
+    this.apicall.GetuserProfileData(userData.id).subscribe(profile=>{
+      console.log(profile)
+      this.userobj = profile[0];
+    })
+  }
+  goToAgency(path: any) {
+    console.log(path);
+    this.route.navigate([path]);
+  }
+
+  goToTiktokAgency() {
+    this.route.navigate(['/default/tiktokeagency']);
+  }
+  goToYouTubeAgency() {
+    this.route.navigate(['/default/youtubeagency']);
+  }
+  goToFaceBookAgency() {
+    this.route.navigate(['/default/facebookagency']);
+  }
+  goToInstagram() {
+    this.route.navigate(['/default/instagramagency']);
+  }
+//      <h6 class="text-muted">{{ item.today }}</h6>
+  async copyUserId() {
+    console.log(window.location.origin);
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+    const url = `https://maclink.cc/#/registrationform?id=${userData.username}`;
+    await Clipboard.write({
+      string: url,
+    }).then(
+      () => {
+        this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!');
+      },
+      () => {
+        console.error('Failed to copy');
+      }
+    );
+    const { type, value } = await Clipboard.read();
+    console.log(`Got ${type} from clipboard: ${value}`);
+    // navigator.clipboard.writeText(url).then(() => {
+    //   console.log(`${url} copied to clipboard`);
+    //   this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!')
+    // },() => {
+    //   console.error('Failed to copy');
+    // })
+
+    // this.route.navigate(['registrationform'], {
+    //   state: { data: userData},
+    //   queryParams: { id: userData.username },
+    // });
+  }
+  async goToComplain() {
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+    if(userData.username == 'google'){
+      this.route.navigate(['/default/complainbox'])
+    }
+    else{
+      this.route.navigate(['/complain'])
+    }
+  }
+
+}

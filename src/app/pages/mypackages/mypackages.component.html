@@ -1,0 +1,41 @@
+<div >
+  <section class="intro mt-3">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+
+        <div class="row" >
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of myPackages" 
+          >
+            <div class="card shadow-sm border" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Package</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{item.package}}$</p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{item.date}}</p></div>
+                   </div>
+                </li>
+               
+                
+                
+                
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+</section>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
+  <!-- <i class="fa fa-whatsapp my-float"></i> -->
+  <img class="float" src="../../../assets/images/whatsapp.png" alt="">
+</a>
+
+</div>

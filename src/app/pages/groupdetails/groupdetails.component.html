@@ -1,0 +1,98 @@
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-3 col-md-3 col-lg-3"><h3 style="color: var(--background-color);"    (click)="goToBack()"><i class="icon bi bi-caret-left-fill float-start" ></i>Back </h3></div>
+  <div class="col-7 col-md-7 col-lg-7"> <h3 class="align-center mx-auto">{{this.groupData.name}}</h3></div>
+  <div class="col-2 col-md-2 col-lg-2"> <i class="icon bi bi-pencil-fill float-end"  (click)="open(content)"></i></div>
+</div>
+</div>
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-12 col-md-12 col-lg-12" >
+      <div class="card testimonial-card widhtofcard">
+        <div class="card-up" style="background-color: rgb(90, 159, 238);"></div>
+        <div class="avatar mx-auto bg-white">
+          <img src="{{this.groupData.image}}" class="rounded-circle img-fluid" />
+        </div>
+        <h4 class="mb-1 mx-auto">{{this.groupData.name}}</h4>
+      </div>
+    </div>
+    </div>
+    
+   <div>
+</div>
+</div>
+
+      <div class="container-fluid"> 
+        <!-- <div class="card border-0">
+            <div clas="card-body"> 
+                <p class="float-start p-2"> 3 Participants </p>
+                <i class="icon bi bi-search float-end p-2"></i>
+            </div>
+        </div> -->
+      
+         <!-- <div class="row mt-2" (click)="GoToGroup()">
+            <div class="add col-4 col-md-4 col-lg-4 p-1">
+                <i class=" bi bi-person-fill-add m-1"></i>
+            </div>
+            <div class="col-8 col-md-8 col-lg-8 mt-2">
+                <h3> Add Participants</h3>
+            </div>
+         </div> -->
+         <!-- <div class="row mt-1">
+            <div class="add col-4 col-md-4 col-lg-4 p-1">
+                <i class=" bi bi-link m-1"></i>
+            </div>
+            <div class="col-8 col-md-8 col-lg-8 mt-2">
+                <h3> Invite Via Link</h3>
+            </div>
+         </div> -->
+         All Memeber ({{this.allMembers.length}})
+         <ul class="list-unstyled mb-0">
+
+            <li class="p-2 border-bottom" *ngFor="let member of allMembers">
+              <a class="d-flex justify-content-between">
+                <div class="d-flex flex-row">
+                  <div>
+                    <img src="{{member.userImage}}"
+                    onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+                      alt="avatar" class="d-flex align-self-center me-3 rounded-circle " width="60" height="60">
+                    <span class="badge bg-success badge-dot"></span>
+                  </div>
+                  <div class="pt-1">
+                    <p class="fw-bold mb-0 mt-3" style="color:var(--background-color);">{{member.username}}</p>
+                 
+                  </div>
+                </div>
+                
+              </a>
+            </li>
+          </ul>
+      </div>
+
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Edit Group Profile</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputname">Edit Name</label>
+              <input type="email" class="form-control" [(ngModel)]="updateGroupData.name"
+              [ngModelOptions]="{standalone: true}"
+               placeholder="Enter Name">
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Edit Profile Image</label>
+              <input type="file" class="form-control-file" (change)="handleUpload($event)" id="exampleFormControlFile1">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="updateGroup()">Save</button>
+        </div>
+      </ng-template>
+      
+      <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

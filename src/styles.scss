@@ -1,0 +1,133 @@
+/* Add application styles & imports to this file! */
+// @import "swiper/swiper-bundle";
+// @import "@angular/material/theming";
+// @import 'swiper/swiper-bundle';
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+// @import '~quill/dist/quill.snow.css';
+.img12{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.item-action-buttons{
+    display: none !important;
+}
+
+.preview{
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+  }
+  :root {
+    --primary-color: #0e154b;
+    --background-color:#121212!important;
+    //  --background-color:#1e4356;
+    --text-color: white;
+  }
+
+  .modal-backdrop {
+    z-index: -1;
+    opacity: 0 !important;
+}
+
+.modal-content{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: contents;
+    // background-color: var(--background-color);
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: auto;  /* IE and Edge */
+  scrollbar-width: 0px;  /* Firefox */
+}
+.active{
+  color: red;
+}
+/* Add the following CSS to create a full-page overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the overlay is on top of other elements */
+}
+
+/* Optional: Customize the appearance of the spinner */
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid #007bff; /* Use the desired Bootstrap color class for the border */
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.swiper-pagination {
+  position: absolute;
+  .swiper-pagination-bullet {
+    background-color: white;
+  }
+  .swiper-pagination-bullet-active {
+    background: white;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: white;
+}
+.swiper {
+    .swiper-pagination-bullet-active {
+      background: white !important;
+    }
+  .swiper-pagination-bullet-active {
+    background: white;
+  }
+}
+::ng-deep {
+  .swiper-pagination-bullet {
+    background: white;
+  }
+  .swiper-pagination-bullet-active {
+  background: white;
+  }
+}
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    background: white;
+  }
+  .swiper-pagination-bullet-active {
+  background: white;
+  }
+}
+.bottompx{
+  margin-bottom: 60px;
+ }
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+a {
+  text-decoration: none;
+}
+.mobileview{
+  margin-top: 35px;
+}

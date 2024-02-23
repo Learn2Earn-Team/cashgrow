@@ -1,0 +1,51 @@
+.page-title {
+  text-align: center;
+
+
+}
+
+.headerclr {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.header {
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: auto;
+  border-radius: 10px;
+  width: 100%;
+  margin-right: -50px;
+}
+
+@media screen and (max-width: 480px) {
+  .mobileapk {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .mobilevie {
+    display: none;
+
+  }
+}
+
+.sidemenubtn {
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.slectorwidth{
+  width: 80px;
+  background-color: var(--background-color);
+  color: white;
+ 
+}
+.style{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

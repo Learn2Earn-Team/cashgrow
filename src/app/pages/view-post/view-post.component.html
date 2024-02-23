@@ -1,0 +1,406 @@
+<div class="container" style="padding-bottom: 60px;">
+  <swiper-container class="my-swiper mb-3">
+    <swiper-slide *ngFor="let status of allStatus">
+      <div class="cardstorry" data-toggle="modal">
+        <img style="width: 100%;height: 100%;border-radius: 10px;" src="{{status.statusImage}}" alt="">
+        <div class="layout">
+          <div class="d-flex position" (click)="openstory(story, status)" >
+            <img class="img-account-profile rounded-circle mb-2" src="{{status.image}}"
+              onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';" alt=""
+              style="height: 40px; width: 40px;border:5px solid var(--background-color);" />
+           
+          </div>
+          <!-- <div class="float-end iconset m-1"     (click)=" openScrollable(view)">  <i class="p-1 iconeye bi bi-eye"></i></div> -->
+          <div style="position: absolute;bottom: 0px;left: 5px;"  (click)="openstory(story, status)">
+            <p><b style="color: white;font-size: small;">{{status.name}}</b></p>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-12 col-lg-6 mb-3">
+          <div class="post" *ngFor="let post of userPost">
+            <div class="post-header">
+              <div class="post-user" >
+                <img src="{{post.image}}" onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';" alt="Profile" class="profile-img">
+               
+                  <p   class="post-username">{{post.name}}</p>
+               
+              </div>
+              <i (click)=" deletePost(post.post_id)" class="bi bi-trash-fill delete-icon" *ngIf="userData.username == 'google'" title="Delete Post"></i>
+            </div>
+            <div class="post-img-container" style="background-image: url('{{post.postimage}}');">
+      
+            </div>
+    
+            <div class="mt-3">
+              <i (click)="likePost(post.post_id)" [ngClass]="post.islike == 1 ? 'bi bi-heart-fill text-danger icon' : 'bi bi-heart icon'"></i> 
+              <i (click)="openScrollableContent(longContent, post.post_id)" data-toggle="modal" class="bi bi-chat icon"></i> 
+              <i class="bi bi-share icon"></i> 
+            </div>
+    
+            <!-- Likes -->
+            <p class="likes">{{post.totalLikes}} likes</p>
+    
+            <p class="post-time">{{post.postdate | date:'d MMM yyyy h:mm a'}}</p>
+    
+            <p class="mt-2"><span class="post-username"> </span>{{post.caption}}</p>
+    
+            <a (click)="openScrollableContent(longContent, post.post_id)" data-toggle="modal" class="comments-link">View all {{post.totalcomments}} comments</a>
+          </div>
+    
+
+
+          
+          <!-- <div class="post" *ngFor="let post of userPost">
+            <div class="post-header">
+              <div>
+                <img src="{{post.image}}" onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+                  alt="Profile Picture" width="40" height="40">
+                <h5>{{post.name}}</h5>
+              </div>
+              <div class="options-dropdown">
+                <i class="bi bi-trash-fill text-primary" *ngIf="this.userData.username == 'google'" (click)=" deletePost(post.post_id)"></i>
+                
+              </div>
+            </div>
+            <div class="post-img-container" style="background-image: url('{{post.postimage}}');">
+
+            </div>
+            <div class="post-caption">
+              <p>{{post.caption}}</p>
+            </div>
+            <div class="post-actions">
+              <div>
+                <i (click)="likePost(post.post_id)"
+                  [ngClass]="post.islike == 1 ? 'bi bi-hand-thumbs-up-fill text-primary' : 'bi bi-hand-thumbs-up'"></i>
+                {{post.totalLikes}}
+              </div>
+              <div>
+                <i (click)="openScrollableContent(longContent, post.post_id)" data-toggle="modal"
+                  class="bi bi-chat-left-text"></i> {{post.totalcomments}}
+              </div>
+              <div>
+                <i class="bi bi-share"></i> 0
+              </div>
+            </div>
+            <div class="post-time">
+              <small>{{post.postdate | date:'d MMM yyyy h:mm a'}}</small>
+            </div>
+          </div> -->
+
+
+
+          
+
+
+        </div>
+
+
+
+          <div class="col-md-6 col-sm-12  col-lg-6 mb-3">
+            <div class="container" style="padding-bottom: 70px;">
+
+              <div class="card mt-3 shadow-sm" *ngFor="let item of userFriends">
+                <div class="flex36">
+                  <div class="flex35">
+                    <img src="{{item.image}}" alt="avatar"
+                      onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+                      class="rounded-circle d-flex align-self-center me-3 shadow-1-strong p-1" width="60" height="60">
+                    <h3> <b>{{item.name}}</b> </h3>
+                  </div>
+                  <button class="btn aceptbtn" (click)="goTOChatBox(item)">
+                    <i style="font-size: 30px;" class="bi bi-chat-fill"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Add comments</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <div class="card-body" style="overflow-y:scroll;  padding-bottom: 10px;  padding-top: 10px;">
+
+        <div class="d-flex flex-row justify-content-start" *ngFor="let comment of allComments">
+          <img src="{{comment.image}}" onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+            alt="avatar 1" style="width: 45px; height: 100%;">
+          <div>
+            <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">{{comment.text}}</p>
+            <p class="small ms-3 mb-3 rounded-3 text-muted dateText">{{comment.date | date:'d MMM yyyy h:mm a'}}</p>
+            <p class="small ms-3 mb-3 rounded-3 text-muted"> <i class="bi bi-trash-fill text-primary" *ngIf="this.userData.username == 'google'"
+              (click)="deleteComment(comment.com_id)" ></i></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="model-footer d-flex justify-content-start align-items-center p-3 " style="background-color: white;">
+      <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+              alt="avatar 3" style="width: 40px; height: 100%; " class="p-1"> -->
+      <input type="text" style="margin-right: 5px;" [(ngModel)]="commentsdData.text"
+        [ngModelOptions]="{ standalone: true }" (keyup.enter)="commentPost()" class="form-control form-control-lg"
+        id="exampleFormControlInput3" placeholder="Type message">
+      <button [disabled]="commentsdData.text == ''" class="btn btn-primary" (click)="commentPost()">
+        <i class="bi bi-send-fill"></i>
+      </button>
+    </div>
+  </ng-template>
+  <!-- <ng-template #story let-modal>
+    <div class="classfles">
+
+
+      <div class="d-flex" style="align-items: center;">
+        <img class="img-account-profile rounded-circle mb-2" src=""
+          onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';" alt=""
+          style="height: 50px; width: 50px;border:5px solid var(--background-color);" />
+        <h3 style="margin-left: 10px;">Admin</h3>
+      </div>
+
+      <button style="margin-right: 10px;" type="button" class="btn-close" aria-label="Close"
+        (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img  class="img" src="../../../assets/images/Maclink.jpg" alt="Random first slide" />
+        </div>
+        <div class="carousel-caption m-0">
+          <p>Done </p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="img" src="../../../assets/images/Maclink.jpg" alt="Random second slide" />
+        </div>
+        <div class="carousel-caption m-0">
+          <p>Alhumdulillah.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img  class="img" src="../../../assets/images/Maclink.jpg" alt="Random third slide" />
+        </div>
+        <div class="carousel-caption m-0">
+          <p>Alhumdulillah</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </ng-template> -->
+
+  <ng-template #story let-modal>
+    <div class="classfles">
+      <div class="d-flex align-items-center">
+        <img class="img-account-profile rounded-circle mb-2" 
+             src="{{userPersonalData.image}}"
+             onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';" 
+             alt=""
+             style="height: 50px; width: 50px; border: 5px solid var(--background-color);" />
+        <h3 style="margin-left: 10px;">{{userPersonalData.name}}</h3>
+      </div>
+      <button style="margin-right: 10px;" type="button" class="btn-close" aria-label="Close"
+              (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="line-bar">
+      <div *ngFor="let status of userStatus; let i = index" class="bar-segment" [class.active]="i === currentIndex"></div>
+    </div>
+    <div class="status-container">
+      <button class="slider-icon prev" (click)="showPrevious()">
+        <i class="bi bi-arrow-left-circle-fill"></i>
+      </button>
+  
+      <div *ngIf="userStatus.length > 0" class="status-card">
+        <img [src]="currentData.image" alt="Image" class="status-image img-fluid">
+        <div class="caption-overlay">
+          <div style="text-align: center;">
+            <p class="status-caption">{{ currentData.caption }}</p>
+          </div>
+          <div style="text-align:left;">
+           <span *ngIf="userPersonalData.uid == this.userData.username">
+            <i  (click)=" openScrollable(view, currentData.status_id)" style="margin-left: 5px;" class="p-1 iconeye bi bi-eye"></i> <br> views</span>
+          </div>
+        </div>
+        
+      </div>
+  
+      <button class="slider-icon next" (click)="showNext()">
+        <i class="bi bi-arrow-right-circle-fill"></i>
+      </button>
+    </div>
+      
+
+   
+  </ng-template>
+  
+      <!-- <ngb-carousel #carousel (slide)="onSlideChange($event)" [showNavigationArrows]="true" [interval]="4000" [wrap]="false">
+      <ng-template ngbSlide *ngFor="let status of userStatus; let i = index">
+        <div class="picsum-img-wrapper">
+          <img class="img" src="{{status.image}}" alt="Random slide" />
+        </div>
+        <div class="carousel-caption m-0">
+          <p>{{status.caption}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel> -->
+  <ng-template #view let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Status Views ({{userViewedStatus.length}})</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px; overflow-y:scroll;">
+        <ul class="list-unstyled mb-0">
+          <li class="p-2 border-bottom" *ngFor="let view of userViewedStatus">
+            <a class="d-flex justify-content-between">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="{{view.image}}" class="rounded-circle"
+                  onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';"
+                    alt="avatar" class="d-flex align-self-center me-3" width="60" height="60">
+                  <span class="badge bg-success badge-dot"></span>
+                </div>
+                <div class="pt-1">
+                  <p class="fw-bold mb-0 mt-1" style="color:var(--background-color);">{{view.name}}</p>
+                  <p class="mb-0 text-muted">{{view.viewDate | date:'d MMM yyyy h:mm a' }}</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </ng-template>
+  <!-- <ng-template #view let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px; overflow-y:scroll;">
+        <ul class="list-unstyled mb-0">
+          <li class="p-2 border-bottom">
+            <a class="d-flex justify-content-between">
+              <div class="d-flex flex-row">
+                <div>
+                  <img src="../../../assets/images/Maclink.jpg" class="rounded-circle"
+                    alt="avatar" class="d-flex align-self-center me-3" width="60" height="60">
+                  <span class="badge bg-success badge-dot"></span>
+                </div>
+                <div class="pt-1">
+                  <p class="fw-bold mb-0 mt-1" style="color:var(--background-color);">Fatima</p>
+                  <p class="mb-0 text-muted">Today,05:30pm</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template> -->
+<!-- <ng-template #view let-modal>
+  <div class="classfles">
+
+
+    <div class="d-flex" style="align-items: center;">
+    
+      <h3 style="margin-left: 10px;">Viewed By 4</h3>
+    </div>
+
+    <button style="margin-right: 10px;" type="button" class="btn-close" aria-label="Close"
+      (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+
+</ng-template> -->
+  <!-- <div style="height: 500px;">
+      <div style="position: relative;">
+
+
+        <img src="../../../assets/images/Maclink.jpg" style="width: 100%;height: 100%;" alt="">
+
+
+
+      </div>
+      <div
+        style="position: absolute;bottom: 0px;width: 100%;height: 50px;background-color: rgba(0, 0, 0, 0.319);align-items: center;">
+
+        <p style="text-align: center;color: white;font-size: large;">dondna don</p>
+
+      </div>
+    </div> -->
+        <!-- <div class="card" *ngFor="let post of userPost"
+          style="border: none; max-width: 500px;margin-left: auto;margin-right: auto;margin-top: 30px;">
+          <div>
+            <div class="display1">
+              <div class="display2">
+                <div style="width: 60px;">
+                  <img class="p-1  rounded-circle" src="{{post.image}}"
+                    onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+                    style="width: 60px!important;height: 60px!important;">
+  
+                </div>
+                <div class="display3">
+                  <p class="mb-0 fw-bold text-truncate" style="font-size:small;">{{post.name}}</p>
+                  <p class="mb-0 text-truncate dateText">{{post.postdate | date:'d MMM yyyy h:mm a'}}</p>
+                  <p class="mb-0">{{post.caption}}</p>
+                </div>
+              </div>
+  
+              <div class=""> <i class="icons bi bi-three-dots-vertical mt-1"></i></div>
+            </div>
+            <div style="width: 100%;height: 250px;border: 1px solid;">
+              <img src="{{post.postimage}}" width="auto" height="250px" style="align-items: center;width: 100%;height: 250px;">
+              <div class="flex34">
+              </div>
+  
+  
+              <div>
+                <p class="fw-bold mb-0 p-1" style="font-size: medium;">{{post.totalLikes}} Likes </p>
+                <p (click)="openScrollableContent(longContent, post.post_id)" data-toggle="modal"
+                  data-target="#exampleModalCenter" class="text-muted mb-0 p-1 text-truncate"
+                  style="font-size: small;cursor: pointer;">
+                  View all {{post.totalcomments}} Comments </p>
+  
+              </div>
+  
+              <div class="display34">
+                <i class="icon bi bi-share float-end p-2"></i>
+                <i class="icon bi bi-chat float-end p-2" (click)="openScrollableContent(longContent, post.post_id)"></i>
+                <i class="icon bi p-2" [ngClass]="post.islike == 1 ? 'bi-heart-fill text-danger' : 'bi-heart'"
+                  (click)="likePost(post.post_id)"></i>
+              </div>
+  
+            </div>
+            <div>
+            </div>
+          </div>
+  
+        </div> -->
+
+
+        <div class="my-container">
+          <ngx-loading
+            [show]="loading"
+            
+            [config]="{
+              animationType: ngxLoadingAnimationTypes.threeBounce,
+              fullScreenBackdrop: true ,
+              primaryColour: '#007bff',
+              secondaryColour: '#007bff',
+              tertiaryColour: '#007bff',
+              backdropBorderRadius: '3px' }"
+      
+          ></ngx-loading>
+        </div>

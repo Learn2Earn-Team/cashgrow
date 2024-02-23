@@ -1,0 +1,211 @@
+<link rel="stylesheet" href="/node_modules/aos/aos.css" />
+<div class="container-xl px-4 mt-4">
+  <div class="row">
+    <div class="col-xl-4">
+      <div class="row">
+        <div class="col-xl-12" data-aos="fade-right">
+          <div class="card mb-4 mb-xl-0">
+            <div class="card-header">Profile Picture</div>
+            <div class="card-body text-center">
+              <img
+                class="img-account-profile rounded-circle mb-2"
+                src="{{ this.userobj.image }}"
+                onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';"
+                alt=""
+                style="height: 150px; width: 150px"
+              />
+              <div class="small font-italic text-muted mb-4">
+                JPG or PNG no larger than 5 MB
+              </div>
+
+              <label class="btn btn-color" for="fileInput">
+                Choose picture
+              </label>
+              <input
+                type="file"
+                class="pngfile"
+                accept="image/png, image/jpeg"
+                id="fileInput"
+                style="display: none"
+                (change)="imageUpload($event)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8" style="padding-bottom: 50px">
+      <div class="card mb-4" data-aos="fade-left">
+        <div class="card-header">Account Details</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Full Name (how your name will appear to other users on the
+                site)</label
+              >
+              <input
+                class="form-control"
+                id="inputUsername"
+                type="text"
+                disabled="true"
+                placeholder="Enter your name"
+                value="{{ userobj.name }}"
+                [(ngModel)]="userobj.name"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputOrgName"
+                  >Whatsapp Number</label
+                >
+                <input
+                  class="form-control"
+                  id="inputOrgName"
+                  type="number"
+                  placeholder="Enter your Whatsapp number"
+                  value="{{ userobj.whatsApp }}"
+                  [(ngModel)]="userobj.whatsApp"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLastName">Contact</label>
+                <input
+                  disabled="true"
+                  class="form-control"
+                  id="inputLastName"
+                  type="number"
+                  placeholder="Enter your contact"
+                  value="{{ userobj.accoundNumber }}"
+                  [(ngModel)]="userobj.accoundNumber"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputFirstName">Email</label>
+                <input
+                  disabled="true"
+                  class="form-control"
+                  id="inputFirstName"
+                  type="email"
+                  placeholder="Enter your email"
+                  value="{{ userobj.email }}"
+                  [(ngModel)]="userobj.email"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLocation"
+                  >Agency Name</label
+                >
+                <input
+                  class="form-control"
+                  id="inputLocation"
+                  type="text"
+                  placeholder="Enter your Agency name"
+                  value="{{ userobj.company }}"
+                  [(ngModel)]="userobj.company"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1">Bank Name</label>
+              <select
+                class="form-control"
+                [(ngModel)]="userobj.bname"
+                [ngModelOptions]="{ standalone: true }"
+              >
+                <option value="{{ userobj.bname }}">{{ userobj.bname }}</option>
+                <option value="United Bank">United Bank</option>
+                <option value="Habib Bank">Habib Bank</option>
+                <option value="Mezan Bank">Mezan Bank</option>
+                <option value="MCB Bank">MCB Bank</option>
+                <option value="Al Habib Bank">Al Habib Bank</option>
+                <option value="Bank Alfalah">Bank Alfalah</option>
+                <option value="Allide Bank">Allide Bank</option>
+                <option value="Faysal Bank">Faysal Bank</option>
+                <option value="Askari Bank">Askari Bank</option>
+                <option value="Soneri Bank">Soneri Bank</option>
+                <option value="NBP">NBP</option>
+                <option value="Bank Islami">Bank Islami</option>
+                <option value="BOP">BOP</option>
+                <option value="Summit Bank">Summit Bank</option>
+                <option value="Standard Chartered">Standard Chartered</option>
+                <option value="Dubai Islamic Bank">Dubai Islamic Bank</option>
+                <option value="Habib Metro">Habib Metro</option>
+                <option value="JS Bank">JS Bank</option>
+                <option value="Sindh Bank">Sindh Bank</option>
+                <option value="Silk Bank">Silk Bank</option>
+              </select>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-12">
+                <label class="small mb-1">Account Number</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter your Account number"
+                  value="{{ userobj.accoundNumber }}"
+                  [(ngModel)]="userobj.accoundNumber"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputBirthday">Jaz Cash</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter your Jaz cash Number"
+                  value="{{ userobj.jazzcash }}"
+                  [(ngModel)]="userobj.jazzcash"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputBirthday">Easypaisa</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter your Easypaisa Number"
+                  value="{{ userobj.easypaisa }}"
+                  [(ngModel)]="userobj.easypaisa"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-12">
+                <label class="small mb-1">PIN</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  readonly="true"
+                  placeholder="Enter your Pin"
+                  placeholder="Enter your Pin"
+                  [(ngModel)]="userobj.pin"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <button class="btn btn-color" (click)="updateuser()" type="button">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+  <!-- <i class="fa fa-whatsapp my-float"></i> -->
+  <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+</a>
+
+

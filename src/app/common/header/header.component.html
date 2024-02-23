@@ -1,0 +1,51 @@
+<div class="mobileapk">
+    <div class="header headclr style">
+        <div class="d-flex" style="    align-items: center;">
+            <div class="menu-toggle-btn">
+                <a href="#">
+                    <i class="text-white bi bi-list"></i>
+                </a>
+            </div>
+            <a href="index.html" class="logo">
+                <img width="100" src="" alt="logo">
+            </a>
+            <h5 class="page-title">{{ path | titlecase }}</h5>
+        </div>
+        <!-- <li class="nav-item dropdown text-white">
+            <a style="color: white;" class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <label style="color: white;">Social</label>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#/default/chat">chat</a></li>
+              <li><a class="dropdown-item" href="#/default/view-post">View Post</a></li>
+              <li><a class="dropdown-item" href="#/default/post-page">Upload Post</a></li>
+            </ul>
+          </li> -->
+    </div>
+</div>
+<div class="mobilevie" style="position: fixed;top: 0px;z-index: 1;background-color: white;width: 100%;">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="flex-shrink-0">
+            <img src="{{this.userobj.image}}" alt=""
+                onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+                class="img-fluid rounded-circle border border-dark border-3"
+                style="width: 40px;height: 40px; margin-left: 10px;">
+        </div>
+        <div class="flex-grow-1 ms-3">
+            <div class="d-flex flex-row align-items-center mb-2 " style="float: left;">
+                <h6 style="margin-top: 20px; margin-left: -5px;"> <b>{{this.userobj.name}}</b> </h6>
+            </div>
+       
+            <div class="menu-toggle-btn" style="float: right; color:black ;">
+                <a href="#">
+                    <img class="sidemenubtn" src="./../../../assets/images/tile.png" alt="">
+                </a>
+            </div>
+            <i style="float: right;
+            font-size: 27px;
+            margin-right: 20px;
+            margin-top: 8px;" class="bi bi-cloud-arrow-down-fill" *ngIf="this.router.url == '/default/index'" (click)="downloadApkFromAssets('Maclink.apk')"></i>
+        </div>
+
+    </div>
+</div>

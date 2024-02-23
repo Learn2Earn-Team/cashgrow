@@ -1,0 +1,53 @@
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"> <i class="float-start icons bi bi-arrow-left"  (click)="GotoBack()"></i></div>
+            <div class="col-7 col-sm-7 col-md-6 col-lg-8 col-xl-8"></div>
+            <div class="col-2 col-sm-2 col-md-3 col-lg-1 col-xl-1"> <i class="float-end icons bi bi-upc-scan"></i></div>
+        </div>
+    </div>
+    <section style="margin-top: 120px;">
+<div class="col-md-6 col-lg-6 col-sm-9 col-9 mx-auto">
+<div class="card">
+    <div class="row">
+        <div class="col-md-12 col-12">
+            <div class="row" >
+                <img class="img-account-profile  mb-2 avatar344" src="../../../assets/images/profile 4.jpg"
+                    onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';" alt=""
+                    style="height: 110px; width: 140px ;" />
+            </div>
+            <h3  style="text-align: center;"><b>Mr.HR</b></h3>
+              <div>
+            <img class="tiktokimg rounded mx-auto d-block" src="../../../assets/images/tiktokbarcode.PNG"
+           alt=""
+            style="height: 60%; width: 60% ;" />
+        </div>
+        </div>
+      
+    </div>
+</div>
+
+</div>
+<div class="btntwo mt-2 row">
+    <button class="btton col-6 col-md-6 col-lg-6" [routerLink]="['/default/profile']">
+        <span><i class="icon bi bi-box-arrow-up"></i></span><br>
+       <b> Edit Profile</b>
+    </button>
+    <button class="btton  col-6 col-md-6 col-lg-6" style="margin-left: 3px;">
+       <span><i class="icon bi bi-share"></i></span> <br>
+       <b> Share Profile</b>
+    </button>
+</div>
+</section>
+    
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{
+            animationType: ngxLoadingAnimationTypes.threeBounce,
+            fullScreenBackdrop: true ,
+            primaryColour: '#007bff',
+            secondaryColour: '#007bff',
+            tertiaryColour: '#007bff',
+            backdropBorderRadius: '3px' }"></ngx-loading>
+    </div>
+</body>

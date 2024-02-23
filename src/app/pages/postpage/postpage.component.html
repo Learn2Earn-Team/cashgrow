@@ -1,0 +1,86 @@
+<div class="container mt-5">
+
+
+
+  <ul class="nav nav-pills nav-justified mt-3 mb-3">
+    <li class="nav-item">
+      <a aria-current="page" [ngClass]="this.segmentvalue == 'post' ? 'nav-link active' : 'nav-link'"
+        (click)="activeTab('post')">post</a>
+    </li>
+    <li class="nav-item">
+      <a aria-current="page" [ngClass]="this.segmentvalue == 'status' ? 'nav-link active' : 'nav-link'"
+        (click)="activeTab('status')">status</a>
+    </li>
+
+
+  </ul >
+
+
+  <div *ngIf="this.segmentvalue == 'post'">
+    <h1 class="text-center ">Creat Your Post</h1>
+    <!-- <form action="your_server_endpoint_here" method="post" enctype="multipart/form-data"> -->
+
+    <div class="form-group">
+      <label class="display56"
+        style="width: 120px; height: 120px; border: 1px solid; margin-left: auto; margin-right: auto; border-radius: 10px; margin-top: 20px;">
+        <i style="font-size: 30px;" class="bi bi-plus-circle-dotted"></i>
+        <input type="file" style="display: none;" class="form-control-file" id="image" name="image" accept="image/*"
+          (change)="imageUpload($event)" required>
+      </label>
+    </div>
+
+
+    <div class="form-group" style="margin-top: 30px;">
+      <label for="exampleFormControlTextarea1"> <b>Caption</b> </label>
+      <textarea class="form-control" style="margin-top: 5px;" id="exampleFormControlTextarea1"
+        [(ngModel)]="userPostData.caption" [ngModelOptions]="{ standalone: true }" rows="3"></textarea>
+    </div>
+    <div class="row">
+      <button [disabled]="this.userPostData.image == '' || userPostData.caption == ''"
+        style="width: 80px;margin-top: 20px;margin-left: auto;margin-right: auto;" type="submit" class="btn btn-primary"
+        (click)="addPost()">Post</button>
+
+    </div>
+  </div>
+
+  <div *ngIf="this.segmentvalue == 'status'">
+    <h1 class="text-center">Uplaod Your Status</h1>
+    <!-- <form action="your_server_endpoint_here" method="post" enctype="multipart/form-data"> -->
+    
+        <div class="form-group">
+            <label class="display56" style="width: 120px; height: 120px; border: 1px solid; margin-left: auto; margin-right: auto; border-radius: 10px; margin-top: 20px;">
+              <i style="font-size: 30px;" class="bi bi-plus-circle-dotted"></i>
+              <input type="file" style="display: none;" class="form-control-file" id="image" name="image" accept="image/*" (change)="StatusImageUpload($event)" required>
+            </label>
+          </div>
+          
+
+        <div class="form-group" style="margin-top: 30px;">
+            <label for="exampleFormControlTextarea1"> <b>Caption</b> </label>
+            <textarea class="form-control" style="margin-top: 5px;" id="exampleFormControlTextarea1" [(ngModel)]="userStatusData.caption"
+            [ngModelOptions]="{ standalone: true }" rows="3"></textarea>
+          </div>
+          <div class="row">
+            <button [disabled]="this.userStatusData.image == '' || userStatusData.caption == ''" style="width: 80px;margin-top: 20px;margin-left: auto;margin-right: auto;" type="submit" class="btn btn-primary" (click)="addStatus()">Post</button>
+
+          </div>
+  </div>
+
+  <!-- </form> -->
+</div>
+
+
+<div class="my-container">
+  <ngx-loading
+    [show]="loading"
+    
+    [config]="{
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      fullScreenBackdrop: true ,
+      primaryColour: '#007bff',
+      secondaryColour: '#007bff',
+      tertiaryColour: '#007bff',
+      backdropBorderRadius: '3px' }"
+
+  ></ngx-loading>
+</div>

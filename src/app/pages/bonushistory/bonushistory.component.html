@@ -1,0 +1,207 @@
+<div class="container bottompx">
+
+  <ul class="nav nav-pills nav-justified mt-3 mb-2">
+    <li class="nav-item">
+      <a aria-current="page" [ngClass]="this.segmentvalue == 'team' ? 'nav-link active' : 'nav-link'" (click)="activeTab('team')">Bonous History</a>
+    </li>
+    <li class="nav-item"> 
+      <a aria-current="page" [ngClass]="this.segmentvalue == 'follow' ? 'nav-link active' : 'nav-link'" (click)="activeTab('follow')">Internal Transfer</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="this.segmentvalue == 'request' ? 'nav-link active' : 'nav-link'" (click)="activeTab('request')">Withdraw History</a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" [ngClass]="this.segmentvalue == 'friend' ? 'nav-link active' : 'nav-link'" (click)="activeTab('friend')">Friends</a>
+    </li> -->
+  </ul>
+
+<div *ngIf="this.segmentvalue == 'team'">
+  <div class="row">
+    <div class="col-12 col-md-4 col-sm-6 mb-3"  *ngFor="
+    let item of userDeposits
+      | paginate : { itemsPerPage: pageSize, currentPage: p };
+    let i = index
+  ">
+      <div class="card text-bg-dark">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi text-success bi-patch-check-fill"></i> + {{item.reffe_balance}}$ Received!</h5>
+          <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+        </div>
+        <div class="card-footer text-body-light text-end">
+          {{item.date}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3">
+    <pagination-controls
+      (pageChange)="p = $event"
+    ></pagination-controls>
+  </div>
+</div>
+
+<div *ngIf="this.segmentvalue == 'follow'">
+  <div class="row" >
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of userTransferData"
+    >
+      <div class="card shadow-sm border text-bg-dark" >
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.amount }}</p></div>
+             </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sender</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{item.sender}}</p></div>
+             </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Receiver</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  " > {{item.receiver}} </p></div>
+             </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.created_at }}</p></div>
+             </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Recepate</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">
+                 <button (click)="open(content, item.amount)" type="button" class="btn btn-primary" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Show
+              </button></p></div>
+             </div>
+          </li>
+          
+          
+          
+        </ul>
+      </div>
+      
+    </div> 
+    
+  </div>
+
+  <ng-template #content let-modal >
+    <div class="modal-body modalcolor" >
+      <img style="height: 50px;width: 50px; border-radius: 10px;" src="../../../assets/images/send.png" alt="">
+      <h1 class="text-white mt-4">Congratulation!</h1>
+      <h5 class="text-white">Maclink</h5>
+      <h1 class="text-white">Transfer Amount</h1>
+      <h5 class="text-white">{{tranferAmount}}$</h5>
+      <h5 class="text-white">Successfully By</h5>
+      <h1 class="text-white">Maclink</h1>
+      
+      <button type="button" class="btn btn-outline-dark text-white" (click)="modal.close('Save click')">close</button>
+    </div>
+   
+  </ng-template>
+
+</div>
+<div *ngIf="this.segmentvalue == 'request'">
+  <section class="intro">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row" >
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1" *ngFor="let item of userWithdrawHistory" >
+            <div class="card shadow-sm border" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.user_id }}</p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.amount }}</p></div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Gateway</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.jdetail }}</div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.tdetail }}</div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Servies</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.services }}</div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Net</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.net }}</div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.created_at }}</div>
+                   </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.status }}</div>
+                   </div>
+                </li>
+                <li class="list-group-item" *ngIf="item.status == 'Approve'">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Recepate</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">  <button (click)="open(content2, item.amount)" type="button" class="btn btn-primary" data-toggle="modal"
+                      data-target="#exampleModalCenter">
+                      Show
+                    </button></div>
+                   </div>
+                </li>
+              </ul>
+            </div>
+          </div> 
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #content2 let-modal >
+    <div class="modal-body modalcolor" >
+      <img style="height: 50px;width: 50px; border-radius: 10px;" src="../../../assets/images/send.png" alt="">
+      <h1 class="text-white mt-4">Congratulation!</h1>
+      <h5 class="text-white">Maclink</h5>
+      <h1 class="text-white">Withdrawal Amount</h1>
+      <h5 class="text-white">{{tranferAmount}}$</h5>
+      <h5 class="text-white">Successfully By</h5>
+      <h1 class="text-white">Maclink</h1>
+      
+      <button type="button" class="btn btn-outline-dark text-white" (click)="modal.close('Save click')">close</button>
+    </div>
+   
+  </ng-template>
+
+</div>
+
+
+</div>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+  <!-- <i class="fa fa-whatsapp my-float"></i> -->
+  <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+</a>
+

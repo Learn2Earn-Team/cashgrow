@@ -1,0 +1,20 @@
+<div class="mobileview">
+    <div class="tabbar">
+        <i [routerLink]="['/default/index']" style="font-size: 30px;" class="bi bi-house-fill"></i>
+        <i [routerLink]="['/default/promotionsocial']" style="font-size: 30px;" class="bi bi-bar-chart-line-fill"></i>
+        <!-- <div [routerLink]="['default/post-page']">
+
+                <img class="float" src="../../../assets/images/add-photo.png" alt="">
+            
+        </div> -->
+        <i [routerLink]="['/default/bonushistory']" style="font-size: 30px;" class="bi bi-bell-fill"></i>
+        <div [routerLink]="['default/profile']" class="flex-shrink-0">
+            <img src="{{this.userobj.image}}" alt=""
+            onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+                class="img-fluid rounded-circle border border-dark border-3"
+                style="width: 35px;margin-top: 5px;height: 35px;">
+        </div>
+
+    </div>
+
+</div>

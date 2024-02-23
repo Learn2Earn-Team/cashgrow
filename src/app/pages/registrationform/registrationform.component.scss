@@ -1,0 +1,76 @@
+.headerclr{
+  background: var(--background-color);
+  color: var( --text-color);
+}
+a{
+  color: var( --text-color);
+  
+}
+.term{
+text-decoration: underline;
+}
+.btn-clr{
+  background: #cc1616;
+  color: var( --text-color);
+}
+@media screen and (max-width: 480px) {
+.float {
+    display: none;
+}
+}
+.backimg{
+  background-image: url("../../../assets/images/bff2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+       min-height: 500px;
+       background-attachment: fixed;
+       background-position: center;
+}
+.form{
+  background-color:rgba(10, 0, 0, 0.699);
+  color:white
+ 
+}
+.fixed-bottom {
+position: fixed;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1030;
+}
+#footer {
+  background: var(--background-color);
+  padding: 0 0 30px 0;
+  color: var( --text-color);
+  font-size: 14px;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.form-control{
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid #cc1616;
+}
+.form-control::placeholder{
+  color: #121212;
+}
+
+.form-check-input:checked{
+  background-color: #cc1616 !important;
+  border: 0;
+}
+.form-check-input{
+  // background-color: #cc1616 !important;
+  border-color: #cc1616;
+}
+.form-check-input:focus, .label::after, label.form-check-label:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus {
+  color: black;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 0 0 0.1rem #cc1616 !important;
+}

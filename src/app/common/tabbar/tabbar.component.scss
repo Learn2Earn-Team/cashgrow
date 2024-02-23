@@ -1,0 +1,25 @@
+@media screen and (min-width: 480px) {
+    .mobileview {
+      display: none;
+  
+    }
+  }
+  .tabbar{
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 1;
+  }
+.float{
+  height: 55px;
+  width: 55px;
+  margin-top: -15px;
+  border-radius: 100%;
+}

@@ -1,0 +1,71 @@
+<section style="background-color: #eee;" >
+    <div class="col-md-12 col-lg-12 col-xl-12">
+      <div class="card border-bottom-0" style="border-radius: 0;">
+        <div class="card fixed-top">  
+        <div class="card-header d-flex align-items-center justify-content-between p-3"
+          style="background:  var(--background-color) ; border-radius: 0;">
+          <i (click)="goToBack()" class="float-start icons bi bi-arrow-left"  > </i> 
+          <div class="d-flex align-items-center">
+            <img class="mb-1 p-1 rounded-circle" src="../../../assets/images/profile 4.jpg" style="width:50px; height:50px;" > 
+            <h5  style="color:white">{{userChatData.name}} </h5><br>
+          </div>
+        
+          <!-- <img (click)="goToBack()" class="mb-1" src="../../../assets/images/arrow.png" style="width:25px; height: auto;">  
+               <h5 class="mb-0 mt-1" (click)="goToNext()">   &nbsp;{{userChatData.name}}</h5> -->
+          <!-- <div class="d-flex align-items-center">
+         
+     
+          </div> -->
+          <div>
+            <i class="icon bi bi-three-dots-vertical"> </i>
+             </div>
+        </div>
+      </div>
+
+      <div class="card-body " data-mdb-perfect-scrollbar="true" 
+      style="position: relative; overflow-y:scroll; padding-top: 90px; padding-bottom: 70px;  height: 90vh;"
+      #chatMessages>
+      <div *ngFor="let message of userMessages">
+        <div class="d-flex flex-row justify-content-end mb-2" style="padding-top: 2px;" *ngIf="message.role == 'receiver'" >
+        <div class="small p-1 me-3 text-white rounded-3" style="background: var(--background-color);">
+          <p class="mb-0"> {{message.msg}}</p>
+          <p class="float-end mb-0 date-text"> {{message.date | date:'d MMM yyyy h:mm a'}}</p>
+        </div>
+        <img src="{{message.image}}"
+        onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';"
+          alt="" style="width: 45px; height: 45px;  border-radius: 50%;">
+      </div>
+  
+      <div class="d-flex flex-row justify-content-start mb-2" style="padding-top: 2px;" *ngIf="message.role == 'sender'">
+        <img src="{{message.image}}"
+        onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';" 
+          alt="" style="width: 45px; height: 45px;  border-radius: 50%;">
+        <div class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">
+          <p class="mb-0"> {{message.msg}}</p>
+          <p class="mb-0 float-end text-muted date-text">{{message.date | date:'d MMM yyyy h:mm a'}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+        <div class="fixed-bottom" style="background:var(--background-color);">
+        <div class="card-footer text-muted d-flex justify-content-between align-items-center p-3">
+          <div class="input-group mb-0">
+            <input type="text" class="form-control" placeholder="Type message"
+            aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="message"
+            [ngModelOptions]="{standalone: true}" (keyup.enter)="addChat()"/>
+          <button class="btn" type="button" id="button-addon2" style="padding-top: .55rem;" (click)="addChat()">
+            <i class="bbicon bi bi-send"></i>
+          </button>
+            <div class="bbicon mt-2">  
+              <i class="bi bi-camera"></i>
+              <i class="bi bi-emoji-smile"></i>
+              <i class="bi bi-mic"></i>
+            </div>
+         
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</section>
+  

@@ -1,0 +1,28 @@
+.left{
+    width: 25%;
+    height: 100vh;
+    display: inline-block;
+}
+
+.left1{
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+    overflow-y: auto;
+    width: 72%;
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+}
+
+@media only screen and (max-width: 1201px) {
+
+    .left{
+        width: auto;
+    }
+
+    .left1{
+        width: 100%;
+    }
+
+}

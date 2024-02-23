@@ -1,0 +1,128 @@
+<section style="background-color: #ffffff;padding-bottom: 80px;">
+    <div class="container py-2">
+
+
+        <div class="input-group md-form form-sm form-2 pl-0 mb-3">
+            <div>
+                <span class="input-group-text"
+                    style="background-color: var(--background-color);height: 50px;border-top-left-radius: 30px;border-bottom-left-radius: 30px;z-index: 1;"
+                    id="basic-text1">
+                    <label for="fileInput" style="margin-top: 7px;">
+                        <img class="img-account-profile rounded-circle mb-2" src=""
+                            onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';" alt=""
+                            style="height: 40px; width: 40px;z-index: 100;" id="previewImage" />
+                    </label>
+                </span>
+                <input type="file" class="pngfile" accept="image/png, image/jpeg" (change)="groupImageUpload($event)"
+                    id="fileInput" style="display: none" />
+            </div>
+
+            <input maxlength="30" class="form-control my-0 py-1 red-border colorinput" [(ngModel)]="groupData.name"
+                [ngModelOptions]="{ standalone: true }" type="text" placeholder="Group Name" aria-label="Search">
+            <div>
+                <button [disabled]="groupData.name == '' ||  this.groupData.image == ''" class="input-group-text"
+                    (click)="createGroup()"
+                    style="background-color: var(--background-color);height: 50px;border-top-right-radius: 30px;border-bottom-right-radius: 30px;"
+                    id="basic-text1"><i class="bi bi-plus-circle " style="color: white;"></i></button>
+            </div>
+        </div>
+
+        <div class="input-group md-form form-sm form-2 pl-0 ">
+            <input class="form-control my-0 py-1 red-border colorinput" [(ngModel)]="filterTerm"
+                [ngModelOptions]="{standalone: true}" type="text" placeholder="Search" aria-label="Search">
+            <div>
+                <span class="input-group-text"
+                    style="background-color: var(--background-color);height: 50px;border-top-right-radius: 30px;border-bottom-right-radius: 30px;"
+                    id="basic-text1"><i class="bi bi-search " style="color: white;"></i></span>
+            </div>
+        </div>
+
+
+        <div class="row mt-3">
+
+
+
+
+
+            <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px; overflow-y:scroll;">
+                <ul class="list-unstyled mb-0">
+                    <li class="p-2 border-bottom" *ngFor="let group of userGroups  | filter: filterTerm;">
+                        <a class="d-flex justify-content-between" style="align-items: center;">
+                            <div class="dflex1">
+                                <img src="{{group.image}}"
+                                    onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';" alt="avatar"
+                                    class="d-flex align-self-center me-3" style="width: 50px;height: 50px;">
+
+                                <span style="color:var(--background-color);font-size: medium;"> <b>{{group.name}} </b>
+                                </span>
+                                <!-- <p class="small text-muted">Hello, Are you there?</p> -->
+
+                            </div>
+                            <button class="btnclr" (click)="open(content, group.gid)" data-toggle="modal">
+                                <span style="font-size: small;"> <i style="font-size: 25px;"
+                                        class="bi bi-plus-lg"></i></span>
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</section>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Add Members</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModel()"></button>
+    </div>
+    <div class="stories-wrapper">
+        <div class="story-container" *ngFor="let item of groupMembersData; let i = index">
+            <div class="circular-container">
+                <span class="close-icon" (click)="removeUser(i)">×</span>
+                <img src="{{item.image}}" onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';">
+            </div>
+            <div class="user-name">
+                {{item.name}}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-body modalcolor">
+        <button *ngIf="this.groupMembersData.length > 0" (click)="addMember()"
+            class="fabbutton pmd-btn-fab pmd-ripple-effect btn-outline-primary" type="button"><i
+                class="bi bi-plus-lg"></i></button>
+
+        <div data-mdb-perfect-scrollbar="true" style="position: relative; height: 500px; overflow-y:scroll;">
+            <ul class="list-unstyled mb-0" *ngFor="let friends of userFriends">
+                <li class="p-2 border-bottom">
+                    <a class="d-flex justify-content-between" style="align-items: center;">
+                        <div class="dflex1">
+                            <img src="{{friends.image}}"
+                                onerror="this.onerror=null;this.src='assets/boy-icon-png-10.jpg.png';" alt="avatar"
+                                class="d-flex align-self-center me-3" style="width: 50px;height: 50px;">
+
+                            <span style="color:var(--background-color);font-size: medium;"> <b>{{friends.name}} </b>
+                            </span>
+                            <!-- <p class="small text-muted">Hello, Are you there?</p> -->
+
+                        </div>
+                        <button
+                            style="width: 60px; height: 40px; background-color: var(--background-color); border: none; border-radius: 5px;color: white;"
+                            (click)="SelectUser(friends)">
+                            add
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+</ng-template>

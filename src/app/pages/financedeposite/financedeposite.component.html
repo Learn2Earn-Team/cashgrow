@@ -1,0 +1,142 @@
+<div class="container-xl px-4 mt-4 " >
+  <div class="row bottompx">
+    <div class="col-xl-6">
+      <div class="row">
+        <div class="col-xl-12">
+          <div (click)="forEasyPaisa()" class="card mb-4 mb-xl-0">
+            <div class="card-header">For Easypaisa</div>
+            <div class="card-body text-center">
+              <h3>Till payment Method</h3>
+              <h3>Title: Maclink</h3>
+              <p>0280565</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="row">
+        <div class="col-xl-12">
+          <div (click)="forJazCash()" class="card mb-4 mb-xl-0">
+            <div class="card-header">For JazzCash</div>
+            <div class="card-body text-center">
+              <h3>Maclink super Store</h3>
+              <h3>Till Number</h3>
+              <p>00493874</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-12">
+      <div class="card mb-4" style="margin-top: 30px">
+        <div class="card-header">Cash To Wallet</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="small mb-1">Select Gateway</label>
+              <select
+                [(ngModel)]="depositdetail.getawey"
+                [ngModelOptions]="{ standalone: true }"
+                class="form-control"
+              >
+                <option value="JazzCash">JazzCash</option>
+                <option value="Easypaisa">Easypaisa</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">Amount</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Enter Amount"
+                readonly="true"
+                value="PKR 950"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Transection ID</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Enter ID"
+                [(ngModel)]="depositdetail.tid"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-12">
+                <label class="small mb-1">Screen Shoot</label>
+                <input
+                  class="form-control"
+                  type="file"
+                  placeholder="Choose File"
+                  [(ngModel)]="uploadedImage"
+                  [ngModelOptions]="{ standalone: true }"
+                  (change)="handleUpload($event)"
+                />
+              </div>
+            </div>
+            <div class="col-md-6 col-12"></div>
+            <div class="col-md-6 col-12 mt-4">
+              <button
+                class="btn btn-color"
+                (click)="DepositReq()"
+                type="button"
+                [disabled]="depositdetail.getawey == '' || depositdetail.tid == '' || uploadedImage == ''"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="text-center  m-3" style="color: black;">My Deposite Request</h1>
+
+
+
+    <div class="row" >
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of userDeposits"
+      >
+        <div class="card shadow-sm border" >
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.amount }}</p></div>
+               </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.tid }}</p></div>
+               </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  " > {{ item.status }} </p></div>
+               </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.created_at }}</p></div>
+               </div>
+            </li>
+            
+            
+          </ul>
+        </div>
+        
+      </div> 
+     
+    </div>
+
+    
+  </div>
+</div>

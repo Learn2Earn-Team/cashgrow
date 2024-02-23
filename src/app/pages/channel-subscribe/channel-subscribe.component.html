@@ -1,0 +1,59 @@
+<div *ngIf="!this.isPackageActiveted"> 
+
+<div *ngIf="!this.shoeMessage"> 
+    <div class="container text-center">
+        <!-- <h1 class="text-center mt-5"> Subscribe Channel Here</h1> -->
+           <a  href="{{channelData.url}}" target="_blank"> 
+                 <img class="img-fluid img"
+                  src="https://i.pinimg.com/originals/49/48/3a/49483a0b5f70c54aee8be7bf7f607a80.png">
+                </a>
+        
+             <br>
+            <div class="col-xl-12">
+                <div class="card mb-4" style="margin-top: 10px;">
+                    <div class="card-header">Warning</div>
+                    <div class="card-body">
+                        <h5 class="text-muted"> When you subscribe to any channel paste the screenshot of that channel on the website if you would paste any other screenshot instead of the channel you have subscribed so you account will be FREEZED </h5>
+                        <h5 class="text-muted">ہوشیار: جو چینل سبسکریپشن کریں اسی کا سکرین شوٹ لے کے آپ نے سبمٹ کرنا اگر آپ کوئی اور سکرین شاٹ سبمٹ کریں گے جو آپنے اسی وقت سبسکریپشن نہیں کیا تو آپکا اکاؤنٹ بند کردیا جائے گا
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card mb-4" style="margin-top: 10px;">
+                    <div class="card-header">Add Screen Shot Here</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row gx-3 mb-3">
+                                <div class="col-md-12">
+                                    <label class="small mb-1">Screen Shoot</label>
+                                    <input class="form-control" type="file" placeholder="Choose File" value="0000000000" (change)="handleUpload($event)">
+                                </div>
+                            </div>
+                            <div class=" col-md-6 col-12">
+                            </div>
+                            <div class="col-md-6 col-12 mt-4">
+                               <button class="btn btn-color"
+                                    type="button" (click)="addChannelSubscribedData()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+             </div>
+             <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
+                <!-- <i class="fa fa-whatsapp my-float"></i> -->
+                <img class="float" src="../../../assets/images/whatsapp.png" alt="">
+              </a>
+</div>
+<div class="centered">
+    <div *ngIf="this.shoeMessage"> 
+      <h1>Your Today Subscribe Limit Is Full</h1>
+    </div>
+  </div>
+
+</div>
+
+  <div  class="centered" *ngIf="this.isPackageActiveted">
+    <h1>Dear Your Current Package Reached Video Available Income. Please Upgrade Your Package.</h1>
+  </div>

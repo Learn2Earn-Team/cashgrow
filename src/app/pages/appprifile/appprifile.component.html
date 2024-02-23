@@ -1,0 +1,101 @@
+<section style="margin-top: 100px;">
+    <div class=" bottompx">
+        <div class="bgcolor borderradious">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="row" >
+                        <img class="img-account-profile  mb-2 avatar344" src="{{this.userobj.image}}"
+                            onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';" alt=""
+                            style="height: 110px; width: 140px ;" />
+                    </div>
+                    <h3 class="text-white" style="text-align: center;"><b>{{this.userobj.name}}</b></h3>
+                    <div class="follo" style="padding-right: 30px;padding-left: 30px;">
+
+                        <div class="col-4" style="text-align: center;">
+                            <h6><b>Following</b></h6>
+                            <p>{{userTotalFriendsDetail.totalFollowing}}</p>
+                        </div>
+                        <div class="col-4" style="text-align: center;">
+                            <h6><b>Followers</b></h6>
+                            <p>{{userTotalFriendsDetail.totalFriends}}</p>
+                        </div>
+                        <div class="col-4" style="text-align: center;">
+                            <h6><b>Like</b></h6>
+                            <p>{{userTotalFriendsDetail.totalLikes}}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="btntwo">
+                    <button class="btton" [routerLink]="['/default/profile']">
+                        Edit Profile
+                    </button>
+                    <button class="btton" style="margin-left: 3px;"   [routerLink]="['/share-profile']">
+                        Share Profile
+                    </button>
+                    <button [routerLink]="['/default/follow-user']" class="btton" style="width: 50px;margin-left: 3px;">
+                        <i style="font-size: 30px;" class="bi bi-person-add"></i>
+                    </button>
+                </div>
+                <div class="addyour" [routerLink]="['/default/post-page']">
+                    <i class="bi bi-cloud-plus"></i>
+                    <h6 style="margin-left: 5px;">Add Yours</h6>
+                </div>
+            </div>
+
+            <div class="mbileveiwinerdiv">
+                <div class="container-fluid" style="padding-bottom: 5px">
+
+                    <div class="row " >
+                        <div class="col-4 mb-2"  *ngFor="let posts of userPost">
+                            <div (click)="groupback()" class="card" style="background-image: url('{{posts.postimage}}');height: 100px;width: 100px;background-repeat: no-repeat;background-size: cover;background-position: center;margin-left: auto;margin-right: auto;">
+                                <!-- <img src="{{posts.postimage}}" class="card-img-top" alt="Image"> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="card35 text-white"  >
+                        <div class="iconcard200">
+                            <i style="
+                                  font-size: 20px;
+                                  margin-left: auto;
+                                  margin-right: auto;
+                                  color: black;
+                                " class="bi bi-pencil-square"></i>
+                        </div>
+
+                        <p style="padding-left: 10px; margin-top: 3px">Update Profile</p>
+                        <p class="wokingtext"> <i class="bi bi-chevron-right"></i> </p>
+                    </div> -->
+
+                    <!-- <div class="card35 text-white" (click)="copyUserId()">
+                        <div class="iconcard200">
+                            <i style="
+                          font-size: 25px;
+                          margin-left: auto;
+                          margin-right: auto;
+                          color: black;
+                        " class="bi bi-person-fill-add"></i>
+                        </div>
+
+                        <p style="padding-left: 10px; margin-top: 3px">Invite Via Link</p>
+
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="my-container">
+    <ngx-loading [show]="loading" [config]="{
+        animationType: ngxLoadingAnimationTypes.threeBounce,
+        fullScreenBackdrop: true ,
+        primaryColour: '#007bff',
+        secondaryColour: '#007bff',
+        tertiaryColour: '#007bff',
+        backdropBorderRadius: '3px' }"></ngx-loading>
+</div>

@@ -1,0 +1,317 @@
+<link rel="stylesheet" href="/node_modules/aos/aos.css" />
+<div class="container-xl px-4 mt-4">
+
+  <section>
+    <div >
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="card text-bg-dark mt-2" style="border-radius: 15px;">
+            <div class="card-body text-black">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <img src="{{userobj.image}}"
+                  onerror="this.onerror=null;this.src='../../../assets/images/UnknownUser.png';"
+                    alt="" class="img-fluid rounded-circle border border-dark border-3"
+                    style="width: 90px; height: 90px;">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <div class="d-flex flex-row align-items-center mb-2">
+                    <p class="mb-0 text-light">{{userData.name}}</p>
+                    <span class="text-info" style="margin-left: 4px;font-size: 13px;">ID {{userDashboardData.username}}</span>
+                  </div>
+                  <div>
+                    <p class="text-light">Invited by <span class="text-info" style="font-size: 15px;">ID {{userDashboardData.sponserid | uppercase}}</span> </p> 
+                  </div>
+                </div>
+              </div>
+              <!-- <hr> -->
+              <label class="btn btn-color btn-primary mt-2" for="fileInput">
+                Choose picture
+              </label>
+              <input
+                type="file"
+                class="pngfile"
+                accept="image/png, image/jpeg"
+                id="fileInput"
+                style="display: none"
+                (change)="imageUpload($event)"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="card text-bg-dark mt-2 p-2" style="border-radius: 15px;">
+          <div class="card-body text-black">
+            <h5 class="card-title text-light">My Personal Link</h5>
+            <p class="card-text text-info">https://maclink.cc/./././.{{userDashboardData.username}} </p>
+            <a class="btn btn-primary" (click)="copyUserId()">Copy</a>
+            <a class="btn btn-info" style="margin-left: 5px;" (click)="downloadApkFromAssets('Maclink.apk')">Download App</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- <div class="body">
+  <div class="body1">
+    <div class="uknow">
+      <img src="{{userobj.image}}"
+      onerror="this.onerror=null;this.src='../../../assets/images/UnknownUser.png';"
+       alt="">
+    </div>
+    <div class="id">
+      <p>
+        <span style="font-size: 20px;">  {{userData.name}} </span><br>
+        <span class="tow" style="font-size: 15px;">{{userData.username | uppercase}}
+        </span><br><br>
+      </p>
+    </div>
+  </div>
+  <div class="body2" >
+    <div class=" bg1 " (click)="copyUserId()">
+      <p class="has-focus" >
+        Personal link
+      </p>
+
+      <div class="bg2">
+        <p class="button-block"  (click)="copyUserId()">Copy</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+ 
+<!-- <div class="row mt-2">
+    <div class="col-xl-12">
+      <div class="row">
+        <div class="col-xl-12" data-aos="fade-right">
+          <div class="card mb-0 mb-xl-0">
+            <div class="card-header">Profile Picture</div>
+            <div class="card-body text-center">
+              <img
+                class="img-account-profile rounded-circle mb-2"
+                src="{{ this.userobj.image }}"
+                onerror="this.onerror=null;this.src='assets/images/avatar1.jpeg';"
+                alt=""
+                style="height: 150px; width: 150px"
+              />
+              <div class="small font-italic text-muted mb-4">
+                JPG or PNG no larger than 5 MB
+              </div>
+
+              <label class="btn btn-color" for="fileInput">
+                Choose picture
+              </label>
+              <input
+                type="file"
+                class="pngfile"
+                accept="image/png, image/jpeg"
+                id="fileInput"
+                style="display: none"
+                (change)="imageUpload($event)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="col-xl-8" style="padding-bottom: 50px">
+      <div class="card mb-4" data-aos="fade-left">
+        <div class="card-header">Account Details</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Full Name (how your name will appear to other users on the
+                site)</label
+              >
+              <input
+                class="form-control"
+                id="inputUsername"
+                type="text"
+                disabled="true"
+                placeholder="Enter your name"
+                value="{{ userobj.name }}"
+                [(ngModel)]="userobj.name"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputOrgName"
+                  >Whatsapp Number</label
+                >
+                <input
+                  class="form-control"
+                  id="inputOrgName"
+                  type="number"
+                  placeholder="Enter your Whatsapp number"
+                  value="{{ userobj.whatsApp }}"
+                  [(ngModel)]="userobj.whatsApp"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLastName">Contact</label>
+                <input
+                  disabled="true"
+                  class="form-control"
+                  id="inputLastName"
+                  type="number"
+                  placeholder="Enter your contact"
+                  value="{{ userobj.accoundNumber }}"
+                  [(ngModel)]="userobj.accoundNumber"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputFirstName">Email</label>
+                <input
+                  disabled="true"
+                  class="form-control"
+                  id="inputFirstName"
+                  type="email"
+                  placeholder="Enter your email"
+                  value="{{ userobj.email }}"
+                  [(ngModel)]="userobj.email"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLocation"
+                  >Agency Name</label
+                >
+                <input
+                  class="form-control"
+                  id="inputLocation"
+                  type="text"
+                  placeholder="Enter your Agency name"
+                  value="{{ userobj.company }}"
+                  [(ngModel)]="userobj.company"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1">Bank Name</label>
+              <select
+                class="form-control"
+                [(ngModel)]="userobj.bname"
+                [ngModelOptions]="{ standalone: true }"
+              >
+                <option value="{{ userobj.bname }}">{{ userobj.bname }}</option>
+                <option value="United Bank">United Bank</option>
+                <option value="Habib Bank">Habib Bank</option>
+                <option value="Mezan Bank">Mezan Bank</option>
+                <option value="MCB Bank">MCB Bank</option>
+                <option value="Al Habib Bank">Al Habib Bank</option>
+                <option value="Bank Alfalah">Bank Alfalah</option>
+                <option value="Allide Bank">Allide Bank</option>
+                <option value="Faysal Bank">Faysal Bank</option>
+                <option value="Askari Bank">Askari Bank</option>
+                <option value="Soneri Bank">Soneri Bank</option>
+                <option value="NBP">NBP</option>
+                <option value="Bank Islami">Bank Islami</option>
+                <option value="BOP">BOP</option>
+                <option value="Summit Bank">Summit Bank</option>
+                <option value="Standard Chartered">Standard Chartered</option>
+                <option value="Dubai Islamic Bank">Dubai Islamic Bank</option>
+                <option value="Habib Metro">Habib Metro</option>
+                <option value="JS Bank">JS Bank</option>
+                <option value="Sindh Bank">Sindh Bank</option>
+                <option value="Silk Bank">Silk Bank</option>
+              </select>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-12">
+                <label class="small mb-1">Account Number</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter your Account number"
+                  value="{{ userobj.accoundNumber }}"
+                  [(ngModel)]="userobj.accoundNumber"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputBirthday">Jaz Cash</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter your Jaz cash Number"
+                  value="{{ userobj.jazzcash }}"
+                  [(ngModel)]="userobj.jazzcash"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputBirthday">Easypaisa</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter your Easypaisa Number"
+                  value="{{ userobj.easypaisa }}"
+                  [(ngModel)]="userobj.easypaisa"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-12">
+                <label class="small mb-1">PIN</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  readonly="true"
+                  placeholder="Enter your Pin"
+                  placeholder="Enter your Pin"
+                  [(ngModel)]="userobj.pin"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+              </div>
+            </div>
+            <button class="btn btn-color" (click)="updateuser()" type="button">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+
+  <div class="list-group mb-3" style="width: 100%; margin-left:  0px; padding-bottom: 50px; border-radius: 15px;">
+    <a class="list-group-item list-group-item-action text-bg-dark" aria-current="true" *ngFor="let item of randomData">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><i class="bi text-success bi-patch-check-fill"></i>
+          <span class="badge rounded-pill text-bg-info" style="margin-left: 10px;font-size: 15px;">Id:{{item.randomId}}</span> </h5>
+        <small style="font-size: 13px;">{{item.randomtime}} minutess ago</small>
+      </div>
+      <p class="mb-1" style="font-size: 18px;">Has buy package of {{item.randomamount}}$</p>
+      <!-- <small>And some small print.</small> -->
+    </a>
+  </div>
+  <!-- <div class="row mt-3 mb-3" style="padding-bottom: 50px;">
+    <div class="col-12 col-md-4 col-sm-6 mb-3" *ngFor="let item of randomData">
+      <div class="card text-bg-dark">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi text-success bi-patch-check-fill"></i> <span class="badge rounded-pill text-bg-info" style="margin-left: 4px;">Id:{{item.randomId}}</span>  has buy package of {{item.randomamount}}$</h5>
+        </div>
+        <div class="card-footer text-body-light text-end">
+       {{item.randomtime}} minutes
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+  <!-- <i class="fa fa-whatsapp my-float"></i> -->
+  <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+</a>
+

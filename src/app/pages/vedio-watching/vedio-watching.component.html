@@ -1,0 +1,45 @@
+<div *ngIf="!this.isPackageActiveted">
+  <div *ngIf="!this.shoeMessage"> 
+    <div class="container text-center mt-5">
+      <div class="row">
+          <div class="col-md-6 col-lg-6 d-flex align-items-stretch mt-4">
+            <div id="player-container"></div>
+              <!-- <iframe class="embed-responsive-item iframe" src="https://www.youtube.com/embed/oT_lpBCWoYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> -->
+              </div>
+           
+              <div class="col-md-6 col-lg-6 d-flex align-items-stretch mt-4" data-aos="fade-up">
+                <div class="card mb-4 shadows" style="margin-top: 10px;">
+                  <div class="card-header">Warning</div>
+                  <div class="card-body">
+                     <h4 class="text-muted"> When video is played don't click on the video and dont forward it your account will be freezed if you do so . When the video is played watch it completely till the video is complete</h4>
+                     <h4 class="text-muted">وشیار:وڈیو جب پلے کر دے تو آپ نے وڈیو پر کلک نہیں کرنا اور نا آگے بھگانا اگر آپ ایسے کریں گے آپکا اکاؤنٹ بند کردیا جائے گا پلے کرنے کے بعد وڈیو آٹومیٹک چلے گی اور بند ہو جائے گی ٹائم مکمل ہونے کے بعد
+      
+                     </h4>
+                  </div>
+                  </div>
+                  </div>
+         
+      </div>
+     
+  </div>
+  <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
+    <!-- <i class="fa fa-whatsapp my-float"></i> -->
+    <img class="float" src="../../../assets/images/whatsapp.png" alt="">
+  </a>
+  </div>
+  
+  
+  <div class="centered">
+    <div *ngIf="this.shoeMessage"> 
+      <h1>Your Today Watch Limit Is Full</h1>
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+<div  class="centered" *ngIf="this.isPackageActiveted">
+  <h1>Dear Your Current Package Reached Video Available Income. Please Upgrade Your Package.</h1>
+</div>

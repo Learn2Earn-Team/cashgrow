@@ -1,0 +1,226 @@
+<!-- <div class="container-xl px-4 mt-4">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card mb-4">
+        <div class="card-header">
+          For Package -> I'd activation method for others Users
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <input
+                class="form-control"
+                readonly="true"
+                type="text"
+                placeholder="Enter ID"
+                value="PKR 950"
+              />
+            </div>
+            <div class="col-md-6 col-12 mt-4">
+              <button
+                (click)="ActivePackage()"
+                class="btn btn-color"
+                type="button"
+                [disabled]="hasClickedAddPackage"
+              >
+                Active Now!
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div id="generic_price_table">   
+<section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--PRICE HEADING START-->
+                    <div class="price-heading clearfix">
+                        <h1>Activate Package</h1>
+                    </div>
+                    <!--//PRICE HEADING END-->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            
+            <!--BLOCK ROW START-->
+            <div class="row">
+                <div class="col-md-4">
+                
+                	<!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix">
+                        
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+                        
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+                            
+                            	<!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>Basic</span>
+                                </div>
+                                <!--//HEAD END-->
+                                
+                            </div>
+                            <!--//HEAD CONTENT END-->
+                            
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">	
+                                <span class="price">
+                                    <span class="sign">$</span>
+                                    <span class="currency">10</span>
+                                    <span class="cent">.00</span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+                            
+                        </div>                            
+                        <!--//HEAD PRICE DETAIL END-->
+                        
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                        	<ul>
+                            	<li><span> Level 1</span>&nbsp;&nbsp; 5$ Direct </li>
+                            	<li><span> Level 2</span>&nbsp;&nbsp; 1$ Bouns </li>
+                            	<li><span> Level 3</span>&nbsp;&nbsp; 0.5$ Bouns </li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+                        
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                        	<a (click)="ActivePackage(10, 5, 1, 0.5)">Activate Now</a>
+                        </div>
+                        <!--//BUTTON END-->
+                        
+                    </div>
+                    <!--//PRICE CONTENT END-->
+                        
+                </div>
+                
+                <div class="col-md-4">
+                
+                	<!--PRICE CONTENT START-->
+                    <div class="generic_content active clearfix">
+                        
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+                        
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+                            
+                            	<!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>Standard</span>
+                                </div>
+                                <!--//HEAD END-->
+                                
+                            </div>
+                            <!--//HEAD CONTENT END-->
+                            
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">	
+                                <span class="price">
+                                    <span class="sign">$</span>
+                                    <span class="currency">30</span>
+                                    <span class="cent">.00</span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+                            
+                        </div>                            
+                        <!--//HEAD PRICE DETAIL END-->
+                        
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                        	<ul>
+                            <li><span> Level 1</span>&nbsp;&nbsp; 15$ Direct </li>
+                            <li><span> Level 2</span>&nbsp;&nbsp; 5$ Bouns </li>
+                            <li><span> Level 3</span>&nbsp;&nbsp; 2$ Bouns </li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+                        
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                        	<a (click)="ActivePackage(30, 15, 5, 2)">Activate Now</a>
+                        </div>
+                        <!--//BUTTON END-->
+                        
+                    </div>
+                    <!--//PRICE CONTENT END-->
+                        
+                </div>
+                <div class="col-md-4">
+                
+                	<!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix">
+                        
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+                        
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+                            
+                            	<!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>Unlimited</span>
+                                </div>
+                                <!--//HEAD END-->
+                                
+                            </div>
+                            <!--//HEAD CONTENT END-->
+                            
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">	
+                                <span class="price">
+                                    <span class="sign">$</span>
+                                    <span class="currency">60</span>
+                                    <span class="cent">.00</span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+                            
+                        </div>                            
+                        <!--//HEAD PRICE DETAIL END-->
+                        
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                        	<ul>
+                            <li><span> Level 1</span>&nbsp;&nbsp; 30$ Direct </li>
+                            <li><span> Level 2</span>&nbsp;&nbsp; 10$ Bouns </li>
+                            <li><span> Level 3</span>&nbsp;&nbsp; 5$ Bouns </li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+                        
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                        	<a (click)="ActivePackage(60, 30, 10, 5)">Activate Now</a>
+                        </div>
+                        <!--//BUTTON END-->
+                        
+                    </div>
+                    <!--//PRICE CONTENT END-->
+                        
+                </div>
+            </div>	
+            <!--//BLOCK ROW END-->
+            
+        </div>
+    </section>             
+</div>
+<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+  <!-- <i class="fa fa-whatsapp my-float"></i> -->
+  <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+</a>
+

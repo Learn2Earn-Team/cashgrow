@@ -1,0 +1,223 @@
+<section class="gradient-custom mt-4">
+  <div class="row">
+    <div class="col-xl-12 mt-4">
+      <div class="card mb-4">
+        <div class="card-header">User Wallet</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="small mb-1">Select User</label>
+              <select
+                class="form-control"
+                [(ngModel)]="usersForWallet"
+                [ngModelOptions]="{ standalone: true }"
+                (ngModelChange)="selectUserForWallet($event)"
+              >
+                <option
+                [ngValue]="users"
+                  *ngFor="let users of allUserData; let i = index"
+                >
+                 {{i+1}} - {{ users.name }} - ({{ users.username }})
+                </option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">Video Watch</label>
+              <input
+                class="form-control"
+                type="number"
+                placeholder="Watch"
+                [(ngModel)]="userWallertData.watch"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Virtual Earning</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Subscribe"
+                [(ngModel)]="userWallertData.subscribe"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <!-- <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Date</label>
+                            <input class="form-control" type="datetime-local" placeholder="Date" [(ngModel)]="userWallertData.id"
+                            [ngModelOptions]="{standalone: true}" />
+                        </div> -->
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Refrence Ballance</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="ref Ballance"
+                [(ngModel)]="userWallertData.reffe_balance"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <!-- <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Suponsor Ballance</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="ref Ballance"
+                [(ngModel)]="userWallertData.sponser_balance"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div> -->
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">BG Coin</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="bg coin"
+                [(ngModel)]="userWallertData.bg_coin"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">Reward</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="reward"
+                [(ngModel)]="userWallertData.reward"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">Social Order</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Social Order"
+                [(ngModel)]="userWallertData.social_order"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <!-- <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Cash To Wallet Ammount</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Withdraw"
+                [(ngModel)]="userWallertData.withdraw"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div> -->
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Total Earning</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="User Withdraw"
+                [(ngModel)]="userWallertData.user_withdraw"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">Cash Balance</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Net Ballance"
+                [(ngModel)]="userWallertData.net_balance"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="col-md-6 col-12 mt-4">
+              <button
+                class="btn btn-color"
+                type="button"
+                (click)="addUserWallet()"
+              >
+                Process Now!
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-12 mt-4">
+      <div class="card mb-4">
+        <div class="card-header">User Deposit</div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label class="small mb-1">Select User</label>
+              <select
+                class="form-control"
+                [(ngModel)]="users"
+                [ngModelOptions]="{ standalone: true }"
+                (ngModelChange)="selectUserForDeposit($event)"
+              >
+                <option [ngValue]="users" *ngFor="let users of allUserData; let i = index">
+                 {{i+1}} - {{ users.name }} - ({{ users.username }})
+                </option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Deposit Wallet</label
+              >
+              <input
+                class="form-control"
+                type="number"
+                placeholder="Amount"
+                [(ngModel)]="userDepositData.amount"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+
+            <!-- <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Deposit Amount</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Deposit Amount"
+                [(ngModel)]="userDepositData.depositamount"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div> -->
+            <!-- <div class="mb-3">
+              <label class="small mb-1" for="inputUsername"
+                >Cash To Wallet</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Cash To Wallet"
+                [(ngModel)]="userDepositData.cashtowallet"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div> -->
+
+            <div class="col-md-6 col-12 mt-4">
+              <button
+                class="btn btn-color"
+                type="button"
+                (click)="addUserDeposit()"
+              >
+                Process Now!
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

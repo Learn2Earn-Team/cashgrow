@@ -1,0 +1,79 @@
+<body class="formback-groundimage">
+  <div class="container">
+    <div class="header headerlogin " style="text-align: center;" >
+        <h3 ><b>Maclink</b></h3>
+        
+    </div>
+
+    <div class="col-md-5 mx-auto p-3 margin form  " style="height:550px;margin-top: 14px; border-radius: 15px; box-shadow: 0px 0px 50px 0px #0000006b ;color: white; border: solid 1px white;     background-color: #fffffff0;">
+      <h2 class="text-center" style="margin-top: 10px; color: #cc1616;" ><span style="color: #cc1616;">Mac</span>Link</h2>
+      <h6 class="text-center" style="margin-top: 10px; font-family: system-ui; color: #cc1616;" >  Login in to your account.</h6>
+
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 40px; color: #cc1616;">
+          <label class="form-label text-white" > </label>
+          <input
+          style="background: transparent; color: black;"
+            class="form-control"
+            [(ngModel)]="userdata.email"
+            placeholder="Enter Email"
+            required
+          />
+        </div>
+        <div class="col-md-12" style="margin-top: 50px;">
+          <label class="form-label text-white"> </label>
+          <input
+          style="background: transparent; color: black;"
+
+            class="form-control"
+            [(ngModel)]="userdata.password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="col-md-6 col-6 mt-3">
+          <!-- <p style="margin-top: 20px; color: #cc1616;">
+            <input class="form-check-input" type="checkbox" value="" />
+            <label
+              style="margin-left: 3px; color: #cc1616;"
+              class="form-check-label text-white"
+            >
+              Remember me
+            </label>
+          </p> -->
+        </div>
+        <div class="col-md-6 col-6 mt-3" >
+          <p class="password" style=" margin-top: 20px;  color: #cc1616;" >
+            <a href="#/forgetpassword" style="color: blue;">Forget password?</a>
+          </p>
+        </div>
+        <div class="col-md-12">
+          <p class="cen">
+            <button class="btn mx-auto m-3" style="width: 70%; border-radius: 20px; background-color: #cc1616; "  (click)="Login()">
+              <a class="loginbtn" style="font-size: 18px;color: white;;" >Login</a>
+            </button>
+          </p>
+        </div>
+<div><p style="text-align: center;color: blue;"><b>Don't have an account?</b> <a (click)="goToRegiester()"><span style="color: blue;"><u>Sign up</u></span></a></p></div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+
+
+<div class="my-container">
+  <ngx-loading
+    [show]="loading"
+    
+    [config]="{
+      animationType: ngxLoadingAnimationTypes.threeBounce,
+      fullScreenBackdrop: true ,
+      primaryColour: '#007bff',
+      secondaryColour: '#007bff',
+      tertiaryColour: '#007bff',
+      backdropBorderRadius: '3px' }"
+
+  ></ngx-loading>
+</div>
