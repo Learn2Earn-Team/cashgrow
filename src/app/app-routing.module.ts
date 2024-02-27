@@ -20,6 +20,7 @@ import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { ShareProfileComponent } from './pages/share-profile/share-profile.component';
 import { ComplainComponent } from './pages/complain/complain.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { AddpackageComponent } from './pages/addpackage/addpackage.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
         { path: 'login', component: LoginComponent, data: { title: 'Login' } },
         { path: 'home', component: HomeComponent , canActivate: [LoginGuard]},
         { path: 'buysocial', component: BuysocialComponent , canActivate: [LoginGuard]},
+        { path: 'addpackage', component: AddpackageComponent , canActivate: [LoginGuard]},
         { path: 'forgetpassword', component: ForgetpasswordComponent },
         
         { path: 'registrationform', component: RegistrationformComponent},
