@@ -104,6 +104,11 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-bell-fill',
       label: 'Notification'
     },
+    {
+      routerLink: '/default/addpackage',
+      icon: 'bi bi-database-fill-add',
+      label: 'Add New Package'
+    },
     // {
     //   routerLink: '/default/cashtowallet',
     //   icon: 'bi bi-wallet2',
@@ -298,6 +303,7 @@ export const menuItems: any[] = [
       icon: 'bi bi-bank',
       label: 'My Packages'
     },
+ 
     // {
     //   routerLink: '/default/mynetwork',
     //   icon: 'bi bi-wifi',
