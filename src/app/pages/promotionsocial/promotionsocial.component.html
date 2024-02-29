@@ -50,7 +50,7 @@
             
             <!--BLOCK ROW START-->
             <div class="row">
-                <div class="col-md-4" *ngFor="let item of active;let i=index">
+                <div class="col-md-4" *ngFor="let item of alldata;let i=index">
                 
                 	<!--PRICE CONTENT START-->
                     <div class="generic_content clearfix" >
@@ -65,7 +65,7 @@
                             	<!--HEAD START-->
                                 <div class="head_bg" ></div>
                                 <div class="head">
-                                    <span>{{item.PackageName}}</span>
+                                    <span>{{item.name}}</span>
                                 </div>
                                 <!--//HEAD END-->
                                 
@@ -76,7 +76,7 @@
                             <div class="generic_price_tag clearfix">	
                                 <span class="price">
                                     <span class="sign">$</span>
-                                    <span class="currency">{{item.mainAmount}}</span>
+                                    <span class="currency">{{item.price}}</span>
                                     <span class="cent">.00</span>
                                 </span>
                             </div>
@@ -88,10 +88,10 @@
                         <!--FEATURE LIST START-->
                         <div class="generic_feature_list">
                        	<ul>
-                            <li><span>Return</span> &nbsp;&nbsp;{{item.intrest}}.00%</li>
+                            <li><span>Return</span> &nbsp;&nbsp;1.00%</li>
                             <li><span>Every Day</span> </li>
                             <li>For<span>365</span>Days </li>
-                            <li>Total<span>{{item.total}}%</span> </li>
+                            <li>Total<span>365%</span> </li>
                             	<!-- <li  *ngFor="let pack of item.levelAmount"><span> {{pack.level}}</span>&nbsp;&nbsp;{{pack.Package}}${{pack.bouns}}</li> -->
                             </ul>
                         </div>

@@ -160,6 +160,7 @@ public interval: any;
   };
   userData: any;
   userobj: any;
+  userTeem: any;
 
   constructor(
     private route: Router,
@@ -173,6 +174,7 @@ public interval: any;
   ngOnInit() {
     this.getUserData();
     this.getUserDashoardData();
+    this.userteam();
     const swiper = new Swiper('.swiper-container', {
       // Your Swiper configuration options here
       autoplay: {
@@ -189,7 +191,7 @@ public interval: any;
     const userData = JSON.parse(user);
     console.log(userData);
       this.notification();
-    }, 3000);
+    }, 30000);
   }
 ngOnDestroy(): void {
   clearInterval(this.interval);
@@ -224,7 +226,15 @@ notification(){
     })
 
   }
-
+ async userteam(){
+  const user: any = await check('user');
+  const userData = JSON.parse(user);
+  console.log(userData);
+  this.apicall.userteam(userData.username).subscribe(res=>{
+    this.userTeem=res;
+    console.log(this.userTeem);
+  })
+}
   async getUserData() {
     const user: any = await check('user');
     const userData = JSON.parse(user);

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Toast } from 'ngx-toastr';
 import { check } from 'src/app/localStorage/LocalStorage';
-// import { ApicallService } from 'src/app/services/apicall.service';
+import { ApicallService } from 'src/app/services/apicall.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { ApiService } from 'src/app/api.service';
 @Component({
@@ -35,6 +35,7 @@ export class PromotionsocialComponent implements OnInit {
   
   public userDeposits: any = {};
   PackageDetails: any;
+  alldata: any;
 //   public packageDetails : any = {PackageDetails:{
 //   mainAmount:'',
 //   level1:'',
@@ -47,7 +48,8 @@ export class PromotionsocialComponent implements OnInit {
     // private apiCall: ApicallService,
     private route: Router,
     private toast: ToastService,
-    public apicall:ApiService
+    public apicall:ApiService,
+    public apiCall:ApicallService
   ) {
   this.apicall.getdata().subscribe(res=>{
     this.PackageDetails=res;
@@ -59,7 +61,14 @@ export class PromotionsocialComponent implements OnInit {
   ngOnInit() {
     this.getUserData();
     this.getCurrentTime();
+    this.getdata();
   }
+   getdata(){
+    this.apiCall.getPackages().subscribe((res:any)=>{
+      this.alldata=res;
+      console.log(this.alldata)
+    })
+   }
 // promotionsocial.component.ts
 
 getCurrentTime() {

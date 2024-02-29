@@ -836,15 +836,22 @@ export class ApicallService {
       })
     );
   }
-  // public getpackage(): Observable<any> {
-  //   return this.http.get(apiUrl + `addpackage`).pipe(
-  //     map((res: any) => {
-  //       return res;
-  //     })
-  //   );
-  // }
+  public getPackages(): Observable<any> {
+    return this.http.get(apiUrl + `getPackages`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
   public postpackage(data:any): Observable<any> {
     return this.http.post(apiUrl + `addpackage`,data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public userteam(id:any): Observable<any> {
+    return this.http.get(apiUrl + `userteam/${id}`).pipe(
       map((res: any) => {
         return res;
       })
