@@ -145,7 +145,7 @@ export class IndexComponent implements OnInit {
 
   public directBonous : any = { icon: 'icon bi-share-fill', type: 'Direct Bonus', subtype: '', rs: 'Rs',
   today: '' , }
-
+public interval: any;
   public dashbaordData = {
     username: '',
     activePromotion: '',
@@ -180,7 +180,23 @@ export class IndexComponent implements OnInit {
       },
     });
   }
+  ngAfterViewInit(): void {
+    this.interval = setInterval(async () => {
+      console.log(this.interval);
 
+      // this.getnotifications();
+   const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+      this.notification();
+    }, 3000);
+  }
+ngOnDestroy(): void {
+  clearInterval(this.interval);
+  }
+notification(){
+  console.log('The  data is repeating after three sec')
+}
   async getUserDashoardData() {
     const user: any = await check('user');
     const userData = JSON.parse(user);

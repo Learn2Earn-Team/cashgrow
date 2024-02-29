@@ -5,12 +5,22 @@
           <div class="card-header text-center fs-3" style="background:#00ff00;color: white;">Packages</div>
           <div class="card-body bg-dark" style="color:white;" >
             <form>
+              <div class="col-lg-6">     
+                <div class="col-lg-6">     
+                  <div class="mb-3">
+         
+                 <label for="" class="">Package Name</label>
+                 <input type="text" placeholder="Package Name" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="withdrawDetail.name"  class="input btn-group" id=""  required style="height: 45px;
+                 width: 100%;"/>
+                 
+ 
+               </div></div></div>
                 <!-- <label for="customAmount" class="form-label"  >Packages</label> -->
                 <div class="mb-3 ">
 
                     <label for="" > Package Amount:</label>
                 <div style="display: flex;">
-                    <input type="number" class="btn-group" placeholder="   Enter your value in $"  style="width: 100%;">
+                    <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.price" placeholder="   Enter your value in $"  style="width: 100%;">
                     <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                       </button>
@@ -23,7 +33,7 @@
                       </ul>
 
                 </div>
-                
+               
                 <!-- <select   class="form-select" id=" id="customAmount type="inputUsername" required>
                   <option value="">Choose...packages</option>
                   <option>10$ - 100$</option>
@@ -37,7 +47,7 @@
                 </div> -->
 
               </div>
-              <div class="mb-3 option">
+              <!-- <div class="mb-3 option">
                 <label for="state" class="form-label">Levels:</label>
                 <select type="text"  class="form-select btn-group" id="state"  required style="height: 45px;">
                   <option value="">Choose...level</option>
@@ -53,7 +63,7 @@
                   Please provide a valid state.
                 </div>
 
-              </div>
+              </div> -->
 
               
               <div class="row">
@@ -62,7 +72,7 @@
                      <div class="mb-3">
             
                     <label for="" class="">Level 1:</label>
-                    <input type="text" placeholder="  --%"  class="input btn-group" id=""  required style="height: 45px;
+                    <input type="text" placeholder="  --%" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="withdrawDetail.l1"  class="input btn-group" id=""  required style="height: 45px;
                     width: 100%;"/>
                     
     
@@ -71,7 +81,7 @@
                      <div class="mb-3">
             
                     <label for="" class="">Level 2:</label>
-                    <input type="text"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
+                    <input type="text"  [ngModelOptions]="{ standalone: true }"   [(ngModel)]="withdrawDetail.l2" placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
                    
     
                   </div></div>
@@ -79,7 +89,7 @@
                     <div class="mb-3">
            
                    <label for="" class="">Level 3:</label>
-                   <input type="text"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
+                   <input type="text" [ngModelOptions]="{ standalone: true }"   [(ngModel)]="withdrawDetail.l3"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
                   
    
                  </div></div> 
@@ -88,7 +98,7 @@
                     <div class="mb-3">
            
                    <label for="" class="">Level 7:</label>
-                   <input type="text"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
+                   <input type="text"   [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.l4" placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
                   
    
                  </div></div>
@@ -98,7 +108,7 @@
                     <div class="mb-3">
            
                    <label for="" class="">Level 4:</label>
-                   <input type="text"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
+                   <input type="text" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="withdrawDetail.l5"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
                   
    
                  </div></div> 
@@ -106,14 +116,14 @@
                     <div class="mb-3">
            
                    <label for="" class="">Level 5:</label>
-                   <input type="text"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
+                   <input type="text" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="withdrawDetail.l6"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
                   
    
                  </div></div> <div class="col-lg-6">     
                     <div class="mb-3">
            
                    <label for="" class="">Level 6:</label>
-                   <input type="text"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
+                   <input type="text" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="withdrawDetail.l7"  placeholder="   --$" class=" btn-group" id="state"  required style="height: 45px;width: 100%;"/>
                   
    
                  </div></div>
@@ -136,7 +146,7 @@
                 />
               </div> -->
               <div class="col-md-6 col-12 mt-4">
-                <button type="button"  class=" button btn-lg">Submit</button>
+                <button type="button"  class=" button btn-lg" (click)="Submit()">Submit</button>
               </div>
            
             </form>

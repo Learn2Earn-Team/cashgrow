@@ -84,7 +84,8 @@ export class SocialdepositComponent {
   async forJazCash() {
     await Clipboard.write({
       string: '0x95d728942EcC7bafa3279aD29dE80642dE1Dfb12',
-    }).then(
+    })
+    .then(
       () => {
         this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!');
       },

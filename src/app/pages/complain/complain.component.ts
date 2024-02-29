@@ -25,7 +25,7 @@ public userMessage : any = { sender:'', message:'', reciver:'', reply:''}
     console.log(userData);
     if(userData.username == 'google') {
       this.stateData =  history.state.data;
-      console.log(this.stateData)
+      console.log(this.stateData);
       this.getComplain(this.stateData.username);
     }
     else{
@@ -47,7 +47,7 @@ public userMessage : any = { sender:'', message:'', reciver:'', reply:''}
 
   public async getComplain(username:any) {
     this.apicall.api_getcomplainusermessage(username).subscribe(complains=>{
-      console.log(complains)
+      console.log(complains);
       this.allComplain = complains;
     })
   }
@@ -57,7 +57,7 @@ public userMessage : any = { sender:'', message:'', reciver:'', reply:''}
   scrollToBottom(): void {
     const chatMessagesElement = this.chatMessages?.nativeElement;
     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
-    console.log(chatMessagesElement.scrollTop)
+    console.log(chatMessagesElement.scrollTop);
   }
   setTimeInterval() {
     if (!this.executed) {
