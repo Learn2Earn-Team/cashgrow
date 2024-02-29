@@ -1,31 +1,39 @@
-<body class="formback-groundimage">
-  <div class="container">
-    <div class="header headerlogin " style="text-align: center;" >
-        <h3 ><b>Maclink</b></h3>
-        
+
+  <div class="video-container">
+    <video autoplay muted loop id="video-bg">
+      <source src="../../../assets/pexels-colin-jones-11042845 (1080p).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content" >
+      <!-- Your content goes here -->
+  <div class="header headerlogin " style="text-align: center;" >
+        <!-- <h3 style="color: #00ff00; letter-spacing: 2px;" ><b>Maclink</b></h3> -->
+        <h1 ><a href="#" class="fs-2" ><img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span
+          style="color: #00ff00d7;text-transform: uppercase;">Maclink</span></a></h1>
+
     </div>
 
-    <div class="col-md-5 mx-auto p-3 margin form  " style="height:550px;margin-top: 14px; border-radius: 15px; box-shadow: 0px 0px 50px 0px #0000006b ;color: white; border: solid 1px white;     background-color: #fffffff0;">
-      <h2 class="text-center" style="margin-top: 10px; color: #cc1616;" ><span style="color: #cc1616;">Mac</span>Link</h2>
-      <h6 class="text-center" style="margin-top: 10px; font-family: system-ui; color: #cc1616;" >  Login in to your account.</h6>
+    <div class="col-md-5 mx-auto p-3 w-80 margin form  "
+    style="background:rgba(0, 0, 0, 0.616);  color:  #00ff00d7;  box-shadow: 0 0 20px rgba(0, 255, 0, 0.767);
+    ">
+      <h2 class="text-center fs-3" style="margin-top: 10px; color: #00ff00d7;" ><span style="color: #00ff00d7; text-transform: uppercase; letter-spacing: 2px;">Maclink</span></h2>
+      <h6 class="text-center fs-4 " style="margin-top: 10px; font-family: system-ui; color: #00ff00d7;" >  Login in to your account.</h6>
 
       <div class="row">
-        <div class="col-md-12" style="margin-top: 40px; color: #cc1616;">
+        <div class="col-md-12 " style="margin-top: 10px;  ">
           <label class="form-label text-white" > </label>
           <input
-          style="background: transparent; color: black;"
-            class="form-control"
+            class="rounded-2 input"
             [(ngModel)]="userdata.email"
             placeholder="Enter Email"
             required
           />
         </div>
-        <div class="col-md-12" style="margin-top: 50px;">
+        <div class="col-md-12" style="margin-top: 10px;">
           <label class="form-label text-white"> </label>
           <input
-          style="background: transparent; color: black;"
 
-            class="form-control"
+            class=" input rounded-2"
             [(ngModel)]="userdata.password"
             type="password"
             placeholder="Password"
@@ -44,23 +52,32 @@
           </p> -->
         </div>
         <div class="col-md-6 col-6 mt-3" >
-          <p class="password" style=" margin-top: 20px;  color: #cc1616;" >
-            <a href="#/forgetpassword" style="color: blue;">Forget password?</a>
+          <p class="password" style=" color:  #00ff00d7; " >
+            <a href="#/forgetpassword" class="fs-6" style=" color:#00ff00d7;">Forget password?</a>
           </p>
         </div>
         <div class="col-md-12">
           <p class="cen">
-            <button class="btn mx-auto m-3" style="width: 70%; border-radius: 20px; background-color: #cc1616; "  (click)="Login()">
+            <button class="btn mx-auto m-3 button" style="width: 70%; " (click)="Login()">
               <a class="loginbtn" style="font-size: 18px;color: white;;" >Login</a>
             </button>
           </p>
-        </div>
-<div><p style="text-align: center;color: blue;"><b>Don't have an account?</b> <a (click)="goToRegiester()"><span style="color: blue;"><u>Sign up</u></span></a></p></div>
+        </div> 
+<div><p style="text-align: center;color:#00ff00d7;font-size: 14px;"><b>Don't have an account?</b> <a (click)="goToRegiester()"><span style="color:#00ff00d7;font-size: 14px;margin-left: 10px; cursor: pointer;"><u>Sign up</u></span></a></p></div>
       </div>
     </div>
-    
+        </div>
   </div>
-</body>
+
+
+
+
+
+
+
+  <div class="container">
+  
+  </div>
 
 
 <div class="my-container">

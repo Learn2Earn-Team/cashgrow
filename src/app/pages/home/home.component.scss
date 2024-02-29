@@ -1140,7 +1140,6 @@ background-color: rgba(27, 27, 255, 0.199);
 }
 
 .pricing .box .btn-buy {
-  background: #cc1616;
   display: inline-block;
   padding: 10px 40px;
   color: #fff;
@@ -1152,23 +1151,23 @@ background-color: rgba(27, 27, 255, 0.199);
   transition: 0.3s;
 }
 
-.pricing .box .btn-buy:hover {
-  background: #e82d2d;
-}
+// .pricing .box .btn-buy:hover {
+//   background: #e82d2d;
+// }
 
-.pricing .featured {
-  background: #cc1616;
-  box-shadow: none;
-  color: #fff;
-}
+// .pricing .featured {
+//   background: #cc1616;
+//   box-shadow: none;
+//   color: #fff;
+// }
 
-.pricing .featured h3,
-.pricing .featured h4,
-.pricing .featured ul,
-.pricing .featured ul li,
-.pricing .featured ul .na {
-  color: #fff;
-}
+// .pricing .featured h3,
+// .pricing .featured h4,
+// .pricing .featured ul,
+// .pricing .featured ul li,
+// .pricing .featured ul .na {
+//   color: #fff;
+// }
 
 .pricing .featured h4 span {
   color: rgba(255, 255, 255, 0.58);
@@ -1648,7 +1647,7 @@ background-color: rgba(27, 27, 255, 0.199);
 .button {
   position: relative;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 20px rgba(37, 37, 37, 0.2);
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
   background-color: #00ff00d7;
@@ -1795,14 +1794,12 @@ background-color: rgba(27, 27, 255, 0.199);
       line-height: 45px;
   }
   .scroll-top:hover{
-    width: 60px;
-    height: 60px;
+    width: 47px;
+    height: 47px;
     background-color: #15ff00d7;
 
   }
-  .bi-rocket:hover{
-padding: 30px;    margin:auto ;
-  }
+  
   
 
   // <--------------alter CSS- Registeration----------------->
@@ -1959,11 +1956,3 @@ height: 100%;
 .term:hover{
   color: #00ff00;
 }
-// @media screen and (max-width: 500px) {
-//   #footer{
-
-//     #footer .subscribe{
-//       width:  ;
-//     }
-//   }
-//     }

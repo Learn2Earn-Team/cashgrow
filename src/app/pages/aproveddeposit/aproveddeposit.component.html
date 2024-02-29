@@ -2,55 +2,56 @@
   <section class="intro">
     <div class="mask d-flex align-items-center h-100">
       <div class="container">
-        <h1 style="text-align: center">My Deposite Requests</h1>
+        <h1 style="text-align: center; margin-top: 5px;">My Deposite Requests</h1>
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of userdata"
           >
-            <div class="card shadow-sm border" >
+            <div class="card shadow-sm border rounded-4 " >
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Name</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.name }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Name</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.name }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.amount }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Amount</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.amount }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  " > {{ item.tid }} </p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">TID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end my-3 " > {{ item.tid }} </p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.status }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Status</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.status }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.created_at }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.created_at }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">image</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"><a href="{{ item.image }}" target="_blank">Open</a></p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">image</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"><a href="{{ item.image }}" target="_blank" class="open">Open</a></p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Action</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> <select class="form-select" aria-label="Default select example" (change)="depositeStatusupdate($event, item)">
-                      <option selected>Select Status</option>
-                      <option value="Aproved">Aproved</option>
-                      <option value="Rejected">Rejected</option>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Action</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> 
+                      <select class="form-select px-2" style="font-size: 12px;" aria-label="Default select example" (change)="depositeStatusupdate($event, item)">
+                      <option  selected>Select Status</option>
+                      <option  value="Aproved">Aproved</option>
+                      <option  value="Rejected">Rejected</option>
                     </select></p></div>
                    </div>
                 </li>
