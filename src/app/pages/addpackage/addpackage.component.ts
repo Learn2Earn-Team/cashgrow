@@ -9,20 +9,10 @@ import { Router } from '@angular/router';
 })
 export class AddpackageComponent {
 
-  public withdrawDetail: any = {
-    name: '',
-    price: '',
-    l1: '',
-    l2: '',
-    l3: '',
-    l4: '',
-    l5: '',
-    l6: '',
-    l7:''
-  };
+  public withdrawDetail: any = {};
   adddata: any;
   postdata: any;
-  ddd: any;
+  packagedata: any;
   constructor( public apiCall:ApicallService,public toast:ToastService,public router:Router) {
     console.log(this.withdrawDetail);
   }
@@ -36,14 +26,11 @@ export class AddpackageComponent {
     //  })
   }
   Submit(){
-    if(this.withdrawDetail.name&&this.withdrawDetail.price){
+    if(this.withdrawDetail.name&&this.withdrawDetail.maxprice&&this.withdrawDetail.days&&this.withdrawDetail.minprice){
       this.apiCall.postpackage(this.withdrawDetail).subscribe(res=>{
         this.postdata=res;
         console.log(this.postdata);
-        this.apiCall.getPackages().subscribe((res:any)=>{
-          this.ddd=res;
-          console.log(this.ddd);
-        })
+       
         // console.log(res.error)
         this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!');
         this.router.navigate(['./default/promotionsocial'])

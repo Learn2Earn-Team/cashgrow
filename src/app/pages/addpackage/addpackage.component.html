@@ -6,22 +6,32 @@
           <div class="card-body" style="color:white;  background: black;" >
             <form>
                   <div class="mb-3">
-         
                  <label for="" class="">Package Name</label>
                  <input type="text" placeholder="  Package Name" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="withdrawDetail.name"  class="input btn-group" id=""  required style="height: 45px;
-                 width: 100%;"/>
-                 
- 
+                 width: 100%;"/> 
              </div>
                 <!-- <label for="customAmount" class="form-label"  >Packages</label> -->
-              
-                <div class="mb-3 ">
-
+                <!-- <div class="mb-3 ">
                     <label for="" > Package Amount:</label>
                 <div style="display: flex;">
                     <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.price" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
+                    </div> -->
+                        <label for="" >Minimum Amount:</label>
+                        <div style="display: flex;">
+                            <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.minprice" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
+                            </div>
+                            <label for="" >Maximum Amount:</label>
+                    <div style="display: flex;">
+                        <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.maxprice" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
+                        </div>
+                            <label for="" >Days:</label>
+                <div style="display: flex;">
+                    <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.days" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
                     </div>
-               
+                    <label for="" >Percentage:</label>
+                    <div style="display: flex;">
+                        <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.percentage" placeholder="  Enter your value in %"  style="width: 100%;height: 45px;">
+                        </div>
                 <!-- <select   class="form-select" id=" id="customAmount type="inputUsername" required>
                   <option value="">Choose...packages</option>
                   <option>10$ - 100$</option>
@@ -34,7 +44,7 @@
                   Please select a valid ammount.
                 </div> -->
 
-              </div>
+          
              
 
                 <!-- <select type="text"  class="form-select btn-group" id="state"  required style="height: 45px;">

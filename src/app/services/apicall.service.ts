@@ -836,8 +836,8 @@ export class ApicallService {
       })
     );
   }
-  public getPackages(): Observable<any> {
-    return this.http.get(apiUrl + `getPackages`).pipe(
+  public getPackages(uid:any): Observable<any> {
+    return this.http.get(apiUrl + `getPackages/${uid}`).pipe(
       map((res: any) => {
         return res;
       })

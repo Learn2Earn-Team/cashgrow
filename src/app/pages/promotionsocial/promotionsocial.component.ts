@@ -52,10 +52,13 @@ public alldata:any;
     this.userdata1();
     this.checkBalacne();
   }
-  getdata() {
-    this.apiCall.getPackages().subscribe((res: any) => {
+  async getdata() {
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    this.apiCall.getPackages(userData.username).subscribe((res: any) => {
       this.alldata = res;
       console.log(this.alldata)
+    
     })
   }
 
@@ -78,10 +81,11 @@ public alldata:any;
   }
   activep(item: any) {
     this.userdata1();
+    this.getdata()
     if (this.alldata[item].price <= 1000) {
       this.persent = this.alldata[item].price / 100;
       console.log('One Day Interest', this.persent);
-  
+  console.log(this.userdataarray.balnce);
       // Calculate total yearly interest
       this.persenttotal = this.persent * 365;
       console.log('Total Yearly Interest', this.persenttotal);
