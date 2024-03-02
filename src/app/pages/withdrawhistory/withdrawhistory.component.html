@@ -4,60 +4,60 @@
       <div class="container">
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1" *ngFor="let item of userdata" >
-            <div class="card shadow-sm border" >
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+            <div class="card shadow-sm border rounded-4 mt-2" >
+              <ul class="list-group list-group-flush rounded-3" style="background: #00ff00;">
+                <li class="list-group-item" style="background: #00ff00;">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">ID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.user_id }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1 fw-bold">ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end fw-bold text-truncate py-1 ">{{ item.user_id }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.amount }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Amount</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.amount }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Gateway</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.jdetail }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Gateway</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.jdetail }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.tdetail }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">TID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.tdetail }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Servies</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.services }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Servies</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.services }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Net</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.net }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Net</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.net }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.created_at }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.created_at }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.status }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Status</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.status }}</div>
                    </div>
                 </li>
                 <li class="list-group-item" *ngIf="item.status == 'Approve'">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Recepate</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">  <button (click)="open(content, item)" type="button" class="btn btn-primary" data-toggle="modal"
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Recepate</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">  <button (click)="open(content, item)" type="button" class="btn btn-primary" data-toggle="modal"
                       data-target="#exampleModalCenter">
                       Show
                     </button></div>

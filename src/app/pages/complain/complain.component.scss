@@ -2,6 +2,7 @@
 //     display: block;
 // 	background: #E5DDD5;
 // }
+
 .page-header {
 	background: var(--background-color);
 	margin: 0;
@@ -14,6 +15,7 @@
 .main {
 	height: 100vh;
 	padding-top: 70px;
+	
 }
 
 .chat-log {
@@ -51,3 +53,11 @@
 	font-size: 14px;
 	font-weight: bold;
 }
+
+
+
+// <----------------Alter Css--------------------->
+// .input:hover{
+// 	outline: none;
+// }
+input:focus{outline:0; box-shadow:none;}

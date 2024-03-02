@@ -1,8 +1,8 @@
 <div class="container-xl px-4 mt-4">
   <div class="row">
-    <div class="col-xl-12" style="margin-bottom: 30px">
-      <div class="card mb-4">
-        <div class="card-header">For Withdraw request</div>
+    <div class="col-xl-12" style="margin-bottom: 30px; " >
+      <div class="card mb-4 " style="border: 5px solid #00ff00;">
+        <div class="card-header text-center fs-3 rounded-0 " style="background:   #00ff00;color: white;">For Withdraw Request</div>
         <div class="card-body">
           <form>
             <div class="mb-3">
@@ -53,10 +53,10 @@
               [disabled]="this.showBalanceMessage != '' || withdrawDetail.jdetail == '' ||
               withdrawDetail.contact == ''"
                 (click)="NewUserdata()"
-                class="btn btn-color"
+                class="btn btn-color button"
                 type="button"
               >
-                Process Now!
+                Process Now
               </button>
             </div>
             <div class="col-md-12 col-12 mt-4">
