@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col-xl-12">
       <div class="card mb-4">
-        <div class="card-header">Share Balance With Friends</div>
-        <div class="card-body">
+        <div class="card-header" style="background:  #00ff00; color: black;text-align: center;font-weight: bold;">Share Balance With Friends</div>
+        <div class="card-body" style="background: black; color: white;">
           <form>
             <div class="mb-3">
               <label class="small mb-1" for="inputUsername">Enter User Account ID</label>
               <input class="form-control" type="text" placeholder="Enter ID" [(ngModel)]="userid"
                 [ngModelOptions]="{ standalone: true }" />
             </div>
-            <button class="btn btn-color" (click)="userdata()" type="button">
+            <button class="btn button btn-color" (click)="userdata()" type="button">
               Send Now
             </button>
           </form>

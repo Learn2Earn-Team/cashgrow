@@ -14,11 +14,14 @@
         "
           >
             <div class="card shadow-sm border rounded-4 mt-2"  >
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+              <ul class="list-group list-group-flush rounded-4">
+                <li class="list-group-item" >
                   <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.amount }}</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                    <p  class="text-end text-truncate py-1 fs-5" style="color:  #00ff00; font-weight: bold;">
+                       {{ item.amount }}$</p>
+                      </div>
                    </div>
                 </li>
                 <li class="list-group-item">

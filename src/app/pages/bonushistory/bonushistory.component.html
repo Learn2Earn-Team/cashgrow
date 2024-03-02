@@ -1,14 +1,14 @@
 <div class="container bottompx">
 
   <ul class="nav nav-pills nav-justified mt-3 mb-2">
-    <li class="nav-item">
+    <li class="nav-item tab">
       <a aria-current="page" [ngClass]="this.segmentvalue == 'team' ? 'nav-link active' : 'nav-link'" (click)="activeTab('team')">Bonous History</a>
     </li>
-    <li class="nav-item"> 
+    <li class="nav-item tab"> 
       <a aria-current="page" [ngClass]="this.segmentvalue == 'follow' ? 'nav-link active' : 'nav-link'" (click)="activeTab('follow')">Internal Transfer</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item tab">
       <a class="nav-link" [ngClass]="this.segmentvalue == 'request' ? 'nav-link active' : 'nav-link'" (click)="activeTab('request')">Withdraw History</a>
     </li>
     <!-- <li class="nav-item">
@@ -23,13 +23,19 @@
       | paginate : { itemsPerPage: pageSize, currentPage: p };
     let i = index
   ">
-      <div class="card text-bg-dark">
-        <div class="card-body">
-          <h5 class="card-title"><i class="bi text-success bi-patch-check-fill"></i> + {{item.reffe_balance}}$ Received!</h5>
+      <div class="card rounded-4">
+        <div class="card-body" style="border-bottom:1px solid rgba(43, 43, 43, 0.63)" >
+          <h5 class="card-title" >
+            <i class="bi text-success bi-patch-check-fill fs-5"  ></i> <span style="color: #00ff00 ;">+ {{item.reffe_balance}}$ </span>Received!</h5>
           <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
         </div>
-        <div class="card-footer text-body-light text-end">
-          {{item.date}}
+       
+
+        <div class=" row  text-body-light p-2 " >
+          <span class=" col-6 text-start"> Date:</span>
+          <span class=" col-6  text-end">         
+             {{item.date}}
+          </span>
         </div>
       </div>
     </div>
@@ -113,60 +119,60 @@
       <div class="container">
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1" *ngFor="let item of userWithdrawHistory" >
-            <div class="card shadow-sm border" >
-              <ul class="list-group list-group-flush">
+            <div class="card shadow-sm border rounded-4" >
+              <ul class="list-group list-group-flush rounded-4">
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">ID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.user_id }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.user_id }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.amount }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">Amount</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.amount }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Gateway</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.jdetail }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">Gateway</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.jdetail }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.tdetail }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">TID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.tdetail }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Servies</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.services }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">Servies</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.services }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Net</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.net }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Net</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.net }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.created_at }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.created_at }}</div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.status }}</div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">Status</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">{{ item.status }}</div>
                    </div>
                 </li>
                 <li class="list-group-item" *ngIf="item.status == 'Approve'">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Recepate</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">  <button (click)="open(content2, item.amount)" type="button" class="btn btn-primary" data-toggle="modal"
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p  py-1">Recepate</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate  py-1">  <button (click)="open(content2, item.amount)" type="button" class="btn btn-primary" data-toggle="modal"
                       data-target="#exampleModalCenter">
                       Show
                     </button></div>
@@ -182,7 +188,7 @@
   </section>
 
   <ng-template #content2 let-modal >
-    <div class="modal-body modalcolor" >
+    <div class="modal-body modalcolor card rounded-4" >
       <img style="height: 50px;width: 50px; border-radius: 10px;" src="../../../assets/images/send.png" alt="">
       <h1 class="text-white mt-4">Congratulation!</h1>
       <h5 class="text-white">Maclink</h5>
@@ -191,7 +197,7 @@
       <h5 class="text-white">Successfully By</h5>
       <h1 class="text-white">Maclink</h1>
       
-      <button type="button" class="btn btn-outline-dark text-white" (click)="modal.close('Save click')">close</button>
+      <button type="button" class="btn button btn-outline-dark text-white" (click)="modal.close('Save click')">close</button>
     </div>
    
   </ng-template>
