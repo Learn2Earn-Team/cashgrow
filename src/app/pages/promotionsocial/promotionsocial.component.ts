@@ -27,95 +27,87 @@ export class PromotionsocialComponent implements OnInit {
     username: '',
     InvitedLink: '',
   };
-  public active:any=[{id:1,intrest: 1,PackageName:'Basic',total:356,mainAmount:10,c_Balance:20},
-    {id:2,intrest: 1,total:356,PackageName:'Prime',mainAmount:20,c_Balance:20},
-    {id:3,intrest: 1,total:356,PackageName:'Prime Plus',mainAmount:30,c_Balance:20},
-    {id:4,intrest: 1,total:356,PackageName:'Premium',mainAmount:40,c_Balance:20},
-    {id:5,intrest: 1,total:356,PackageName:'Premium Plus',mainAmount:50,c_Balance:20}]
-  
+  buttonClicked: boolean = false;
+public alldata:any;
   public userDeposits: any = {};
-  PackageDetails: any;
-  alldata: any;
-//   public packageDetails : any = {PackageDetails:{
-//   mainAmount:'',
-//   level1:'',
-//   level2:'',
-//   level3:'',
-//   user_id:'',
-//   username:''
-// },Users:[]}
+  userdataarray: any;
+  persent: any;
+  persenttotal: any;
+  yearintrest: any;
+  activeTime: any;
+  currentT: any;
+  todaypersenttotal=0;
   constructor(
     // private apiCall: ApicallService,
     private route: Router,
     private toast: ToastService,
-    public apicall:ApiService,
-    public apiCall:ApicallService
+    public apicall: ApiService,
+    public apiCall: ApicallService
   ) {
-  this.apicall.getdata().subscribe(res=>{
-    this.PackageDetails=res;
-    console.log(this.PackageDetails);
-    console.log(this.PackageDetails[0].levelAmount)
-  })
   }
 
   ngOnInit() {
     this.getUserData();
-    this.getCurrentTime();
     this.getdata();
+    this.userdata1();
+    this.checkBalacne();
   }
-   getdata(){
-    this.apiCall.getPackages().subscribe((res:any)=>{
-      this.alldata=res;
+  getdata() {
+    this.apiCall.getPackages().subscribe((res: any) => {
+      this.alldata = res;
       console.log(this.alldata)
     })
-   }
-// promotionsocial.component.ts
+  }
 
-getCurrentTime() {
-  const currentTime = new Date();
-  const options : Intl.DateTimeFormatOptions =  {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: true,
-    timeZone: 'UTC' // You can set a specific timezone if needed
+  // promotionsocial.component.ts
+
+  getCurrentTime(){
+    const currentTime = new Date();
+    const options : Intl.DateTimeFormatOptions =  {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true,
+      timeZone: 'UTC' 
+    }
+    this.activeTime = currentTime.toLocaleString('en-US', options);
+    console.log('Current Time', this.activeTime);
   }
-  this.active.activeTime = currentTime.toLocaleString('en-US', options);
-  console.log('Current Time', this.active.activeTime);
-}
-time(){
-  this.active.currentT=this.active.activeTime;
-  console.log(this.active.currentT);
-  if(this.active.currentT>this.active.activeTime){
-    console.log('You get 1 persent');
+  activep(item: any) {
+    this.userdata1();
+    if (this.alldata[item].price <= 1000) {
+      this.persent = this.alldata[item].price / 100;
+      console.log('One Day Interest', this.persent);
+  
+      // Calculate total yearly interest
+      this.persenttotal = this.persent * 365;
+      console.log('Total Yearly Interest', this.persenttotal);
+  
+      // Set up a timer to add 1% of the price every 24 hours
+      setInterval(() => {
+        // Add 1% of the price to persenttotal
+        this.todaypersenttotal += this.alldata[item].price / 100;
+  
+        // Log the updated total interest
+        console.log('Updated Total Yearly Interest', this.todaypersenttotal);
+      }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+  
+      console.log('User Id', this.userData.username);
+      console.log('You have Successfully Activated Package');
+      this.buttonClicked = true;
+      this.getCurrentTime();
+    } else {
+      console.log('You have not successfully activated the package');
+    }
   }
-  else{
-    console.log('Time Remaining ');
-  }
-}
-   activep(item:any){
-if(this.active[item].mainAmount<=this.active[item].c_Balance){
-  this.active[item].persent=this.active[item].intrest/100;
-// console.log('One Day Intrest',this.active[item].persent);
-this.active[item].pertotal=this.active[item].persent*this.active[item].total;
-// console.log(  'Total Year Intrest',this.active[item].pertotal);
-this.active[item].YearIntrest=this.active[item].persent*this.active[item].mainAmount;
-console.log(this.active[item].mainAmount);
-console.log(this.active[item].id)
-console.log('Total Year Intrest ',this.active[item].YearIntrest);
-console.log('User Id',this.userData.username);
-console.log("You have Successfully Activated Package")
-this.getCurrentTime();
-  }
-  else{
-    console.log("You Have not successfully  activate the package");
-  }}
-// getcolor(index:number){
-//  return index===1 ? 'black':'transparent'
-// }
+  
+
+  // getcolor(index:number){
+  //  return index===1 ? 'black':'transparent'
+  // }
   async getUserData() {
     const user: any = await check('user');
     const userData = JSON.parse(user);
@@ -131,39 +123,49 @@ this.getCurrentTime();
     const user: any = await check('user');
     const userData = JSON.parse(user);
     console.log(userData);
-    // this.apiCall.userdata(userData.username).subscribe((user) => {
-    //   console.log(user);
-    //   // this.userBlanace = +user.balnce;
-    //   // console.log(typeof this.userBlanace, this.userBlanace);
-    //   // if ($event.target.value > this.userBlanace) {
-    //   //   // this.showBalanceMessage = `You have only Rs. ${this.userBlanace} balance`;
-    //   //   // console.log('you have not balacne');
-    //   // } else {
-    //   //   // this.showBalanceMessage = '';
-    //   // }
-    // });
+    this.apiCall.userdata(userData.username).subscribe((user) => {
+      console.log(user);
+      // this.userBlanace = +user.balnce;
+      // console.log(typeof this.userBlanace, this.userBlanace);
+      // if ($event.target.value > this.userBlanace) {
+      //   this.showBalanceMessage = `You have only Rs. ${this.userBlanace} balance`;
+      //   console.log('you have not balacne');
+      // } else {
+      //   this.showBalanceMessage = '';
+      // }
+    });
   }
-
-  public async ActivePackage(mainAmount:number, level1Amount:any,level2Amount:any,level3Amount:any,level4Amount:any,level5Amount:any,level6Amount:any) {
-    const user: any = await check('user');
-    const userData = JSON.parse(user);
+  
+  async userdata1(){
+    const userz :any= await check('user');
+    const userData = JSON.parse(userz);
     console.log(userData);
-    console.log(mainAmount, level1Amount, level2Amount, level3Amount, level4Amount, level5Amount,level6Amount)
-    this.PackageDetails.mainAmount = mainAmount;
-    this.PackageDetails.level1 = level1Amount;
-    this.PackageDetails.level2 = level2Amount;
-    this.PackageDetails.level3 = level3Amount;
-    this.PackageDetails.level4 = level4Amount;
-    this.PackageDetails.level5 = level5Amount;
-    this.PackageDetails.level6 = level6Amount;
-    this.PackageDetails.user_id = userData.id;
-    this.PackageDetails.username = userData.username;
-    console.log(this.PackageDetails)
+    this.apiCall.userdata(userData.username).subscribe((res:any)=>{
+      this.userdataarray=res;
+      console.log(this.userdataarray);
+    })
+   }
+
+  // public async ActivePackage(price: number, level1Amount: any, level2Amount: any, level3Amount: any, level4Amount: any, level5Amount: any, level6Amount: any) {
+  //   const user: any = await check('user');
+  //   const userData = JSON.parse(user);
+  //   console.log(userData);
+  //   console.log(price, level1Amount, level2Amount, level3Amount, level4Amount, level5Amount, level6Amount)
+    // this.PackageDetails.price = price;
+    // this.PackageDetails.level1 = level1Amount;
+    // this.PackageDetails.level2 = level2Amount;
+    // this.PackageDetails.level3 = level3Amount;
+    // this.PackageDetails.level4 = level4Amount;
+    // this.PackageDetails.level5 = level5Amount;
+    // this.PackageDetails.level6 = level6Amount;   assif
+    // this.PackageDetails.user_id = userData.id;
+    // this.PackageDetails.username = userData.username;
+    // console.log(this.PackageDetails)
     // this.apiCall.userdata(userData.username).subscribe((user) => {
     //   console.log(user);
     //  const userBlanace = +user.balnce;
     //   console.log(typeof userBlanace, userBlanace);
-    //   if(userBlanace >= mainAmount) {
+    //   if(userBlanace >= price) {
     //     console.log('you an buy package')
     //     this.apiCall.ActivePackage(userData.id).subscribe((res) => {
     //       console.log(res)
@@ -182,5 +184,5 @@ this.getCurrentTime();
     //     this.toast.ErrorToast('You do not have enough Balacne please deposite some amount', 'Sorry')
     //   }
     // });
-  }
+  // }
 }
