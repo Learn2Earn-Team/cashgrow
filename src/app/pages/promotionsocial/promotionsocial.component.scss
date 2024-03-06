@@ -88,7 +88,7 @@
         bottom: 30px;
         right: 5px;
         background-color: #25d366;
-        color: #FFF;
+        color: #e20505;
         border-radius: 50px;
         text-align: center;
         font-size: 40px;
@@ -110,82 +110,101 @@ body{background-color:#eee;}
 
 #generic_price_table{
     padding-bottom: 20px;
-	background-color: #f0eded;
+	// background-color: #ec3333;
+	height: 100%;
+	color: black;
 }
 
 /*PRICE COLOR CODE START*/
 #generic_price_table .generic_content{
-	background-color: #fff;
-	margin-top: 50px;
-	border-radius: 30px;
+	background: rgb(119,213,255);
+	background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(255,139,251,1) 100%);	border-radius: 30px;
+	color: black;
+
+
+
+
 }
 
 #generic_price_table .generic_content .generic_head_price{
-	background-color: #f6f6f6;
+	color: red;
+	background: rgb(119,213,255);
+	background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(255,139,251,1) 100%);	border-radius: 30px;
+
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head_bg{
-	border-color:#00ff00 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #00ff00;
-	// border-color: #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #e4e4e4;
+	// border-color:#00ff00 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #00ff00;
+	border-color: #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #e4e4e4;
+	color: black;
+	
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head span{
-	color: white;
+	text-shadow: 3px 3px 3px  #9f31c0a8;;
+	text-transform: uppercase; 
+	color: rgb(114, 123, 206);
+	font-weight: bold;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price{
     color: #414141;
 }
 .sign{
-    color:  #00ff00;
+    color:  black;
 	font-weight: 400;
 }
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .currency{
-    color:  #00ff00;
+    color:  black;
 	font-weight: 400;
 
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .cent{
-    color:  #00ff00;
+    color:  black;
 	font-weight: 400;
 
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .month{
-    color: #414141;
+    color: #fafafa;
 }
 
 #generic_price_table .generic_content .generic_feature_list ul li{	
-	color: #ffffff;
+    color:  black;
+	
 }
 
 #generic_price_table .generic_content .generic_feature_list ul li span{
-	color: #ffffff;
+    color:  black;
+	color: rgb(2, 85, 23);
+
+
 }
 #generic_price_table .generic_content .generic_feature_list ul li:hover{
-	background-color:#00ff00;
+	// background-color:#00ff00;
 	border-left: 5px solid #121212;
+	color: rgb(2, 85, 23);
 }
 
 #generic_price_table .generic_content .generic_price_btn a{
-	border: 1px solid hsl(0, 0%, 100%); 
+	border: 1px solid hsl(0, 78%, 39%); 
 } 
 
 #generic_price_table .generic_content.active .generic_head_price .generic_head_content .head_bg,
 #generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head_bg{
 	border-color: #121212 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #121212;
-	color: #000000;
+    color:  rgb(0, 0, 0);
 }
 
 #generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head span,
 #generic_price_table .generic_content.active .generic_head_price .generic_head_content .head span{
-	color: #fff;
+    color:  rgb(255, 255, 255);
 }
 
 #generic_price_table .generic_content:hover .generic_price_btn a,
 #generic_price_table .generic_content.active .generic_price_btn a{
-	background-color:#00ff00;
+	background-color:#000000;
 	color: #fff;
 	cursor: pointer;
 	border-radius: 50px;
@@ -532,37 +551,127 @@ body{background-color:#eee;}
 
 // <-------------alter Css------------->
 
-
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
-  top: 0;
-  left: -100px;
-  opacity: 0.6;
-}
-
-@keyframes shine {
-  0% {
-    left: -100px;
+.button {
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 10px 20px rgba(37, 37, 37, 0.2);
+	padding-block: 0.5rem;
+	padding-inline: 1.25rem;
+	background-color: #00ff00d7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffff;
+	gap: 10px;
+	font-weight: bold;
+	border: 3px solid #ffffff4d;
+	outline: none;
+	overflow: hidden;
+	font-size: 15px;
+  }
+  
+  
+  
+  
+  
+  
+  .button:hover::before {
+	animation: shine 1.5s ease-out infinite;
+  }
+  
+  .button::before {
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	background-image: linear-gradient(
+	  120deg,
+	  rgba(255, 255, 255, 0) 30%,
+	  rgba(255, 255, 255, 0.8),
+	  rgba(255, 255, 255, 0) 70%
+	);
+	top: 0;
+	left: -100px;
+	opacity: 0.6;
+  }
+  
+  @keyframes shine {
+	0% {
+	  left: -100px;
+	}
+  
+	60% {
+	  left: 100%;
+	}
+  
+	to {
+	  left: 100%;
+	}
+  }
+  
+  
+  
+  .button-nav {
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	padding-block: 0.5rem;
+	padding-inline: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffff;
+	gap: 10px;
+	font-weight: bold;
+	outline: none;
+	overflow: hidden;
+	font-size: 15px;
+  }
+  
+  
+  
+  
+  
+  
+  .button-nav:hover::before {
+	animation: shine 1.5s ease-out infinite;
+	background-color: #00ff00;
+	box-shadow: 0px 10px 20px rgba(20, 165, 15, 0.2);
+  
+  
+  }
+  
+  .button-nav::before {
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	background-image: linear-gradient(
+	  120deg,
+	  rgba(255, 255, 255, 0) 30%,
+	  rgba(255, 255, 255, 0.8),
+	  rgba(255, 255, 255, 0) 70%
+	);
+	top: 0;
+	left: -100px;
+	opacity: 0.6;
+  }
+  
+  @keyframes shine {
+	0% {
+	  left: -100px;
+	}
+  
+	60% {
+	  left: 100%;
+	}
+  
+	to {
+	  left: 100%;
+	}
+  }
+  .hero-text{
+	text-shadow: 3px 3px 3px  #9f31c0;;
+	text-transform: uppercase; 
+	color: rgba(114, 123, 206, 0.719);
   }
 
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 100%;
-  }
-}

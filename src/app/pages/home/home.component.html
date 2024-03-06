@@ -35,20 +35,46 @@
   </svg>
 </a> 
 
+<!-- <========== New Design  Modal Content ===================== > -->
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
-      <h1 class="fs-1 "> <span>Welcome to</span> 
- </h1> <h1  style=" color: #00ff00d7;
- font-size: 4em; letter-spacing: 2px; margin-top: 4px;"> Maclink</h1>
+    
+
+    <div class="container position-relative" style="z-index: 1;background: none;">
+      
+<div class="row">
+  
+  <div class="col-lg-6 float-start">
+    <h1 > <span class="fs-1 fw-bold " data-aos="fade-up-right" data-aos-duration="1000" style="color: white;" >Welcome to</span> 
+    </h1> <br>
+    <h1> <span class="hero-text fw-bold" data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">Maclink</span> </h1>
+  </div>
+  <div class="col-lg-6">
+    <div class="hero-png">
+      <img src="../../../assets/png hero (2).png" alt="">
+    </div>
+  </div>
+ 
+</div>
+ 
+    
+     
+
       <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
       <!-- <a  class="btn-get-started scrollto m-3 rounded-2 btn-lg " [routerLink]="['/login']">Login</a> 
       <a  class="btn-get-started-register scrollto rounded-2 btn-lg" (click)="goToRegiester()">Register</a>
       <a  class="btn-get-started-register scrollto m-3 rounded-2" (click)="downloadApkFromAssets('Maclink.apk')">Download App</a> -->
-      <a class="button btn-get-started scrollto m-2 rounded-2" [routerLink]="['/login']">Login</a>
-      <a class="button btn-get-started scrollto m-2 rounded-2"  (click)="goToRegiester()">Register</a>
-      <a class="button btn-get-started scrollto btn-lg m-2 rounded-2" (click)="downloadApkFromAssets('Maclink.apk')">Download App</a>
+      <a class="button btn-get-started btn-lg  scrollto m-2 mt-0 rounded-2" [routerLink]="['/login']"  data-aos="fade-up"
+      data-aos-duration="5000">Login</a>
+      <a class="button btn-get-started btn-lg scrollto m-2 mt-0 rounded-2"  (click)="goToRegiester()"  data-aos="fade-up"
+      data-aos-duration="5000">Register</a>
+      <a class="button btn-get-started scrollto btn-lg m-2 mt-0 rounded-2" (click)="downloadApkFromAssets('Maclink.apk')"  data-aos="fade-up"
+      data-aos-duration="5000">Download App</a>
     </div>
+
   </section><!-- End Hero -->
 
   <main id="main">
@@ -86,19 +112,29 @@
     <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
     <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
   </ul> -->
+
     
   <section id="about" class="about-section pt-120 pb-120 " >
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-6 text-center m-auto p-3">
+    <div class="rounded-pill text-center m-auto w-50 h-50 py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> About Maclink</div>
+
+  </div>
+</div>
     <div class="container" >
       <div class="row">
-        <div class="col-lg-6 offset-lg-6 aboutSectionImage" data-aos="fade-right">
+        <div class="col-lg-6 col-sm-12 text-center m-auto " data-aos="fade-right" data-aos-duration="3000">
+          <img src="../../../assets/paper-clip_14367642.png" alt="" style="width: auto; height: 300px;">
+        </div>
+        <div class="col-lg-6 col-sm-12   h-100 text-center " >
           <div class="about-content">
-            <h2 class="section-title mb-3 "><span class="font-weight-normal" style="color: #00ff00d7;">About Maclink</span> </h2>
-            <div class="content-des" style="color: white;">
+            <h2 class="section-title mb-3 "><span class="font-weight-normal text-center px-3 mt-4 "  data-aos="zoom-out-down" data-aos-duration="2000" style="color: rgba(0, 0, 0, 0.747); font-size: 4rem;"> Maclink</span> </h2>
+            <div class="content-des mt-4 py-3" data-aos="fade-down" data-aos-duration="2000">
 
-              <span class=" fs-4 py-3 " style="color: white;">
+              <span class=" fs-4 py-3  text-center about-cont mt-4" >
                 Maclink is a decentralized, blockchain- and based online earning application that operates on the usdt network.
               </span>
-              <p class="fst-bold py-3"  style="color: white;">
+              <p class="fst-bold py-3 text-start about-cont " >
                 It functions as a smart contract program allowing participants to earn dollars through a peer-to-peer matrix system. Users join by paying an entry fee in dollars (USDT), which grants them access to the matrix.
                 Participants can earn through a referral program by inviting others to join the platform. As new members join under their referral link, they can earn commissions based on the contributions made by these new members. Maclink operates on a self-executing smart contract, ensuring transparency and immutability of transactions.
               </p>
@@ -113,7 +149,7 @@
 
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <section id="why-us" class="why-us mt-5 p-5">
       <!-- <div  style=" position: relative;
       width: 100vw;
       height: auto;
@@ -132,24 +168,52 @@
       <div class="card w-50" style="  
       color:black; position: absolute; top: 50%; left: 50%;
        transform: translate(-50%, -50%); text-align: center; color: rgb(0, 0, 0);"> -->
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-front">
-                <h1 class="fs-1" style="color: #ffffffd7"> <b>01</b> <span class="fs-2" > <b> Registeration</b></span> </h1>
+       <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+        <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> Registeration catagories</div>
+    </div>
+      <h2 class="section-title text-center"><span class="font-weight-normal fs-1  text-center m-auto hero-text hero-reg" style="color: rgba(114, 123, 206, 0.719);" >Registeration </span> 
+      </h2>
+
+      <div class="row mt-5">
+        
+        <div class="col-2"></div>
+        <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center py-3" >
+          
+
+            <div class="card-back " data-aos="fade-down" data-aos-duration="3000">
+              <div class="border p-4">
+
+              <div class="col-lg-4 col-md-6 col-sm-12 text-center m-auto ">
+                <img src="../../../assets/analytics_6802460.png" alt="" style="width: 60px; height:60px;">
               </div>
-              <div class="card-back">
-                <p style="color: #fafafa;">
+                <p class="fs-6 text-start" >
                   The registration process for your maclink website account is designed to be 
                   straightforward and user-friendly. Prospective users begin by visiting the 
                   application's website or downloading the apk version.
                 </p>
-              </div>
             </div>
-              </div>
+          </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center  py-3">
+                <div class="card-back" data-aos="fade-down" data-aos-duration="3000">
+                  <div class="border">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center m-auto py-3">
+                    <img src="../../../assets/analytics_6802460.png" alt="" style="width: 60px; height:60px;">
+                  </div>
+    
+                    <p class="fs-6 text-start p-3 " >
+                      Upon opening the platform, they are guided through a 
+                      simple sign-up process, requiring basic information such as name,
+                      email address, and a secure password. Finally, they gain access to
+                      the platform's dashboard, where they can explore and do deposit in 
+                      their wallet and can purchase a active package for work.
+                                        </p>
+                  </div>
+                </div>
+                </div>
+        <div class="col-2"></div>
+
+            <!-- <div class="col-lg-6 col-md-6 col-sm-12"  data-aos="fade-up-left" data-aos-duration="3000">
               <div class="card">
                 <div class="card-inner">
                   <div class="card-front">
@@ -164,7 +228,7 @@
                     </div>
                   </div>
                     </div>
-                  </div>
+                  </div> -->
             <!-- </div>
           </div> -->
           
@@ -243,16 +307,30 @@
     </section>
     
     <!-- End Why Us Section -->
-    <!-- ======= Services Section ======= -->
+
+        <!-- ======= Services Section ======= -->
+       
     <section id="services" class="services">
-      <div class="container">
+      <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+        <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> Maclink services</div>
+    
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 col-lg-10 m-auto text-center video-container">
+          <video controls  autoplay loop>
+            <source src="../../../assets/bitcoin_-_63667 (Original).mp4" type="video/mp4">
+          </video>
+          
+        </div>
+      </div>
+      <div class="container mt-5">
 
         <div class="row justify-content-center py-2">
           <div class="col-lg-6 text-center">
-          <div class="section-header ">
-              <h2 class="section-title text-center"><span class="font-weight-normal" style="color: #00ff00d7">Services</span> 
+          <div class="section-header "  data-aos="zoom-out-down">
+              <h2 class="section-title text-center"><span class="font-weight-normal hero-text" style="color: rgba(114, 123, 206, 0.719);" >Services</span> 
                 </h2>
-                <p class="col-lg-12 py-2 fs-5 " style="color: #fafafa;">These services collectively aim to create a comprehensive and rewarding experience for users,
+                <p class="col-lg-12 py-2 fs-5 "  data-aos="fade-down" style="color: #fafafa;">These services collectively aim to create a comprehensive and rewarding experience for users,
                    leveraging blockchain technology to enable secure, transparent,
                     and diversified earning opportunities.</p>
               </div>
@@ -344,11 +422,18 @@
           <span>Packages</span>
           <h2>Pricing</h2>
         </div> -->
+        <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+          <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> Package Pricing</div>
+      
+        </div>
+        <h2 class="section-title text-center"><span class="font-weight-normal hero-text" style="color: rgba(114, 123, 206, 0.719);" data-aos="zoom-out-down" > Packages</span> </h2>
+
         <div class="row justify-content-center ">
+          
           <div class="col-lg-6 text-center">
           <div class="section-header">
-              <h2 class="section-title text-center "><span class="font-weight-normal"style="color: #00ff00d7">Packages</span> 
-                </h2>
+              
+
               </div>
           </div>
       </div>
@@ -357,25 +442,23 @@
 
         <div class="row py-2 ">
 
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150" style="color: white;">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150" >
             <div class="box " 
-            style="position: relative;
-            background-size: cover;
-            /* background-position: center; */
-            background-repeat: no-repeat;
-            width:100%;
-          height: auto;
-          color: white;
-          box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); 
-            background-image: url(../../../assets/plan.png);">
-              <h3 style="color: white;">Basic</h3>
-              <h4 style="color: white;"><sup>$</sup>10<span style="color: white;">.00</span></h4>
-              <ul class="fs-5">
-                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;"><span>Level 1&nbsp;&nbsp;&nbsp;5$ Direct</span></li>
-                <li style="color: white;border-bottom: 2px solid #00ff00;padding: 15px 0; "><span>Level 2&nbsp;&nbsp;&nbsp;1$ bouns </span></li>
-                <li style="color: white;border-bottom: 2px solid #00ff00;padding: 15px 0; "><span>&nbsp; &nbsp;Level 3&nbsp;&nbsp;&nbsp;0.5$ bouns</span> </li>
-          
-
+            style=" box-shadow: 0 0 20px rgba(157, 53, 255, 0.8);  ">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center m-auto ">
+              <div class=" text-center m-auto  uppercase p-3 fs-6 fw-bold " 
+              data-aos="fade-down" data-aos-duration="1000" style="     background: linear-gradient(135deg, #021c63 0%, #75ed6d 100%);
+           color: white; clip-path: polygon(50% 40%, 0 0, 100% 0); height: 150px; text-transform: uppercase;   ">Basic</div>
+          </div>
+                    <h4><sup>$</sup>10<span style="color: white;">.00</span></h4>
+              <ul class="fs-5" data-aos="fade-down" data-aos-delay="500">
+                <!-- <li style=" color:rgb(0, 0, 0);padding: 15px 0;"><span>Level 1&nbsp;&nbsp;&nbsp;5$ Direct</span></li>
+                <li style="color: rgb(0, 0, 0);padding: 15px 0; "><span>Level 2&nbsp;&nbsp;&nbsp;1$ bouns </span></li>
+                <li style="color: rgb(0, 0, 0);padding: 15px 0; "><span>&nbsp; &nbsp;Level 3&nbsp;&nbsp;&nbsp;0.5$ bouns</span> </li> -->
+                <li><span>Return</span>&nbsp;&nbsp;0 to More %</li>
+                <li><span>Every Day</span> </li>
+                <li>Monthly&nbsp;&<span>&nbsp;</span>Yearly </li>
+                <li>Total&nbsp;<span>%</span>Percentage </li>
               </ul>
               <div class="btn-wrap"
               >
@@ -385,23 +468,22 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in">
-            <div class="box"
-            
-            style="position: relative;
-            background-size: cover;
-            /* background-position: center; */
-            background-repeat: no-repeat;
-            width:100%;
-          height: auto;
-          color: white;
-          box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); 
-            background-image: url(../../../assets/plan.png);">
-              <h3 style="color: white;">Standard</h3>
-              <h4 style="color: white;"><sup>$</sup>30<span>.00</span></h4>
-              <ul class="fs-5">
-                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">&nbsp;Level 1 &nbsp;&nbsp;&nbsp;  15$ Direct</li>
+            <div class="box" style=" box-shadow: 0 0 20px rgba(157, 53, 255, 0.8);  " >
+              <div class="col-lg-12 col-md-12 col-sm-12 text-center m-auto ">
+                <div class=" text-center m-auto uppercase p-3 fs-6 fw-bold "
+                 data-aos="fade-down" data-aos-duration="1000" 
+                 style="    background: linear-gradient(135deg, #ff0b0b 0%, #1d1f1d 100%);
+                color: white; clip-path: polygon(50% 40%, 0 0, 100% 0); height: 150px; text-transform: uppercase;   ">Standard</div>
+            </div>
+                      <h4><sup>$</sup>30<span>.00</span></h4>
+              <ul class="fs-5" data-aos="fade-down" data-aos-delay="500">
+                <!-- <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">&nbsp;Level 1 &nbsp;&nbsp;&nbsp;  15$ Direct</li>
                 <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 2 &nbsp;&nbsp;&nbsp;   5$ bouns</li>
-                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 3 &nbsp;&nbsp;&nbsp;  2$ bouns</li>
+                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 3 &nbsp;&nbsp;&nbsp;  2$ bouns</li> -->
+                <li><span>Return</span>&nbsp;&nbsp;0 to More %</li>
+                <li><span>Every Day</span> </li>
+                <li>Monthly&nbsp;&<span>&nbsp;</span>Yearly </li>
+                <li>Total&nbsp;<span>%</span>Percentage </li>
               </ul>
               <div class="btn-wrap">
                 <a  [routerLink]="['/login']" class="btn-buy button rounded-2">Buy Now</a>
@@ -410,22 +492,23 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-            <div class="box"
-            style="position: relative;
-            background-size: cover;
-            /* background-position: center; */
-            background-repeat: no-repeat;
-            width:100%;
-          height: auto;
-          color: white;
-          box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); 
-            background-image: url(../../../assets/plan.png);">
-              <h3 style="color: white;">Unlimited</h3>
-              <h4 style="color: white;"><sup>$</sup>60<span>.00</span></h4>
-              <ul class="fs-5">
-                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 1 &nbsp;&nbsp;&nbsp;  30$ Direct</li>
+            <div class="box"  style=" box-shadow: 0 0 20px rgba(157, 53, 255, 0.8);">
+              <div class="col-lg-12 col-md-12 col-sm-12 text-center m-auto  ">
+                <div class="text-center m-auto uppercase fw-bold p-3 fs-6" data-aos="fade-down" 
+                data-aos-duration="1000" style="    background: linear-gradient(135deg, #ffc400 0%, #1d1f1d 100%);
+                color: white; clip-path: polygon(50% 40%, 0 0, 100% 0);height: 150px; text-transform: uppercase;   ">  Unlimited</div>
+
+            </div>
+                      <h4 ><sup>$</sup>60<span>.00</span></h4>
+              <ul class="fs-5" data-aos="fade-down" data-aos-delay="500">
+                <!-- <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 1 &nbsp;&nbsp;&nbsp;  30$ Direct</li>
                 <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 2 &nbsp;&nbsp;&nbsp;   10$ bouns</li>
-                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 3 &nbsp;&nbsp;&nbsp;&nbsp;  5$ bouns</li>
+                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 3 &nbsp;&nbsp;&nbsp;&nbsp;  5$ bouns</li> -->
+                <li><span>Return</span>&nbsp;&nbsp;0 to More %</li>
+                <li><span>Every Day</span> </li>
+                <li>Monthly&nbsp;&<span>&nbsp;</span>Yearly </li>
+                <li>Total&nbsp;<span>%</span>Percentage </li>
+
               </ul>
               <div class="btn-wrap">
                 <a [routerLink]="['/login']" class="btn-buy button rounded-2">Buy Now</a>
@@ -440,23 +523,26 @@
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
+      <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+        <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> How to reach</div>
+    
+      </div>
       <div class="container">
 
 
         <div class="section-header">
-          <h2 class="section-title text-center">
-            <span class="font-weight-normal" style="color: #00ff00d7">Contact</span> 
-            </h2>
-            <p class="py-4 fs-5 text-center" style="color: white;">
+          <h2 class="section-title text-center"><span class="font-weight-normal hero-text" style="color: rgba(114, 123, 206, 0.719);" 
+            data-aos="zoom-out-down" data-aos-duration="1000"> Contact</span> </h2>
+
+            <p class="py-4 fs-5 text-center" >
               For any questions, concerns, or inquiries feel free to contact us.
 
             </p>
           </div>
-<div class="form rounded-2" style="height: 30%; width: 85%; margin: auto;">
+<div class="form rounded-2" style="height: 30%; width: 85%; margin: 10px auto;">
 
-        <div class="  my-3  py-2  text-center align-items-center m-auto" style="
-          width: 80%; height: 80px;">
-          <button class="email px-3"  style="font-size: 0.8em; margin-top: 10px;">
+        <div class=" col-lg-8 col-md-6 col-sm-12 p-4 mt-3  py-2  text-center align-items-center mt-3 m-auto" data-aos="fade-down" data-aos-duration="1500">
+          <button class="email px-3" >
             maclink.cc@gmail.com
                         <span class="dark">
                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
@@ -467,17 +553,17 @@
             </span>
           </button>
         </div>
-        <div class="info-box ">
+        <div class="info-box " data-aos="fade-down" data-aos-duration="2000">
           <h4 class="section-title text-center">
-            <span class="font-weight-normal fs-3" style="color: #00ff00d7">Our Address</span> 
+            <span class="font-weight-normal fs-3" >Our Address</span> 
             </h4>
-            <p class=" text-center" style="color: white;">
+            <p class=" text-center" >
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
                 <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z "style="color: #00ff00; 
                 " />
               </svg>
-              <span class="py-1 px-2 " style="border-bottom: 1px solid white ;cursor: pointer; font-size: 13px;"> A108 Adam Street, New York, NY 535022</span> 
+              <span class="py-1 px-2"  > A108 Adam Street, New York, NY 535022</span> 
             </p>
          
         </div>
@@ -545,24 +631,24 @@
 
         </div> -->
 
-        <form action="forms/contact.php" method="post" role="form" class=" form php-email-form  ">
+        <form action="forms/contact.php" method="post" role="form" class=" form php-email-form p-5 " data-aos="fade-left" data-aos-duration="3000">
         <div class="row " data-aos="fade-up">
 
           
-          <div class="col-lg-6" style="padding: 10px 10px;" >
-            <input  placeholder="Name  " class="input rounded-2 p-3 border-4  "  name="text" type="text" />
+          <div class="col-lg-6 p-1"  >
+            <input  placeholder="Name  " class="input rounded-2 p-3 border-2  "  name="text" type="text" />
 
           </div>
-          <div class="col-lg-6" style="padding: 10px 10px;">
-            <input placeholder="Email " class="input rounded-2 p-3 border-4" name="text" type="text" />
+          <div class="col-lg-6 p-1" >
+            <input placeholder="Email " class="input rounded-2 p-3 border-2" name="text" type="text" />
 
           </div>
-          <div class="col-lg-12" style="padding: 10px 10px;">
-            <input placeholder="Subject  " class="input rounded-2 p-3  border-4" name="text" type="text" />
+          <div class="col-lg-12 p-1">
+            <input placeholder="Subject  " class="input rounded-2 p-3  border-2" name="text" type="text" />
 
           </div>
-          <div class="col-lg-12" style="padding: 10px 10px;">
-            <textarea class="input rounded-2 border-4 p-3 w-100" name="Message  " rows="6" placeholder="Message" required></textarea>
+          <div class="col-lg-12 p-1" >
+            <textarea class="input rounded-2 border-2 p-3 w-100" name="Message  " rows="6" placeholder="Message" required></textarea>
 
           </div>
           <div class=" text-center">
@@ -571,8 +657,7 @@
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
           <div class=" text-start my-3  "  >
-            <button class="rounded-2 button btn-get-started-register "  type="submit" style="background: #00ff00;
-            ;">Send Message</button></div>
+            <button class="rounded-2 button "  type="submit">Send Message</button></div>
         </div>
       </form>
       </div>
@@ -584,9 +669,17 @@
   <footer id="footer">
     <div class="footer-top">
       <div class="container ">
-        <div class="row ">
+        <div class="row">
 
-          <div class="col-lg-6 col-md-6 ">
+          <div class="col-lg-8 col-md-12 col-sm-12 m-auto text-center" data-aos="fade-right" data-aos-duration="2000">
+            <h4 class="fs-4 text-start" >Our Newsletter</h4>
+            <form action="" method="post" class=" d-flex col-lg-8 col-sm-12">
+              <input type="email" name="email" class=" w-100 fs-6 col-lg-8 col-sm-12 p-2 border-4 border border-light " style="background: transparent;"  placeholder="Email address ">
+              ;&nbsp; <button   type="submit" value="" class="button p-2 rounded-2  col-lg-4 col-sm-5 " style="min-width: 90px">subscribe</button>
+              <!-- <input class="button " type="submit" value="Subscribe"> -->
+              <!-- &nbsp;&nbsp;  <button class="btn px-4  rounded-2 col-sm-12 text-center">Subscribe</button> -->
+            </form>
+          </div>
             <!-- <div class="footer-info"> -->
               <!-- <h3>Maclink</h3>
               <p>
@@ -600,7 +693,6 @@
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div> -->
             <!-- </div> -->
-          </div>
 
           <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
@@ -617,22 +709,19 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
           </div> -->
-         
-          <div class="col-lg-8 col-md-8  col-sm-12 footer-newsletter">
-            <div class="col-lg-12 col-md-12  col-sm-12 footer-links" style=" padding-left:5px;">
-              <h4 class="fs-4" style="color: #00ff00; ">Useful Links</h4>
-              <ul style="display: flex;">
-              <li style="padding: 3px 2px;"><i class="bx bx-chevron-right"></i> <a [routerLink]="['/tems']">Terms and Condition</a></li>
-              <li style="padding-left: 8px ;"><i class="bx bx-chevron-right"></i> <a [routerLink]="['/privacy-policy']">Privacy policy</a></li>
+         <br>
+          <div class="col-lg-4 col-md-12  col-sm-12 footer-newsletter" data-aos="fade-down" data-aos-duration="2000">
+            <div class="col-lg-12 col-md-12  col-sm-12 footer-links" >
+              <br>
+              <h4 class="fs-4" >Useful Links</h4>
+              <ul >
+              <li><i class="bx bx-chevron-right"></i> <a [routerLink]="['/tems']">Terms and Condition</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a [routerLink]="['/privacy-policy']">Privacy policy</a></li>
             </ul>
           </div>
-            <h4 class="fs-4" style="color: #00ff00;">Our Newsletter</h4>
             
             <!-- <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> -->
-            <form action="" method="post" class="rounded-2  d-sm-flex subscribe">
-              <input type="email" name="email" >
-              <input   type="submit" value="Subscribe"style="background-color: #00ff00;" >
-            </form>
+          
 
           </div>
 
@@ -641,21 +730,22 @@
     </div>
 
     <div class="container">
-      <div class="copyright " style="color: rgba(255, 255, 255, 0.637);">
+      <div class="copyright ">
         &copy; Copyright <strong><span>Maclink</span></strong>. All Rights Reserved
+        <div class="credits">
+          Designed by <a href="#"  style="color: rgb(173, 122, 221);">Maclink</a>
+        </div>
       </div>
-      <div class="credits">
+
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Maclink-multipurpose-html-template-for-free/ -->
-        Designed by <a href="#" style="color: #00ff00;">Maclink</a>
-      </div>
     </div>
     <section id="topbar" class="d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center fs-6" >
-          <i class="bi bi-envelope-fill" style="color: #00ff00;"></i><a href="mailto:maclink.cc@gmail.com">maclink.cc@gmail.com</a>
+          <i class="bi bi-envelope-fill"></i><a href="mailto:maclink.cc@gmail.com">maclink.cc@gmail.com</a>
           <!-- <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55 -->
         </div>
         <div class="social-links d-none d-md-block">

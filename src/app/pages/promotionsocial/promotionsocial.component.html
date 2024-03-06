@@ -37,38 +37,29 @@
    
       <!-- <button  (click)="open(content)" > Click to show model</button> -->
 <section>
-        <div class="container" style="background: black; color: white;">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12  m-auto">
                     <!--PRICE HEADING START-->
                     <div class="price-heading clearfix ">
-                        <h1 class="mt-4 fs-2" style="color: white; text-transform: uppercase;">Activate Package</h1>
+                        <h1 class="mt-4 fs-3 text-black fw-bold" style=" text-transform: uppercase;">Activate Package</h1>
                     </div>
                     <!--//PRICE HEADING END-->
                 </div>
             </div>
         </div>
-        <div class="container " style="background: black;">
+        <div class="container">
             
             <!--BLOCK ROW START-->
-            <div class="row">
-                <div class="col-md-4" *ngFor="let item of alldata;let i=index"
+            <div class="row m-auto">
+                <div class="col-md-4 col-sm-10 m-auto  mb-3" *ngFor="let item of alldata;let i=index"
                 >
                 
                 	<!--PRICE CONTENT START-->
-                    <div class="generic_content clearfix"  
-                    style="position: relative;
-                    background-size: cover;
-                    /* background-position: center; */
-                    background-repeat: no-repeat;
-                    width:100%;
-                  height: auto;
-                  color: white;
-                  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); 
-                    background-image: url(../../../assets/plan.png);" >
+                    <div class="generic_content clearfix"  >
                         
                         <!--HEAD PRICE DETAIL START-->
-                        <div class="generic_head_price clearfix"
+                        <div class="generic_head_price  bg-dark clearfix"
                          >
                             
                         
@@ -86,17 +77,28 @@
                             <!--//HEAD CONTENT END-->
                             
                             <!--PRICE START-->
-                            <div class="generic_price_tag clearfix">	
-                                <span class="price" >
-                                    <span class="sign fw- normal">$</span>
-                                    <span class="currency fw-normal">{{item.minprice}}</span>
+                            <div class="generic_price_tag row clearfix d-flex m-auto text-center border-bottom  p-0">	
+
+                                <div class="col-6">
+                                    <span class="price p-0 " >
+                                    
+                                    <span class="sign ">$</span>
+                                    <span class="currency fw-normal fs-2">{{item.minprice}}</span>
                                     <span class="cent fw-normal">.00</span>
-                                </span>&nbsp; 
-                                <span class="price" >
-                                    <span class="sign fw- normal">$</span>
-                                    <span class="currency fw-normal">{{item.maxprice}}</span>
-                                    <span class="cent fw-normal">.00</span>
-                                </span>
+                                    <!-- <span class="sign fst-italic float-start fs-5 px-4  ">MIN</span> -->
+                                </span>&nbsp;</div>
+                                <div class="col-6">
+                                    <span class="price p-0" >
+                                        <span class="sign fw- normal text-danger">$</span>
+                                        <span class="currency fw-normal fs-2 text-danger">{{item.maxprice}}</span>
+                                        <span class="cent fw-normal text-danger">.00</span>
+                                        <!-- <span class="sign fst-italic float-start fs-5 px-4  ">MAX</span> -->
+    
+                                    </span>
+                                </div>
+                               
+                                
+                               
                             </div>
                             <!--//PRICE END-->
                             
@@ -114,8 +116,8 @@
                            
                           </ng-template>  
                         <!--FEATURE LIST START-->
-                        <div class="generic_feature_list">
-                       	<ul>
+                        <div class="generic_feature_list p-0">
+                       	<ul class="p-0">
                             <li><span>Return</span>&nbsp;&nbsp;{{item.percentage}}.00%</li>
                             <li><span>Every Day</span> </li>
                             <li>For&nbsp;<span>{{item.days}}&nbsp;</span>Days </li>
@@ -127,10 +129,10 @@
                         <!--//FEATURE LIST END-->
                         
                         <!--BUTTON START-->
-                        <div class="generic_price_btn button  clearfix">
+                        <div class="  generic_price_btn text-center  clearfix">
                             <!-- <a (click)="time()">Profit</a> -->
-                            <button *ngIf = "item.pstatus === 'active'"[disabled]="true" style="color: rgb(4, 4, 4);">Activated</button>
-                            <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)"  style="color: rgb(0, 0, 0);">Active</button>
+                            <button *ngIf = "item.pstatus === 'active'"[disabled]="true" class="btn btn-success" >Activated</button>
+                            <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)" class="btn btn-success" >Active</button>
                             <!-- <a (click)="ActivePackage(20,15,10,5,3,1,1)">Activate Now</a> -->
                         </div>
                         <!--//BUTTON END-->
@@ -139,7 +141,6 @@
                     <!--//PRICE CONTENT END-->
                         
                 </div>
-                
                 <!-- <div class="col-md-4">
                 
                 	PRICE CONTENT START
@@ -251,7 +252,9 @@
             <!-- //BLOCK ROW END -->
             
         </div>
-    </section>             
+
+    </section>   
+              
 </div>
 <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
   <!-- <i class="fa fa-whatsapp my-float"></i> -->
