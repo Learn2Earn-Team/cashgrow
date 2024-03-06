@@ -161,6 +161,7 @@ public interval: any;
   userData: any;
   userobj: any;
   userTeem: any;
+  pendingorders: any;
 
   constructor(
     private route: Router,
@@ -172,15 +173,25 @@ public interval: any;
     console.log(this.card)
   }
   ngOnInit() {
+    this.reward();
     this.getUserData();
     this.getUserDashoardData();
     this.userteam();
+    this.activatePackage();
     const swiper = new Swiper('.swiper-container', {
       // Your Swiper configuration options here
       autoplay: {
         delay: 1000, // Set your desired autoplay delay
       },
     });
+  }
+ async reward(){
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+    this.apicall.reward(userData.user_id).subscribe(res=>{
+console.log(res);
+    })
   }
   ngAfterViewInit(): void {
     this.interval = setInterval(async () => {
@@ -191,13 +202,35 @@ public interval: any;
     const userData = JSON.parse(user);
     console.log(userData);
       this.notification();
-    }, 30000);
-  }
+      this.activatePackage();
+  },10000);
+}
 ngOnDestroy(): void {
   clearInterval(this.interval);
-  }
+}
 notification(){
   console.log('The  data is repeating after three sec')
+}
+ 
+ async activatePackage(){ 
+  const user: any = await check('user');
+  const userData = JSON.parse(user);
+  console.log(userData);
+    this.apicall.Pendingorder(userData.username).subscribe((res:any)=>{
+      if(res.length > 0){
+        this.apicall.activatePackafe(userData.id).subscribe((res2:any)=>{
+            const data = {
+              username :userData.username,
+              users:res2,
+              PackageDetails:res
+            }
+            console.log('repeat data',data)
+            this.apicall.adduserprofit(data).subscribe(res=>{
+console.log(res);
+            })
+        })
+      }
+    })
 }
   async getUserDashoardData() {
     const user: any = await check('user');
@@ -233,6 +266,7 @@ notification(){
   this.apicall.userteam(userData.username).subscribe(res=>{
     this.userTeem=res;
     console.log(this.userTeem);
+    
   })
 }
   async getUserData() {

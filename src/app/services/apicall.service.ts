@@ -9,6 +9,9 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class ApicallService {
+  TeamReports(res: any, id: any) {
+    throw new Error('Method not implemented.');
+  }
   getordercomplete(arg0: string) {
     throw new Error('Method not implemented.');
   }
@@ -867,6 +870,49 @@ export class ApicallService {
 
   public myorders(uid:any): Observable<any> {
     return this.http.get(apiUrl + `myorders/${uid}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public Pendingorder(uid:any): Observable<any> {
+    return this.http.get(apiUrl + `pendingorder/${uid}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  
+  public activatePackafe(user_id:any): Observable<any> {
+    return this.http.post(apiUrl + `activatepackage`,{user_id:user_id}).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public adduserprofit(data:any): Observable<any> {
+    return this.http.post(apiUrl +`adduserprofit`,data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public userdailyprofit(uid:any): Observable<any> {
+    return this.http.get(apiUrl + `userdailyprofit/${uid}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public teamreport(uid:any,data:any): Observable<any> {
+    return this.http.post(apiUrl + `teamreport/${data}`,uid).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public reward(data:any): Observable<any> {
+    return this.http.post(apiUrl + `reward`,data).pipe(
       map((res: any) => {
         return res;
       })
