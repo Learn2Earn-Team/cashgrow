@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Toast } from 'ngx-toastr';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { check } from 'src/app/localStorage/LocalStorage';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -12,6 +13,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class PromotionsocialComponent implements OnInit {
   hasClickedAddPackage: boolean = false;
+  balance:any
   userData: any = {
     id: '',
     name: '',
@@ -29,6 +31,8 @@ export class PromotionsocialComponent implements OnInit {
   };
   buttonClicked: boolean = false;
 public alldata:any;
+
+
   public userDeposits: any = {};
   userdataarray: any;
   persent: any;
@@ -37,7 +41,9 @@ public alldata:any;
   activeTime: any;
   currentT: any;
   todaypersenttotal=0;
+  res: any;
   constructor(
+    public modalService: NgbModal,
     // private apiCall: ApicallService,
     private route: Router,
     private toast: ToastService,
@@ -61,9 +67,17 @@ public alldata:any;
     
     })
   }
-
   // promotionsocial.component.ts
+  open(content: any) {
 
+    this.modalService.open(content,{ ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+          // this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
   getCurrentTime(){
     const currentTime = new Date();
     const options : Intl.DateTimeFormatOptions =  {
@@ -79,33 +93,62 @@ public alldata:any;
     this.activeTime = currentTime.toLocaleString('en-US', options);
     console.log('Current Time', this.activeTime);
   }
-  activep(item: any) {
-    this.userdata1();
-    this.getdata()
-    if (this.alldata[item].price <= 1000) {
-      this.persent = this.alldata[item].price / 100;
-      console.log('One Day Interest', this.persent);
-  console.log(this.userdataarray.balnce);
-      // Calculate total yearly interest
-      this.persenttotal = this.persent * 365;
-      console.log('Total Yearly Interest', this.persenttotal);
-  
-      // Set up a timer to add 1% of the price every 24 hours
-      setInterval(() => {
-        // Add 1% of the price to persenttotal
-        this.todaypersenttotal += this.alldata[item].price / 100;
-  
-        // Log the updated total interest
-        console.log('Updated Total Yearly Interest', this.todaypersenttotal);
-      }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-  
-      console.log('User Id', this.userData.username);
-      console.log('You have Successfully Activated Package');
-      this.buttonClicked = true;
-      this.getCurrentTime();
-    } else {
-      console.log('You have not successfully activated the package');
+
+  activep(item: any,modal:any) {
+    const data = {
+      pid:item.pid,
+      days:item.days,
+      username:this.userdataarray.username,
+      balance:+this.balance,
     }
+    console.log(data,"data");
+    if(+item.maxprice>= +data.balance && +item.minprice<= +data.balance && +this.userdataarray.balnce >= +this.balance){
+      this.apiCall.orders(data).subscribe((res)=>{
+        if(res.error === false){
+          modal.close();
+          this.toast.SuccessToast("Invest Succsessfully","Good Job!")
+          this.userdata1()
+        }else {
+          this.toast.ErrorToast("Somthing Went Wrong","Error")
+        }
+    console.log(res);
+    this.res=res;
+    console.log(this.userdataarray.balnce);
+     })    
+    }
+    else{
+      this.toast.ErrorToast("Somthing Went Wrong","Error")
+    }
+ 
+
+
+    // console.log(days,pid)
+  //   this.userdata1();
+  //   this.getdata();
+  //   if (this.alldata[item].price <= 1000) {
+  //     this.persent = this.alldata[item].price / 100;
+  //     console.log('One Day Interest', this.persent);
+  // console.log(this.userdataarray.balnce);
+  //     // Calculate total yearly interest
+  //     this.persenttotal = this.persent * 365;
+  //     console.log('Total Yearly Interest', this.persenttotal);
+  
+  //     // Set up a timer to add 1% of the price every 24 hours
+  //     setInterval(() => {
+  //       // Add 1% of the price to persenttotal
+  //       this.todaypersenttotal += this.alldata[item].price / 100;
+  
+  //       // Log the updated total interest
+  //       console.log('Updated Total Yearly Interest', this.todaypersenttotal);
+  //     }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+     
+  //     console.log('User Id', this.userData.username);
+  //     console.log('You have Successfully Activated Package');
+  //     this.buttonClicked = true;
+  //     this.getCurrentTime();
+  //   } else {
+  //     console.log('You have not successfully activated the package');
+  //   }
   }
   
 

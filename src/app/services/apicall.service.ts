@@ -857,5 +857,20 @@ export class ApicallService {
       })
     );
   }
+  public orders(data:any): Observable<any> {
+    return this.http.post(apiUrl + `orders`,data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  public myorders(uid:any): Observable<any> {
+    return this.http.get(apiUrl + `myorders/${uid}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }
 
