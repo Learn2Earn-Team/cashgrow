@@ -13,15 +13,23 @@ export class MypackagesComponent  implements OnInit{
   constructor(public apicall : ApicallService,) {
 
   }
-  
- async ngOnInit()  {
-    const user : any = await check("user");
-    const userData = JSON.parse(user)
-    console.log(userData)
-    this.apicall.getMyPackage(userData.id).subscribe(res=>{
-      console.log(res)
-      this.myPackages = res;
+ async myorders(){  
+  const user : any = await check("user");
+  const userData = JSON.parse(user)
+    this.apicall.myorders(userData.username).subscribe(res=>{
+      this.myPackages=res;
+      console.log(this.myPackages);
     })
+  }
+  async ngOnInit()  {
+ this.myorders();
+    // const user : any = await check("user");
+    // const userData = JSON.parse(user)
+    // console.log(userData)
+    // this.apicall.getMyPackage(userData.id).subscribe(res=>{
+    //   console.log(res);
+    //   this.myPackages = res;
+    // })
   }
   
 

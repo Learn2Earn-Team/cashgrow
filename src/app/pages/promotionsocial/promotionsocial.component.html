@@ -33,7 +33,9 @@
   </div>
 </div> -->
 
-<div id="generic_price_table">   
+<div id="generic_price_table"> 
+   
+      <!-- <button  (click)="open(content)" > Click to show model</button> -->
 <section>
         <div class="container">
             <div class="row">
@@ -102,7 +104,17 @@
                             
                         </div>                            
                         <!--//HEAD PRICE DETAIL END-->
-                        
+                        <ng-template #content let-modal >
+                            <div class="modal-body modalcolor" >
+                                <div style="border:  solid black 1px;"> User Current Balance: {{this.userdataarray.balnce}}</div>
+                                <div style="border:  solid black 1px;"> MinPrice: {{item.minprice}}</div>
+                     <input type="text" placeholder="Invest Between Max and Min Price" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="balance" >
+                    <button (click)="activep(item,modal)"> Add </button>
+                    <div style="border:  solid black 1px;"> MaxPrice: {{item.maxprice}}</div>
+                    <button type="button" class="btn btn-outline-dark " (click)="modal.close('Save click')">close</button>
+                            </div>
+                           
+                          </ng-template>  
                         <!--FEATURE LIST START-->
                         <div class="generic_feature_list p-0">
                        	<ul class="p-0">
@@ -119,14 +131,8 @@
                         <!--BUTTON START-->
                         <div class=" row generic_price_btn text-center  clearfix">
                             <!-- <a (click)="time()">Profit</a> -->
-                            <div class="col"></div>
-                            <div class="col-12">
-                                <button *ngIf = "item.pstatus === 'active'"[disabled]="true" (click)="activep(i)"  class="btn  btn-success float-center " >Activated</button>
-                                <button *ngIf = "item.pstatus !== 'active'"  (click)="activep(i)" class="btn  btn-success float-center"  >Active</button>
-    
-                            </div>
-                            <div class="col"></div>
-
+                            <button *ngIf = "item.pstatus === 'active'"[disabled]="true" style="color: rgb(4, 4, 4);">Activated</button>
+                            <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)"  style="color: rgb(0, 0, 0);">Active</button>
                             <!-- <a (click)="ActivePackage(20,15,10,5,3,1,1)">Activate Now</a> -->
                         </div>
                         <!--//BUTTON END-->
@@ -254,4 +260,8 @@
   <!-- <i class="fa fa-whatsapp my-float"></i> -->
   <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
 </a>
+
+  
+  
+  
 
