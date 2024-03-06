@@ -57,19 +57,7 @@ export class ComplainComponent
     this.scrollToBottom();
   }
 
-  public async getComplain(username: any) {
-    this.apicall.api_getcomplainusermessage(username).subscribe((complains) => {
-      console.log(complains);
-      this.allComplain = complains;
-    });
-  }
 
-  // public async getComplain(username: any) {
-  //   this.apicall.api_getcomplainusermessage(username).subscribe((complains) => {
-  //     console.log(complains);
-  //     this.allComplain = complains;
-  //   });
-  // }
 
   scrollToBottom(): void {
     const chatMessagesElement = this.chatMessages?.nativeElement;
@@ -129,6 +117,9 @@ export class ComplainComponent
       });
     }
     this.setTimeInterval();
+  }
+  getComplain(username: any) {
+    throw new Error("Method not implemented.");
   }
 
   goToBack() {
