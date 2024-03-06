@@ -129,10 +129,10 @@
                         <!--//FEATURE LIST END-->
                         
                         <!--BUTTON START-->
-                        <div class=" row generic_price_btn text-center  clearfix">
+                        <div class="  generic_price_btn text-center  clearfix">
                             <!-- <a (click)="time()">Profit</a> -->
-                            <button *ngIf = "item.pstatus === 'active'"[disabled]="true" style="color: rgb(4, 4, 4);">Activated</button>
-                            <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)"  style="color: rgb(0, 0, 0);">Active</button>
+                            <button *ngIf = "item.pstatus === 'active'"[disabled]="true" class="btn btn-success" >Activated</button>
+                            <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)" class="btn btn-success" >Active</button>
                             <!-- <a (click)="ActivePackage(20,15,10,5,3,1,1)">Activate Now</a> -->
                         </div>
                         <!--//BUTTON END-->
