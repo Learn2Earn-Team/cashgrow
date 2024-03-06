@@ -1,12 +1,17 @@
 <div class="container">
   <section class="intro">
     <div class="mask d-flex align-items-center h-100">
-      <div class="container">
+      <div class="container p-3">
+        <h1 class="text-white text-center fs-2">Withdraw History</h1>
+
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1" *ngFor="let item of userdata" >
-            <div class="card shadow-sm border rounded-4 mt-2" >
-              <ul class="list-group list-group-flush rounded-3" style="background: #00ff00;">
-                <li class="list-group-item" style="background: #00ff00;">
+            <div class="card shadow-sm border rounded-2 mt-2" >
+              <ul class="list-group list-group-flush rounded-2" >
+                <li class="list-group-item  heading text-center fw-bold" >
+                  <p>Recent Withdraw</p>
+                </li>
+                <li class="list-group-item" >
                   <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1 fw-bold">ID</p></div>
                     <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end fw-bold text-truncate py-1 ">{{ item.user_id }}</p></div>
@@ -75,9 +80,9 @@
 
 
 <ng-template #content let-modal >
-  <div class="modal-body modalcolor" >
+  <div class=" card modal-body modalcolor" >
     <img style="height: 50px;width: 50px; border-radius: 10px;" src="../../../assets/images/send.png" alt="">
-    <h1 class="text-white mt-4">Congratulation!</h1>
+    <h1 class="mt-4 heading">Congratulation!</h1>
     <h5 class="text-white">Maclink</h5>
     <h1 class="text-white">Withdrawal Amount</h1>
     <h5 class="text-white">{{userDepositeAmouint}}$</h5>

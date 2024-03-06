@@ -58,27 +58,42 @@ table th {
 // <-----------alter css----------->
 
 .tab:hover{
-  background:black;
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
 
 
 }
 .tab  a:hover{
-  color:#00ff00;
+  color:#ffffff;
 }
 
-
+.container{
+  background:  rgba(16,14,60,1);
+}
 .card{
-  background: black;
+  background:  rgb(37, 34, 102);
   color: white;
-  border: 5px solid  #00ff00 !important;
+
 }
 
 .list-group-item{
-  background : black;
-  color: white;
-  border-radius: 8px;
+  background:  rgb(37, 34, 102);
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+  ;
 }
+
+
 .list-group-item p{
-  color: white;
+  color: rgb(255, 255, 255);
+  padding-top: 5px;
+
+}
+.card:hover{
+  margin:-3px 0;
+  transition: all 0.2s;
+
+}
+.heading{
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
 
 }
