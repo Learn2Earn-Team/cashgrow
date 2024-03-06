@@ -16,22 +16,39 @@
                 <div style="display: flex;">
                     <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.price" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
                     </div> -->
-                        <label for="" >Minimum Amount:</label>
-                        <div style="display: flex;">
-                            <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.minprice" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
-                            </div>
-                            <label for="" >Maximum Amount:</label>
-                    <div style="display: flex;">
-                        <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.maxprice" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
-                        </div>
-                            <label for="" >Days:</label>
-                <div style="display: flex;">
-                    <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.days" placeholder="  Enter your value in $"  style="width: 100%;height: 45px;">
+                  <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                      <label for="" >Minimum Amount:</label>
+                      <div style="display: flex;">
+                          <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.minprice" placeholder="  Enter your minimum value in $"  style="width: 100%;height: 45px;">
+                          </div>
                     </div>
-                    <label for="" >Percentage:</label>
+                    <div class="col-lg-6 col-sm-12">
+                      <label for="" >Maximum Amount:</label>
                     <div style="display: flex;">
-                        <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.percentage" placeholder="  Enter your value in %"  style="width: 100%;height: 45px;">
+                        <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.maxprice" placeholder="  Enter your maximum value in $"  style="width: 100%;height: 45px;">
                         </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                      <label for="" >Days:</label>
+                      <div style="display: flex;">
+                          <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.days" placeholder=" "  style="width: 100%;height: 45px;">
+                          </div>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12">
+                      <label for="" >Percentage:</label>
+                    <div style="display: flex;">
+                        <input type="number" class="btn-group"  [ngModelOptions]="{ standalone: true }" [(ngModel)]="withdrawDetail.percentage" placeholder=" %"  style="width: 100%;height: 45px;">
+                        </div>
+                    </div>
+                    
+
+                  </div>
+                       
+                            
+                           
+                    
                 <!-- <select   class="form-select" id=" id="customAmount type="inputUsername" required>
                   <option value="">Choose...packages</option>
                   <option>10$ - 100$</option>
@@ -101,7 +118,7 @@
                  </div></div>
               </div>
               <div class="col-lg-6">
-                <div class="col-lg-6">     
+                <div class="col-lg-6">     rgb(151, 145, 145)rgb(160, 156, 156)rgb(170, 169, 169)rgb(185, 185, 185)rgb(206, 206, 206)
                     <div class="mb-3">
            
                    <label for="" class="">Level 4:</label>

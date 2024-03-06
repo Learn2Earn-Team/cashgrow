@@ -1,35 +1,30 @@
-<div class="video-container">
-  <video autoplay muted loop id="video-bg">
-    <source src="../../../assets/pexels-colin-jones-11009983 (1080p).mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-<div class="content whitecolor">
-  
+<div class="content">
+
   <header id="header" class="fixed-top d-flex align-items-center headerclr">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo">
           <h1 ><a href="#" class="fs-2" ><img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span
-            style="color: #00ff00d7;text-transform: uppercase;">Maclink</span></a></h1>
+            style="color: #06397c;text-transform: uppercase;">Maclink</span></a></h1>
       </div>
 
 
       <nav id="navbar" class="navbar">
-        <button class="btn button navbtn text-white" [routerLink]="['/login']"><a>Login</a></button>
+        <button class="btn button navbtn text-white px-5" [routerLink]="['/login']"><a>Login</a></button>
       </nav>
     </div>
   </header>
-  <div class="mt-5 backimg ">
-    <form class="p-3">
-      <div class="col-md-6 mx-auto mt-5 m-3 p-3  " style="color: white;    border: solid 1px white;
-      background:rgba(0, 0, 0, 0.616);  color:  #00ff00d7;  box-shadow: 0 0 20px rgba(0, 255, 0, 0.767);">
-        <h2 class="text-center mb-3" style="color: #00ff00d7"><span style="color: #00ff00d7">Registration</span> Form</h2>
-
+  <div class="mt-5 m-auto text-center" style="width: 80%;">
+    <form class="p-3  row">
+      <div class="col-lg-7 col-sm-12  m-auto mt-5">
+        <img class="signup"  src="../../../assets/12291223_Wavy_Tech-28_Single-10.jpg" alt="">
+      </div>
+      <div class="col-lg-5  col-md-6 col-sm-12 mx-auto mt-5 m-3 p-3  " >
+        <h2 class="text-center mb-3"><span class="hero-text" style="letter-spacing: 1px;"> Sign upto Register</span></h2><br>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 mt-2">
             <label class="form-label"> </label>
             <input
-            style="height: 55px;"
               class="rounded-2 input "
               placeholder="First Name"
               [(ngModel)]="userFirstName"
@@ -37,10 +32,9 @@
               required
             />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 mt-2">
             <label class="form-label"> </label>
             <input
-            style="height: 55px;"
               class="rounded-2 input"
               [(ngModel)]="signupdata.lastname"
               placeholder="Last Name"
@@ -48,10 +42,12 @@
             />
           </div>
         </div>
-        <label class="form-label mt-1"></label>
+        <div class="col-md-12 mt-2">
+
+        <label class="form-label "></label>
         <input
 
-          class="rounded-2 input"
+          class="rounded-2  input"
           placeholder="Contact Number"
           type="text"
           maxlength="11"
@@ -61,6 +57,9 @@
           maxlength="11"  min="0" max="9999" step="1"
           required
         />
+        </div>
+        <div class="col-md-12">
+
         <label class="form-label mt-1"></label>
         <input
 
@@ -69,7 +68,9 @@
           [(ngModel)]="signupdata.email"
           [ngModelOptions]="{ standalone: true }"
           required
-        />
+        /></div>
+        <div class="col-md-12">
+
         <label class="form-label mt-1"></label>
         <input
 
@@ -78,32 +79,40 @@
     
           (input)="password($event)"
           required
-        />
-        <label class="form-label mt-1"></label>
-          <input class="rounded-2 input" style="color: black;" placeholder="Confirm"   (input)="confirmpassword($event)" required />
-          
-          <span  style="background-color: transparent ;color:#00ff00d7;"  class="mt-4" *ngIf="this.showmessage != ''" [ngClass]="this.showmessage == 'Correct Password' ? 'text-success' : 'text-danger'">{{this.showmessage}} </span>
-      <br>  <label class="form-label mt-1" style="color: #00ff00d7;">Referral-link</label>
-        <input
-        style="background: transparent; color: black;"
+        /></div>
+        <div class="col-md-12">
 
-          class="form-control input"
+        <label class="form-label mt-1 "></label>
+          <input class="rounded-2 input " placeholder="Confirm"   (input)="confirmpassword($event)" required />
+        </div>
+
+          <span   class="mt-4" *ngIf="this.showmessage != ''" [ngClass]="this.showmessage == 'Correct Password' ? 'text-success' : 'text-danger'">{{this.showmessage}} </span>
+      <br>  
+      <div class="col-md-12">
+
+      <label class="form-label mt-1" >Referral-link</label>
+        <input
+style="color: black;"
+          class="form-control input  text-center"
           value="{{ signupdata.invitationlink }}"
           disabled
-        />
+        /></div>
         <br />
+        <div class="col-md-12">
+
         <p class="d-flex">
-          <input class="form-check-input "  style="color: #cc1616;" [(ngModel)]="isChecked"
+          <input class="form-check-input border border-1 border-dark p-1  "  [(ngModel)]="isChecked"
           [ngModelOptions]="{ standalone: true }" type="checkbox" />
           <label class="form-check-label m-auto  text-center fs-6" >
-            I have read and agree to the <a class="term" href="#/tems" style="color: rgb(255, 255, 255);font-size: 14px;">Terms and Condition</a>
+            I have read and agree to the <a class="term" href="#/tems" >Terms and Condition</a>
           </label>
         </p>
+        </div>
         <br />
         <div class="row">
           <div class="col-12 m-auto text-center">
             <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
-            <button class=" m-auto text-center  button btn-clr mt-3" (click)="submit()" [disabled]="userFirstName == ''|| signupdata.lastname == '' || 
+            <button class=" m-auto text-center  button btn-lg w-100 mt-3" (click)="submit()" [disabled]="userFirstName == ''|| signupdata.lastname == '' || 
             signupdata.contactno == ''|| signupdata.email == ''|| signupdata.password == ''|| signupdata.invitationlink == '' || this.showmessage != 'Correct Password' || isChecked == false">Submit</button>
 
           </div>
@@ -125,4 +134,3 @@
     </div>
   </div>
 </footer>
-</div>

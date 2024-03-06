@@ -1,7 +1,9 @@
 
 .formbox{
-  background-color: var(--background-color);
-  color: var( --text-color);
+  // background-color: var(--background-color);
+  // color: var( --text-color);
+  background: rgb(211, 83, 83);
+  
  }
 //  .hy{
 //   height: 400px;
@@ -31,8 +33,13 @@ margin-top: 90px;
 .btn{
   background-color:rgba(255, 255, 255, 0.63);
 }
-.password{
-  color: red;
+.password a{
+  color: rgb(0, 0, 0);
+  text-align: right;
+  font-weight: bold;
+}
+.password a:hover{
+  color: rgb(42, 134, 255);
   text-align: right;
 }
 .cen{
@@ -51,7 +58,7 @@ color: white;
   background-color: transparent;
   color: white;
   border: none;
-  border-bottom: 1px solid #cc1616;
+  border-bottom: 1px solid #000000;
 }
 .form-control::placeholder{
   color: #121212;
@@ -69,39 +76,23 @@ color: white;
 
 
 // <----------------ALter css----------------->
-    body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.video-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#video-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-}
+ 
 
 .content {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  // background: rgb(0, 0, 0);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // text-align: center;
   color: #fff;
+  background-image: url("../../../assets/pexels-jonathan-borba-14911428.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+//   background: rgb(99,207,255);
+// background: linear-gradient(90deg, rgba(99,207,255,1) 0%, rgba(189,176,176,1) 50%, rgba(181,28,177,1) 100%);
 }
 
 .content h1 {
@@ -116,26 +107,23 @@ color: white;
 .input {
   margin: 5px 0;
   background: none;
-  border: 5px solid #181818;
+  border: 1px solid #000000;
   outline: none;
 // padding: 14px 23px;
 width: 100%;
 height: 100%;
-  // padding: 11px 23px;
+  padding: 11px 23px;
   font-size: 16px;
-  color:#00ff00;
+  color:#f4f7f4;
   font-weight: bold;
-  box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
-  rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
-  rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-  rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-  rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  // box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
+  // rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
+  // rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+  // rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+  // rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
 }
-.input:hover{
-  border: 5px solid #00ff00;
 
-}
 
 .button {
   position: relative;
@@ -143,17 +131,19 @@ height: 100%;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
-  background-color: #00ff00d7;
-  display: flex;
+  // background: rgb(99,207,255);
+  background: linear-gradient(90deg, rgba(99,207,255,1) 0%, rgba(181,28,177,1) 100%);
+    display: flex;
   align-items: center;
   justify-content: center;
   color: #ffff;
   gap: 10px;
   font-weight: bold;
-  border: 3px solid #7070704d;
+  // border: 3px solid #7070704d;
   outline: none;
   overflow: hidden;
   font-size: 15px;
+  padding: 10px;
 }
 
 
@@ -192,4 +182,23 @@ height: 100%;
   to {
     left: 100%;
   }
+}
+.form{
+border: 1px solid rgb(194, 191, 191);
+margin-top: 30px;
+padding: 10px;
+background: rgba(255, 255, 255, 0.753);
+border-radius: 20px;
+color: black;
+width: 50%;
+}
+@media screen and (max-width: 550px) {
+  .form {
+width: 98%;
+margin: auto;      }
+}
+.hero-text{
+  text-shadow: 3px 3px 3px  #9f31c0;;
+  text-transform: uppercase; 
+  color: rgba(114, 123, 206, 0.719);
 }
