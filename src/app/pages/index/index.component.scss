@@ -791,7 +791,8 @@ a:visited {
 .card-body {
   border-radius: 8%;
   background-color: var(--background-color);
-  color: var(--text-color);
+color: white;
+border: 3px solid white;
   .text-muted{
     color: var(--text-color) !important;
   }
@@ -815,7 +816,7 @@ a:visited {
   backface-visibility: hidden;
   will-change: transform;
   background-color: var(--background-color);
-  box-shadow: 0 1rem 3rem rgba(189, 189, 189, 0.75) !important;
+  box-shadow: 0 0.2rem 1.5rem rgba(189, 189, 189, 0.75) !important;
 }
 
 .card-body:hover::after {
@@ -1811,4 +1812,33 @@ section.client .section-title {
   border-radius: 100px;
   border: none;
   background: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+// <------------------Alter CSS------------------>
+
+
+
+
+
+
+.card-body:hover{
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+  color: rgb(255, 255, 255); 
+  border: 3px solid  #00ff00;;
+  transition: all 0.2s;
+    cursor: pointer;
+
+}
+.text-muted:hover{
+  color: black;
 }

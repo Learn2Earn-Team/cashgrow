@@ -1,108 +1,298 @@
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope-fill"></i><a href="mailto:maclink.cc@gmail.com">maclink.cc@gmail.com</a>
-        <!-- <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55 -->
-      </div>
-      <div class="social-links d-none d-md-block">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
+  <header id="header" class="d-flex align-items-center sticky-top  " >
+    <div class="container d-flex align-items-center justify-content-between ">
 
       <!-- <h1 class="logo"><a href="#">Maclink</a></h1> -->
       <h1 class="logo"><a href="#"><img src="../../../assets/maclink white png.png" alt="">Maclink</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar">
+      <nav id="navbar " class="navbar" >
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Packages</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto rounded-2 button-nav " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto rounded-2 button-nav " href="#about">About</a></li>
+          <li><a class="nav-link scrollto rounded-2 button-nav " href="#services">Services</a></li>
+          <li><a class="nav-link scrollto rounded-2 button-nav " href="#pricing">Packages</a></li>
+          <li><a class="nav-link scrollto rounded-2 button-nav " href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle" (click)="open(content)"></i>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
+  <!-- <div class="scroll-to-top" style="display: block;">
+    <span class="scroll-icon">
+        <i class="fa fa-rocket" aria-hidden="true">UP</i>
+    </span>
+</div> -->
+
+<a href="#" class="scroll-top btn-hover" style="display: block;">
+  <i class="bi bi-rocket py-3 px-3"></i>
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-rocket" viewBox="0 0 20 20">
+  </svg>
+</a> 
+
+<!-- <========== New Design  Modal Content ===================== > -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
-      <h1>Welcome to Maclink</h1>
-      <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
-      <a  class="btn-get-started scrollto m-3" [routerLink]="['/login']">Login</a>
-      <a  class="btn-get-started-register scrollto" (click)="goToRegiester()">Register</a>
-      <a  class="btn-get-started-register scrollto m-3" (click)="downloadApkFromAssets('Maclink.apk')">Download App</a>
+    
+
+    <div class="container position-relative" style="z-index: 1;background: none;">
+      
+<div class="row">
+  
+  <div class="col-lg-6 float-start">
+    <h1 > <span class="fs-1 fw-bold " data-aos="fade-up-right" data-aos-duration="1000" style="color: white;" >Welcome to</span> 
+    </h1> <br>
+    <h1> <span class="hero-text fw-bold" data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500">Maclink</span> </h1>
+  </div>
+  <div class="col-lg-6">
+    <div class="hero-png">
+      <img src="../../../assets/png hero (2).png" alt="">
     </div>
+  </div>
+ 
+</div>
+ 
+    
+     
+
+      <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
+      <!-- <a  class="btn-get-started scrollto m-3 rounded-2 btn-lg " [routerLink]="['/login']">Login</a> 
+      <a  class="btn-get-started-register scrollto rounded-2 btn-lg" (click)="goToRegiester()">Register</a>
+      <a  class="btn-get-started-register scrollto m-3 rounded-2" (click)="downloadApkFromAssets('Maclink.apk')">Download App</a> -->
+      <a class="button btn-get-started btn-lg  scrollto m-2 mt-0 rounded-2" [routerLink]="['/login']"  data-aos="fade-up"
+      data-aos-duration="5000">Login</a>
+      <a class="button btn-get-started btn-lg scrollto m-2 mt-0 rounded-2"  (click)="goToRegiester()"  data-aos="fade-up"
+      data-aos-duration="5000">Register</a>
+      <a class="button btn-get-started scrollto btn-lg m-2 mt-0 rounded-2" (click)="downloadApkFromAssets('Maclink.apk')"  data-aos="fade-up"
+      data-aos-duration="5000">Download App</a>
+    </div>
+
   </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div>
-
+    <!-- <img src="assets/images/planet.webp" class="img-fluid" alt="" > -->
+    <!-- <section id="about" class="about">
+      <div style="background-image: url(../../../assets/about.jpg);
+        background-size: cover;
+  position: relative;
+">
+      
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2 aboutSectionImage" data-aos="fade-left">
-            <img src="assets/images/planet.webp" class="img-fluid" alt=""   
-
-            >
+          <div class="col-lg-6 col-md-6 order-1 order-lg-2 aboutSectionImage" data-aos="fade-right">
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-            <h3>About Maclink</h3>
-            <p class="fst-italic">
-              Maclink is a decentralized, blockchain- and based online earning application that operates on the usdt network.
-            </p>
-            <!-- <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul> -->
-            <p>
-              It functions as a smart contract program allowing participants to earn dollars through a peer-to-peer matrix system. Users join by paying an entry fee in dollars (USDT), which grants them access to the matrix.
-              Participants can earn through a referral program by inviting others to join the platform. As new members join under their referral link, they can earn commissions based on the contributions made by these new members. Maclink operates on a self-executing smart contract, ensuring transparency and immutability of transactions.
-            </p>
+          <div class="col-lg-6 col-md-12 col-sm-12 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right">
+            <span class="fs-1 fw-semibold py-4 " style="color: #cc1616;">About Maclink</span>
+            <div class="content-des">
+
+              <span class=" fs-4 py-3 ">
+                Maclink is a decentralized, blockchain- and based online earning application that operates on the usdt network.
+              </span>
+              <p class="fst-italic py-3">
+                It functions as a smart contract program allowing participants to earn dollars through a peer-to-peer matrix system. Users join by paying an entry fee in dollars (USDT), which grants them access to the matrix.
+                Participants can earn through a referral program by inviting others to join the platform. As new members join under their referral link, they can earn commissions based on the contributions made by these new members. Maclink operates on a self-executing smart contract, ensuring transparency and immutability of transactions.
+              </p>
+            </div>
           </div>
         </div>
-
+        
       </div>
-    </section><!-- End About Section -->
+    </section> -->
+    <!-- <ul>
+    <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+    <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+    <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+  </ul> -->
+
+    
+  <section id="about" class="about-section pt-120 pb-120 " >
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-6 text-center m-auto p-3">
+    <div class="rounded-pill text-center m-auto w-50 h-50 py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> About Maclink</div>
+
+  </div>
+</div>
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 text-center m-auto " data-aos="fade-right" data-aos-duration="3000">
+          <img src="../../../assets/paper-clip_14367642.png" alt="" style="width: auto; height: 300px;">
+        </div>
+        <div class="col-lg-6 col-sm-12   h-100 text-center " >
+          <div class="about-content">
+            <h2 class="section-title mb-3 "><span class="font-weight-normal text-center px-3 mt-4 "  data-aos="zoom-out-down" data-aos-duration="2000" style="color: rgba(0, 0, 0, 0.747); font-size: 4rem;"> Maclink</span> </h2>
+            <div class="content-des mt-4 py-3" data-aos="fade-down" data-aos-duration="2000">
+
+              <span class=" fs-4 py-3  text-center about-cont mt-4" >
+                Maclink is a decentralized, blockchain- and based online earning application that operates on the usdt network.
+              </span>
+              <p class="fst-bold py-3 text-start about-cont " >
+                It functions as a smart contract program allowing participants to earn dollars through a peer-to-peer matrix system. Users join by paying an entry fee in dollars (USDT), which grants them access to the matrix.
+                Participants can earn through a referral program by inviting others to join the platform. As new members join under their referral link, they can earn commissions based on the contributions made by these new members. Maclink operates on a self-executing smart contract, ensuring transparency and immutability of transactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <!-- End About Section -->
+
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
-      <div class="container">
+    <section id="why-us" class="why-us mt-5 p-5">
+      <!-- <div  style=" position: relative;
+      width: 100vw;
+      height: auto;
+      overflow: hidden;">
 
-        <div class="row">
+        <video autoplay loop muted style=" width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* position: absolute; */
+      top: 0;
+      left: 0;
+      z-index: 1;">
+        
+        <source src="../../../assets/pexels-rostislav-uzunov-9629255 (1080p).mp4" type="video/mp4">
+      </video>
+      <div class="card w-50" style="  
+      color:black; position: absolute; top: 50%; left: 50%;
+       transform: translate(-50%, -50%); text-align: center; color: rgb(0, 0, 0);"> -->
+       <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+        <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> Registeration catagories</div>
+    </div>
+      <h2 class="section-title text-center"><span class="font-weight-normal fs-1  text-center m-auto hero-text hero-reg" style="color: rgba(114, 123, 206, 0.719);" >Registeration </span> 
+      </h2>
+
+      <div class="row mt-5">
+        
+        <div class="col-2"></div>
+        <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center py-3" >
+          
+
+            <div class="card-back " data-aos="fade-down" data-aos-duration="3000">
+              <div class="border p-4">
+
+              <div class="col-lg-4 col-md-6 col-sm-12 text-center m-auto ">
+                <img src="../../../assets/analytics_6802460.png" alt="" style="width: 60px; height:60px;">
+              </div>
+                <p class="fs-6 text-start" >
+                  The registration process for your maclink website account is designed to be 
+                  straightforward and user-friendly. Prospective users begin by visiting the 
+                  application's website or downloading the apk version.
+                </p>
+            </div>
+          </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center  py-3">
+                <div class="card-back" data-aos="fade-down" data-aos-duration="3000">
+                  <div class="border">
+                  <div class="col-lg-4 col-md-6 col-sm-12 text-center m-auto py-3">
+                    <img src="../../../assets/analytics_6802460.png" alt="" style="width: 60px; height:60px;">
+                  </div>
+    
+                    <p class="fs-6 text-start p-3 " >
+                      Upon opening the platform, they are guided through a 
+                      simple sign-up process, requiring basic information such as name,
+                      email address, and a secure password. Finally, they gain access to
+                      the platform's dashboard, where they can explore and do deposit in 
+                      their wallet and can purchase a active package for work.
+                                        </p>
+                  </div>
+                </div>
+                </div>
+        <div class="col-2"></div>
+
+            <!-- <div class="col-lg-6 col-md-6 col-sm-12"  data-aos="fade-up-left" data-aos-duration="3000">
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <h1 class="fs-1"  style="color: #ffffffd7">  <b>02 </b> <span class="fs-2"> <b> Registeration</b></span> </h1>
+                  </div>
+                  <div class="card-back">
+                    <p style="color: #fafafa;">Upon opening the platform, they are guided through a 
+                      simple sign-up process, requiring basic information such as name,
+                      email address, and a secure password. Finally, they gain access to
+                      the platform's dashboard, where they can explore and do deposit in 
+                      their wallet and can purchase a active package for work.</p>
+                    </div>
+                  </div>
+                    </div>
+                  </div> -->
+            <!-- </div>
+          </div> -->
+          
+  
+  
+  
+          <!-- <div class="box">
+          <span class="fs-3 text-center">01</span>
+          <h4>Registeration</h4>
+          <p>
+            The registration process for your maclink website account is designed to be 
+            straightforward and user-friendly. Prospective users begin by visiting the 
+            application's website or downloading the apk version.</p> 
+            <br>
+        </div> -->
+          <!-- </div>
+        </div> -->
+        
+
+
+
+        <!-- <div class="box">
+        <span class="fs-3 text-center">01</span>
+        <h4>Registeration</h4>
+        <p>
+          The registration process for your maclink website account is designed to be 
+          straightforward and user-friendly. Prospective users begin by visiting the 
+          application's website or downloading the apk version.</p> 
+          <br>
+      </div> -->
+  
+  </div>
+      <!-- <div class="container-"> -->
+
+        <!-- <div class="row">
 
           <div class="col-lg-6" data-aos="fade-up">
             <div class="box">
-              <span>01</span>
+              <span class="fs-3 text-center">01</span>
               <h4>Registeration</h4>
               <p>
-                The registration process for your maclink website account is designed to be straightforward and user-friendly. Prospective users begin by visiting the application's website or downloading the apk version.</p>
+                The registration process for your maclink website account is designed to be 
+                straightforward and user-friendly. Prospective users begin by visiting the 
+                application's website or downloading the apk version.</p> 
+                <br>
             </div>
           </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="150">
+          <div class="col-lg-6" data-aos="fade-up">
             <div class="box">
-              <span>02</span>
+              <span class="fs-3 text-center">01</span>
+              <h4>Registeration</h4>
+              <p>Upon opening the platform, they are guided through a simple sign-up process, requiring basic information such as name, email address, and a secure password. Finally, they gain access to the platform's dashboard, where they can explore and do deposit in their wallet and can purchase a active package for work.</p>
+            </div>
+          </div> -->
+
+
+          <!-- <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="150">
+            <div class="box">
+              <span class="fs-3 text-center">02</span>
               <h4>Registeration</h4>
               <p>Upon opening the platform, they are guided through a simple sign-up process, requiring basic information such as name, email address, and a secure password. Finally, they gain access to the platform's dashboard, where they can explore and do deposit in their wallet and can purchase a active package for work.</p>
             </div>
           </div>
-
+ -->
           <!-- <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="box">
               <span>03</span>
@@ -111,71 +301,111 @@
             </div>
           </div> -->
 
-        </div>
+        <!-- </div> -->
 
-      </div>
-    </section><!-- End Why Us Section -->
-    <!-- ======= Services Section ======= -->
+      <!-- </div> -->
+    </section>
+    
+    <!-- End Why Us Section -->
+
+        <!-- ======= Services Section ======= -->
+       
     <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <span>Services</span>
-          <h2>Services</h2>
-          <p>These services collectively aim to create a comprehensive and rewarding experience for users, leveraging blockchain technology to enable secure, transparent, and diversified earning opportunities.</p>
+      <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+        <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> Maclink services</div>
+    
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 col-lg-10 m-auto text-center video-container">
+          <video controls  autoplay loop>
+            <source src="../../../assets/bitcoin_-_63667 (Original).mp4" type="video/mp4">
+          </video>
+          
         </div>
+      </div>
+      <div class="container mt-5">
+
+        <div class="row justify-content-center py-2">
+          <div class="col-lg-6 text-center">
+          <div class="section-header "  data-aos="zoom-out-down">
+              <h2 class="section-title text-center"><span class="font-weight-normal hero-text" style="color: rgba(114, 123, 206, 0.719);" >Services</span> 
+                </h2>
+                <p class="col-lg-12 py-2 fs-5 "  data-aos="fade-down" style="color: #fafafa;">These services collectively aim to create a comprehensive and rewarding experience for users,
+                   leveraging blockchain technology to enable secure, transparent,
+                    and diversified earning opportunities.</p>
+              </div>
+          </div>
+      </div>
+
+      
+
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+          <div class="service-box col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box rounded-2">
+             <div class="icon rounded-2">
+              <i class="bi bi-currency-bitcoin bx bxl-dribbble"></i>
+             </div> 
+              <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
               <!-- <h4><a href="">Lorem Ipsum</a></h4> -->
-              <p>Decentralized Earning Opportunities: Maclink platform provides a decentralized environment where users can access various earning opportunities, including smart contracts, staking, yield farming, and participating in DeFi protocols. These avenues enable users to earn passive income through USDT holdings and interactions with blockchain-based financial tools.
+              <b class="fs-5 py-2 " style="color: #fafafa;">Decentralized Earning Opportunities</b>
+
+              <p class="py-4 fst-italic " style="color: #fafafa;"> Maclink platform provides a decentralized environment where users can access various earning opportunities, including smart contracts, staking, yield farming, and participating in DeFi protocols. These avenues enable users to earn passive income through USDT holdings and interactions with blockchain-based financial tools.
               </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="150">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
+            <div class="icon-box  rounded-2">
+              <div class="icon rounded-2"><i class=" bi bi-cash-coin bx bx-file"></i></div>
               <!-- <h4><a href="">Sed ut perspiciatis</a></h4> -->
-              <p>Secure Wallet Integration: Offering secure wallet integration within the platform allows users to manage their earned USDT. This feature ensures a safe and encrypted environment for storing, sending, and receiving various digital assets earned through the platform.
+              <b class="fs-5 py-2 " style="color: #fafafa;">Secure Wallet Integration</b>
+
+              <p class="py-4 fst-italic " style="color: #fafafa;"> Offering secure wallet integration within the platform allows users to manage their earned USDT. This feature ensures a safe and encrypted environment for storing, sending, and receiving various digital assets earned through the platform.
               </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
+            <div class="icon-box  rounded-2">
+              <div class="icon rounded-2"><i class="bi bi-trophy bx bx-tachometer"></i></div>
               <!-- <h4><a href="">Magni Dolores</a></h4> -->
-              <p>Tokenized Reward Systems: Implementing a token-based reward system incentivizes user engagement and loyalty. Users earn platform-specific tokens or rewards for completing tasks, participating in the community, and contributing positively. These tokens might offer additional benefits, such as discounts, access to premium features, or higher earnings.
+              <b class="fs-5 py-2 " style="color: #fafafa;">Tokenized Reward Systems</b>
+
+              <p class="py-4 fst-italic"style="color: #fafafa;"> Implementing a token-based reward system incentivizes user engagement and loyalty. Users earn platform-specific tokens or rewards for completing tasks, participating in the community, and contributing positively. These tokens might offer additional benefits, such as discounts, access to premium features, or higher earnings.
               </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="450">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
+            <div class="icon-box rounded-2">
+              <div class="icon rounded-2"><i class="bi bi-book-half bx bx-world"></i></div>
               <!-- <h4><a href="">Nemo Enim</a></h4> -->
-              <p>Community Engagement and Learning Resources: Your platform may foster a vibrant community by providing forums, discussion boards, and social features where users can interact, share insights, and support each other. Additionally, offering educational resources like tutorials, articles, and webinars about blockchain technology, investing, and decentralized finance enhances user knowledge and engagement.
+              <b class="fs-5 py-2 " style="color: #fafafa; ">Community Engagement and Learning Resources</b>
+
+              
+              <p class="py-4 fst-italic"style="color: #fafafa;"> Your platform may foster a vibrant community by providing forums, discussion boards, and social features where users can interact, share insights, and support each other. Additionally, offering educational resources like tutorials, articles, and webinars about blockchain technology, investing, and decentralized finance enhances user knowledge and engagement.
               </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
+            <div class="icon-box  rounded-2">
+              <div class="icon rounded-2"><i class=" bi bi-graph-up-arrow  bx bx-slideshow"></i></div>
               <!-- <h4><a href="">Dele cardo</a></h4> -->
-              <p>Transparent Analytics and Reporting: Providing transparent analytics and reporting tools allows users to track their earnings, performance metrics, and transaction history easily. Real-time data insights empower users to make informed decisions regarding their earning strategies within the platform.
+              <b class="fs-5 py-2 " style="color: #fafafa;">Transparent Analytics and Reporting </b>
+              <p class="py-4 fst-italic"style="color: #fafafa;">  Providing transparent analytics and reporting tools allows users to track their earnings, performance metrics, and transaction history easily. Real-time data insights empower users to make informed decisions regarding their earning strategies within the platform.
               </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="750">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
+            <div class="icon-box  rounded-2">
+              <div class="icon rounded-2"><i class="bi bi-people-fill bx bx-arch"></i></div>
               <!-- <h4><a href="">Divera don</a></h4> -->
-              <p>Partnerships and Ecosystem Expansion: Continuously seeking partnerships with other blockchain projects, DeFi protocols, or digital asset platforms expands the earning possibilities for users. Collaborations can offer new earning streams, a wider range of supported cryptocurrencies, and opportunities for growth within the platform's ecosystem.
+              <b class="fs-5 py-2 " style="color: #fafafa;">Partnerships and Ecosystem Expansion </b>
+
+              <p class="py-4 fst-italic"style="color: #fafafa;"> Continuously seeking partnerships with other blockchain projects, DeFi protocols, or digital asset platforms expands the earning possibilities for users. Collaborations can offer new earning streams, a wider range of supported cryptocurrencies, and opportunities for growth within the platform's ecosystem.
               </p>
             </div>
           </div>
@@ -188,58 +418,100 @@
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
       <div class="container">
-
-        <div class="section-title">
+        <!-- <div class="section-title">
           <span>Packages</span>
           <h2>Pricing</h2>
-          <!-- <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> -->
+        </div> -->
+        <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+          <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> Package Pricing</div>
+      
         </div>
+        <h2 class="section-title text-center"><span class="font-weight-normal hero-text" style="color: rgba(114, 123, 206, 0.719);" data-aos="zoom-out-down" > Packages</span> </h2>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150">
-            <div class="box">
-              <h3>Basic</h3>
-              <h4><sup>$</sup>10<span>.00</span></h4>
-              <ul>
-                <li>Level 1 &nbsp;&nbsp;&nbsp;  5$ Direct</li>
-                <li>Level 2 &nbsp;&nbsp;&nbsp;   1$ bouns</li>
-                <li>Level 3 &nbsp;&nbsp;&nbsp;  0.5$ bouns</li>
+        <div class="row justify-content-center ">
           
+          <div class="col-lg-6 text-center">
+          <div class="section-header">
+              
 
+              </div>
+          </div>
+      </div>
+          <!-- <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> -->
+
+
+        <div class="row py-2 ">
+
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150" >
+            <div class="box " 
+            style=" box-shadow: 0 0 20px rgba(157, 53, 255, 0.8);  ">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center m-auto ">
+              <div class=" text-center m-auto  uppercase p-3 fs-6 fw-bold " 
+              data-aos="fade-down" data-aos-duration="1000" style="     background: linear-gradient(135deg, #021c63 0%, #75ed6d 100%);
+           color: white; clip-path: polygon(50% 40%, 0 0, 100% 0); height: 150px; text-transform: uppercase;   ">Basic</div>
+          </div>
+                    <h4><sup>$</sup>10<span style="color: white;">.00</span></h4>
+              <ul class="fs-5" data-aos="fade-down" data-aos-delay="500">
+                <!-- <li style=" color:rgb(0, 0, 0);padding: 15px 0;"><span>Level 1&nbsp;&nbsp;&nbsp;5$ Direct</span></li>
+                <li style="color: rgb(0, 0, 0);padding: 15px 0; "><span>Level 2&nbsp;&nbsp;&nbsp;1$ bouns </span></li>
+                <li style="color: rgb(0, 0, 0);padding: 15px 0; "><span>&nbsp; &nbsp;Level 3&nbsp;&nbsp;&nbsp;0.5$ bouns</span> </li> -->
+                <li><span>Return</span>&nbsp;&nbsp;0 to More %</li>
+                <li><span>Every Day</span> </li>
+                <li>Monthly&nbsp;&<span>&nbsp;</span>Yearly </li>
+                <li>Total&nbsp;<span>%</span>Percentage </li>
               </ul>
-              <div class="btn-wrap">
-                <a  [routerLink]="['/login']" class="btn-buy">Buy Now</a>
+              <div class="btn-wrap"
+              >
+                <a  class="" [routerLink]="['/login']" class="btn-buy button rounded-2 ">Buy Now</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in">
-            <div class="box featured">
-              <h3>Standard</h3>
-              <h4><sup>$</sup>30<span>.00</span></h4>
-              <ul>
-                <li>Level 1 &nbsp;&nbsp;&nbsp;  15$ Direct</li>
-                <li>Level 2 &nbsp;&nbsp;&nbsp;   5$ bouns</li>
-                <li>Level 3 &nbsp;&nbsp;&nbsp;  2$ bouns</li>
+            <div class="box" style=" box-shadow: 0 0 20px rgba(157, 53, 255, 0.8);  " >
+              <div class="col-lg-12 col-md-12 col-sm-12 text-center m-auto ">
+                <div class=" text-center m-auto uppercase p-3 fs-6 fw-bold "
+                 data-aos="fade-down" data-aos-duration="1000" 
+                 style="    background: linear-gradient(135deg, #ff0b0b 0%, #1d1f1d 100%);
+                color: white; clip-path: polygon(50% 40%, 0 0, 100% 0); height: 150px; text-transform: uppercase;   ">Standard</div>
+            </div>
+                      <h4><sup>$</sup>30<span>.00</span></h4>
+              <ul class="fs-5" data-aos="fade-down" data-aos-delay="500">
+                <!-- <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">&nbsp;Level 1 &nbsp;&nbsp;&nbsp;  15$ Direct</li>
+                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 2 &nbsp;&nbsp;&nbsp;   5$ bouns</li>
+                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 3 &nbsp;&nbsp;&nbsp;  2$ bouns</li> -->
+                <li><span>Return</span>&nbsp;&nbsp;0 to More %</li>
+                <li><span>Every Day</span> </li>
+                <li>Monthly&nbsp;&<span>&nbsp;</span>Yearly </li>
+                <li>Total&nbsp;<span>%</span>Percentage </li>
               </ul>
               <div class="btn-wrap">
-                <a  [routerLink]="['/login']" class="btn-buy">Buy Now</a>
+                <a  [routerLink]="['/login']" class="btn-buy button rounded-2">Buy Now</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-            <div class="box">
-              <h3>Unlimited</h3>
-              <h4><sup>$</sup>60<span>.00</span></h4>
-              <ul>
-                <li>Level 1 &nbsp;&nbsp;&nbsp;  30$ Direct</li>
-                <li>Level 2 &nbsp;&nbsp;&nbsp;   10$ bouns</li>
-                <li>Level 3 &nbsp;&nbsp;&nbsp;  5$ bouns</li>
+            <div class="box"  style=" box-shadow: 0 0 20px rgba(157, 53, 255, 0.8);">
+              <div class="col-lg-12 col-md-12 col-sm-12 text-center m-auto  ">
+                <div class="text-center m-auto uppercase fw-bold p-3 fs-6" data-aos="fade-down" 
+                data-aos-duration="1000" style="    background: linear-gradient(135deg, #ffc400 0%, #1d1f1d 100%);
+                color: white; clip-path: polygon(50% 40%, 0 0, 100% 0);height: 150px; text-transform: uppercase;   ">  Unlimited</div>
+
+            </div>
+                      <h4 ><sup>$</sup>60<span>.00</span></h4>
+              <ul class="fs-5" data-aos="fade-down" data-aos-delay="500">
+                <!-- <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 1 &nbsp;&nbsp;&nbsp;  30$ Direct</li>
+                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 2 &nbsp;&nbsp;&nbsp;   10$ bouns</li>
+                <li style="border-bottom: 2px solid #00ff00; color:white;padding: 15px 0;">Level 3 &nbsp;&nbsp;&nbsp;&nbsp;  5$ bouns</li> -->
+                <li><span>Return</span>&nbsp;&nbsp;0 to More %</li>
+                <li><span>Every Day</span> </li>
+                <li>Monthly&nbsp;&<span>&nbsp;</span>Yearly </li>
+                <li>Total&nbsp;<span>%</span>Percentage </li>
+
               </ul>
               <div class="btn-wrap">
-                <a [routerLink]="['/login']" class="btn-buy">Buy Now</a>
+                <a [routerLink]="['/login']" class="btn-buy button rounded-2">Buy Now</a>
               </div>
             </div>
           </div>
@@ -251,15 +523,55 @@
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
+      <div class="col-lg-5 col-md-8 col-sm-12 text-center m-auto p-3">
+        <div class="rounded-pill text-center m-auto  py-3 px-3 uppercase drop-text" data-aos="fade-down" data-aos-duration="3000"> How to reach</div>
+    
+      </div>
       <div class="container">
 
-        <div class="section-title">
-          <span>Contact</span>
-          <h2>Contact</h2>
-          <p>For any questions, concerns, or inquiries feel free to contact us.</p>
-        </div>
 
-        <div class="row" data-aos="fade-up">
+        <div class="section-header">
+          <h2 class="section-title text-center"><span class="font-weight-normal hero-text" style="color: rgba(114, 123, 206, 0.719);" 
+            data-aos="zoom-out-down" data-aos-duration="1000"> Contact</span> </h2>
+
+            <p class="py-4 fs-5 text-center" >
+              For any questions, concerns, or inquiries feel free to contact us.
+
+            </p>
+          </div>
+<div class="form rounded-2" style="height: 30%; width: 85%; margin: 10px auto;">
+
+        <div class=" col-lg-8 col-md-6 col-sm-12 p-4 mt-3  py-2  text-center align-items-center mt-3 m-auto" data-aos="fade-down" data-aos-duration="1500">
+          <button class="email px-3" >
+            maclink.cc@gmail.com
+                        <span class="dark">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 
+                            2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 
+                            .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1"/>
+                          </svg>
+            </span>
+          </button>
+        </div>
+        <div class="info-box " data-aos="fade-down" data-aos-duration="2000">
+          <h4 class="section-title text-center">
+            <span class="font-weight-normal fs-3" >Our Address</span> 
+            </h4>
+            <p class=" text-center" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
+                <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z "style="color: #00ff00; 
+                " />
+              </svg>
+              <span class="py-1 px-2"  > A108 Adam Street, New York, NY 535022</span> 
+            </p>
+         
+        </div>
+      </div>
+        
+
+
+        <div class="row py-2 my-2" data-aos="fade-up">
           <!-- <div class="col-lg-6">
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
@@ -267,14 +579,14 @@
               <p>A108 Adam Street, New York, NY 535022</p>
             </div>
           </div> -->
-
-          <div class="col-lg-12 col-md-6">
-            <div class="info-box  mb-4">
+        
+          <!-- <div class="col-lg-12 col-md-6 form">
+            <div class=" mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email Us</h3>
               <p>maclink.cc@gmail.com</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="col-lg-6 col-md-6">
             <div class="info-box  mb-4">
@@ -286,11 +598,11 @@
 
         </div>
 
-        <div class="row" data-aos="fade-up">
+        <!-- <div class="col-lg-6 ">
+          <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+        </div> -->
+        <!-- <div class="row" data-aos="fade-up">
 
-          <!-- <div class="col-lg-6 ">
-            <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-          </div> -->
 
           <div class="col-lg-12">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
@@ -317,8 +629,37 @@
             </form>
           </div>
 
-        </div>
+        </div> -->
 
+        <form action="forms/contact.php" method="post" role="form" class=" form php-email-form p-5 " data-aos="fade-left" data-aos-duration="3000">
+        <div class="row " data-aos="fade-up">
+
+          
+          <div class="col-lg-6 p-1"  >
+            <input  placeholder="Name  " class="input rounded-2 p-3 border-2  "  name="text" type="text" />
+
+          </div>
+          <div class="col-lg-6 p-1" >
+            <input placeholder="Email " class="input rounded-2 p-3 border-2" name="text" type="text" />
+
+          </div>
+          <div class="col-lg-12 p-1">
+            <input placeholder="Subject  " class="input rounded-2 p-3  border-2" name="text" type="text" />
+
+          </div>
+          <div class="col-lg-12 p-1" >
+            <textarea class="input rounded-2 border-2 p-3 w-100" name="Message  " rows="6" placeholder="Message" required></textarea>
+
+          </div>
+          <div class=" text-center">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class=" text-start my-3  "  >
+            <button class="rounded-2 button "  type="submit">Send Message</button></div>
+        </div>
+      </form>
       </div>
     </section><!-- End Contact Section -->
 
@@ -327,15 +668,23 @@
 
   <footer id="footer">
     <div class="footer-top">
-      <div class="container">
+      <div class="container ">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>Maclink</h3>
+          <div class="col-lg-8 col-md-12 col-sm-12 m-auto text-center" data-aos="fade-right" data-aos-duration="2000">
+            <h4 class="fs-4 text-start" >Our Newsletter</h4>
+            <form action="" method="post" class=" d-flex col-lg-8 col-sm-12">
+              <input type="email" name="email" class=" w-100 fs-6 col-lg-8 col-sm-12 p-2 border-4 border border-light " style="background: transparent;"  placeholder="Email address ">
+              ;&nbsp; <button   type="submit" value="" class="button p-2 rounded-2  col-lg-4 col-sm-5 " style="min-width: 90px">subscribe</button>
+              <!-- <input class="button " type="submit" value="Subscribe"> -->
+              <!-- &nbsp;&nbsp;  <button class="btn px-4  rounded-2 col-sm-12 text-center">Subscribe</button> -->
+            </form>
+          </div>
+            <!-- <div class="footer-info"> -->
+              <!-- <h3>Maclink</h3>
               <p>
                 <strong>Email:</strong> maclink.cc@gmail.com<br>
-              </p>
+              </p> -->
               <!-- <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -343,19 +692,12 @@
                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div> -->
-            </div>
-          </div>
+            <!-- </div> -->
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a [routerLink]="['/tems']">Terms and Condition</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a [routerLink]="['/privacy-policy']">Privacy policy</a></li>
-            </ul>
-          </div>
+          <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li> -->
+         
 
           <!-- <div class="col-lg-2 col-md-6 footer-links">
             <h4>Our Services</h4>
@@ -367,13 +709,19 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
           </div> -->
-
-          <div class="col-lg-6 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
+         <br>
+          <div class="col-lg-4 col-md-12  col-sm-12 footer-newsletter" data-aos="fade-down" data-aos-duration="2000">
+            <div class="col-lg-12 col-md-12  col-sm-12 footer-links" >
+              <br>
+              <h4 class="fs-4" >Useful Links</h4>
+              <ul >
+              <li><i class="bx bx-chevron-right"></i> <a [routerLink]="['/tems']">Terms and Condition</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a [routerLink]="['/privacy-policy']">Privacy policy</a></li>
+            </ul>
+          </div>
+            
             <!-- <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> -->
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+          
 
           </div>
 
@@ -382,19 +730,35 @@
     </div>
 
     <div class="container">
-      <div class="copyright">
+      <div class="copyright ">
         &copy; Copyright <strong><span>Maclink</span></strong>. All Rights Reserved
+        <div class="credits">
+          Designed by <a href="#"  style="color: rgb(173, 122, 221);">Maclink</a>
+        </div>
       </div>
-      <div class="credits">
+
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Maclink-multipurpose-html-template-for-free/ -->
-        Designed by <a href="#">Maclink</a>
-      </div>
     </div>
+    <section id="topbar" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center fs-6" >
+          <i class="bi bi-envelope-fill"></i><a href="mailto:maclink.cc@gmail.com">maclink.cc@gmail.com</a>
+          <!-- <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55 -->
+        </div>
+        <div class="social-links d-none d-md-block">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
   </footer><!-- End Footer -->
 
+  
 
   <ng-template #content let-offcanvas>
 
@@ -415,7 +779,9 @@
         </div>
         <div class="card35 text-white" (click)="offcanvas.close('Save click')">
 
-            <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;" class="bi bi-box"></i></b>
+            <p style="padding-left: 10px; margin-top: 3px"> 
+
+            <b><i style="font-size: 25px;" class="bi bi-box"></i></b>
             </p>
             <p class="wokingtext" style="padding-left: 20px;">
                 <b><a class="text-white" href="#about">About</a></b>

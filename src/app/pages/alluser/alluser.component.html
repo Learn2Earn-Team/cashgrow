@@ -11,12 +11,12 @@
                 | paginate : { itemsPerPage: pageSize, currentPage: p };
               let i = index
             ">
-                <div class="card shadow-sm border" >
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p">Order No</p></div>
-                        <div class="col-8 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ i + 1 }}</p></div>
+                <div class="card shadow-sm border rounded-3" >
+                  <ul class="list-group list-group-flush  rounded-2" style="background: #00ff00;">
+                    <li class="list-group-item" style="background-color:  #00ff00; ">
+                      <div class="row rounded-3" style="background: #00ff00;">
+                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p"  style="color: black;">Order No</p></div>
+                        <div class="col-8 col-md-6 col-lg-6 justify-content-end" ><p  style="color: black;"  class="text-end text-truncate"><b> {{ i + 1 }}</b></p></div>
                        </div>
                     </li>
                     <li class="list-group-item">

@@ -7,36 +7,36 @@
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of userdata | paginate: { itemsPerPage: pageSize, currentPage: p };"
           >
-            <div class="card shadow-sm border" >
-              <ul class="list-group list-group-flush">
+            <div class="card shadow-sm border rounded-4 " >
+              <ul class="list-group list-group-flush rounded-4">
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Name</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.name }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Name</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.name }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">ID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.username }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.username }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sponsor ID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  " > {{ item.sponsor }} </p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Sponsor ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  py-1 " > {{ item.sponsor }} </p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Contact No</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.c_id }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Contact No</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.c_id }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Joning Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.created_at }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Joning Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.created_at }}</p></div>
                    </div>
                 </li>
                 
@@ -44,9 +44,9 @@
                 
               </ul>
             </div>
-            
+          
           </div> 
-          <li class="list-group-item">
+          <li  style="list-style: none; margin-top: 20px;">
             <div class="row">
               <pagination-controls (pageChange)="p= $event"></pagination-controls>
             </div>

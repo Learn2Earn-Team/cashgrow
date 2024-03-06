@@ -11,9 +11,9 @@ table th {
   overflow: hidden;
 }
 
-.card {
-  border-radius: .5rem;
-}
+// .card {
+//   border-radius: .5rem;
+// }
 .wave{
   position: absolute;
   bottom: 0;
@@ -37,3 +37,25 @@ table th {
   box-shadow: 2px 2px 3px #999;
  
  }
+
+
+
+
+
+
+
+//  <-----------------Alter Css------------------->
+.card{
+  background: black;
+  color: white;
+  border: 5px solid  #00ff00 !important;
+}
+
+.list-group-item{
+  background : black;
+  color: white;
+  padding-top: 0;
+}
+.open:hover{
+color:   #00ff00;
+}

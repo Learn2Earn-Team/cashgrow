@@ -33,14 +33,16 @@
   </div>
 </div> -->
 
-<div id="generic_price_table">   
+<div id="generic_price_table"> 
+   
+      <!-- <button  (click)="open(content)" > Click to show model</button> -->
 <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12  m-auto">
                     <!--PRICE HEADING START-->
-                    <div class="price-heading clearfix">
-                        <h1>Activate Package</h1>
+                    <div class="price-heading clearfix ">
+                        <h1 class="mt-4 fs-3 text-black fw-bold" style=" text-transform: uppercase;">Activate Package</h1>
                     </div>
                     <!--//PRICE HEADING END-->
                 </div>
@@ -49,22 +51,25 @@
         <div class="container">
             
             <!--BLOCK ROW START-->
-            <div class="row">
-                <div class="col-md-4">
+            <div class="row m-auto">
+                <div class="col-md-4 col-sm-10 m-auto  mb-3" *ngFor="let item of alldata;let i=index"
+                >
                 
                 	<!--PRICE CONTENT START-->
-                    <div class="generic_content clearfix">
+                    <div class="generic_content clearfix"  >
                         
                         <!--HEAD PRICE DETAIL START-->
-                        <div class="generic_head_price clearfix">
+                        <div class="generic_head_price  bg-dark clearfix"
+                         >
+                            
                         
                             <!--HEAD CONTENT START-->
-                            <div class="generic_head_content clearfix">
+                            <div class="generic_head_content clearfix" >
                             
                             	<!--HEAD START-->
-                                <div class="head_bg"></div>
+                                <div class="head_bg" ></div>
                                 <div class="head">
-                                    <span>Basic</span>
+                                    <span>{{item.name}}</span>
                                 </div>
                                 <!--//HEAD END-->
                                 
@@ -72,31 +77,63 @@
                             <!--//HEAD CONTENT END-->
                             
                             <!--PRICE START-->
-                            <div class="generic_price_tag clearfix">	
-                                <span class="price">
-                                    <span class="sign">$</span>
-                                    <span class="currency">10</span>
-                                    <span class="cent">.00</span>
-                                </span>
+                            <div class="generic_price_tag row clearfix d-flex m-auto text-center border-bottom  p-0">	
+
+                                <div class="col-6">
+                                    <span class="price p-0 " >
+                                    
+                                    <span class="sign ">$</span>
+                                    <span class="currency fw-normal fs-2">{{item.minprice}}</span>
+                                    <span class="cent fw-normal">.00</span>
+                                    <!-- <span class="sign fst-italic float-start fs-5 px-4  ">MIN</span> -->
+                                </span>&nbsp;</div>
+                                <div class="col-6">
+                                    <span class="price p-0" >
+                                        <span class="sign fw- normal text-danger">$</span>
+                                        <span class="currency fw-normal fs-2 text-danger">{{item.maxprice}}</span>
+                                        <span class="cent fw-normal text-danger">.00</span>
+                                        <!-- <span class="sign fst-italic float-start fs-5 px-4  ">MAX</span> -->
+    
+                                    </span>
+                                </div>
+                               
+                                
+                               
                             </div>
                             <!--//PRICE END-->
                             
                         </div>                            
                         <!--//HEAD PRICE DETAIL END-->
-                        
+                        <ng-template #content let-modal >
+                            <div class="modal-body modalcolor" >
+                                <div style="border:  solid black 1px;"> User Current Balance: {{this.userdataarray.balnce}}</div>
+                                <div style="border:  solid black 1px;"> MinPrice: {{item.minprice}}</div>
+                     <input type="text" placeholder="Invest Between Max and Min Price" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="balance" >
+                    <button (click)="activep(item,modal)"> Add </button>
+                    <div style="border:  solid black 1px;"> MaxPrice: {{item.maxprice}}</div>
+                    <button type="button" class="btn btn-outline-dark " (click)="modal.close('Save click')">close</button>
+                            </div>
+                           
+                          </ng-template>  
                         <!--FEATURE LIST START-->
-                        <div class="generic_feature_list">
-                        	<ul>
-                            	<li><span> Level 1</span>&nbsp;&nbsp; 5$ Direct </li>
-                            	<li><span> Level 2</span>&nbsp;&nbsp; 1$ Bouns </li>
-                            	<li><span> Level 3</span>&nbsp;&nbsp; 0.5$ Bouns </li>
+                        <div class="generic_feature_list p-0">
+                       	<ul class="p-0">
+                            <li><span>Return</span>&nbsp;&nbsp;{{item.percentage}}.00%</li>
+                            <li><span>Every Day</span> </li>
+                            <li>For&nbsp;<span>{{item.days}}&nbsp;</span>Days </li>
+                            <li>Total&nbsp;<span>{{item.days}}%</span> </li>
+                            	<!-- <li  *ngFor="let pack of item.levelAmount"><span> {{pack.level}}</span>&nbsp;&nbsp;{{pack.Package}}${{pack.bouns}}</li> -->
                             </ul>
                         </div>
+
                         <!--//FEATURE LIST END-->
                         
                         <!--BUTTON START-->
-                        <div class="generic_price_btn clearfix">
-                        	<a (click)="ActivePackage(10, 5, 1, 0.5)">Activate Now</a>
+                        <div class="  generic_price_btn text-center  clearfix">
+                            <!-- <a (click)="time()">Profit</a> -->
+                            <button *ngIf = "item.pstatus === 'active'"[disabled]="true" class="btn btn-success" >Activated</button>
+                            <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)" class="btn btn-success" >Active</button>
+                            <!-- <a (click)="ActivePackage(20,15,10,5,3,1,1)">Activate Now</a> -->
                         </div>
                         <!--//BUTTON END-->
                         
@@ -104,29 +141,28 @@
                     <!--//PRICE CONTENT END-->
                         
                 </div>
+                <!-- <div class="col-md-4">
                 
-                <div class="col-md-4">
-                
-                	<!--PRICE CONTENT START-->
+                	PRICE CONTENT START
                     <div class="generic_content active clearfix">
                         
-                        <!--HEAD PRICE DETAIL START-->
+                        HEAD PRICE DETAIL START
                         <div class="generic_head_price clearfix">
                         
-                            <!--HEAD CONTENT START-->
+                            HEAD CONTENT START
                             <div class="generic_head_content clearfix">
                             
-                            	<!--HEAD START-->
+                            	HEAD START
                                 <div class="head_bg"></div>
                                 <div class="head">
                                     <span>Standard</span>
                                 </div>
-                                <!--//HEAD END-->
+                                //HEAD END
                                 
                             </div>
-                            <!--//HEAD CONTENT END-->
+                            //HEAD CONTENT END
                             
-                            <!--PRICE START-->
+                            PRICE START
                             <div class="generic_price_tag clearfix">	
                                 <span class="price">
                                     <span class="sign">$</span>
@@ -134,53 +170,53 @@
                                     <span class="cent">.00</span>
                                 </span>
                             </div>
-                            <!--//PRICE END-->
+                            //PRICE END
                             
                         </div>                            
-                        <!--//HEAD PRICE DETAIL END-->
+                        //HEAD PRICE DETAIL END
                         
-                        <!--FEATURE LIST START-->
+                        FEATURE LIST START
                         <div class="generic_feature_list">
                         	<ul>
-                            <li><span> Level 1</span>&nbsp;&nbsp; 15$ Direct </li>
-                            <li><span> Level 2</span>&nbsp;&nbsp; 5$ Bouns </li>
-                            <li><span> Level 3</span>&nbsp;&nbsp; 2$ Bouns </li>
+                            <li *ngFor="let package of PackageDetails"><span>{{this.package.level}} </span>&nbsp;&nbsp; {{this.package.Package2}}$ {{this.package.bouns}} </li>
+                      
+
                             </ul>
                         </div>
-                        <!--//FEATURE LIST END-->
+                        //FEATURE LIST END
                         
-                        <!--BUTTON START-->
+                        BUTTON START
                         <div class="generic_price_btn clearfix">
-                        	<a (click)="ActivePackage(30, 15, 5, 2)">Activate Now</a>
+                        	<a (click)="ActivePackage(30, 25, 20, 15,10,5,1)">Activate Now</a>
                         </div>
-                        <!--//BUTTON END-->
+                        //BUTTON END
                         
                     </div>
-                    <!--//PRICE CONTENT END-->
+                    //PRICE CONTENT END
                         
                 </div>
                 <div class="col-md-4">
                 
-                	<!--PRICE CONTENT START-->
+                	PRICE CONTENT START
                     <div class="generic_content clearfix">
                         
-                        <!--HEAD PRICE DETAIL START-->
+                        HEAD PRICE DETAIL START
                         <div class="generic_head_price clearfix">
                         
-                            <!--HEAD CONTENT START-->
+                            HEAD CONTENT START
                             <div class="generic_head_content clearfix">
                             
-                            	<!--HEAD START-->
+                            	HEAD START
                                 <div class="head_bg"></div>
                                 <div class="head">
                                     <span>Unlimited</span>
                                 </div>
-                                <!--//HEAD END-->
+                                //HEAD END
                                 
                             </div>
-                            <!--//HEAD CONTENT END-->
+                            //HEAD CONTENT END
                             
-                            <!--PRICE START-->
+                            PRICE START
                             <div class="generic_price_tag clearfix">	
                                 <span class="price">
                                     <span class="sign">$</span>
@@ -188,39 +224,44 @@
                                     <span class="cent">.00</span>
                                 </span>
                             </div>
-                            <!--//PRICE END-->
+                            //PRICE END
                             
                         </div>                            
-                        <!--//HEAD PRICE DETAIL END-->
+                        //HEAD PRICE DETAIL END
                         
-                        <!--FEATURE LIST START-->
+                        FEATURE LIST START
                         <div class="generic_feature_list">
                         	<ul>
-                            <li><span> Level 1</span>&nbsp;&nbsp; 30$ Direct </li>
-                            <li><span> Level 2</span>&nbsp;&nbsp; 10$ Bouns </li>
-                            <li><span> Level 3</span>&nbsp;&nbsp; 5$ Bouns </li>
+                            <li *ngFor="let package of PackageDetails"><span> {{this.package.level}}</span>&nbsp;&nbsp; {{this.package.Package1}}$ {{this.package.bouns}} </li>
+                            
                             </ul>
                         </div>
-                        <!--//FEATURE LIST END-->
+                        //FEATURE LIST END
                         
-                        <!--BUTTON START-->
+                        BUTTON START
                         <div class="generic_price_btn clearfix">
-                        	<a (click)="ActivePackage(60, 30, 10, 5)">Activate Now</a>
+                        	<a (click)="ActivePackage(60, 50, 40,30,20,10,1)">Activate Now</a>
                         </div>
-                        <!--//BUTTON END-->
+                        //BUTTON END
                         
                     </div>
-                    <!--//PRICE CONTENT END-->
+                    //PRICE CONTENT END
                         
-                </div>
+                </div> -->
             </div>	
-            <!--//BLOCK ROW END-->
+            <!-- //BLOCK ROW END -->
             
         </div>
-    </section>             
+
+    </section>   
+              
 </div>
 <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
   <!-- <i class="fa fa-whatsapp my-float"></i> -->
   <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
 </a>
+
+  
+  
+  
 

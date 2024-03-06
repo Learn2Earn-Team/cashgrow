@@ -3,52 +3,55 @@
     <div class="mask d-flex align-items-center h-100">
       <div class="container">
         <h1 style="text-align: center">All Approved Deposite Requests</h1>
-        <p style="text-align: center">
+        <p style="text-align: center;">
           Total Aproved Amount: {{ this.userdata.length }}
         </p>
 
         <div class="row" >
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 "  *ngFor="
           let item of userdata
             | paginate : { itemsPerPage: pageSize, currentPage: p }
         "
           >
-            <div class="card shadow-sm border" >
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+            <div class="card shadow-sm border rounded-4 mt-2"  >
+              <ul class="list-group list-group-flush rounded-4">
+                <li class="list-group-item" >
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.amount }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Amount</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                    <p  class="text-end text-truncate py-1 fs-5" style="color:  #00ff00; font-weight: bold;">
+                       {{ item.amount }}$</p>
+                      </div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">User ID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.username }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">User ID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.username }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Name</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end  " > {{ item.name }} </p></div>
+                    <div class="col-5 col-md-4 col-lg-4  justify-content-start" > <p class="p py-1">Name</p></div>
+                    <div class="col-7 col-md-8 col-lg-8 justify-content-end"><p  class="text-end py-1 " > {{ item.name }} </p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.tid }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">TID</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.tid }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.status }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Status</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.status }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.created_at }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Date</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.created_at }}</p></div>
                    </div>
                 </li>
                 

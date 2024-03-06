@@ -1,31 +1,34 @@
 <link rel="stylesheet" href="/node_modules/aos/aos.css" />
 <div class="container-xl px-4 mt-4">
-
   <section>
     <div >
       <div class="row">
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-          <div class="card text-bg-dark mt-2" style="border-radius: 15px;">
-            <div class="card-body text-black">
-              <div class="d-flex align-items-center">
-                <div class="flex-shrink-0">
+          <div class="card text-bg-dark mt-2" style="border-radius: 15px;background: black;">
+            <div class="card-body text-black " style="border-radius: 15px;background: black;">
+              <div class="d-flex align-items-center" style="background: transparent;">
+                <div class="flex-shrink-0" style="background: transparent;">
+        
                   <img src="{{userobj.image}}"
-                  onerror="this.onerror=null;this.src='../../../assets/images/UnknownUser.png';"
+                  onerror="this.onerror=null;this.src='../assets/boy-icon-png-10.jpg.png'"
+              *ngIf="userobj.image != 0" 
                     alt="" class="img-fluid rounded-circle border border-dark border-3"
                     style="width: 90px; height: 90px;">
+
+                    <img *ngIf="userobj.image ==0" style="width: 90px; height: 90px;" src="../assets/boy-icon-png-10.jpg.png" alt="">
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <div class="d-flex flex-row align-items-center mb-2">
                     <p class="mb-0 text-light">{{userData.name}}</p>
-                    <span class="text-info" style="margin-left: 4px;font-size: 13px;">ID {{userDashboardData.username}}</span>
+                    <span class="text-info" style="margin-left: 4px;font-size: 10px;">ID {{userDashboardData?.username }}</span>
                   </div>
                   <div>
-                    <p class="text-light">Invited by <span class="text-info" style="font-size: 15px;">ID {{userDashboardData.sponserid | uppercase}}</span> </p> 
+                    <p class="text-light">Invited by <span class="text-info" style="font-size: 10px; ">ID {{userDashboardData.sponserid | uppercase}}</span> </p> 
                   </div>
                 </div>
               </div>
               <!-- <hr> -->
-              <label class="btn btn-color btn-primary mt-2" for="fileInput">
+              <label class="btn button mt-1 w-50" for="fileInput">
                 Choose picture
               </label>
               <input
@@ -40,12 +43,13 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-        <div class="card text-bg-dark mt-2 p-2" style="border-radius: 15px;">
-          <div class="card-body text-black">
-            <h5 class="card-title text-light">My Personal Link</h5>
+        <div class="card  mt-2 p-2" style="border-radius: 15px;background: black;">
+          <div class="card-body text-black"style="border-radius: 15px;background: black;">
+            <h5 class="card-title text-light mt-2">My Personal Link</h5> 
             <p class="card-text text-info">https://maclink.cc/./././.{{userDashboardData.username}} </p>
             <a class="btn btn-primary" (click)="copyUserId()">Copy</a>
-            <a class="btn btn-info" style="margin-left: 5px;" (click)="downloadApkFromAssets('Maclink.apk')">Download App</a>
+            <a class="btn   btn-info" style="margin-left: 5px;  background-color: #00ff00d7;
+                border: none;        " (click)="downloadApkFromAssets('Maclink.apk')">Download App</a>
           </div>
         </div>
       </div>
@@ -286,14 +290,14 @@
     </div> -->
   <!-- </div> -->
 
-  <div class="list-group mb-3" style="width: 100%; margin-left:  0px; padding-bottom: 50px; border-radius: 15px;">
-    <a class="list-group-item list-group-item-action text-bg-dark" aria-current="true" *ngFor="let item of randomData">
-      <div class="d-flex w-100 justify-content-between">
+  <div class="list-group mb-3" style="width: 100%; margin-left:  0px; padding-bottom: 50px; border-radius: 15px; ">
+    <a class="list-group-item list-group-item-action "  aria-current="true" *ngFor="let item of randomData" style="background: black; color: white;">
+      <div class="d-flex w-100 justify-content-between py-1 " >
         <h5 class="mb-1"><i class="bi text-success bi-patch-check-fill"></i>
           <span class="badge rounded-pill text-bg-info" style="margin-left: 10px;font-size: 15px;">Id:{{item.randomId}}</span> </h5>
-        <small style="font-size: 13px;">{{item.randomtime}} minutess ago</small>
+        <small style="font-size: 13px; ">{{item.randomtime}} minutess ago</small>
       </div>
-      <p class="mb-1" style="font-size: 18px;">Has buy package of {{item.randomamount}}$</p>
+      <p class="mb-1" style="font-size: 18px;">Has buy package of <span style="color: #00ff00d7;">{{item.randomamount}}$</span></p>
       <!-- <small>And some small print.</small> -->
     </a>
   </div>

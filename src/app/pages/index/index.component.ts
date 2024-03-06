@@ -145,7 +145,7 @@ export class IndexComponent implements OnInit {
 
   public directBonous : any = { icon: 'icon bi-share-fill', type: 'Direct Bonus', subtype: '', rs: 'Rs',
   today: '' , }
-
+public interval: any;
   public dashbaordData = {
     username: '',
     activePromotion: '',
@@ -160,6 +160,8 @@ export class IndexComponent implements OnInit {
   };
   userData: any;
   userobj: any;
+  userTeem: any;
+  pendingorders: any;
 
   constructor(
     private route: Router,
@@ -171,8 +173,11 @@ export class IndexComponent implements OnInit {
     console.log(this.card)
   }
   ngOnInit() {
+    this.reward();
     this.getUserData();
     this.getUserDashoardData();
+    this.userteam();
+    this.activatePackage();
     const swiper = new Swiper('.swiper-container', {
       // Your Swiper configuration options here
       autoplay: {
@@ -180,7 +185,53 @@ export class IndexComponent implements OnInit {
       },
     });
   }
+ async reward(){
+    const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+    this.apicall.reward(userData.user_id).subscribe(res=>{
+console.log(res);
+    })
+  }
+  ngAfterViewInit(): void {
+    this.interval = setInterval(async () => {
+      console.log(this.interval);
 
+      // this.getnotifications();
+   const user: any = await check('user');
+    const userData = JSON.parse(user);
+    console.log(userData);
+      this.notification();
+      this.activatePackage();
+  },10000);
+}
+ngOnDestroy(): void {
+  clearInterval(this.interval);
+}
+notification(){
+  console.log('The  data is repeating after three sec')
+}
+ 
+ async activatePackage(){ 
+  const user: any = await check('user');
+  const userData = JSON.parse(user);
+  console.log(userData);
+    this.apicall.Pendingorder(userData.username).subscribe((res:any)=>{
+      if(res.length > 0){
+        this.apicall.activatePackafe(userData.id).subscribe((res2:any)=>{
+            const data = {
+              username :userData.username,
+              users:res2,
+              PackageDetails:res
+            }
+            console.log('repeat data',data)
+            this.apicall.adduserprofit(data).subscribe(res=>{
+console.log(res);
+            })
+        })
+      }
+    })
+}
   async getUserDashoardData() {
     const user: any = await check('user');
     const userData = JSON.parse(user);
@@ -208,7 +259,16 @@ export class IndexComponent implements OnInit {
     })
 
   }
-
+ async userteam(){
+  const user: any = await check('user');
+  const userData = JSON.parse(user);
+  console.log(userData);
+  this.apicall.userteam(userData.username).subscribe(res=>{
+    this.userTeem=res;
+    console.log(this.userTeem);
+    
+  })
+}
   async getUserData() {
     const user: any = await check('user');
     const userData = JSON.parse(user);

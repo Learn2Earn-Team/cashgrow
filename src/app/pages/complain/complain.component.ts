@@ -55,7 +55,13 @@ export class ComplainComponent
 
   ngAfterViewInit(): void {
     this.scrollToBottom();
-    this.setTimeInterval();
+  }
+
+  public async getComplain(username: any) {
+    this.apicall.api_getcomplainusermessage(username).subscribe((complains) => {
+      console.log(complains);
+      this.allComplain = complains;
+    });
   }
 
   public async getComplain(username: any) {
@@ -66,10 +72,9 @@ export class ComplainComponent
   }
 
   scrollToBottom(): void {
-    setTimeout(() => {
-      const chatMessagesElement = this.chatMessages?.nativeElement;
-      chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
-    });
+    const chatMessagesElement = this.chatMessages?.nativeElement;
+    chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
+    console.log(chatMessagesElement.scrollTop);
   }
 
   setTimeInterval() {

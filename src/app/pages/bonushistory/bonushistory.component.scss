@@ -53,3 +53,32 @@ table th {
   justify-content: flex-start;
   align-items: center;
 }
+
+
+// <-----------alter css----------->
+
+.tab:hover{
+  background:black;
+
+
+}
+.tab  a:hover{
+  color:#00ff00;
+}
+
+
+.card{
+  background: black;
+  color: white;
+  border: 5px solid  #00ff00 !important;
+}
+
+.list-group-item{
+  background : black;
+  color: white;
+  border-radius: 8px;
+}
+.list-group-item p{
+  color: white;
+
+}

@@ -1,6 +1,7 @@
 .headerclr{
     background: var(--background-color);
-    color: white;
+color: #00ff00;
+height: 60px;
 }
 h1{
     font-size: 30px;
@@ -26,7 +27,7 @@ a{
     color: white;
 }
 .backimg{
-    background-image: url("../../../assets/images/Terms\ Services.avif");
+    background-image: url("../../../assets/registeration.jpg");
     background-repeat: no-repeat;
     background-size: cover;
          min-height: 500px;
@@ -37,7 +38,9 @@ a{
  
 }
 .backcolor{
-  background-color: rgba(255, 255, 255, 0.808);
+  background-color: rgba(0, 0, 0, 0.808);
+  color:white;
+
 }
 .form{
     background-color: var(--background-color);
@@ -350,4 +353,9 @@ a{
     100% {
       bottom: 0;
     }
+  }
+
+  h5{
+    color: #00ff00;
+
   }

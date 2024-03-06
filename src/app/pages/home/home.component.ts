@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import Aos from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,9 @@ export class HomeComponent {
   closeResult = '';
 constructor(private  router : Router, private offcanvasService: NgbOffcanvas, private http: HttpClient) {}
 
+ngOnInit() {
+  Aos.init(); // Initialize AOS when the component is initialized
+}
 goToRegiester() {
   this.router.navigate(['registrationform'], {
       // state: { data: userData},
@@ -61,4 +65,5 @@ goToRegiester() {
         console.error('Error downloading APK:', error);
       });
   }
+  
 }

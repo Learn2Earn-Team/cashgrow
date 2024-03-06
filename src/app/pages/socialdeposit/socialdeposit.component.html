@@ -14,13 +14,14 @@
           </div>
         </div>
       </div> -->
-      <div  (click)="forJazCash()" class="col-xl-12">
+      <div  (click)="forJazCash()" class="col-xl-12" >
         <div class="row">
           <div class="col-xl-12">
             <div class="card mb-4 mb-xl-0">
-              <div class="card-header">Wallet</div>
-              <div class="card-body text-center">
-                <h3>Wallet Id</h3>
+              <div class="card-header text-center fs-4">Wallet</div>
+            <div class="card-body text-center" style="    background: black;
+            ">
+                <h3 class="fs-6 " style="color: rgb(75, 75, 75);">Wallet ID</h3>
                 <p>0x95d728942EcC7bafa3279aD29dE80642dE1Dfb12</p>
               </div>
             </div>
@@ -30,7 +31,7 @@
       <div class="col-xl-12">
         <div class="card mb-4" style="margin-top: 30px">
           <div class="card-header">Deposite Amount</div>
-          <div class="card-body">
+          <div class="card-body"style="background: black;color: white;">
             <form>
               <div class="mb-3">
                 <label class="small mb-1">Gateway</label> 
@@ -53,6 +54,7 @@
                   <option value="10">10$</option>
                   <option value="30">30$</option>
                   <option value="60">60$</option>
+                  <option value="80">80$</option>
                 </select>
               </div>
               <!-- <div class="mb-3">
@@ -93,7 +95,7 @@
               <div class="col-md-6 col-12"></div>
               <div class="col-md-6 col-12 mt-4">
                 <button
-                  class="btn btn-color"
+                  class="btn btn-color  button"
                   (click)="DepositReq()"
                   type="button"
                   [disabled]="depositdetail.tid == ''|| depositdetail.depositAmount == '' || 
@@ -108,15 +110,15 @@
       </div>
   
       <div class="col-12">
-        <h1 class="text-center text-muted m-3">My Deposite Request</h1>
+        <h1 class="text-center m-3">My Deposite Request</h1>
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1" *ngFor="let item of userDeposits">
             <div class="card shadow-sm border" >
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+                <li class="list-group-item" style="background:  #00ff00;">
                   <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.amount }}</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate fw-bold">{{ item.amount }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">

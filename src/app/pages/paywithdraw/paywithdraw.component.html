@@ -10,15 +10,15 @@
               [ngClass]="this.request.status == 'Approve' ? 'table-success' : 'table-danger'">
                 <div class="card shadow-sm border" >
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sr</p></div>
-                        <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{i+1}}</p></div>
+                    <li class="list-group-item" style="background: #00ff00; color: black;">
+                      <div class="row" >
+                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Sr</p></div>
+                        <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate fs-6 fw-bold"> {{i+1}}</p></div>
                        </div>
                     </li>
                     <li class="list-group-item">
                       <div class="row">
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">UserCode</p></div>
+                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">User-code</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.uname}}</p></div>
                        </div>
                     </li>
@@ -68,11 +68,11 @@
                     </li>
                     <li class="list-group-item">
                       <div class="row">
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Update</p></div>
-                        <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> <select *ngIf="request.status == 'Pending'" (change)="changeWidthrawStatus($event, request)"
+                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-1">Update</p></div>
+                        <div class="col-7 col-md-6 col-lg-6 justify-content-end px-2" style="font-size: 12px;"><p  class="text-end text-truncate my-1"> <select *ngIf="request.status == 'Pending'" (change)="changeWidthrawStatus($event, request)"
                           class="form-control">
                           <option selected>Select Status</option>
-                          <option value="Approve">Approve</option>
+                          <option value="Approve">Approved</option>
                           <option value="Rejected">Rejected</option>
                         </select>
                         <span *ngIf="request.status == 'Approve'">Paid</span>

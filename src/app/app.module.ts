@@ -92,6 +92,9 @@ import { ComplainComponent } from './pages/complain/complain.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ComplainboxComponent } from './pages/complainbox/complainbox.component';
 import { ChaticonComponent } from './common/chaticon/chaticon.component';
+import { AddpackageComponent } from './pages/addpackage/addpackage.component';
+import { TeamComponent } from './pages/team/team.component';
+import { RewardComponent } from './pages/reward/reward.component';
 // import { SearchFilter } from './pipes/search-filter.pipe';
 @NgModule({
   declarations: [
@@ -165,6 +168,9 @@ import { ChaticonComponent } from './common/chaticon/chaticon.component';
     ComplainComponent,
     PrivacyPolicyComponent,
     ComplainboxComponent,
+    AddpackageComponent,
+    TeamComponent,
+    RewardComponent,
     // ChaticonComponent
     // SearchFilter,
     // LoadingOverlayComponent,
