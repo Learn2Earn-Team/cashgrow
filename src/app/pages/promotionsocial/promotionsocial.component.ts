@@ -63,8 +63,7 @@ public alldata:any;
     const userData = JSON.parse(user);
     this.apiCall.getPackages(userData.username).subscribe((res: any) => {
       this.alldata = res;
-      console.log(this.alldata)
-    
+      console.log(this.alldata);
     })
   }
   // promotionsocial.component.ts

@@ -135,7 +135,6 @@ const routes: Routes = [
           { path: 'default/user-post-view', component: UserpostviewComponent, canActivate: [LoginGuard]},
           { path: 'default/myprofile', component:MyprofileComponent, canActivate: [LoginGuard]},
           { path: 'default/followerspage', component:FollowUserComponent, canActivate: [LoginGuard]},
-          // { path: 'default/teamreport', component: TeamreportComponent , canActivate: [LoginGuard]},
           { path: 'default/team', component: TeamComponent , canActivate: [LoginGuard]},
           { path: 'default/complainbox', component:ComplainboxComponent, canActivate: [LoginGuard]},
           { path: 'default/addpackage', component:AddpackageComponent, canActivate: [LoginGuard]},

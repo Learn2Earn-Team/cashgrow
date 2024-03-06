@@ -302,7 +302,7 @@ console.log(res);
     const user: any = await check('user');
     const userData = JSON.parse(user);
     console.log(userData);
-    const url = `https://maclink.cc/#/registrationform?id=${userData.username}`;
+    const url = `https://Cashgrow.cc/#/registrationform?id=${userData.username}`;
     await Clipboard.write({
       string: url,
     }).then(
