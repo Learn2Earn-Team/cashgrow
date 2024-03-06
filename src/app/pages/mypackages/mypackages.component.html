@@ -57,18 +57,18 @@
     </div>
 </section>
 <table>
-  <tr>
-    <th>PackageName</th>
-    <th>OrderPrice</th>
-    <th>ProfitDate</th>
+  <tr class="t-head">
+    <th>Package Name</th>
+    <th>Order Price</th>
+    <th>Profit Date</th>
     <th>Percentage</th>
     <th>Status</th>
-    <th>ActiveDate</th>
-    <th>ExpireDate</th>
+    <th>Active Date</th>
+    <th>Expire Date</th>
   </tr>
   <tr *ngFor="let item of userprofit">
     <td>{{item.packageName}}</td>
-    <td>{{item.orderPrice}}</td>
+    <td>{{item.orderPrice}}$</td>
     <td>{{item.profitDate}}</td>
     <td>{{item.percentage}}</td>
     <td>{{item.status}}</td>
