@@ -1,39 +1,78 @@
-
-
 <header class="page-header">
-    <div class="container ">
-      <i  class="float-start icons bi bi-arrow-left" (click)="goToBack()"  style="font-size: 30px; margin-right: 8px;"> </i> 
-      <h2>Support System</h2>
-    </div>
-  </header>
-  <div class="main">
-    <div class="container " #chatMessages>
+  <div class="container">
+    <i
+      class="float-start icons bi bi-arrow-left"
+      (click)="goToBack()"
+      style="font-size: 30px; margin-right: 8px"
+    >
+    </i>
+    <h2>Support System</h2>
+  </div>
+</header>
+<div class="main">
+  <div #chatMessages>
+    <div class="container">
       <div class="chat-log" *ngFor="let item of allComplain">
         <div class="chat-log__item mt-2" *ngIf="item.reciver == other">
-          <h3 class="chat-log__author">{{item.name}} <small class="text-primary">{{item.datetime | date:'d MMM yyyy h:mm a'}}</small></h3>
-          <div class="chat-log__message" *ngIf="item.reply != ''">{{item.reply}}</div>
-          <div class="chat-log__message" *ngIf="item.reply == ''">{{item.message}}</div>
+          <h3 class="chat-log__author">
+            {{ item.name }}
+            <small class="text-primary">{{
+              item.datetime | date : "d MMM yyyy h:mm a"
+            }}</small>
+          </h3>
+          <div class="chat-log__message" *ngIf="item.reply != ''">
+            {{ item.reply }}
+          </div>
+          <div class="chat-log__message" *ngIf="item.reply == ''">
+            {{ item.message }}
+          </div>
         </div>
-        <div class="chat-log__item chat-log__item--own" *ngIf="item.sender == other">
-          <h3 class="chat-log__author">{{item.name}} <small class="text-primary">{{item.datetime  | date:'d MMM yyyy h:mm a'}}</small></h3>
-          <div class="chat-log__message" *ngIf="item.message != ''">{{item.message}}</div>
-          <div class="chat-log__message" *ngIf="item.message == ''">{{item.reply}}</div>
+        <div
+          class="chat-log__item chat-log__item--own"
+          *ngIf="item.sender == other"
+        >
+          <h3 class="chat-log__author">
+            {{ item.name }}
+            <small class="text-primary">{{
+              item.datetime | date : "d MMM yyyy h:mm a"
+            }}</small>
+          </h3>
+          <div class="chat-log__message" *ngIf="item.message != ''">
+            {{ item.message }}
+          </div>
+          <div class="chat-log__message" *ngIf="item.message == ''">
+            {{ item.reply }}
+          </div>
         </div>
       </div>
     </div>
     <div class="chat-form">
-      <div class="container ">
+      <div class="container">
         <form class="form-horizontal">
           <div class="row">
             <div class="col-sm-10 col-8 col-xs-8">
-              <input type="text" class="form-control" id="" placeholder="Message" [(ngModel)]="message"
-              [ngModelOptions]="{standalone: true}" (keyup.enter)="addComplain()" />
+              <input
+                type="text"
+                class="form-control"
+                id=""
+                placeholder="Message"
+                [(ngModel)]="message"
+                [ngModelOptions]="{ standalone: true }"
+                (keyup.enter)="addComplain()"
+              />
             </div>
             <div class="col-sm-2 col-4 col-xs-4 text-center">
-              <button type="submit" class="btn btn-success btn-block" (click)="addComplain()">Send</button>
+              <button
+                type="submit"
+                class="btn btn-success btn-block"
+                (click)="addComplain()"
+              >
+                Send
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
+</div>
