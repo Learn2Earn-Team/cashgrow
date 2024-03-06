@@ -2,31 +2,42 @@
   <section class="intro mt-3">
     <div class="mask d-flex align-items-center h-100">
       <div class="container">
+        <h1 class="text-center text-white m-auto fs-2 p-4">My Activated Packages</h1>
+
 
         <div class="row" >
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of myPackages" 
           >
             <div class="card shadow-sm border" >
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+                <li class="list-group-item  heading">
                   <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Package</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fs-5 fw-bold" style="color: #00ff00;">{{item.packageName}}</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fs-5 fw-bold text-warning" >{{item.packageName}}</p></div>
+                  </div></li>
+                    <li class="list-group-item">
+                      <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Username</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fs-5 fw-bold" style="color: #00ff00;">{{item.username}}</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fs-5 text-warning fw-bold" >{{item.username}}</p></div>
 
                     <!-- <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fs-5 fw-bold" style="color: #00ff00;">{{item.maxprice}}$</p></div> -->
                   </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Activated Date</p></div>
 
+                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Activated Date</p></div>
                     <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item.activeDate}}</p></div>
+                  </div></li>
+                    <li class="list-group-item">
+                      <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Expire Date</p></div>
                     <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item.expire}}</p></div>
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">invest</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item.invest}}</p></div>
+                      </div></li>
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Invest</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item.invest}}$</p></div>
                    </div>
                   
 

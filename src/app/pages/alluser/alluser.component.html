@@ -4,19 +4,22 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h1 style="text-align: center">All Users</h1>
+            <h1 class="text-white text-center p-3">All Users</h1>
             <div class="row" >
-              <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1"   *ngFor="
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-2 mb-1"   *ngFor="
               let item of userdata
                 | paginate : { itemsPerPage: pageSize, currentPage: p };
               let i = index
             ">
                 <div class="card shadow-sm border rounded-3" >
-                  <ul class="list-group list-group-flush  rounded-2" style="background: #00ff00;">
-                    <li class="list-group-item" style="background-color:  #00ff00; ">
-                      <div class="row rounded-3" style="background: #00ff00;">
-                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p"  style="color: black;">Order No</p></div>
-                        <div class="col-8 col-md-6 col-lg-6 justify-content-end" ><p  style="color: black;"  class="text-end text-truncate"><b> {{ i + 1 }}</b></p></div>
+                  <ul class="list-group list-group-flush  rounded-2" >
+                    <li class="list-group-item  heading text-center fw-bold" >
+                      <p>User All Details</p>
+                    </li>
+                    <li class="list-group-item" >
+                      <div class="row rounded-3">
+                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p">Order No</p></div>
+                        <div class="col-8 col-md-6 col-lg-6 justify-content-end" ><p  class="text-end text-truncate"><b> {{ i + 1 }}</b></p></div>
                        </div>
                     </li>
                     <li class="list-group-item">
@@ -39,7 +42,7 @@
                     </li>
                     <li class="list-group-item">
                       <div class="row">
-                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sponsar</p></div>
+                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sponsor</p></div>
                         <div class="col-8 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.sponsor }}</p></div>
                        </div>
                     </li>
@@ -63,8 +66,8 @@
                     </li>
                     <li class="list-group-item">
                       <div class="row">
-                        <div class="col-4 col-md-6 col-lg-6  justify-content-start" > <p class="p">Joining</p></div>
-                        <div class="col-8 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.created_at }}</p></div>
+                        <div class="col-4 col-md-6 col-lg-4  justify-content-start" > <p class="p">Joining</p></div>
+                        <div class="col-8 col-md-6 col-lg-8 justify-content-end"><p  class="text-end text-truncate">{{ item.created_at }}</p></div>
                        </div>
                     </li>
                   </ul>
