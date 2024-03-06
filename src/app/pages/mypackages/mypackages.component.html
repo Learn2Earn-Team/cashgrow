@@ -42,8 +42,29 @@
         </div>
 
       </div>
+     
     </div>
 </section>
+<table>
+  <tr>
+    <th>PackageName</th>
+    <th>OrderPrice</th>
+    <th>ProfitDate</th>
+    <th>Percentage</th>
+    <th>Status</th>
+    <th>ActiveDate</th>
+    <th>ExpireDate</th>
+  </tr>
+  <tr *ngFor="let item of userprofit">
+    <td>{{item.packageName}}</td>
+    <td>{{item.orderPrice}}</td>
+    <td>{{item.profitDate}}</td>
+    <td>{{item.percentage}}</td>
+    <td>{{item.status}}</td>
+    <td>{{item.activeDate}}</td>
+    <td>{{item.expireDate}}</td>
+  </tr>
+</table>
 <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
   <!-- <i class="fa fa-whatsapp my-float"></i> -->
   <img class="float" src="../../../assets/images/whatsapp.png" alt="">

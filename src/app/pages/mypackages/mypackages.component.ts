@@ -10,6 +10,7 @@ import { ApicallService } from 'src/app/services/apicall.service';
 export class MypackagesComponent  implements OnInit{
   public isPackageActiveted : boolean = true;
   public myPackages : any;
+  userprofit: any;
   constructor(public apicall : ApicallService,) {
 
   }
@@ -23,6 +24,7 @@ export class MypackagesComponent  implements OnInit{
   }
   async ngOnInit()  {
  this.myorders();
+ this.userdailyprofit();
     // const user : any = await check("user");
     // const userData = JSON.parse(user)
     // console.log(userData)
@@ -31,6 +33,16 @@ export class MypackagesComponent  implements OnInit{
     //   this.myPackages = res;
     // })
   }
+ async userdailyprofit(){
+ const user : any = await check("user");
+    const userData = JSON.parse(user)
+    console.log(userData)
+    this.apicall.userdailyprofit(userData.username).subscribe(res=>{
+this.userprofit=res;
+console.log(this.userprofit);
+    })
+  }
+
   
 
 }

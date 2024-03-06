@@ -21,6 +21,7 @@ import { ShareProfileComponent } from './pages/share-profile/share-profile.compo
 import { ComplainComponent } from './pages/complain/complain.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { AddpackageComponent } from './pages/addpackage/addpackage.component';
+// import { TeamreportComponent } from './pages/teamreport/teamreport.component';
 
 
 const routes: Routes = [

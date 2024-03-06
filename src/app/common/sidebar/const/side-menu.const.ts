@@ -170,6 +170,11 @@ export const adminMenuItems: any[] = [
       label: 'Active Package'
     },
     {
+      routerLink: 'default/reward',
+      icon: 'bi bi-coin',
+      label: 'Reward'
+    },
+    {
       routerLink: '/default/withdrawrequest',
       icon: 'bi bi-chat-dots-fill',
       label: 'Withdraw Request'
@@ -185,10 +190,16 @@ export const adminMenuItems: any[] = [
     //   label: 'My Network'
     // },
     {
+      routerLink: 'default/team',
+      icon: 'bi bi-microsoft-teams',
+      label: 'Teamreport'
+    },
+    {
       routerLink: '/default/complainbox',
       icon: 'bi bi-wifi',
       label: 'Complains box'
     },
+    
     {
       routerLink: '/login',
       icon: 'bi bi-box-arrow-left',
@@ -294,6 +305,11 @@ export const menuItems: any[] = [
       label: 'Active Package'
     },
     {
+      routerLink: 'default/reward',
+      icon: 'bi bi-coin',
+      label: 'Reward'
+    },
+    {
       routerLink: '/default/withdrawrequest',
       icon: 'bi bi-chat-dots-fill',
       label: 'Withdraw Request'
@@ -309,11 +325,17 @@ export const menuItems: any[] = [
     //   icon: 'bi bi-wifi',
     //   label: 'My Network'
     // },
+     {
+      routerLink: 'default/team',
+      icon: 'bi bi-microsoft-teams',
+      label: 'Teamreport'
+    },
     {
       routerLink: '/complain',
       icon: 'bi bi-wifi',
       label: 'Support Team'
     },
+   
     {
       routerLink: '/login',
       icon: 'bi bi-box-arrow-left',
