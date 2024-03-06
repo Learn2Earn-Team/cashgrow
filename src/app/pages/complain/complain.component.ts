@@ -64,13 +64,6 @@ export class ComplainComponent
     });
   }
 
-  public async getComplain(username: any) {
-    this.apicall.api_getcomplainusermessage(username).subscribe((complains) => {
-      console.log(complains);
-      this.allComplain = complains;
-    });
-  }
-
   scrollToBottom(): void {
     const chatMessagesElement = this.chatMessages?.nativeElement;
     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
