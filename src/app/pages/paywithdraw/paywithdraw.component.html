@@ -4,16 +4,21 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h1 style="text-align: center;">All Withdrawal Request History</h1>
+            <h1 class="text-center text-white m-auto fs-2 p-4">All Withdrawal Request History</h1>
             <div class="row" >
-              <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let request of allWithdrawRequest  | paginate: { itemsPerPage: pageSize, currentPage: p }; let i = index "
+              <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 "  *ngFor="let request of allWithdrawRequest  | paginate: { itemsPerPage: pageSize, currentPage: p }; let i = index "
               [ngClass]="this.request.status == 'Approve' ? 'table-success' : 'table-danger'">
-                <div class="card shadow-sm border" >
+                <div class="card shadow-sm border " >
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item" style="background: #00ff00; color: black;">
+                    <li class="list-group-item  heading text-center fw-bold" >
+                      <p>Withdraw Request</p>
+                    </li>
+                    <li class="list-group-item " >
+                    
                       <div class="row" >
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Sr</p></div>
-                        <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate fs-6 fw-bold"> {{i+1}}</p></div>
+                        
+                        <div class="col-5 col-md-6 col-lg-5  justify-content-start" > <p class="p py-1">Sr</p></div>
+                        <div class="col-7 col-md-6 col-lg-7 justify-content-end"><p  class="text-end text-truncate fs-6 fw-bold"> {{i+1}}</p></div>
                        </div>
                     </li>
                     <li class="list-group-item">
@@ -50,7 +55,7 @@
                     
                     <li class="list-group-item">
                       <div class="row">
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p" style="margin-top: 15px;">Details</p></div>
+                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p" style="margin-top: 5px;">Details</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.jdetail}} <br> {{request.contact}}</p></div>
                        </div>
                     </li>
@@ -62,7 +67,7 @@
                     </li>
                     <li class="list-group-item">
                       <div class="row">
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p" style="margin-top: 15px;">Request At</p></div>
+                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p" style="margin-top: 5px;">Request At</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end "> {{request.created_at}}</p></div>
                        </div>
                     </li>

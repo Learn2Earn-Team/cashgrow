@@ -8,9 +8,9 @@ body{margin-top:20px;
     .rounded-circle {
         border-radius: 50% !important;
     }
-    .card {
-        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
-    }
+    // .card {
+    //     box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    // }
     .card .card-header {
         font-weight: 500;
     }
@@ -588,11 +588,11 @@ body{margin-top:20px;
     }
   }
   
-  .gri {
-    border-radius: 33px;
-    background: black;
-    color: white;
-  }
+  // .gri {
+  //   border-radius: 33px;
+  //   background: black;
+  //   color: white;
+  // }
   
   .col{
     display: flex;
@@ -707,6 +707,33 @@ width: 30px;
   }
 }
 
+
+.container{
+  background:  rgba(16,14,60,1);
+}
 .card{
-  border: 5px solid #00ff00d7;
+  background:  rgb(37, 34, 102);
+
+}
+
+.list-group-item{
+  background:  rgb(37, 34, 102);
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+  ;
+}
+
+
+.list-group-item p{
+  color: rgb(255, 255, 255);
+  padding-top: 5px;
+
+}
+
+.heading{
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
+
+}
+small{
+  font-size: 13px;
 }
