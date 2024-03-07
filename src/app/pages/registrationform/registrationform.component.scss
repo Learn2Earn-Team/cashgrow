@@ -179,12 +179,13 @@ text-decoration: underline;
 .signup{
   width: 100%;height: auto; margin-top: 40px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .signup {
-width: 40%;
-height: auto;
-margin-top: 0;   
-margin-bottom: 0;   }
+// width: 40%;
+// height: auto;
+// margin-top: 0;   
+// margin-bottom: 0;   
+display: none;}
 }
 .input {
   margin: 5px 0;
