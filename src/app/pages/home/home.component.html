@@ -6,7 +6,7 @@
     <div class="container d-flex align-items-center justify-content-between ">
 
       <!-- <h1 class="logo"><a href="#">Cashgrow</a></h1> -->
-      <h1 class="logo"><a href="#"><img src="../../../assets/Cashgrow white png.png" alt="">Cashgrow</a></h1>
+      <h1 class="logo"><a href="#" class="fw-bold" ><img src="../../../assets/maclink white png.png" alt="">Cashgrow</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -18,7 +18,7 @@
           <li><a class="nav-link scrollto rounded-2 button-nav " href="#pricing">Packages</a></li>
           <li><a class="nav-link scrollto rounded-2 button-nav " href="#contact">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle" (click)="open(content)"></i>
+        <i class="bi bi-list mobile-nav-toggle " (click)="open(content)" style="color: #9f31c0;"></i>
       </nav><!-- .navbar -->
 
     </div>
@@ -45,12 +45,11 @@
       
 <div class="row">
   
-  <div class="col-lg-6 float-start">
-    <h1 > <span class="fs-1 fw-bold " data-aos="fade-up-right" data-aos-duration="1000" style="color: white;" >Welcome to</span> 
+  <div class="col-lg-6 float-start "    data-aos-easing="linear"
+  data-aos-duration="500" >
+    <h1 > <span class="fs-1 fw-bold  text-green">Welcome to</span> 
     </h1> <br>
-    <h1> <span class="hero-text fw-bold" data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="1500">Cashgrow</span> </h1>
+    <h1> <span class="hero-text  fw-bold mt-5" data-aos="fade-down">Cashgrow</span> </h1>
   </div>
   <div class="col-lg-6">
     <div class="hero-png">
@@ -59,10 +58,6 @@
   </div>
  
 </div>
- 
-    
-     
-
       <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
       <!-- <a  class="btn-get-started scrollto m-3 rounded-2 btn-lg " [routerLink]="['/login']">Login</a> 
       <a  class="btn-get-started-register scrollto rounded-2 btn-lg" (click)="goToRegiester()">Register</a>
@@ -128,7 +123,7 @@
         </div>
         <div class="col-lg-6 col-sm-12   h-100 text-center " >
           <div class="about-content">
-            <h2 class="section-title mb-3 "><span class="font-weight-normal text-center px-3 mt-4 "  data-aos="zoom-out-down" data-aos-duration="2000" style="color: rgba(0, 0, 0, 0.747); font-size: 4rem;"> Cashgrow</span> </h2>
+            <h2 class="section-title mb-3 "><span class="font-weight-normal text-center px-3 mt-4 "  data-aos="zoom-out-down" data-aos-duration="2000" style="color: rgba(0, 0, 0, 0.747); font-size: 2.4rem;"> Cashgrow</span> </h2>
             <div class="content-des mt-4 py-3" data-aos="fade-down" data-aos-duration="2000">
 
               <span class=" fs-4 py-3  text-center about-cont mt-4" >
@@ -760,31 +755,31 @@
 
   
 
-  <ng-template #content let-offcanvas>
+  <ng-template #content let-offcanvas class="bg-dark" >
 
-    <div class="offcanvas-header bgcolor">
+    <div class="offcanvas-header bg-toggle">
         <h4 class="offcanvas-title text-white" id="offcanvas-basic-title"> <b>Cashgrow</b> </h4>
         <button type="button" style="background: transparent;color: white;" aria-label="Close"
             (click)="offcanvas.dismiss('Cross click')"><i class="bi bi-x-lg"></i></button>
     </div>
-    <div class="offcanvas-body bgcolor">
+    <div class="offcanvas-body  text-black">
 
-        <div class="card35 text-white" (click)="offcanvas.close('Save click')">
+        <div class="card35 text-black" (click)="offcanvas.close('Save click')">
 
-            <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;" class="bi bi-house"></i></b>
+            <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;" class="bi bi-house-door"></i></b>
             </p>
             <p class="wokingtext" style="padding-left: 20px;">
-                <b><a  class="text-white" href="#hero">Home</a></b>
+                <b><a  class="text-black" href="#hero">Home</a></b>
             </p>
         </div>
-        <div class="card35 text-white" (click)="offcanvas.close('Save click')">
+        <div class="card35 text-black" (click)="offcanvas.close('Save click')">
 
             <p style="padding-left: 10px; margin-top: 3px"> 
 
             <b><i style="font-size: 25px;" class="bi bi-box"></i></b>
             </p>
             <p class="wokingtext" style="padding-left: 20px;">
-                <b><a class="text-white" href="#about">About</a></b>
+                <b><a class="text-black" href="#about">About</a></b>
             </p>
         </div>
 
@@ -813,7 +808,7 @@
             </p>
         </div> -->
 
-        <div [routerLink]="['/tems']" class="card35 text-white" (click)="offcanvas.close('Save click')">
+        <div [routerLink]="['/tems']" class="card35 text-black" (click)="offcanvas.close('Save click')">
 
             <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;"
                         class="bi bi-terminal"></i></b> </p>
@@ -821,15 +816,15 @@
                 <b>Terms & conditions</b>
             </p>
         </div>
-        <div [routerLink]="['/privacy-policy']" class="card35 text-white" (click)="offcanvas.close('Save click')">
+        <div [routerLink]="['/privacy-policy']" class="card35 text-black" (click)="offcanvas.close('Save click')">
 
             <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;"
-                        class="bi bi-terminal"></i></b> </p>
+                        class="bi bi-shield-check"></i></b> </p>
             <p class="wokingtext" style="padding-left: 20px;">
                 <b>Privacy policy</b>
             </p>
         </div>
-        <div [routerLink]="['/login']" class="card35 text-white" (click)="offcanvas.close('Save click')">
+        <div [routerLink]="['/login']" class="card35 text-black" (click)="offcanvas.close('Save click')">
 
             <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;"
                         class="bi bi-box-arrow-in-right"></i></b> </p>
@@ -837,11 +832,11 @@
                 <b>Login </b>
             </p>
         </div>
-        <div class="card35 text-white" (click)="offcanvas.close('Save click') || goToRegiester() ">
+        <div class="card35 text-black" (click)="offcanvas.close('Save click') || goToRegiester() ">
 
             <p style="padding-left: 10px; margin-top: 3px"> <b><i style="font-size: 25px;"
                         class="bi bi-r-circle"></i></b> </p>
-            <p class="wokingtext" style="padding-left: 20px;">
+            <p class="wokingtext text-black" style="padding-left: 20px;">
                 <b>Register</b>
             </p>
         </div>

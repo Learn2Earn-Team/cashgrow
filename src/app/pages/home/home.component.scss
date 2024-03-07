@@ -291,8 +291,8 @@ h6 {
 }
 
 #header .logo a {
-  color: #04203a;
-  text-shadow: #086b08af;
+  color: #0f0442b6;
+  text-shadow:1px 1px 1px  #99b999af;
   margin-top: 2px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -1898,14 +1898,14 @@ height: 100%;
 .hero-text{
   font-size: 3em;
   color: #f0f0f7;
-  text-shadow: 3px 3px 3px  #9f31c0;;
+  text-shadow: 3px 3px 3px  #9f31c0;
   text-transform: uppercase; 
   top: 0;
 
 }
 @media screen and (max-width: 768px) {
 .hero-text{
-  font-size: 2em;
+  font-size: 1.7em;
   margin: auto;
 }
 
@@ -1924,4 +1924,9 @@ height: 100%;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+.bg-toggle{
+  background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
+
 }
