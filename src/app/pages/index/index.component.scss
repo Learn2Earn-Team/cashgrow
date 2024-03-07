@@ -1108,24 +1108,24 @@ border: 3px solid white;
 .position{
   position: relative;
 }
-.card-body{
-  position: relative;
-  bottom: -70px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  animation: slideInFromBottom 1.5s ease-in-out forwards;
-}
+// .card-body{
+//   position: relative;
+//   bottom: -70px;
+//   left: 0;
+//   width: 100%;
+//   text-align: center;
+//   animation: slideInFromBottom 1.5s ease-in-out forwards;
+// }
 
-@keyframes slideInFromBottom {
-  0% {
-    bottom: -70px;
-  }
+// @keyframes slideInFromBottom {
+//   0% {
+//     bottom: -70px;
+//   }
 
-  100% {
-    bottom: 0;
-  }
-}
+//   100% {
+//     bottom: 0;
+//   }
+// }
 
 // @media screen and (max-width: 480px) {
 //   .mobileapk {
@@ -1831,14 +1831,46 @@ section.client .section-title {
 
 
 
-.card-body:hover{
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
-  color: rgb(255, 255, 255); 
-  border: 3px solid  #00ff00;;
-  transition: all 0.2s;
-    cursor: pointer;
+// .card-body:hover{
+//   box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+//   color: rgb(255, 255, 255); 
+//   border: 3px solid  #00ff00;;
+//   transition: all 0.2s;
+//     cursor: pointer;
+
+// }
+// .text-muted:hover{
+//   color: black;
+// }
+.container{
+  // background:  rgba(16,14,60,1);
+  height: 100%;
+}
+
+
+.list-group-item{
+  background:  rgb(37, 34, 102);
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+  ;
+}
+
+
+.list-group-item p{
+  color: rgb(255, 255, 255);
+  padding-top: 5px;
 
 }
-.text-muted:hover{
-  color: black;
+.card:hover{
+  margin:-3px 0;
+  transition: all 0.2s;
+
+}
+.heading{
+  background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
+
+}
+.t-heading{
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
+
 }
