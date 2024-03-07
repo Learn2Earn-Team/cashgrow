@@ -3,6 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Preferences } from "@capacitor/preferences";
 import { remove } from "../localStorage/LocalStorage";
+//export const apiUrl = 'https://learn2earnn.com/products/Cashgrow-api/public/';
+ export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
 export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
 //  export const apiUrl = "https://7starcommercial.com/SMM/public/";
 

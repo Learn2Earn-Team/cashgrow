@@ -59,7 +59,7 @@ ngAfterViewInit(){
 }
 async copyUserId() {
   console.log(window.location.origin)
-  const url = `https://Maclink.shop/#/registrationform?id=${this.userUniqeId}`;
+  const url = `https://Cashgrow.shop/#/registrationform?id=${this.userUniqeId}`;
   await Clipboard.write({
     string: url
   }).then(() =>{

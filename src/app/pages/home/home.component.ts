@@ -34,7 +34,7 @@ goToRegiester() {
 		);
 	}
 
-  // ../../../assets/APK/Maclink.apk
+  // ../../../assets/APK/Cashgrow.apk
 
   downloadApkFromAssets(apkName: string) {
     // Construct the path to the APK file in the assets folder
