@@ -106,11 +106,11 @@
                         <!--//HEAD PRICE DETAIL END-->
                         <ng-template #content let-modal >
                             <div class="modal-body modalcolor" >
-                                <div style="border:  solid black 1px;"> User Current Balance: {{this.userdataarray.balnce}}</div>
-                                <div style="border:  solid black 1px;"> MinPrice: {{item.minprice}}</div>
+                                <div> User Current Balance: {{this.userdataarray.balnce}}</div>
+                                <div> MinPrice: {{item.minprice}}</div>
                      <input type="text" placeholder="Invest Between Max and Min Price" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="balance" >
                     <button (click)="activep(item,modal)"> Add </button>
-                    <div style="border:  solid black 1px;"> MaxPrice: {{item.maxprice}}</div>
+                    <div > MaxPrice: {{item.maxprice}}</div>
                     <button type="button" class="btn btn-outline-dark " (click)="modal.close('Save click')">close</button>
                             </div>
                            
