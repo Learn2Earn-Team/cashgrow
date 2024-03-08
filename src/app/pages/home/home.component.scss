@@ -291,9 +291,9 @@ h6 {
 }
 
 #header .logo a {
-  color: #f2f2f5b6;
+  color: #fffffff5;
   text-shadow:1px 1px 1px  #6f089eaf;
-  margin-top: 2px;
+  margin-top:3px;
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px ;
@@ -602,8 +602,8 @@ float: right;
   display: inline-block;
   padding: 10px 28px;
   transition: 0.5s;
-  border: 1px solid #fff;
-  background: rgba(0, 66, 0, 0.815);
+  border: 1px solid #065202;
+  background: rgba(1, 56, 1, 0.637);
   color: #fff;
 }
 
@@ -621,8 +621,8 @@ float: right;
   padding: 10px 28px;
   transition: 0.5s;
   // border: 2px solid #fff;
-  border: 1px solid #fff;
-  background: rgba(0, 66, 0, 0.815);
+  border: 1px solid #065202;
+  background: rgba(1, 56, 1, 0.658);
   cursor: pointer;
 }
 
@@ -1905,6 +1905,12 @@ height: 100%;
   top: 0;
 
 }
+@media screen and (max-width: 1000px) {
+  .hero-text{
+    font-size:2.5em;
+    margin: auto;
+  }
+}
 @media screen and (max-width: 768px) {
 .hero-text{
   font-size: 1.7em;
@@ -1912,6 +1918,12 @@ height: 100%;
 }
 
 }
+// @media screen and (max-width: 400px) {
+//   #hero{
+//    height: 70%;
+//   }
+  
+//   }
 
 // <-------------bitcoin moving-------------->
 
@@ -1931,4 +1943,9 @@ height: 100%;
 .bg-toggle{
   background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
 
+}
+
+@media screen and (max-width: 990px) {
+  .subscribe{
+display: block;  }
 }
