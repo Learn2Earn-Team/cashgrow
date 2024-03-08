@@ -103,17 +103,43 @@
                             <!--//PRICE END-->
                             
                         </div>                            
-                        <!--//HEAD PRICE DETAIL END-->
-                        <ng-template #content let-modal >
-                            <div class="modal-body modalcolor" >
-                                <div> User Current Balance: {{this.userdataarray.balnce}}</div>
-                                <div> MinPrice: {{item.minprice}}</div>
-                     <input type="text" placeholder="Invest Between Max and Min Price" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="balance" >
-                    <button (click)="activep(item,modal)"> Add </button>
-                    <div > MaxPrice: {{item.maxprice}}</div>
-                    <button type="button" class="btn btn-outline-dark " (click)="modal.close('Save click')">close</button>
+                        <!--//HEAD PRICE DETAIL END MODAL-->
+                        <ng-template #content let-modal>
+<div class="pop">
+                            <div class="row modal-body modalcolor mt-2">
+                                <div class="col-9"></div>
+                                <div class="col-3">          
+                <i class="bi bi-x-lg text-white  float-end "  (click)="modal.close('Save click')"></i>
+                                </div>
+                                <div class="col-12 text-white">
+                                    <div class="row">
+                                    <div class="col-5 p-1">User Current Balance:</div>
+                                    <div class="col-7 p-1 text-primary text-white fw-bold float-end">{{this.userdataarray.balnce}}$</div>
+                                    <div class="col-5 p-1">Min-Price:</div>
+                                    <div class="col-7 p-1 text-danger float-end fw-bold "> {{item.minprice}}$</div>
+                                </div>
+                                </div>
+                                    <input class="col-10 col-5 rounded-2 input border-1" type="text" placeholder="Invest Between Max and Min Price" [ngModelOptions]="{ standalone: true }"  [(ngModel)]="balance"  >
+
+                                <div class="col-2 add ">
+                                    <button (click)="activep(item,modal)" class="btn-success btn"> Add </button>
+
+                                </div>
+                                <!-- <div class="col-sm-3"></div> -->
+                                <div class="row mt-4 text-white">
+                                        <div class="col-4"> Max-Price: </div>
+                                        <div class="col-4 fw-bold">
+                                            {{item.maxprice}}$
+                                        </div>
+                                        <div class="col-4"></div>
+
+                                                </div>
+                            
+
                             </div>
-                           
+
+                          
+                        </div>              
                           </ng-template>  
                         <!--FEATURE LIST START-->
                         <div class="generic_feature_list p-0">

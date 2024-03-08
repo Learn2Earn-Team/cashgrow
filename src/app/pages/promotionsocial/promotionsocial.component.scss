@@ -141,7 +141,7 @@ body{background-color:#eee;}
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head span{
-	text-shadow: 3px 3px 3px  #9f31c0a8;;
+	text-shadow: 3px 3px 3px  #9f31c0a8;
 	text-transform: uppercase; 
 	color: rgb(114, 123, 206);
 	font-weight: bold;
@@ -675,3 +675,20 @@ body{background-color:#eee;}
 	color: rgba(114, 123, 206, 0.719);
   }
 
+.input{
+	background: rgba(255, 255, 255, 0.658);
+}
+input:focus{
+	outline: 0;
+	box-shadow: none;
+}
+.pop{
+		background: #5f027edc;
+	
+}
+@media (max-width:600px) {
+	.modal-body{
+		padding: 30px;
+	}
+
+}
