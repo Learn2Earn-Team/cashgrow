@@ -1,1 +1,76 @@
-<p>reward works!</p>
+<!-- {{item.direct_total == undefined? 'Nill':item.direct_total}}
+{{item.indirect_total == undefined? 'Nill':item.indirect_total  }}
+*ngFor="let item of outputAry"  -->
+<div class="card shadow-sm border rounded-2 ">
+  <ul class="list-group list-group-flush rounded-2">
+    <li class="list-group-item  heading text-center fw-bold" >
+      <p>Current Recode</p>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Direct</p></div>
+        <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{this.directdata}}
+        </p></div>
+       </div>
+       <div class="row">
+        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Indirect</p></div>
+        <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">{{this.indirectdata}}
+        </p></div>
+       </div>
+    </li>
+  
+    
+    
+    
+  </ul>
+</div>
+<div class="row" >
+  
+  <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of hundred,let i=index"
+  >
+    <div class="card shadow-sm border rounded-2 ">
+      <ul class="list-group list-group-flush rounded-2">
+        <li class="list-group-item  heading text-center fw-bold" >
+          <p>{{item.RewardName}}</p>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Direct</p></div>
+            <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item?.direct}}
+            </p></div>
+           </div>
+           <div class="row">
+            <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Indirect</p></div>
+            <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1">
+              {{item?.indirect}}
+            </p></div>
+           </div>
+           <div class="row">
+            <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Reward</p></div>
+            <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item.reward}}
+            </p></div>
+           </div>
+           <button style="background-color: red;" (click)="bbb(item)">Apply</button>
+        </li>
+      </ul>
+    </div>
+  
+  </div> 
+  <table class="table-responsive table-hover p-4 mt-4 m-auto text-center ">
+    <tr class="t-head text-white text-center">
+      <th>Package Name</th>
+      <th>Order Price</th>
+      <th>Profit Date</th>
+      <th>Percentage</th>
+      <th>Status</th>
+      <th>Active Date</th>
+      <th>Expire Date</th>
+    </tr>
+    <tr  class="text-center" *ngFor="let item of rewardreq">
+      <td>{{item.user_id}}</td>
+      <td>{{item.reward}}</td>
+      <td>{{item.status}}</td>
+      <td>{{item.name}}</td>
+    </tr>
+  </table>
+</div>

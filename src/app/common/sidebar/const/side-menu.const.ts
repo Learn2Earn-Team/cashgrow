@@ -169,10 +169,10 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-bar-chart-line-fill',
       label: 'Active Package'
     },
-    {
-      routerLink: 'default/reward',
-      icon: 'bi bi-coin',
-      label: 'Reward'
+     {
+      routerLink: '/default/getreward',
+      icon: 'bi bi-patch-check-fill',
+      label: 'Give Reward'
     },
     {
       routerLink: '/default/withdrawrequest',
@@ -308,7 +308,7 @@ export const menuItems: any[] = [
       routerLink: 'default/reward',
       icon: 'bi bi-coin',
       label: 'Reward'
-    },
+    }, 
     {
       routerLink: '/default/withdrawrequest',
       icon: 'bi bi-chat-dots-fill',

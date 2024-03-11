@@ -72,6 +72,7 @@ import { ChaticonComponent } from 'src/app/common/chaticon/chaticon.component';
 import { AddpackageComponent } from 'src/app/pages/addpackage/addpackage.component';
 import { TeamreportComponent } from 'src/app/pages/teamreport/teamreport.component';
 import { TeamComponent } from 'src/app/pages/team/team.component';
+import { GetrewardComponent } from 'src/app/pages/getreward/getreward.component';
 import { RewardComponent } from 'src/app/pages/reward/reward.component';
 
 const routes: Routes = [
@@ -135,11 +136,11 @@ const routes: Routes = [
           { path: 'default/user-post-view', component: UserpostviewComponent, canActivate: [LoginGuard]},
           { path: 'default/myprofile', component:MyprofileComponent, canActivate: [LoginGuard]},
           { path: 'default/followerspage', component:FollowUserComponent, canActivate: [LoginGuard]},
-          // { path: 'default/teamreport', component: TeamreportComponent , canActivate: [LoginGuard]},
           { path: 'default/team', component: TeamComponent , canActivate: [LoginGuard]},
           { path: 'default/complainbox', component:ComplainboxComponent, canActivate: [LoginGuard]},
           { path: 'default/addpackage', component:AddpackageComponent, canActivate: [LoginGuard]},
           { path: 'default/reward', component: RewardComponent , canActivate: [LoginGuard]},
+          { path: 'default/getreward', component: GetrewardComponent , canActivate: [LoginGuard]},
 
 
 

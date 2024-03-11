@@ -11,8 +11,17 @@ table th {
   overflow: hidden;
 }
 
-.card {
-  border-radius: .5rem;
+// .card {
+//   border-radius: .5rem;
+// }
+.wave{
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .float {
+      display: none;
+  }
 }
 .float {
   position: fixed;
@@ -28,40 +37,23 @@ table th {
   box-shadow: 2px 2px 3px #999;
  
  }
- @media screen and (max-width: 480px) {
-  .float {
-    display: none;
-
-  }
-}
-
- .centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh; /* This ensures it takes the full height of the viewport */
-}
-
-.p{
-  font-weight: 600;
-  color:  var(--background-color);
-}
-p{
-  margin: 0;
-}
 
 
 
-  // <-----------------Alter CSs-------------------->/
+
+
+
+
+//  <-----------------Alter Css------------------->
+
 
   .container{
-    // background:  rgba(16,14,60,1);
-    height: 100%;
+    background:  rgba(16,14,60,1);
   }
-  // .card{
-  //   // background:  rgb(37, 34, 102);
+  .card{
+    background:  rgb(37, 34, 102);
   
-  // }
+  }
   
   .list-group-item{
     background:  rgb(37, 34, 102);
@@ -76,9 +68,9 @@ p{
     padding-top: 5px;
   
   }
-  .card:hover{
+  .box-c:hover{
     margin:-3px 0;
-    transition: all 0.2s;
+    transition: all 0.3s;
   
   }
   .heading{
@@ -88,7 +80,6 @@ p{
   .t-head{
     background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
   }
-
   th{
     padding: 10px;
     border: 1px solid  rgba(116, 114, 114, 0.603);
@@ -131,6 +122,4 @@ th{
   font-size: 8px;
   padding: auto;
 
-}
- }
-
+}}

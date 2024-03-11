@@ -7,7 +7,7 @@ import { StatusBar, Style } from '@capacitor/status-bar';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Maclink';
+  title = 'Cashgrow';
 
   constructor() {
     StatusBar.setBackgroundColor({color:"ffffff"})

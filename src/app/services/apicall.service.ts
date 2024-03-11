@@ -918,5 +918,40 @@ export class ApicallService {
       })
     );
   }
+  public getreward(): Observable<any> {
+    return this.http.get(apiUrl + `getreward`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public rewadrequests(): Observable<any> {
+    return this.http.get(apiUrl + `rewadrequests`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public rewardstatus(data: any): Observable<any> {
+    return this.http.post(apiUrl + `rewardstatus/update`, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public approveReward(): Observable<any> {
+    return this.http.get(apiUrl + `approveReward`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public userrewad(uid:any): Observable<any> {
+    return this.http.get(apiUrl + `userrewadrequests/${uid}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }
 

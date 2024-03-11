@@ -109,12 +109,14 @@ color: white;
 
 .img-bg{
 width: 100%;height: auto;
+// float: right;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 770px) {
 
   .img-bg{
    display: none;
+   float: center;
   }}
 .input {
   margin: 5px auto;
@@ -199,11 +201,11 @@ height: 100%;
 // padding: 30px;
 background: #ffffff;
 color: black;
-width: 50%;
+// width: 100%;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .form {
-width: 90%;
+width: 100%;
 margin: auto; 
      padding: 20px}
      
@@ -213,4 +215,14 @@ margin: auto;
   text-shadow: 3px 3px 3px  #9f31c0;;
   text-transform: uppercase; 
   color: rgba(114, 123, 206, 0.719);
+}
+.bg-head{
+  background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
+
+}
+
+.wokingtext:hover{
+  color:  #9f31c0;
+  text-decoration: underline;
+
 }

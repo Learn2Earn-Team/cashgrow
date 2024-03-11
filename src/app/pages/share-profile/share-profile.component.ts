@@ -37,7 +37,7 @@ export class ShareProfileComponent {
       const user: any = await check('user');
       const userData = JSON.parse(user);
       console.log(userData);
-      const url = `https://Maclink.shop/#/registrationform?id=${userData.username}`;
+      const url = `https://Cashgrow.shop/#/registrationform?id=${userData.username}`;
       await Clipboard.write({
         string: url,
       }).then(

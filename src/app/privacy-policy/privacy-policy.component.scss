@@ -9,30 +9,34 @@
 }
 
 header {
+    background: var(--background-color);
+    color: #ffffff;
+    
     text-align: center;
-    background-color: black;
-    color: #00ff00d7;
     padding: 20px;
     font-weight: bolder;
     border-radius: 8px 8px 0 0;
 }
 
 section {
+
     margin-bottom: 20px;
     padding: 20px;
     border-bottom: 1px solid #ecf0f1;
 }
 
 h2 {
-    color: #cc1616;
+    color:white;
+    font-weight: bold;
 }
 
 h3 {
-    color: #555;
+    color: #2b2828ce;
+    font-size: 18px;
 }
 
 p {
-    color: #777;
+    color: #ffffff;
 }
 
 /* Style the contact section differently */
@@ -41,4 +45,11 @@ p {
     color: #fff;
     padding: 20px;
     border-radius: 0 0 8px 8px;
+}
+
+
+.bg{
+    
+    background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
+
 }

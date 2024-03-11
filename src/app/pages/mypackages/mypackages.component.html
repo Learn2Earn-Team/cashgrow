@@ -2,11 +2,11 @@
   <section class="intro mt-3">
     <div class="mask d-flex align-items-center h-100">
       <div class="container">
-        <h1 class="text-center text-white m-auto fs-2 p-4">My Activated Packages</h1>
+        <h1 class="text-center list-group-item text-white fw-bold m-auto fs-2 p-4">My Activated Packages</h1>
 
 
         <div class="row" >
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of myPackages" 
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-1 mb-1"  *ngFor="let item of myPackages" 
           >
             <div class="card shadow-sm border " >
               <ul class="list-group list-group-flush rounded-2">
@@ -56,19 +56,19 @@
      
     </div>
 </section>
-<table>
-  <tr>
-    <th>PackageName</th>
-    <th>OrderPrice</th>
-    <th>ProfitDate</th>
+<table class="table-responsive table-hover p-4 mt-4 m-auto text-center ">
+  <tr class="t-head text-white text-center">
+    <th>Package Name</th>
+    <th>Order Price</th>
+    <th>Profit Date</th>
     <th>Percentage</th>
     <th>Status</th>
-    <th>ActiveDate</th>
-    <th>ExpireDate</th>
+    <th>Active Date</th>
+    <th>Expire Date</th>
   </tr>
-  <tr *ngFor="let item of userprofit">
+  <tr *ngFor="let item of userprofit" class="text-center">
     <td>{{item.packageName}}</td>
-    <td>{{item.orderPrice}}</td>
+    <td>{{item.orderPrice}}$</td>
     <td>{{item.profitDate}}</td>
     <td>{{item.percentage}}</td>
     <td>{{item.status}}</td>

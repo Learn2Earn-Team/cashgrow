@@ -7,7 +7,7 @@
               <div class="card-header">For Easypaisa</div>
               <div class="card-body text-center">
                 <h3>Till payment Method</h3>
-                <h3>Title: Maclink</h3>
+                <h3>Title: Cashgrow</h3>
                 <p>0280565</p>
               </div>
             </div>
@@ -18,9 +18,8 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="card mb-4 mb-xl-0">
-              <div class="card-header text-center fs-4">Wallet</div>
-            <div class="card-body text-center" style="    background: black;
-            ">
+              <div class="card-header text-center fs-4 heading">Wallet</div>
+            <div class="card-body text-center" >
                 <h3 class="fs-6 " style="color: rgb(75, 75, 75);">Wallet ID</h3>
                 <p>0x95d728942EcC7bafa3279aD29dE80642dE1Dfb12</p>
               </div>
@@ -30,8 +29,8 @@
       </div>
       <div class="col-xl-12">
         <div class="card mb-4" style="margin-top: 30px">
-          <div class="card-header">Deposite Amount</div>
-          <div class="card-body"style="background: black;color: white;">
+          <div class="card-header heading">Deposite Amount</div>
+          <div class="card-body" >
             <form>
               <div class="mb-3">
                 <label class="small mb-1">Gateway</label> 
@@ -115,16 +114,16 @@
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1" *ngFor="let item of userDeposits">
             <div class="card shadow-sm border" >
               <ul class="list-group list-group-flush">
-                <li class="list-group-item" style="background:  #00ff00;">
+                <li class="list-group-item t-heading">
                   <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate fw-bold">{{ item.amount }}</p></div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate fw-bold text-green">{{ item.amount }}$</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">TID</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{ item.tid }}</p></div>
+                    <div class="col-5 col-md-6 col-lg-5  justify-content-start" > <p class="p">TID</p></div>
+                    <div class="col-7 col-md-6 col-lg-7 justify-content-end"><p  class="text-end text-truncate">{{ item.tid }}</p></div>
                    </div>
                 </li>
                 <li class="list-group-item">

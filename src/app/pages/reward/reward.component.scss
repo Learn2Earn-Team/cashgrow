@@ -1,0 +1,134 @@
+th,td{
+    border: solid black 1px;
+}
+html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: .5rem;
+}
+.wave{
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .float {
+      display: none;
+  }
+}
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 5px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: 2px 2px 3px #999;
+ 
+ }
+
+ .p{
+  font-weight: 600;
+  color:  var(--background-color);
+}
+p{
+  margin: 0;
+}
+
+
+
+
+
+
+
+// <--------------Alter Css-------------->
+.container{
+  background:  rgba(16,14,60,1);
+}
+.card{
+  background:  rgb(37, 34, 102);
+
+}
+
+.list-group-item{
+  background:  rgb(37, 34, 102);
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+  ;
+}
+
+
+.list-group-item p{
+  color: rgb(255, 255, 255);
+  padding-top: 5px;
+
+}
+.card:hover{
+  margin:-3px 0;
+  transition: all 0.2s;
+
+}
+.heading{
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
+
+}
+.t-head{
+  background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
+}
+th{
+  padding: 10px;
+  border: 1px solid  rgba(116, 114, 114, 0.603);
+
+}
+td{
+  padding: 10px;
+  border: 1px solid  rgba(116, 114, 114, 0.603);
+
+}
+.table{
+margin: 10px auto;
+width: 100%;
+padding: auto;
+
+// display: grid;
+
+}
+
+@media screen and (max-width: 900px) {
+ table {
+  justify-content: center;
+  text-align: center;
+font-size: 10px; 
+width:auto;
+height: auto;
+margin: auto;
+display: flex;  
+padding: auto;
+}
+
+td{
+display: flex;
+flex-direction: row;
+padding:auto;
+}
+th{
+display: flex;
+flex-direction: row;
+font-size: 8px;
+padding: auto;
+
+}}

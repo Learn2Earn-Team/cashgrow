@@ -95,6 +95,7 @@ import { ChaticonComponent } from './common/chaticon/chaticon.component';
 import { AddpackageComponent } from './pages/addpackage/addpackage.component';
 import { TeamComponent } from './pages/team/team.component';
 import { RewardComponent } from './pages/reward/reward.component';
+import { GetrewardComponent } from './pages/getreward/getreward.component';
 // import { SearchFilter } from './pipes/search-filter.pipe';
 @NgModule({
   declarations: [
@@ -171,6 +172,7 @@ import { RewardComponent } from './pages/reward/reward.component';
     AddpackageComponent,
     TeamComponent,
     RewardComponent,
+    GetrewardComponent,
     // ChaticonComponent
     // SearchFilter,
     // LoadingOverlayComponent,

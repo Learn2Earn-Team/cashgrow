@@ -1,12 +1,12 @@
 .headerclr{
     background: var(--background-color);
-color: #00ff00;
-height: 60px;
+color: #ffffff;
+height: 70px;
+
 }
 h1{
-    font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 3px;
+    padding: 5px;
 }
 p{
     text-align: justify;
@@ -38,7 +38,8 @@ a{
  
 }
 .backcolor{
-  background-color: rgba(0, 0, 0, 0.808);
+  border-radius: 5px;
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
   color:white;
 
 }
@@ -52,6 +53,8 @@ a{
     padding: 0 0 30px 0;
     color: #fff;
     font-size: 14px;
+    height: 70px;
+
   }
   
   #footer .footer-newsletter {
@@ -207,7 +210,7 @@ a{
   
   #footer .copyright {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 22px;
   }
   
   #footer .credits {
@@ -251,7 +254,7 @@ a{
   }
   
   .education__content h5 {
-    color: #fff; /* White text color */
+    color: #390041; /* White text color */
     font-size: 1rem;
     margin: 0;
   }
@@ -356,6 +359,10 @@ a{
   }
 
   h5{
-    color: #00ff00;
-
+    padding: 10px;
+    color: #fcfcfc;
+text-shadow: 3px 3px 3px purple;
+  }
+  p{
+    padding:0 15px;
   }

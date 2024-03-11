@@ -25,13 +25,6 @@ export class MypackagesComponent  implements OnInit{
   async ngOnInit()  {
  this.myorders();
  this.userdailyprofit();
-    // const user : any = await check("user");
-    // const userData = JSON.parse(user)
-    // console.log(userData)
-    // this.apicall.getMyPackage(userData.id).subscribe(res=>{
-    //   console.log(res);
-    //   this.myPackages = res;
-    // })
   }
  async userdailyprofit(){
  const user : any = await check("user");

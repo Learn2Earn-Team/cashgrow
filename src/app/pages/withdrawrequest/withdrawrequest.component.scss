@@ -107,20 +107,37 @@ body{margin-top:20px;
 
     
 
-.card{
-    background: black;
-    color: white;
-    // border: 2px solid   #00ff00!important;
-  }
-  
-  .list-group-item{
-    background : black;
-    color: white;
-  }
-  .list-group-item p{
-    color: white;
-  
-  }
+.container{
+  background:  rgba(16,14,60,1);
+  height: 100%;
+}
+// .card{
+//   // background:  rgb(37, 34, 102);
+
+// }
+
+.list-group-item{
+  background:  rgb(37, 34, 102);
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+  ;
+}
+
+
+.list-group-item p{
+  color: rgb(255, 255, 255);
+  padding-top: 5px;
+
+}
+// .card:hover{
+//   margin:-3px 0;
+//   transition: all 0.2s;
+
+// }
+.heading{
+  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
+
+}
 
   .button {
     position: relative;
