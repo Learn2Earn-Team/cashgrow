@@ -95,7 +95,6 @@
   </section>
 </div> -->
 
-
 <!-- <div class="body">
   <div class="body1">
     <div class="uknow">
@@ -124,24 +123,28 @@
   </div>
 </div> -->
 
-<div class="mobileapk" >
+<div class="mobileapk">
   <section class="services" id="mainCards">
     <div class="container">
       <div class="row">
-        <div
-          class="col-md-12 col-lg-12 col-sm-12 col-12 d-flex mt-1"
-        >
-          <div class="card-body  text-center shadow rounded-3 heading text-white " >
-            <i class="{{ directBonous.icon }} mainicon "class="text-white"></i>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-12 d-flex mt-1">
+          <div
+            class="card-body text-center shadow rounded-3 heading text-white"
+          >
+            <i class="{{ directBonous.icon }} mainicon " class="text-white"></i>
             <br />
             <h4 class="text-white">{{ directBonous.type }}</h4>
-            <h4 class="text-muted text-white">{{ directBonous.subtype }}<span class="text-white">$</span></h4>
+            <h4 class="text-muted text-white">
+              {{ directBonous.subtype }}<span class="text-white">$</span>
+            </h4>
             <h6 class="text-muted text-white">
               <i class="bi bi-arrow-up text-success"></i
-              ><span *ngIf="directBonous.today != null" 
-              class="text-white">{{ directBonous.today }}<span class="text-white">$</span></span
+              ><span *ngIf="directBonous.today != null" class="text-white"
+                >{{ directBonous.today }}<span class="text-white">$</span></span
               >
-              <span *ngIf="directBonous.today == null" class="text-white">0$</span>
+              <span *ngIf="directBonous.today == null" class="text-white"
+                >0$</span
+              >
             </h6>
           </div>
         </div>
@@ -155,29 +158,31 @@
           class="col-md-6 col-lg-3 col-sm-4 col-6 d-flex align-items-stretch mt-1"
           *ngFor="let item of card; let i = index"
         >
-          <div class="card-body text-center shadow heading text-white ">
-            <i class="{{ item.icon }} mainicon text-white" ></i>
+          <div class="card-body text-center shadow heading text-white">
+            <i class="{{ item.icon }} mainicon text-white"></i>
             <br />
             <h4 class="text-white">{{ item.type }}</h4>
             <h4 class="text-white">
-              {{ item.subtype}}<span *ngIf="i == 1 || i == 2 || i == 3" class="text-white">$</span>
+              {{ item.subtype
+              }}<span *ngIf="i == 1 || i == 2 || i == 3" class="text-white"
+                >$</span
+              >
             </h4>
             <h6 class="text-muted text-white">
-              <i class="bi bi-arrow-up text-success " *ngIf="i > 1"></i
-              ><span *ngIf="item.today != null"
-              class="text-white" >{{ item.today }}<span *ngIf="i == 2 || i == 3" class="text-white">$</span></span
+              <i class="bi bi-arrow-up text-success" *ngIf="i > 1"></i
+              ><span *ngIf="item.today != null" class="text-white"
+                >{{ item.today
+                }}<span *ngIf="i == 2 || i == 3" class="text-white"
+                  >$</span
+                ></span
               >
               <span *ngIf="item.today == null" class="text-white">0$</span>
             </h6>
           </div>
         </div>
 
-        <div
-          class="col-lg-3 d-flex align-items-stretch mt-4 text-center"
-        ></div>
-        <div
-          class="col-lg-3 d-flex align-items-stretch mt-4 text-center"
-        ></div>
+        <div class="col-lg-3 d-flex align-items-stretch mt-4 text-center"></div>
+        <div class="col-lg-3 d-flex align-items-stretch mt-4 text-center"></div>
       </div>
     </div>
   </section>

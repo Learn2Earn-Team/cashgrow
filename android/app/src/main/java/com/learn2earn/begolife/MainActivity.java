@@ -1,4 +1,4 @@
-package com.learn2earn.Maclink;
+package com.learn2earn.Cashgrow;
 
 import com.getcapacitor.BridgeActivity;
 
