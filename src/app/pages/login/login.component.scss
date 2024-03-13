@@ -34,7 +34,7 @@ margin-top: 90px;
   background-color:rgba(255, 255, 255, 0.63);
 }
 .password a{
-  color: rgb(0, 0, 0);
+  color:#323232;
   text-align: right;
   font-weight: bold;
   font-size: 12px;
@@ -89,7 +89,7 @@ color: white;
   // transform: translate(-50%, -50%);
   // text-align: center;
   color: #fff;
-  background: #ffffff;
+  background: rgba(37,47,70,255);
 
   // background-image: url("../../../assets/5873675.jpg");
   background-repeat: no-repeat;
@@ -199,8 +199,8 @@ height: 100%;
 }
 .form{
 // padding: 30px;
-background: #ffffff;
-color: black;
+background: rgba(37,47,70,255);
+color: rgb(252, 252, 252);
 // width: 100%;
 }
 @media screen and (max-width: 700px) {
