@@ -81,9 +81,8 @@
   top: 0;
   margin: 0;
   padding: 0;
-  background: rgb(49,61,145);
-  background: linear-gradient(221deg, rgba(49,61,145,1) 0%, rgba(15,4,122,1) 100%);}
-
+  background:  rgb(27, 22, 73);
+}
   // box-shadow: 0px 0px 30px rgba(18, 181, 245, 0.397);
 
 
@@ -95,8 +94,7 @@
 }
 
 #services{
-  background: rgb(49,61,145);
-  background: linear-gradient(221deg, rgba(49,61,145,1) 0%, rgba(15,4,122,1) 100%);
+  background:  rgb(27, 22, 73);
 }
   // background: linear-gradient(183deg, rgba(255,134,105,1) 0%, rgba(252,80,144,1) 44%, rgba(99,42,255,1) 84%);
     // background-color: var(--background-color);
@@ -118,8 +116,7 @@ video {
 }
 
 #pricing{
-  background: rgb(49,61,145);
-  background: linear-gradient(221deg, rgba(49,61,145,1) 0%, rgba(15,4,122,1) 100%);
+  background:  rgb(27, 22, 73);
   height: 100%;
 
   .section-title {
@@ -240,22 +237,22 @@ h6 {
   // background-position: center;
   // background-repeat: no-repeat;
   // background-image: url(../../../assets/footer.jpg);
-  background: rgba(200, 141, 255, 0.685);
+  background:  rgb(27, 22, 73);
 
 }
 #topbar {
-  background: #000000;
+  background:  rgb(27, 22, 73);
   font-size: 15px;
   height: 60px;
   padding: 0;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255, 255, 255);
   // border-top: 1px solid rgba(224, 221, 221, 0.678);
 
 }
 
 #topbar .contact-info a {
   line-height: 0;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255, 255, 255);
   transition: 0.3s;
 }
 
@@ -289,8 +286,9 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgb(3, 37, 65);
+  background:  rgb(27, 22, 73);
   transition: all 0.5s;
+
   z-index: 997;
   height: 70px;
   // box-shadow: 0 10px 10px rgba(4, 47, 82, 0.767);
@@ -555,7 +553,7 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  background: linear-gradient(221deg, rgb(89, 0, 253) 0%, rgb(2, 59, 105) 100%); 
+  background:  rgb(27, 22, 73);
 
 
 }
@@ -573,8 +571,7 @@ h6 {
   // background: block;
   // height: calc(100vh - 110px);
   // background: url("assets/img/about.jpg") top center;
-  background: rgb(49,61,145);
-  background: linear-gradient(221deg, rgba(49,61,145,1) 0%, rgba(15,4,122,1) 100%);
+  background:  rgb(27, 22, 73);
     color: white;
   //  background-size: cover;
   // position: relative;
@@ -826,7 +823,7 @@ section {
 # Clients
 --------------------------------------------------------------*/
 .clients {
-  background:  rgb(14, 33, 119);
+  background:  rgb(27, 22, 73);
   color: white;
   padding: 15px 0;
   text-align: center;
@@ -1161,9 +1158,8 @@ height: 100%;
 # Pricing
 --------------------------------------------------------------*/
 #pricing{
-  background: rgb(49,61,145);
-  background: linear-gradient(221deg, rgba(49,61,145,1) 0%, rgba(15,4,122,1) 100%);}
-
+  background:  rgb(27, 22, 73);
+}
 
 
 .pricing .box {
@@ -1693,9 +1689,8 @@ height: 100%;
   // position: relative;
   // background-size: cover;
   // background-position: center;
-  background: rgb(49,61,145);
-  background: linear-gradient(221deg, rgba(49,61,145,1) 0%, rgba(15,4,122,1) 100%);}
-
+  background:  rgb(27, 22, 73);
+}
 // #about:after{
 //   content: "";
 //   background: none;
@@ -1759,8 +1754,7 @@ height: 100%;
 
 .button {
   color: white;
-  background:  rgb(4, 118, 224);
-  background: linear-gradient(221deg, rgb(4, 118, 224) 0%,  rgb(4, 118, 224));
+  background: rgb(48, 107, 161);
 cursor: pointer
 ;}
 
@@ -1832,7 +1826,6 @@ box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   
   border-radius: 20px;
   background: rgba(31, 35, 68, 0.822);
-  background: linear-gradient(221deg, rgb(36, 42, 85) 0%, rgb(36, 42, 85)100%);
   }
   .card-back:hover{
     border: 1px solid rgb(35, 149, 255);
@@ -1959,7 +1952,8 @@ height: 100%;
     // text-transform: uppercase;
     // color: #231f40;
     // font-family: "EuclidCircularAMedium";
-    background: linear-gradient(135deg, #21a0e9 0%, #152c49 100%);
+    background:  rgb(27, 22, 73);
+    border: 1px solid rgb(35, 149, 255);
     // border-radius: 20px;
     // padding: 7px 17px;
     font-weight: bold;
@@ -1969,7 +1963,7 @@ height: 100%;
 }
 
 .bg-toggle{
-  background: linear-gradient(135deg, #21a0e9 0%, #152c49 100%);
+  background:  rgb(27, 22, 73);
 
 }
 
@@ -1991,13 +1985,12 @@ display: block;  }
 // alter css imported from dashboard
 
  .generic_content{
-	background: rgb(119,213,255);
-	background: linear-gradient(90deg, rgb(37, 136, 248) 0%, rgb(180, 82, 177) 100%);	border-radius: 30px;
+  background:  rgb(27, 22, 73);
 	color: rgb(255, 255, 255);
 padding: 3px 0;
 border-radius: none;
 
-color: #000000;
+color: #ffffff;
 
 }
 .head-logo{
@@ -2008,9 +2001,7 @@ color: #000000;
 
  .generic_content .generic_head_price{
 	color: rgb(255, 255, 255);
-	background: rgb(119,213,255);
-	background: linear-gradient(90deg, rgb(37, 136, 248) 0%, rgb(180, 82, 177) 100%);	border-radius: 30px;
-
+  background:  rgb(27, 22, 73);
 
 }
 
@@ -2440,7 +2431,7 @@ height: 50px;
 
 
 .card-body{
-  background: linear-gradient(221deg, rgb(36, 42, 85) 0%, rgb(36, 42, 85)100%);
+  background:rgb(36, 42, 85);
   color: white;
 
 }
