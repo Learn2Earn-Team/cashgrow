@@ -34,18 +34,20 @@ margin-top: 90px;
   background-color:rgba(255, 255, 255, 0.63);
 }
 .password a{
-  color:rgb(63,94,113);
+  color:rgb(244, 244, 244);
   text-align: right;
-  font-weight: bold;
   font-size: 12px;
 }
 .password  a:hover {
-  color: rgb(42, 134, 255);
+  color: rgb(35, 149, 255);
   text-align: right;
-  border-bottom: 2px solid rgb(42, 134, 255);
 }
 .sign:hover{
-  border-bottom: 2px solid rgb(42, 134, 255);
+  color:rgb(35, 149, 255);
+}
+.sign{
+margin-left: 7px;  color: white;
+  cursor: pointer;
 }
 .cen{
   text-align: center;
@@ -93,8 +95,8 @@ color: white;
   // transform: translate(-50%, -50%);
   // text-align: center;
   color: #fff;
-  background: rgba(37,47,70,255);
-
+  background: white;
+  background:  rgb(27, 22, 73);
   // background-image: url("../../../assets/5873675.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -125,7 +127,7 @@ width: 100%;height: auto;
 .input {
   margin: 5px auto;
   background: none;
-  border: 1px solid #000000;
+  border: 1px solid #e8e4e4;
   outline: none;
 // padding: 14px 23px;
 width: 100%;
@@ -133,32 +135,23 @@ height: 100%;
   padding: 11px 20px;
   font-size: 16px;
   color:#f2f2f2;
-  font-weight: bold;
 }
 .input:hover{
   border:1px solid rgb(42, 134, 255,0.3);
   outline: 1px solid rgb(42, 134, 255,0.3);
 }
 
+
+
+
+
 .button {
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
-  // background: rgb(99,207,255);
-  background: linear-gradient(90deg, rgba(99,207,255,1) 0%, rgba(181,28,177,1) 100%);
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffff;
-  gap: 10px;
-  font-weight: bold;
-  // border: 3px solid #7070704d;
-  outline: none;
-  overflow: hidden;
-  font-size: 15px;
-  padding: 10px;
+  color: white;
+  background: rgb(48, 107, 161);
+cursor: pointer
+;
+border: none;
+width: 90%;
 }
 
 
@@ -166,42 +159,17 @@ height: 100%;
 
 
 
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
+.button:hover{
+  color: white;
+  background:  rgb(35, 149, 255);
+  background: linear-gradient(221deg, rgb(35, 149, 255) 0%, rgb(35, 149, 255));
+box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
 }
 
-.button::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
-  top: 0;
-  left: -100px;
-  opacity: 0.6;
-}
-@keyframes shine {
-  0% {
-    left: -100px;
-  }
-
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 100%;
-  }
-}
 .form{
 // padding: 30px;
-background: rgba(37,47,70,255);
-color: rgb(252, 252, 252);
+background: transparent;
+color: rgb(0, 0, 0);
 // width: 100%;
 }
 @media screen and (max-width: 700px) {
@@ -218,12 +186,10 @@ margin: auto;
   color: rgba(114, 123, 206, 0.719);
 }
 .bg-head{
-  background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
+  background:  rgb(27, 22, 73);
 
 }
 
-.wokingtext:hover{
-  color:  #9f31c0;
-  text-decoration: underline;
-
+.account{
+  font-size: 12px;
 }
