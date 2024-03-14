@@ -33,50 +33,145 @@
   </div>
 </div> -->
 
-<div id="generic_price_table"> 
-   
-      <!-- <button  (click)="open(content)" > Click to show model</button> -->
-<section>
+<div id="generic_price_table">
+
+    <!-- <button  (click)="open(content)" > Click to show model</button> -->
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-12  m-auto">
                     <!--PRICE HEADING START-->
                     <div class="price-heading clearfix ">
-                        <h1 class="mt-4 fs-3 text-black fw-bold" style=" text-transform: uppercase;">Activate Package</h1>
+                        <h1 class="mt-4 fs-3 text-black fw-bold" style=" text-transform: uppercase;">Activate Package
+                        </h1>
                     </div>
                     <!--//PRICE HEADING END-->
                 </div>
             </div>
         </div>
+
         <div class="container">
-            
+
             <!--BLOCK ROW START-->
             <div class="row m-auto">
-                <div class="col-md-4 col-sm-10 m-auto  mb-3" *ngFor="let item of alldata;let i=index"
+                <div class="col-12 col-md-4 col-sm-12" *ngFor="let item of alldata;let i=index">
+                    <div class="card mb-4 ">
+                        <div class="card-header py-3 packe">
+                            <h4 class="my-0 fw-normal text-white pack">{{item.name}}</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title text-white">{{item.minprice}}
+                                &nbsp;&nbsp;<small>/&nbsp;&nbsp;{{item.minprice}}</small></h1>
+                            <!-- <ul class="list-unstyled mt-3 mb-4">
+                          <li>30 users included</li>
+                          <li>15 GB of storage</li>
+                          <li>Phone and email support</li>
+                          <li>Help center access</li>
+                        </ul> -->
+                            <ng-template #content let-modal>
+                                <div class="card-body">
+                                    <div class="row modal-body modalcolor mt-2">
+                                        <div class="col-9"></div>
+                                        <div class="col-3">
+                                            <i class="bi bi-x-lg text-white  float-end "
+                                                (click)="modal.close('Save click')"></i>
+                                        </div>
+                                        <div class="col-12 text-white">
+                                            <div class="row">
+                                                <div class="col-5 p-1">User Current Balance:</div>
+                                                <div class="col-7 p-1 text-primary text-white fw-bold float-end">
+                                                    {{this.userdataarray.balnce}}$</div>
+                                                <div class="col-5 p-1">Min-Price:</div>
+                                                <div class="col-7 p-1 text-white float-end fw-bold ">
+                                                    {{item.minprice}}$</div>
+                                            </div>
+                                        </div>
+                                        <input class="col-10 col-5 rounded-2 input border-1" type="text"
+                                            placeholder="Invest Between Max and Min Price"
+                                            [ngModelOptions]="{ standalone: true }" [(ngModel)]="balance">
+                                        <div class="col-2 add ">
+                                            <button (click)="activep(item,modal)" class="packe btn"> Add </button>
+                                        </div>
+                                        <!-- <div class="col-sm-3"></div> -->
+                                        <div class="row mt-4 text-white">
+                                            <div class="col-4"> Max-Price: </div>
+                                            <div class="col-4 fw-bold">
+                                                {{item.maxprice}}$
+                                            </div>
+                                            <div class="col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <div class="generic_feature_list p-1 ">
+                                <ul>
+
+                                    <!-- <li class="d-flex p-1 mt-3"><div class="col-2">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-check" icon-name="check-check" class="lucide lucide-check-check"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg></div>
+                                        <div class="col-6 text-start"> Profit </div>
+                                        <div class="col-5">  <span>{{item.percentage}}.00%</span></div>
+                                  
+                                    </li> -->
+                                    <li class="d-flex p-1 mt-3">
+                                        <div class="col-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                data-lucide="check-check" icon-name="check-check"
+                                                class="lucide lucide-check-check">
+                                                <path d="M18 6 7 17l-5-5"></path>
+                                                <path d="m22 10-7.5 7.5L13 16"></path>
+                                            </svg></div>
+                                        <div class="col-6 text-start">Daily Profit</div>
+                                        <div class="col-5"> <span>{{item.percentage}}.00</span></div>
+
+                                    </li>
+                                    <li class="d-flex p-1 mt-3">
+                                        <div class="col-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                data-lucide="check-check" icon-name="check-check"
+                                                class="lucide lucide-check-check">
+                                                <path d="M18 6 7 17l-5-5"></path>
+                                                <path d="m22 10-7.5 7.5L13 16"></path>
+                                            </svg></div>
+                                        <div class="col-6 text-start">Package Days</div>
+                                        <div class="col-5 price-b"> <span>{{item.days}}</span></div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <button type="button" class=" btn button">Invest Now</button> -->
+                            <button type="button" *ngIf="item.pstatus === 'active'" [disabled]="true"
+                                class="btn  packe">Activated</button>
+                            <button type="button" *ngIf="item.pstatus !== 'active'" (click)="open(content)"
+                                class="btn packe text-white">Active</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 col-sm-10 m-auto  mb-3" *ngFor="let item of alldata;let i=index"
                 >
                 
-                	<!--PRICE CONTENT START-->
+                	PRICE CONTENT START
                     <div class="generic_content clearfix"  >
                         
-                        <!--HEAD PRICE DETAIL START-->
+                        HEAD PRICE DETAIL START
                         <div class="generic_head_price  bg-dark clearfix"
                          >
                             
                         
-                            <!--HEAD CONTENT START-->
+                            HEAD CONTENT START
                             <div class="generic_head_content clearfix" >
                             
-                            	<!--HEAD START-->
+                            	HEAD START
                                 <div class="head_bg" ></div>
                                 <div class="head">
                                     <span>{{item.name}}</span>
                                 </div>
-                                <!--//HEAD END-->
+                                //HEAD END
                                 
                             </div>
-                            <!--//HEAD CONTENT END-->
+                            //HEAD CONTENT END
                             
-                            <!--PRICE START-->
+                            PRICE START
                             <div class="generic_price_tag row clearfix d-flex m-auto text-center border-bottom  p-0">	
 
                                 <div class="col-6">
@@ -85,14 +180,14 @@
                                     <span class="sign ">$</span>
                                     <span class="currency fw-normal fs-2">{{item.minprice}}</span>
                                     <span class="cent fw-normal">.00</span>
-                                    <!-- <span class="sign fst-italic float-start fs-5 px-4  ">MIN</span> -->
+                                    <span class="sign fst-italic float-start fs-5 px-4  ">MIN</span>
                                 </span>&nbsp;</div>
                                 <div class="col-6">
                                     <span class="price p-0" >
                                         <span class="sign fw- normal text-danger">$</span>
                                         <span class="currency fw-normal fs-2 text-danger">{{item.maxprice}}</span>
                                         <span class="cent fw-normal text-danger">.00</span>
-                                        <!-- <span class="sign fst-italic float-start fs-5 px-4  ">MAX</span> -->
+                                        <span class="sign fst-italic float-start fs-5 px-4  ">MAX</span>
     
                                     </span>
                                 </div>
@@ -100,10 +195,10 @@
                                 
                                
                             </div>
-                            <!--//PRICE END-->
+                            //PRICE END
                             
                         </div>                            
-                        <!--//HEAD PRICE DETAIL END MODAL-->
+                        //HEAD PRICE DETAIL END MODAL
                         <ng-template #content let-modal>
 <div class="pop">
                             <div class="row modal-body modalcolor mt-2">
@@ -125,7 +220,7 @@
                                     <button (click)="activep(item,modal)" class="btn-success btn"> Add </button>
 
                                 </div>
-                                <!-- <div class="col-sm-3"></div> -->
+                                <div class="col-sm-3"></div>
                                 <div class="row mt-4 text-white">
                                         <div class="col-4"> Max-Price: </div>
                                         <div class="col-4 fw-bold">
@@ -141,30 +236,30 @@
                           
                         </div>              
                           </ng-template>  
-                        <!--FEATURE LIST START-->
+                        FEATURE LIST START
                         <div class="generic_feature_list p-0">
                        	<ul class="p-0">
                             <li><span>Profit</span>&nbsp;&nbsp;{{item.percentage}}.00%</li>
                             <li>Duration&nbsp;<span>{{item.days}}&nbsp;</span>Days </li>
-                            	<!-- <li  *ngFor="let pack of item.levelAmount"><span> {{pack.level}}</span>&nbsp;&nbsp;{{pack.Package}}${{pack.bouns}}</li> -->
+                            	<li  *ngFor="let pack of item.levelAmount"><span> {{pack.level}}</span>&nbsp;&nbsp;{{pack.Package}}${{pack.bouns}}</li>
                             </ul>
                         </div>
 
-                        <!--//FEATURE LIST END-->
+                        //FEATURE LIST END
                         
-                        <!--BUTTON START-->
+                        BUTTON START
                         <div class="  generic_price_btn text-center  clearfix">
-                            <!-- <a (click)="time()">Profit</a> -->
+                            <a (click)="time()">Profit</a>
                             <button *ngIf = "item.pstatus === 'active'"[disabled]="true" class="btn btn-success" >Activated</button>
                             <button *ngIf = "item.pstatus !== 'active'"  (click)="open(content)" class="btn btn-success" >Active</button>
-                            <!-- <a (click)="ActivePackage(20,15,10,5,3,1,1)">Activate Now</a> -->
+                            <a (click)="ActivePackage(20,15,10,5,3,1,1)">Activate Now</a>
                         </div>
-                        <!--//BUTTON END-->
+                        //BUTTON END
                         
                     </div>
-                    <!--//PRICE CONTENT END-->
+                    //PRICE CONTENT END
                         
-                </div>
+                </div> -->
                 <!-- <div class="col-md-4">
                 
                 	PRICE CONTENT START
@@ -272,20 +367,15 @@
                     //PRICE CONTENT END
                         
                 </div> -->
-            </div>	
+            </div>
             <!-- //BLOCK ROW END -->
-            
+
         </div>
 
-    </section>   
-              
+    </section>
+
 </div>
 <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
-  <!-- <i class="fa fa-whatsapp my-float"></i> -->
-  <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+    <!-- <i class="fa fa-whatsapp my-float"></i> -->
+    <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
 </a>
-
-  
-  
-  
-

@@ -127,7 +127,7 @@
   <section class="services" id="mainCards">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-12 d-flex mt-1">
+        <div class="col-md-12 col-lg-12 col-sm-12  col-12 d-flex mt-1">
           <div
             class="card-body text-center shadow rounded-3 heading text-white"
           >
@@ -138,7 +138,7 @@
               {{ directBonous.subtype }}<span class="text-white">$</span>
             </h4>
             <h6 class="text-muted text-white">
-              <i class="bi bi-arrow-up text-success"></i
+              <i class="bi bi-arrow-up text-white"></i
               ><span *ngIf="directBonous.today != null" class="text-white"
                 >{{ directBonous.today }}<span class="text-white">$</span></span
               >
@@ -169,7 +169,7 @@
               >
             </h4>
             <h6 class="text-muted text-white">
-              <i class="bi bi-arrow-up text-success" *ngIf="i > 1"></i
+              <i class="bi bi-arrow-up text-white" *ngIf="i > 1"></i
               ><span *ngIf="item.today != null" class="text-white"
                 >{{ item.today
                 }}<span *ngIf="i == 2 || i == 3" class="text-white"

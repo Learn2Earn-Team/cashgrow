@@ -59,6 +59,15 @@
 .active{
   color: red;
 }
+.cardbodytheam{
+  background: rgb(22, 27, 73) !important;
+  color: white;
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+}
+.cardheadtheam{
+  background: rgb(35, 149, 255)!important;
+  color: white;
+}
 /* Add the following CSS to create a full-page overlay */
 .loading-overlay {
   position: fixed;

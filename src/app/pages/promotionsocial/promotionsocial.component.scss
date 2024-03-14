@@ -100,7 +100,27 @@
             display: none;
         }
     }
-
+	.packe{
+		background:  rgb(35, 149, 255);
+	  }
+	  .card-body{
+		background:rgb(36, 42, 85);
+		color: white;
+	  border-radius: none;
+	  }
+	  .card{
+		border: none;
+	  }
+	  .card-back {
+  
+		border-radius: 20px;
+		background: rgba(31, 35, 68, 0.822);
+		padding: 5px;
+		}
+		.card-back:hover{
+		  border: 1px solid rgb(35, 149, 255);
+		  transition: all 0.3s ease-out 0s;
+		}
 
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700italic,700,900italic,900);

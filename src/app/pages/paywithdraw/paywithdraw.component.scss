@@ -7,6 +7,7 @@ body,
   font-weight: 600;
   color:  var(--background-color);
 }
+
 p{
   margin: 0;
 }
@@ -53,28 +54,12 @@ table th {
 }
 .card{
   background:  rgb(37, 34, 102);
-
 }
-
-.list-group-item{
-  background:  rgb(37, 34, 102);
-  color: rgb(0, 0, 0);
-  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
-  ;
-}
-
-
 .list-group-item p{
   color: rgb(255, 255, 255);
   padding-top: 5px;
-
 }
 .card:hover{
   margin:-3px 0;
   transition: all 0.2s;
-
-}
-.heading{
-  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
-
 }
