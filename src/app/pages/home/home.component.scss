@@ -222,11 +222,8 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
+
+
 
 /*--------------------------------------------------------------
 # Top Bar
@@ -592,7 +589,7 @@ position: relative;
 }
 @media screen and (max-width: 1000px) {
   .logo{
-    display: none;
+    float: end;
   }
 }
 
@@ -1508,7 +1505,7 @@ height: 100%;
   // background-position: center;
   // background-repeat: no-repeat;
   // background-image: url(../../../assets/end.jpg);
-  background: #000000;
+  background:  rgb(27, 22, 73);
 }
 
 #footer .footer-top {
@@ -1517,9 +1514,8 @@ height: 100%;
 
 #footer .footer-top .footer-info {
   margin-bottom: 15px;
-  background: #191919;
+  background:  rgb(27, 22, 73);
   color: #fff;
-  border-top: 4px solid #ffffff;
   text-align: center;
   padding: 30px 20px;
 }
@@ -1600,11 +1596,11 @@ height: 100%;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
+  font-size: 13px;
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #2b208d;
-  font-weight: bold;
+  color: rgb(35, 149, 255);
 }
 
 #footer .footer-top .footer-newsletter form {
@@ -1641,7 +1637,6 @@ height: 100%;
 }
 
 #footer .copyright {
-  border-top: 1px solid #cccccc;
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1830,6 +1825,7 @@ box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   
   border-radius: 20px;
   background: rgba(31, 35, 68, 0.822);
+  padding: 5px;
   }
   .card-back:hover{
     border: 1px solid rgb(35, 149, 255);
@@ -2406,6 +2402,19 @@ color: #ffffff;
 height: 50px;
 
 }
+.partner{
+  height:20px;
+  width: auto;
+  margin: auto;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .partner {
+    height:15px;
+    float: end;
+
+  }
+}
 
 
 
@@ -2465,8 +2474,32 @@ border-radius: none;
 
   .packe{
     background:  rgb(35, 149, 255);
+  }
+  .locate{
+    font-size: 12px;
+  }
+  .map{
+  height: 300px;width: auto;margin-top:10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+  .partner{
+    font-size: 15px;
+  }
+  .payment{
+    font-size: 15px;
+    font-weight: bold;
 
   }
-  .working:hover{
-    border-bottom: blue;
+  @media screen and (max-width: 768px) {
+    .payment{
+      margin-top: 4px;
+    }
+  }
+  .copy{
+    font-size: 13px;
   }
