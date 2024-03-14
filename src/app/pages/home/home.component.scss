@@ -2483,31 +2483,3 @@ border-radius: none;
   .packe{
     background:  rgb(35, 149, 255);
   }
-  .locate{
-    font-size: 12px;
-  }
-  .map{
-  height: 300px;width: auto;margin-top:10px;
-  }
-
-  @media screen and (max-width: 768px) {
-    [data-aos-delay] {
-      transition-delay: 0 !important;
-    }
-  }
-  .partner{
-    font-size: 15px;
-  }
-  .payment{
-    font-size: 15px;
-    font-weight: bold;
-
-  }
-  @media screen and (max-width: 768px) {
-    .payment{
-      margin-top: 4px;
-    }
-  }
-  .copy{
-    font-size: 13px;
-  }

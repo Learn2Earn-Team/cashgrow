@@ -33,7 +33,7 @@
   </div>
 </div> -->
 
-<div id="generic_price_table">
+<div id="generic_price_table" class="bg">
 
     <!-- <button  (click)="open(content)" > Click to show model</button> -->
     <section>
@@ -42,7 +42,7 @@
                 <div class="col-md-12  m-auto">
                     <!--PRICE HEADING START-->
                     <div class="price-heading clearfix ">
-                        <h1 class="mt-4 fs-3 text-black fw-bold" style=" text-transform: uppercase;">Activate Package
+                        <h1 class="mt-4 fs-3 text-black fw-bold text-white" style=" text-transform: uppercase;">Activate Package
                         </h1>
                     </div>
                     <!--//PRICE HEADING END-->
@@ -54,14 +54,14 @@
 
             <!--BLOCK ROW START-->
             <div class="row m-auto">
-                <div class="col-12 col-md-4 col-sm-12" *ngFor="let item of alldata;let i=index">
+                <div class="col-12 col-md-4 col-sm-12 m-auto" *ngFor="let item of alldata;let i=index">
                     <div class="card mb-4 ">
                         <div class="card-header py-3 packe">
-                            <h4 class="my-0 fw-normal text-white pack">{{item.name}}</h4>
+                            <h4 class="my-0 fw-normal text-white pack head-c  text-center fs-5 fw-bold">{{item.name}}</h4>
                         </div>
                         <div class="card-body">
-                            <h1 class="card-title pricing-card-title text-white">{{item.minprice}}
-                                &nbsp;&nbsp;<small>/&nbsp;&nbsp;{{item.minprice}}</small></h1>
+                            <h1 class="card-title pricing-card-title text-white text-center fs-4">${{item.minprice}}
+                                &nbsp;&nbsp;<small>/&nbsp;&nbsp;&nbsp;${{item.minprice}}</small></h1>
                             <!-- <ul class="list-unstyled mt-3 mb-4">
                           <li>30 users included</li>
                           <li>15 GB of storage</li>
@@ -104,46 +104,51 @@
                                 </div>
                             </ng-template>
                             <div class="generic_feature_list p-1 ">
-                                <ul>
+                                <ul class="row">
 
                                     <!-- <li class="d-flex p-1 mt-3"><div class="col-2">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-check" icon-name="check-check" class="lucide lucide-check-check"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg></div>
                                         <div class="col-6 text-start"> Profit </div>
                                         <div class="col-5">  <span>{{item.percentage}}.00%</span></div>
                                   
                                     </li> -->
-                                    <li class="d-flex p-1 mt-3">
-                                        <div class="col-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    <li class=" p-1 mt-3 d-flex">
+                                        <div class="col-8 "> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                 data-lucide="check-check" icon-name="check-check"
                                                 class="lucide lucide-check-check">
                                                 <path d="M18 6 7 17l-5-5"></path>
                                                 <path d="m22 10-7.5 7.5L13 16"></path>
-                                            </svg></div>
-                                        <div class="col-6 text-start">Daily Profit</div>
-                                        <div class="col-5"> <span>{{item.percentage}}.00</span></div>
+                                            </svg> 
+                                              Daily Profit
+
+                                        </div>
+                                        <div class="col-4"> <span class="text-center"> &nbsp;&nbsp; {{item.percentage}}.00 %</span></div>
 
                                     </li>
-                                    <li class="d-flex p-1 mt-3">
-                                        <div class="col-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    <li class=" p-1 mt-3 d-flex">
+                                        <div class="col-8 text-start "> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                 data-lucide="check-check" icon-name="check-check"
                                                 class="lucide lucide-check-check">
                                                 <path d="M18 6 7 17l-5-5"></path>
                                                 <path d="m22 10-7.5 7.5L13 16"></path>
-                                            </svg></div>
-                                        <div class="col-6 text-start">Package Days</div>
-                                        <div class="col-5 price-b"> <span>{{item.days}}</span></div>
+                                            </svg>
+                                        Package Days
+                                        </div>
+                                        <div class="col-4 price-b text-center"> <span>{{item.days}}</span></div>
 
                                     </li>
                                 </ul>
                             </div>
                             <!-- <button type="button" class=" btn button">Invest Now</button> -->
-                            <button type="button" *ngIf="item.pstatus === 'active'" [disabled]="true"
-                                class="btn  packe">Activated</button>
+                            <div class="m-auto text-center">
+                            <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
+                                class="btn  packe m-auto text-center">Activated</button>
                             <button type="button" *ngIf="item.pstatus !== 'active'" (click)="open(content)"
-                                class="btn packe text-white">Active</button>
+                                class="btn packe text-white ">Active</button>
+                            </div>
                         </div>
                     </div>
                 </div>
