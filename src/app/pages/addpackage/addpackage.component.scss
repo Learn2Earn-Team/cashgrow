@@ -17,7 +17,7 @@ width: 100%;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-    background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
+    background-color: rgb(35, 149, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,8 +110,7 @@ width: 100%;
 
 // }
 .heading{
-background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(16,14,60,1) 0%, rgba(98,6,99,1) 98%)!important;
-
+  background:  rgb(37, 34, 102);
 }
 label{
   color: rgba(0, 0, 0, 0.63);
