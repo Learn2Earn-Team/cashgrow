@@ -60,12 +60,13 @@ table th {
     color: rgb(0, 0, 0);
     border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
     ;
+    font-size: 12px;
   }
   
   
   .list-group-item p{
     color: rgb(255, 255, 255);
-    padding-top: 5px;
+    padding-top:2px;
   
   }
   .box-c:hover{
@@ -81,17 +82,17 @@ table th {
     background:  rgb(37, 34, 102);
   }
   th{
-    padding: 10px;
+    padding: 3px;
     border: 1px solid  rgba(116, 114, 114, 0.603);
 
   }
   td{
-    padding: 10px;
+    padding: 3px;
     border: 1px solid  rgba(116, 114, 114, 0.603);
 
   }
 .table{
-  margin: 10px auto;
+  margin: 5px auto;
 width: 100%;
 padding: auto;
 

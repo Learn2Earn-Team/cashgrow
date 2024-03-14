@@ -6,7 +6,7 @@
           <div class="row" >
             <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"  *ngFor="let item of userdata"
             >
-              <div class="card shadow-sm border rounded-4 " >
+              <div class="card shadow-sm border rounded-2 " >
                 <ul class="list-group list-group-flush">
                  <li class="list-group-item  heading text-center fw-bold" >
                     <p>Approved Reward Request</p>
@@ -14,32 +14,32 @@
                
                   <li class="list-group-item">
                     <div class="row">
-                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">User Name</p></div>
-                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.name }}</p></div>
+                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p ">User Name</p></div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate "> {{ item.name }}</p></div>
                      </div>
                   </li>
                   <li class="list-group-item">
                     <div class="row">
-                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">User Id</p></div>
-                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.user_id }}</p></div>
+                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p ">User Id</p></div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate "> {{ item.user_id }}</p></div>
                      </div>
                   </li>
                   <li class="list-group-item">
                     <div class="row">
-                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Reward</p></div>
-                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.reward }}</p></div>
+                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Reward</p></div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate "> {{ item.reward }}</p></div>
                      </div>
                   </li>
                   <li class="list-group-item">
                     <div class="row">
-                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Status</p></div>
-                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> {{ item.status }}</p></div>
+                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p ">Status</p></div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate "> {{ item.status }}</p></div>
                      </div>
                   </li>
                   <li class="list-group-item">
                     <div class="row">
-                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-3">Action</p></div>
-                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate my-3"> 
+                      <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p ">Action</p></div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> 
                         <select class="form-select px-2" style="font-size: 12px;" aria-label="Default select example" (change)="depositeStatusupdate($event, item)">
                         <option  selected>Select Status</option>
                         <option  value="Aproved">Aproved</option>
@@ -68,7 +68,7 @@
           </animate>
       </path>
     </svg> -->
-    <table class="table-responsive table-hover p-4 mt-4 m-auto text-center ">
+    <table class="table-responsive table-hover  mt-4 m-auto text-center ">
       <tr class="t-head text-white text-center">
         <th>User Name</th>
         <th>Reward</th>
