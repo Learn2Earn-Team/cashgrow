@@ -10,10 +10,10 @@
               [ngClass]="this.request.status == 'Approve' ? 'table-success' : 'table-danger'">
                 <div class="card shadow-sm border " >
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item  cardheadtheam text-center fw-bold" >
+                    <li class="list-group-item  heading text-center fw-bold" >
                       <p>Withdraw Request</p>
                     </li>
-                    <li class="list-group-item cardbodytheam " >
+                    <li class="list-group-item list-group-item " >
                     
                       <div class="row"  >
                         
@@ -21,57 +21,57 @@
                         <div class="col-7 col-md-6 col-lg-7 justify-content-end"><p  class="text-end text-truncate fs-6 fw-bold"> {{i+1}}</p></div>
                        </div>
                     </li>
-                    <li class="list-group-item cardbodytheam ">
+                    <li class="list-group-item list-group-item ">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">User-code</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.uname}}</p></div>
                        </div>
                     </li>
-                    <li class="list-group-item  cardbodytheam">
+                    <li class="list-group-item  list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Name</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{request.name}} </p></div>
                        </div>
                     </li>
-                    <li class="list-group-item cardbodytheam">
+                    <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount Rs</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">{{request.amount}}</p></div>
                        </div>
                     </li>
                     
-                     <li class="list-group-item cardbodytheam">
+                     <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Services</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.services}}</p></div>
                        </div>
                     </li>
-                    <li class="list-group-item cardbodytheam">
+                    <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Payable Amount</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.net}}</p></div>
                        </div>
                     </li>
                     
-                    <li class="list-group-item cardbodytheam">
+                    <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p" style="margin-top: 5px;">Details</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.jdetail}} <br> {{request.contact}}</p></div>
                        </div>
                     </li>
-                    <li class="list-group-item cardbodytheam">
+                    <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Status</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{request.status}}</p></div>
                        </div>
                     </li>
-                    <li class="list-group-item cardbodytheam">
+                    <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p" style="margin-top: 5px;">Request At</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end "> {{request.created_at}}</p></div>
                        </div>
                     </li>
-                    <li class="list-group-item cardbodytheam">
+                    <li class="list-group-item list-group-item">
                       <div class="row">
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p my-1">Update</p></div>
                         <div class="col-7 col-md-6 col-lg-6 justify-content-end px-2" style="font-size: 12px;"><p  class="text-end text-truncate my-1"> <select *ngIf="request.status == 'Pending'" (change)="changeWidthrawStatus($event, request)"

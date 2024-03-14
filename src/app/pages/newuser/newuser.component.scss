@@ -72,14 +72,12 @@ p{
 .list-group-item p{
   color: rgb(255, 255, 255);
   padding-top: 5px;
-
 }
+.heading{
+  background-color: rgb(35, 149, 255);
+  }
 .card:hover{
   margin:-3px 0;
   transition: all 0.2s;
-
-}
-.heading{
-  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
 
 }
