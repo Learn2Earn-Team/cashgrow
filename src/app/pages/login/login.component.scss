@@ -124,6 +124,12 @@ width: 100%;height: auto;
    display: none;
    float: center;
   }}
+  @media screen and (max-width: 770px) {
+
+    .locate{
+     display: none;
+    }}
+
 .input {
   margin: 5px auto;
   background: none;
@@ -140,9 +146,15 @@ height: 100%;
   border:1px solid rgb(42, 134, 255,0.3);
   outline: 1px solid rgb(42, 134, 255,0.3);
 }
+.locate{
+  font-size: 13px;
+  color: rgb(35, 149, 255);
+}
 
-
-
+.hu__hu__ { animation: hu__hu__ infinite 2s ease-in-out }
+@keyframes hu__hu__ {
+    50% { transform: translateY(30px) }
+}
 
 
 .button {
@@ -174,9 +186,9 @@ color: rgb(0, 0, 0);
 }
 @media screen and (max-width: 700px) {
   .form {
-width: 100%;
+width: 90%;
 margin: auto; 
-     padding: 20px}
+    padding: 10px auto;}
      
     
 }

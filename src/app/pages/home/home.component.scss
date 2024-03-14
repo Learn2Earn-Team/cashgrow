@@ -1670,14 +1670,24 @@ height: 100%;
 .card35{
   padding-left: 10px;
   padding-right: 10px;
-  background-color: var(--background-color);
+  // background-color: var(--background-color);
   border-radius: 10px;
   display: flex;
   align-items: center;
 }
 
-
-
+.wokingtext:hover{
+  color: rgb(35, 149, 255) ;
+}
+.card35 b:hover{
+  color: rgb(35, 149, 255) ;
+}
+.wokingtext a:hover{
+  color: rgb(35, 149, 255) ;
+}
+.card35 span:hover{
+  color: rgb(35, 149, 255) ;
+}
 
 // <--------------Alternate CSS--------------------------->
 

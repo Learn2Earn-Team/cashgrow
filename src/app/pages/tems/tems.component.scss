@@ -2,7 +2,6 @@
     background: var(--background-color);
 color: #ffffff;
 height: 70px;
-
 }
 h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -27,19 +26,22 @@ a{
     color: white;
 }
 .backimg{
-    background-image: url("../../../assets/registeration.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-         min-height: 500px;
-         background-attachment: fixed;
-         background-position: center;
-        background-color: #fff;
-         color: #0a0a0a;
- 
+    // background-image: url("../../../assets/registeration.jpg");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    //      min-height: 500px;
+    //      background-attachment: fixed;
+    //      background-position: center;
+    //     background-color: #fff;
+    //      color: #0a0a0a;
+    
+    background: var(--background-color);
+    color: #ffffff;
+    
 }
 .backcolor{
   border-radius: 5px;
-  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
+  background: var(--background-color);
   color:white;
 
 }
@@ -360,8 +362,8 @@ a{
 
   h5{
     padding: 10px;
-    color: #fcfcfc;
-text-shadow: 3px 3px 3px purple;
+    color: rgb(35, 149, 255);
+text-shadow: 1px 1px 1px rgb(255, 255, 255);
   }
   p{
     padding:0 15px;
