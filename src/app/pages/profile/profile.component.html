@@ -293,10 +293,10 @@
     <a class="list-group-item list-group-item-action "  aria-current="true" *ngFor="let item of randomData" >
       <div class="d-flex w-100 justify-content-between py-1 " >
         <h5 class="mb-1"><i class="bi text-success bi-patch-check-fill"></i>
-          <span class="badge rounded-pill text-bg-info" style="margin-left: 10px;font-size: 15px;">Id:{{item.randomId}}</span> </h5>
+          <span class="badge rounded-pill  id" >Id:{{item.randomId}}</span> </h5>
         <small class="text-white">{{item.randomtime}} minutess ago</small>
       </div>
-      <p class="mb-1 fs-6">Has buy package of <span class="text-danger fs-5 fw-bold">{{item.randomamount}}$</span></p>
+      <p class="mb-1  " style="font-size: 14px;">Has buy package of <span class="dollar fw-bold ">{{item.randomamount}}$</span></p>
       <!-- <small>And some small print.</small> -->
     </a>
   </div>
