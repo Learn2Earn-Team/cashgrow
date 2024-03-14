@@ -646,68 +646,19 @@ body{margin-top:20px;
 
   // <------------------Alter Css------------------>
 
-
   .button {
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(37, 37, 37, 0.2);
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
-  background-color: #00ff00d7;
-height: 40px;
-width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffff;
-  gap: 10px;
-  font-weight: bold;
-  border: 3px solid #ffffff4d;
-  outline: none;
-  overflow: hidden;
-  font-size: 15px;
-}
-
-
-
-
-
-
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
-  top: 0;
-  left: -100px;
-  opacity: 0.6;
-}
-
-@keyframes shine {
-  0% {
-    left: -100px;
+    color: white;
+    background: rgb(48, 107, 161);
+  cursor: pointer
+  ;}
+  
+  
+  .button:hover{
+    color: white;
+    background:  rgb(35, 149, 255);
+    background: linear-gradient(221deg, rgb(35, 149, 255) 0%, rgb(35, 149, 255));
+  box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   }
-
-  60% {
-    left: 100%;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-
 .container{
   background:  rgba(16,14,60,1);
 }

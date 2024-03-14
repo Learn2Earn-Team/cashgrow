@@ -1433,18 +1433,19 @@ height: 100%;
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #03afe4;
   border: 0;
-  padding: 10px 24px;
+  padding: 8px 16px;
   color: #fff;
   transition: 0.4s;
   text-align: center;
   margin: auto;
   border: none;
+  background: rgb(48, 107, 161);
+  cursor: pointer
+  
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background:#000000;
   color: wheat;
   border: none;
 }
@@ -1766,10 +1767,6 @@ height: 100%;
   background: rgb(48, 107, 161);
 cursor: pointer
 ;}
-
-
-
-
 
 
 .button:hover{

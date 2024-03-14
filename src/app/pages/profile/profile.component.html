@@ -12,7 +12,7 @@
                   <img src="{{userobj.image}}"
                   onerror="this.onerror=null;this.src='../assets/boy-icon-png-10.jpg.png'"
               *ngIf="userobj.image != 0" 
-                    alt="" class="img-fluid rounded-circle border border-dark border-3"
+                    alt="" class="img-fluid rounded-circle border border-dark border-2"
                     style="width: 90px; height: 90px;">
 
                     <img *ngIf="userobj.image ==0" style="width: 90px; height: 90px;" src="../assets/boy-icon-png-10.jpg.png" alt="">
@@ -28,7 +28,7 @@
                 </div>
               </div>
               <!-- <hr> -->
-              <label class="btn btn-success mt-1 w-50" for="fileInput">
+              <label class="btn button mt-1 w-50" for="fileInput">
                 Choose picture
               </label>
               <input
@@ -47,7 +47,7 @@
           <div class="card-body text-black">
             <h5 class="card-title text-light mt-2">My Personal Link</h5> 
             <p class="card-text text-info">https://maclink.cc/./././.{{userDashboardData.username}} </p>
-            <a class="btn btn-primary" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
+            <a class="btn button" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
             <a class="btn   btn-info " (click)="downloadApkFromAssets('Maclink.apk')">Download App</a>
           </div>
         </div>
