@@ -1,5 +1,4 @@
 
-<div class="content">
 
   <header id="header" class="fixed-top d-flex align-items-center headerclr">
     <div class="container d-flex justify-content-between align-items-center">
@@ -7,21 +6,22 @@
           <h1 ><a href="#" class="fs-2" ><img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span class="fs-4" style="text-transform: uppercase;color: white;">Cashgrow</span></a></h1>
       </div>
 
-
-      <nav id="navbar" class="navbar">
-        <button class="btn button navbtn text-white px-5" [routerLink]="['/login']"><a>Login</a></button>
-      </nav>
     </div>
-  </header>
-  <div class="mt-5 m-auto text-center" style="width: 80%;">
-    <form class="p-3  row">
-      <div class="col-lg-7 col-sm-12  m-auto mt-5">
-        <img class="signup"  src="../../../assets/12291223_Wavy_Tech-28_Single-10.jpg" alt="">
+  </header> <br> <br>
+  <div class=" m-auto text-start  bg-cash">
+    <div class="p-3 container m-auto row">
+      <div class="col-lg-7 col-sm-12  m-auto mt-5 bg-cash float ">
+        <div class="cssanimation hu__hu__">
+        <h1 class="pop">Cashgrow</h1>
+        <button class="btn button navbtn text-white m-auto px-5" [routerLink]="['/login']">
+          <a class="text-center m-auto text-white">Login</a></button>
+        </div>
       </div>
-      <div class="col-lg-5  col-md-6 col-sm-12 mx-auto mt-5 m-3 p-3  " >
-        <h2 class="text-center mb-3"><span class="hero-text" style="letter-spacing: 1px;"> Sign upto Register</span></h2><br>
+      <div class="col-lg-5  col-md-8 col-sm-12 mx-auto  m-3 p-3 bg-light rounded-2  " >
+        <form >
+        <h2 class="text-center mb-3 fs-4"><span class="sign-head"> SignUp to Register</span></h2><br>
         <div class="row">
-          <div class="col-md-6 mt-2">
+          <div class="col-md-6 ">
             <label class="form-label"> </label>
             <input
               class="rounded-2 input "
@@ -31,7 +31,7 @@
               required
             />
           </div>
-          <div class="col-md-6 mt-2">
+          <div class="col-md-6 ">
             <label class="form-label"> </label>
             <input
               class="rounded-2 input"
@@ -41,7 +41,7 @@
             />
           </div>
         </div>
-        <div class="col-md-12 mt-2">
+        <div class="col-md-12 ">
 
         <label class="form-label "></label>
         <input
@@ -85,14 +85,14 @@
           <input class="rounded-2 input " placeholder="Confirm"   (input)="confirmpassword($event)" required />
         </div>
 
-          <span   class="mt-4" *ngIf="this.showmessage != ''" [ngClass]="this.showmessage == 'Correct Password' ? 'text-success' : 'text-danger'">{{this.showmessage}} </span>
+          <span   class="mt-2" *ngIf="this.showmessage != ''" [ngClass]="this.showmessage == 'Correct Password' ? 'text-success' : 'text-danger'">{{this.showmessage}} </span>
       <br>  
       <div class="col-md-12">
 
-      <label class="form-label mt-1" >Referral-link</label>
+      <label class="form-label mt-1" style="color: grey;" >Referral-link</label>
         <input
-style="color: black;"
-          class="form-control input  text-center"
+
+          class="form-control input text-black gradient  text-center"
           value="{{ signupdata.invitationlink }}"
           disabled
         /></div>
@@ -100,9 +100,9 @@ style="color: black;"
         <div class="col-md-12">
 
         <p class="d-flex">
-          <input class="form-check-input border border-1 border-dark p-1  "  [(ngModel)]="isChecked"
+          <input class="form-check-input border border-1 border-dark p-1 text-black  "  [(ngModel)]="isChecked"
           [ngModelOptions]="{ standalone: true }" type="checkbox" />
-          <label class="form-check-label m-auto  text-center fs-6" >
+          <label class="form-check-label m-auto text-black  fs-6" >
             I have read and agree to the <a class="term" href="#/tems" >Terms and Condition</a>
           </label>
         </p>
@@ -111,16 +111,16 @@ style="color: black;"
         <div class="row">
           <div class="col-12 m-auto text-center">
             <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
-            <button class=" m-auto text-center  button btn-lg w-100 mt-3" (click)="submit()" [disabled]="userFirstName == ''|| signupdata.lastname == '' || 
+            <button class=" m-auto text-center w-100 btn button navbtn mt-3" (click)="submit()" [disabled]="userFirstName == ''|| signupdata.lastname == '' || 
             signupdata.contactno == ''|| signupdata.email == ''|| signupdata.password == ''|| signupdata.invitationlink == '' || this.showmessage != 'Correct Password' || isChecked == false">Submit</button>
 
           </div>
         </div>
+      </form>
       </div>
-    </form>
+    </div>
   </div>
-</div>
-  <footer
+  <!-- <footer
   id="footer"
   data-aos="fade-up"
   data-aos-easing="ease-in-out"
@@ -132,4 +132,4 @@ style="color: black;"
       >. All Rights Reserved
     </div>
   </div>
-</footer>
+</footer> -->
