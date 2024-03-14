@@ -58,9 +58,8 @@ table th {
 // <-----------alter css----------->
 
 .tab:hover{
-  background: linear-gradient(135deg, #7015ad 0%, #942307 100%);
 
-
+background:  rgb(35, 149, 255);
 }
 .tab  a:hover{
   color:#ffffff;
@@ -80,12 +79,13 @@ table th {
   color: rgb(255, 255, 255);
   border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
   ;
+  font-size: 12px;
 }
 
 
 .list-group-item p{
   color: rgb(255, 255, 255);
-  padding-top: 5px;
+  padding-top: 2px;
 
 }
 .card:hover{
