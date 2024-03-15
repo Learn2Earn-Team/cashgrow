@@ -103,17 +103,7 @@
   }
 
 
-.video-container {
-  position: relative;
-  width: auto;
-}
 
-video {
-  width: 100%;
-  height:250px;
-  display: block;
-  background: transparent;
-}
 
 #pricing{
   background:  rgb(27, 22, 73);
@@ -563,8 +553,8 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  height: 100vh;
-  width: 100%;
+
+height: 85vh;  width: 100%;
   // background: block;
   // height: calc(100vh - 110px);
   // background: url("assets/img/about.jpg") top center;
