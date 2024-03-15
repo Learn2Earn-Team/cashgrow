@@ -15,9 +15,19 @@
 .main {
 	height: 100vh;
 	padding-top: 70px;
+
 	
+
+}
+.button{
+	background:  rgb(35, 149, 255);color: white;
+
 }
 
+.button:focus{
+	outline: 0;
+	box-shadow: none;
+}
 .chat-log {
 	padding: 0px 0 10px;
 	height: auto;
