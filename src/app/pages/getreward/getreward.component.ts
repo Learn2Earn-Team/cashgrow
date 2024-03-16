@@ -14,7 +14,7 @@ export class GetrewardComponent {
     this.NewUserdata();
   }
   ngOnInit(): void {
-this.userreward();
+this.aprovereward();
   }
   public NewUserdata(): void {
     this.apiCall.rewadrequests().subscribe((res) => {
@@ -30,16 +30,13 @@ this.userreward();
     };
     this.apiCall.rewardstatus(status).subscribe((res) => {
       this.NewUserdata();
+      this.aprovereward();
     });
   }
-  async userreward(){
-    
-    const user: any = await check('user');
-    const userData = JSON.parse(user);
-    console.log(userData);
-    this.apiCall.userrewad(userData).subscribe(res=>{
+  async aprovereward(){
+    this.apiCall.approveReward().subscribe(res=>{
 this.userrewarde=res;
-console.log(this.userrewarde)
+console.log(this.userrewarde);
     })
   }
 }

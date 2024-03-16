@@ -68,17 +68,23 @@
           </animate>
       </path>
     </svg> -->
+    <table class="table-responsive table-hover p-4 mt-4 m-auto text-center w-100"  style="height: 100px;font-size: 20px;">
+      
+      <tr class="t-head text-white text-center">
+        <th><h1>Aproved Rewards</h1></th>
+      </tr>
+     
+    </table>
     <table class="table-responsive table-hover p-4 mt-4 m-auto text-center w-100">
+      
       <tr class="t-head text-white text-center">
         <th>User Name</th>
         <th>Reward</th>
-        <th>User Id</th>
         <th>Status</th>
       </tr>
       <tr  class="text-center" *ngFor="let item of userrewarde">
         <td>{{item.name}}</td>
         <td>{{item.reward}}</td>
-        <td>{{item.user_id}}</td>
         <td>{{item.status}}</td>
       </tr>
     </table>

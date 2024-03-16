@@ -144,9 +144,9 @@
                             </div>
                             <!-- <button type="button" class=" btn button">Invest Now</button> -->
                             <div class="m-auto text-center">
-                            <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
-                                class="btn  packe m-auto text-center">Activated</button>
-                            <button type="button" *ngIf="item.pstatus !== 'active'" (click)="open(content)"
+                            <!-- <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
+                                class="btn  packe m-auto text-center">Activated</button> -->
+                            <button type="button" (click)="open(content)"
                                 class="btn packe text-white ">Active</button>
                             </div>
                         </div>
