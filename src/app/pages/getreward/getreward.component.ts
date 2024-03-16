@@ -33,6 +33,7 @@ this.userreward();
     });
   }
   async userreward(){
+    
     const user: any = await check('user');
     const userData = JSON.parse(user);
     console.log(userData);
