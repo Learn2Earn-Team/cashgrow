@@ -29,7 +29,10 @@ export class HomeComponent {
   ngOnInit() {
     Aos.init();
     this.getdata(); // Initialize AOS when the component is initialized
+ 
+ 
   }
+  
   async getdata() {
     // const user: any = await check('user');
     // const userData = JSON.parse(user);
@@ -38,6 +41,8 @@ export class HomeComponent {
       console.log(this.alldata);
     });
   }
+     
+  
 
   goToRegiester() {
     this.router.navigate(["registrationform"], {
@@ -89,4 +94,5 @@ export class HomeComponent {
         console.error("Error downloading APK:", error);
       });
   }
+  
 }
