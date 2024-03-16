@@ -2560,3 +2560,18 @@ outline:0;
   background: rgba(31, 35, 68, 0.822);
 
 }
+.foot-logo{
+  width: 200px;
+  height: auto;
+  margin: -35px 0;
+}
+@media (max-width: 990px) {
+  .foot-logo {
+display: none;  }
+}
+.useful a{
+  font-size: 13px;
+}
+.useful ul li a:hover{
+  color:  rgb(35, 149, 255);
+}
