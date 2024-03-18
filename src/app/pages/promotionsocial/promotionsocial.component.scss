@@ -92,7 +92,7 @@
         bottom: 30px;
         right: 5px;
         background-color: #25d366;
-        color: #e20505;
+        // color: #e20505;
         border-radius: 50px;
         text-align: center;
         font-size: 40px;
@@ -656,3 +656,69 @@ input:focus{
 	}
 
 }
+
+
+.btn-shine {
+	// position: absolute;
+	// top: 50%;
+	// left: 50%;
+	// transform: translate(-50%, -50%);
+	// padding: 12px 48px;
+	color: #fff;
+	background: linear-gradient(to right, #9f9f9f 0,   rgb(35, 149, 255) 20%,  rgb(242, 243, 243) 30%);
+	background-position: 0;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 3s infinite linear;
+	animation-fill-mode: forwards;
+	-webkit-text-size-adjust: none;
+	font-weight: 600;
+	font-size: 13px;
+	text-decoration: none;
+	white-space: nowrap;
+	font-family: "Poppins", sans-serif;
+  }
+  @-moz-keyframes shine {
+	0% {
+	  background-position: 0;
+	}
+	60% {
+	  background-position: 180px;
+	}
+	100% {
+	  background-position: 180px;
+	}
+  }
+  @-webkit-keyframes shine {
+	0% {
+	  background-position: 0;
+	}
+	60% {
+	  background-position: 180px;
+	}
+	100% {
+	  background-position: 180px;
+	}
+  }
+  @-o-keyframes shine {
+	0% {
+	  background-position: 0;
+	}
+	60% {
+	  background-position: 180px;
+	}
+	100% {
+	  background-position: 180px;
+	}
+  }
+  @keyframes shine {
+	0% {
+	  background-position: 0;
+	}
+	60% {
+	  background-position: 180px;
+	}
+	100% {
+	  background-position: 180px;
+	}
+  }
