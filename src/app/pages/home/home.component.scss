@@ -229,8 +229,8 @@ h6 {
 }
 #topbar {
   background:  rgb(27, 22, 73);
-  font-size: 15px;
-  height: 60px;
+  font-size: 13px;
+  height: 40px;
   padding: 0;
   color: rgb(255, 255, 255);
   // border-top: 1px solid rgba(224, 221, 221, 0.678);
@@ -1639,7 +1639,7 @@ height: 100%;
 #footer .credits {
   padding-top: 5px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: #fff;
 }
 
@@ -2398,17 +2398,26 @@ color: #ffffff;
 height: 50px;
 
 }
+.pay{
+  text-align: center;
+  margin: 5px auto;
+}
 .partner{
-  height:20px;
+  height:30px;
+
   width: auto;
-  margin: auto;
+  margin:10px auto;
   cursor: pointer;
+  float: center;
 }
 @media screen and (max-width: 768px) {
   .partner {
-    height:15px;
-    float: end;
-
+    height:20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pay {
+    text-align: center;
   }
 }
 
@@ -2516,12 +2525,20 @@ border-radius: none;
 }
 .accordion-button::after{
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2'/%3E%3C/svg%3E");
-color: #ffff;
-}
+  background-color: rgb(35, 149, 255);
+  --color:white;
+  border-radius: 5px;
+  }
 .accordion-button:not(.collapsed)::after{
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8'/%3E%3C/svg%3E");
-color: rgb(35, 149, 255);
+background-color: rgb(35, 149, 255);
+border-radius: 5px;
+--color:white;
+
+
 }
+
+
 .accordion-item{
   color: white;
   border: 1px solid rgb(35, 149, 255);
@@ -2569,9 +2586,13 @@ outline:0;
   .foot-logo {
 display: none;  }
 }
-.useful a{
-  font-size: 13px;
+
+.footer-nav{
+  display: flex;
+  font-size: 12px;
 }
-.useful ul li a:hover{
-  color:  rgb(35, 149, 255);
+
+@media (max-width: 480px) {
+  .footer-nav {
+flex-direction: column;}
 }

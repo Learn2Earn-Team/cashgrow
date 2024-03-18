@@ -4,14 +4,15 @@ body,
   height: 100%;
 }
 
-table td,
-table th {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+// table td,
+// table th {
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+//   overflow: hidden;
+// }
 
 .card {
+  
   border-radius: .5rem;
 }
 .float {
@@ -85,52 +86,52 @@ p{
   .heading{
     background-color: rgb(35, 149, 255)!important;
   }
-  .t-head{
-    background:  rgb(37, 34, 102);
-  }
+//   .t-head{
+//     background:  rgb(37, 34, 102);
+//   }
 
-  th{
-    padding: 10px;
-    border: 1px solid  rgba(116, 114, 114, 0.603);
+//   th{
+//     padding: 10px;
+//     border: 1px solid  rgba(116, 114, 114, 0.603);
 
-  }
-  td{
-    padding: 10px;
-    border: 1px solid  rgba(116, 114, 114, 0.603);
+//   }
+//   td{
+//     padding: 10px;
+//     border: 1px solid  rgba(116, 114, 114, 0.603);
 
-  }
-.table{
-  margin: 10px auto;
-width: 100%;
-padding: auto;
+//   }
+// .table{
+//   margin: 10px ;
+// width: 100%;
+// height: 100%;
 
 // display: grid;
 
-}
+// }
 
-  @media screen and (max-width: 900px) {
-   table {
-    justify-content: center;
-    text-align: center;
-font-size: 10px; 
-width:auto;
-height: auto;
-margin: auto;
-display: flex;  
-padding: auto;
-}
+//   @media screen and (max-width: 900px) {
+//    table {
+//     justify-content: center;
+//     text-align: center;
+// font-size: 10px; 
+// width:auto;
+// height: auto;
+// margin: auto;
+// display: flex;  
+// padding: auto;
+// }
 
-td{
-  display: flex;
-  flex-direction: row;
-padding:auto;
-}
-th{
-  display: flex;
-  flex-direction: row;
-  font-size: 8px;
-  padding: auto;
+// td{
+//   display: flex;
+//   flex-direction: row;
+// padding:auto;
+// }
+// th{
+//   display: flex;
+//   flex-direction: row;
+//   font-size: 8px;
+//   padding: auto;
 
-}
- }
+// }
+//  }
 
