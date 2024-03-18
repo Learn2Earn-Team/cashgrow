@@ -31,7 +31,14 @@ export class PromotionsocialComponent implements OnInit {
   };
   buttonClicked: boolean = false;
 public alldata:any;
+public staticpackage:any=[
+  {PackageName:'Basic',MinPrice:10,MaxPrice:100,PackageDays:180,Days:'Monday to Friday'},
+  {PackageName:'Prime',MinPrice:500,MaxPrice:1000,PackageDays:120,Days:'Monday to Friday'},
+  {PackageName:'Prime Plus',MinPrice:2000,MaxPrice:5000,PackageDays:90,Days:'Monday to Friday'},
+  {PackageName:'Premium',MinPrice:10000,MaxPrice:15000,PackageDays:72,Days:'Monday to Friday'},
+  {PackageName:'Premium Plus',MinPrice:20000,MaxPrice:25000,PackageDays:60,Days:'Monday to Friday'},
 
+]
 
   public userDeposits: any = {};
   userdataarray: any;
@@ -57,6 +64,7 @@ public alldata:any;
     this.getdata();
     this.userdata1();
     this.checkBalacne();
+    this.getCurrentDay();
   }
   async getdata() {
     const user: any = await check('user');
@@ -77,22 +85,29 @@ public alldata:any;
         }
       );
   }
-  getCurrentTime(){
+  // getCurrentTime(){
+  //   const currentTime = new Date();
+  //   const options : Intl.DateTimeFormatOptions =  {
+  //     year: 'numeric',
+  //     month: 'short',
+  //     day: 'numeric',
+  //     hour: 'numeric',
+  //     minute: 'numeric',
+  //     second: 'numeric',
+  //     hour12: true,
+  //     timeZone: 'UTC' 
+  //   }
+  //   this.activeTime = currentTime.toLocaleString('en-US', options);
+  //   console.log('Current Time', this.activeTime.day);
+  // }
+  getCurrentDay() {
     const currentTime = new Date();
-    const options : Intl.DateTimeFormatOptions =  {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      hour12: true,
-      timeZone: 'UTC' 
-    }
-    this.activeTime = currentTime.toLocaleString('en-US', options);
-    console.log('Current Time', this.activeTime);
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long' // Specify 'long' for the full name of the day of the week
+    };
+    const currentDay = currentTime.toLocaleDateString('en-US', options);
+    console.log('Current Day:', currentDay);
   }
-
   activep(item: any,modal:any) {
     const data = {
       pid:item.pid,
