@@ -124,7 +124,7 @@ public staticpackage:any=[
           this.toast.SuccessToast("Invest Succsessfully","Good Job!")
           this.userdata1()
         }else {
-          this.toast.ErrorToast("You can Only Invest on Monday to Friday","Error")
+          this.toast.ErrorToast("Somthing Went Wrong","Error")
         }
     console.log(res);
     this.res=res;
@@ -132,7 +132,7 @@ public staticpackage:any=[
      })    
     }
     else{
-      this.toast.ErrorToast("Somthing Went Wrong","Error")
+      this.toast.ErrorToast("You can Only Invest on Monday to Friday","Error")
     }
  
 
