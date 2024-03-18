@@ -6,6 +6,7 @@ import Aos from "aos";
 import { ApicallService } from "src/app/services/apicall.service";
 import { check } from "src/app/localStorage/LocalStorage";
 import { ToastService } from "src/app/services/toast.service";
+import { interval, Subscription } from 'rxjs';
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -18,6 +19,7 @@ export class HomeComponent {
   userdataarray: any;
   balance: any;
   res: any;
+  
   constructor(
     public toast: ToastService,
     public apiCall: ApicallService,
