@@ -155,6 +155,7 @@ export class IndexComponent implements OnInit {
   }
 
   async activatePackage() {
+    
     const user: any = await check("user");
     const userData = JSON.parse(user);
     console.log(userData);
@@ -195,8 +196,13 @@ export class IndexComponent implements OnInit {
         this.card[4].today = res.todayDirectJoing;
         this.card[5].subtype = res.totalIndirectJoining;
         this.card[5].today = res.IndirectJoining;
-        this.card[6].subtype = Math.max(0, res.totaldeposit - res.netBalance);
-        this.card[6].today = Math.max(0, res.totaldeposit - res.netBalance);
+        if( res.totaldeposit > 0) {
+          this.card[6].subtype = Math.max(0, res.totaldeposit - res.netBalance);
+          this.card[6].today = Math.max(0, res.totaldeposit - res.netBalance);
+        }else {
+          this.card[6].subtype = 0;
+          this.card[6].today = 0;
+        }
       });
     });
   }

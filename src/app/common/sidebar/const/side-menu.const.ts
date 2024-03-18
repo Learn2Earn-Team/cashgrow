@@ -49,11 +49,7 @@ export const adminMenuItems: any[] = [
     //   icon: 'bi bi-body-text',
     //   label: 'All Vedio'
     // },
-    {
-      routerLink: '/default/approveddeposite',
-      icon: 'bi bi-check-circle',
-      label: 'Aproved Deposit'
-    },
+  
     {
       routerLink: '/default/allapproveddeposite',
       icon: 'bi bi-body-text',

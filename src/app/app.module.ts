@@ -55,7 +55,6 @@ import { AddchanelComponent } from './pages/addchanel/addchanel.component';
 import { AllchanelComponent } from './pages/allchanel/allchanel.component';
 import { AddvedioComponent } from './pages/addvedio/addvedio.component';
 import { AllvedioComponent } from './pages/allvedio/allvedio.component';
-import { AproveddepositComponent } from './pages/aproveddeposit/aproveddeposit.component';
 import { AllaproveddepositComponent } from './pages/allaproveddeposit/allaproveddeposit.component';
 import { BydatereporttotalComponent } from './pages/bydatereporttotal/bydatereporttotal.component';
 import { NewuserComponent } from './pages/newuser/newuser.component';
@@ -137,7 +136,6 @@ import { GetrewardComponent } from './pages/getreward/getreward.component';
     AllchanelComponent,
     AddvedioComponent,
     AllvedioComponent,
-    AproveddepositComponent,
     AllaproveddepositComponent,
     BydatereporttotalComponent,
     NewuserComponent,

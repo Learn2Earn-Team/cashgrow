@@ -39,7 +39,6 @@ import { AddchanelComponent } from 'src/app/pages/addchanel/addchanel.component'
 import { AllchanelComponent } from 'src/app/pages/allchanel/allchanel.component';
 import { AddvedioComponent } from 'src/app/pages/addvedio/addvedio.component';
 import { AllvedioComponent } from 'src/app/pages/allvedio/allvedio.component';
-import { AproveddepositComponent } from 'src/app/pages/aproveddeposit/aproveddeposit.component';
 import { AllaproveddepositComponent } from 'src/app/pages/allaproveddeposit/allaproveddeposit.component';
 import { BydatereporttotalComponent } from 'src/app/pages/bydatereporttotal/bydatereporttotal.component';
 import { NewuserComponent } from 'src/app/pages/newuser/newuser.component';
@@ -115,7 +114,6 @@ const routes: Routes = [
           { path: 'default/allchanel', component: AllchanelComponent , canActivate: [LoginGuard]},
           { path: 'default/addvedio', component: AddvedioComponent , canActivate: [LoginGuard]},
           { path: 'default/allvedio', component: AllvedioComponent , canActivate: [LoginGuard]},
-          { path: 'default/approveddeposite', component: AproveddepositComponent , canActivate: [LoginGuard]},
           { path: 'default/allapproveddeposite', component: AllaproveddepositComponent , canActivate: [LoginGuard]},
           { path: 'default/bydatereport', component: BydatereporttotalComponent , canActivate: [LoginGuard]},
           { path: 'default/newuser', component: NewuserComponent , canActivate: [LoginGuard]},
