@@ -81,15 +81,15 @@
         /></div>
         <div class="col-md-12">
 
-        <label class="form-label mt-1 "></label>
+        <label class="form-label "></label>
           <input class="rounded-2 input " placeholder="Confirm"   (input)="confirmpassword($event)" required />
         </div>
 
-          <span   class="mt-2" *ngIf="this.showmessage != ''" [ngClass]="this.showmessage == 'Correct Password' ? 'text-success' : 'text-danger'">{{this.showmessage}} </span>
+          <span   class="" *ngIf="this.showmessage != ''" [ngClass]="this.showmessage == 'Correct Password' ? 'text-success' : 'text-danger'">{{this.showmessage}} </span>
       <br>  
       <div class="col-md-12">
 
-      <label class="form-label mt-1" style="color: grey;" >Referral-link</label>
+      <label class="form-label " style="color: grey;" >Referral-link</label>
         <input
 
           class="form-control input text-black gradient  text-center"
@@ -97,13 +97,14 @@
           disabled
         /></div>
         <br />
-        <div class="col-md-12">
+        <div class="col-md-12 auto">
 
-        <p class="d-flex">
-          <input class="form-check-input border border-1 border-dark p-1 text-black  "  [(ngModel)]="isChecked"
+
+        <p class="d-flex text-center">
+          <input class="form-check-input border border-1 border-dark p-1 text-black mx-2  "  [(ngModel)]="isChecked"
           [ngModelOptions]="{ standalone: true }" type="checkbox" />
-          <label class="form-check-label m-auto text-black text-white mx-1" >
-            I have read and agree to the <a class="term text-white" href="#/tems" >Terms and Condition</a>
+          <label class="form-check-label m-auto text-black text-center text-white mx-1" style="font-size: 13px;" >
+            I have read and agree to the <a class="term text-white" style="font-size: 13px;" href="#/tems" >Terms and Condition</a>
           </label>
         </p>
         </div>

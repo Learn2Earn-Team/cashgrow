@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h1 class="text-center text-white m-auto fs-2 p-4">All Withdrawal Request History</h1>
+            <h1 class="text-center text-white m-auto fs-4 p-4" style="text-transform: uppercase;">All Withdrawal Request History</h1>
             <div class="row" >
               <div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 "  *ngFor="let request of allWithdrawRequest  | paginate: { itemsPerPage: pageSize, currentPage: p }; let i = index "
               [ngClass]="this.request.status == 'Approve' ? 'table-success' : 'table-danger'">
