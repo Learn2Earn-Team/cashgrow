@@ -100,11 +100,7 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-bell-fill',
       label: 'Notification'
     },
-    {
-      routerLink: '/default/addpackage',
-      icon: 'bi bi-database-fill-add',
-      label: 'Add New Package'
-    },
+    
     // {
     //   routerLink: '/default/cashtowallet',
     //   icon: 'bi bi-wallet2',
