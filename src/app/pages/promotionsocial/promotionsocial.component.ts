@@ -112,13 +112,12 @@ public staticpackage:any=[
   }
   activep(item: any,modal:any) {
     const data = {
-      pid:item.pid,
-      days:item.Days,
+      days:this.currentDay,
       username:this.userdataarray.username,
       balance:+this.balance,
     }
     console.log(data,"data");
-    if(this.currentDay==='Sunday'&& this.currentDay==='Saturday'&& item.MaxPrice>data.balance&&item.MinPrice<data.balance){
+    if(this.currentDay!=='Sunday'&& this.currentDay!=='Saturday'&& item.MaxPrice>=data.balance&&item.MinPrice<=data.balance){
       this.apiCall.orders(data).subscribe((res)=>{
         if(res.error === false){
           modal.close();
