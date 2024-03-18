@@ -111,7 +111,9 @@ public staticpackage:any=[
     console.log('Current Day:', this.currentDay);
   }
   activep(item: any,modal:any) {
+    this.getCurrentDay();
     const data = {
+      pid:10,
       days:this.currentDay,
       username:this.userdataarray.username,
       balance:+this.balance,
