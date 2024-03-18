@@ -53,7 +53,7 @@ export const adminMenuItems: any[] = [
     {
       routerLink: '/default/allapproveddeposite',
       icon: 'bi bi-body-text',
-      label: 'Total Approved Deposit'
+      label: 'All Deposits'
     },
     // {
     //   routerLink: '/default/bydatereport',
