@@ -30,13 +30,12 @@ export class PromotionsocialComponent implements OnInit {
     InvitedLink: '',
   };
   buttonClicked: boolean = false;
-public alldata:any;
-public staticpackage:any=[
-  {PackageName:'Basic',MinPrice:10,MaxPrice:100,PackageDays:180,Days:'Monday to Friday',percentage:1.00},
-  {PackageName:'Prime',MinPrice:500,MaxPrice:1000,PackageDays:120,Days:'Monday to Friday',percentage:1.50},
-  {PackageName:'Prime Plus',MinPrice:2000,MaxPrice:5000,PackageDays:90,Days:'Monday to Friday',percentage:2.00},
-  {PackageName:'Premium',MinPrice:10000,MaxPrice:15000,PackageDays:72,Days:'Monday to Friday',percentage:2.50},
-  {PackageName:'Premium Plus',MinPrice:20000,MaxPrice:25000,PackageDays:60,Days:'Monday to Friday',percentage:3.00}
+// public alldata:any;
+public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage:1.00},
+{maxprice:1000,minprice:500,name:'PRIME',days:'120',percentage:1.50},
+{maxprice:5000,minprice:2000,name:'PRIME PLUS',days:'90',percentage:2.00},
+{maxprice:15000,minprice:10000,name:'PREMIUM',days:'72',percentage:2.50},
+{maxprice:25000,minprice:20000,name:'PREMIUMN PLUS',days:'60',percentage:3.00},
 ]
 
   public userDeposits: any = {};
@@ -48,7 +47,6 @@ public staticpackage:any=[
   currentT: any;
   todaypersenttotal=0;
   res: any;
-  currentDay: any;
   constructor(
     public modalService: NgbModal,
     // private apiCall: ApicallService,
@@ -61,19 +59,18 @@ public staticpackage:any=[
 
   ngOnInit() {
     this.getUserData();
-    this.getdata();
+    // this.getdata();
     this.userdata1();
     this.checkBalacne();
-    this.getCurrentDay();
   }
-  async getdata() {
-    const user: any = await check('user');
-    const userData = JSON.parse(user);
-    this.apiCall.getPackages(userData.username).subscribe((res: any) => {
-      this.alldata = res;
-      console.log(this.alldata);
-    })
-  }
+  // async getdata() {
+  //   const user: any = await check('user');
+  //   const userData = JSON.parse(user);
+  //   this.apiCall.getPackages(userData.username).subscribe((res: any) => {
+  //     this.alldata = res;
+  //     console.log(this.alldata);
+  //   })
+  // }
   // promotionsocial.component.ts
   open(content: any) {
 
@@ -85,46 +82,38 @@ public staticpackage:any=[
         }
       );
   }
-  // getCurrentTime(){
-  //   const currentTime = new Date();
-  //   const options : Intl.DateTimeFormatOptions =  {
-  //     year: 'numeric',
-  //     month: 'short',
-  //     day: 'numeric',
-  //     hour: 'numeric',
-  //     minute: 'numeric',
-  //     second: 'numeric',
-  //     hour12: true,
-  //     timeZone: 'UTC' 
-  //   }
-  //   this.activeTime = currentTime.toLocaleString('en-US', options);
-  //   console.log('Current Time', this.activeTime.day);
-  // }
-  getCurrentDay() {
+  getCurrentTime(){
     const currentTime = new Date();
-    const options: Intl.DateTimeFormatOptions = {
-      weekday: 'long' // Specify 'long' for the full name of the day of the week
-    };
-    const currentDay = currentTime.toLocaleDateString('en-US', options);
-    this.currentDay=currentDay;
-    
-    console.log('Current Day:', this.currentDay);
+    const options : Intl.DateTimeFormatOptions =  {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true,
+      timeZone: 'UTC' 
+    }
+    this.activeTime = currentTime.toLocaleString('en-US', options);
+    console.log('Current Time', this.activeTime);
   }
+
   activep(item: any,modal:any) {
     const data = {
-      days:this.currentDay,
+      pid:10,
+      days:item.days,
       username:this.userdataarray.username,
       balance:+this.balance,
     }
     console.log(data,"data");
-    if(data.days!=='Sunday'&& data.days!=='Saturday'&& item.MaxPrice>=data.balance&&item.MinPrice<=data.balance){
+    if(+item.maxprice>= +data.balance && +item.minprice<= +data.balance && +this.userdataarray.balnce >= +this.balance){
       this.apiCall.orders(data).subscribe((res)=>{
         if(res.error === false){
           modal.close();
           this.toast.SuccessToast("Invest Succsessfully","Good Job!")
           this.userdata1()
         }else {
-          this.toast.ErrorToast("You can Only Invest on Monday to Friday","Error")
+          this.toast.ErrorToast("Somthing Went Wrong","Error")
         }
     console.log(res);
     this.res=res;
