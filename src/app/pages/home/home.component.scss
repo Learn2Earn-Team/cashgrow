@@ -2666,3 +2666,10 @@ flex-direction: column;}
     background-position: 180px;
   }
 }
+
+
+@media screen and (max-width: 500px) {
+  .btn-shine {
+  
+  font-size: 12px;}
+}
