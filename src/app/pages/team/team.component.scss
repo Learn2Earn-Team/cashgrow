@@ -5,8 +5,13 @@
     color: rgb(255, 255, 255);
     border-radius: 0px;
     }
+    h4{
+      font-size: 17px;
+
+    }
     .card-body{
-    margin-top: 5px;
+    padding: 5px;
+
     }
     
     .card-body:hover {
@@ -14,8 +19,7 @@
      -webkit-transform: scale(1.02, 1.02);
       backface-visibility: hidden;
      will-change: transform;
-     background-color:whitesmoke;
-     box-shadow: 0 1rem 3rem rgba(189, 189, 189, 0.75) !important;
+     border: 1px solid rgb(35, 149, 255);
      }
      .card-body:hover::after {
      opacity: 1;

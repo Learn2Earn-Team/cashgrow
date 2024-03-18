@@ -151,7 +151,7 @@
 	color: black;
 }
 #generic_price_table .generic_content .generic_head_price{
-	color: red;
+	// color: red;
 	background: rgb(119,213,255);
 	background: linear-gradient(90deg, rgba(119,213,255,1) 0%, rgba(255,139,251,1) 100%);	border-radius: 30px;
 }
@@ -207,9 +207,9 @@
 	color: rgb(2, 85, 23);
 }
 
-#generic_price_table .generic_content .generic_price_btn a{
-	border: 1px solid hsl(0, 78%, 39%); 
-} 
+// #generic_price_table .generic_content .generic_price_btn a{
+// 	// border: 1px solid hsl(0, 78%, 39%); 
+// } 
 
 #generic_price_table .generic_content.active .generic_head_price .generic_head_content .head_bg,
 #generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head_bg{
@@ -456,10 +456,8 @@
 	background: #9B59B6;
 	transition: all 0.3s ease-in-out 0s;
 }
-#generic_price_table_home .red{
-	background: #E74C3C;
-	transition:all 0.3s ease-in-out 0s;
-}
+// 
+
 #generic_price_table_home .turquoise{
 	background: #121212;
 	transition: all 0.3s ease-in-out 0s;
@@ -471,7 +469,6 @@
 #generic_price_table_home .midnight:hover,
 #generic_price_table_home .orange:hover,
 #generic_price_table_home .purple:hover,
-#generic_price_table_home .red:hover,
 #generic_price_table_home .turquoise:hover{
 	border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -562,64 +559,20 @@
 
 // <-------------alter Css------------->
 
+
 .button {
-	position: relative;
-	transition: all 0.3s ease-in-out;
-	box-shadow: 0px 10px 20px rgba(37, 37, 37, 0.2);
-	padding-block: 0.5rem;
-	padding-inline: 1.25rem;
-	background-color: #00ff00d7;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #ffff;
-	gap: 10px;
-	font-weight: bold;
-	border: 3px solid #ffffff4d;
-	outline: none;
-	overflow: hidden;
-	font-size: 15px;
+	color: white;
+	background: rgb(48, 107, 161);
+  cursor: pointer
+  ;}
+  
+  
+  .button:hover{
+	color: white;
+	background:  rgb(35, 149, 255);
+	background: linear-gradient(221deg, rgb(35, 149, 255) 0%, rgb(35, 149, 255));
+  box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   }
-  
-  
-  
-  
-  
-  
-  .button:hover::before {
-	animation: shine 1.5s ease-out infinite;
-  }
-  
-  .button::before {
-	content: "";
-	position: absolute;
-	width: 100px;
-	height: 100%;
-	background-image: linear-gradient(
-	  120deg,
-	  rgba(255, 255, 255, 0) 30%,
-	  rgba(255, 255, 255, 0.8),
-	  rgba(255, 255, 255, 0) 70%
-	);
-	top: 0;
-	left: -100px;
-	opacity: 0.6;
-  }
-  
-  @keyframes shine {
-	0% {
-	  left: -100px;
-	}
-  
-	60% {
-	  left: 100%;
-	}
-  
-	to {
-	  left: 100%;
-	}
-  }
-  
   
   
   .button-nav {
