@@ -117,7 +117,7 @@ public staticpackage:any=[
       balance:+this.balance,
     }
     console.log(data,"data");
-    if(this.currentDay!=='Sunday'&& this.currentDay!=='Saturday'&& item.MaxPrice>=data.balance&&item.MinPrice<=data.balance){
+    if(data.days!=='Sunday'&& data.days!=='Saturday'&& item.MaxPrice>=data.balance&&item.MinPrice<=data.balance){
       this.apiCall.orders(data).subscribe((res)=>{
         if(res.error === false){
           modal.close();
