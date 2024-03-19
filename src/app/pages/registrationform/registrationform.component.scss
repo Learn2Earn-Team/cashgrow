@@ -181,7 +181,10 @@ a{
 // }
 .signup{
   width: 100%; margin-top: 40px;
+  font-family: "Poppins", sans-serif;
+
 }
+
 @media screen and (max-width: 1000px) {
   .signup {
 // width: 40%;
@@ -197,6 +200,7 @@ display: none;}
 .input {
   margin: 3px 0;
   background: white;
+  font-family: Poppins, sans-serif;
   
   border: 1px solid rgb(39, 39, 109);
   outline: none;
@@ -217,14 +221,16 @@ width: 100%;
 .button {
   color: white;
   background: rgb(48, 107, 161);
-cursor: pointer
-;}
+cursor: pointer;
+font-family: "Poppins", sans-serif;
+}
 
 .button:hover{
   color: white;
   background:  rgb(35, 149, 255);
   background: linear-gradient(221deg, rgb(35, 149, 255) 0%, rgb(35, 149, 255));
 box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
+
 }
 
 .form{
@@ -236,6 +242,8 @@ border-radius: 20px;
 color: black;
 width: 80%;
 float: right;
+font-family: "Poppins", sans-serif;
+
 }
 @media screen and (max-width: 550px) {
   .form {
@@ -255,5 +263,7 @@ margin: auto;}
 }
 .sign-head{
   color:   rgb(27, 22, 73);
-  font-weight: bold;
+  // font-weight: bold;
+  font-family: "Poppins", sans-serif;
+text-transform: uppercase;
 }

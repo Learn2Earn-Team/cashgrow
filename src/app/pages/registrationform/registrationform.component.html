@@ -1,9 +1,9 @@
 
 
-  <header id="header" class="fixed-top d-flex align-items-center headerclr">
+  <header id="header container-fluid" class="fixed-top d-flex align-items-center headerclr">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo mt-3">
-          <h1 ><a href="#" class="fs-2" ><img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span class="fs-4" style="text-transform: uppercase;color: white;">Cashgrow</span></a></h1>
+          <h1 ><a href="#" class="fs-2" ><img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span class="fs-5" style="text-transform: uppercase;color: white;">Cashgrow</span></a></h1>
       </div>
 
     </div>
@@ -89,9 +89,10 @@
       <br>  
       <div class="col-md-12">
 
-      <label class="form-label " style="color: grey;" >Referral-link</label>
+      <label class="form-label " style="color: grey;  font-family: Poppins, sans-serif;
+      " >Referral-link</label>
         <input
-
+class="font-family: Poppins, sans-serif;"
           class="form-control input text-black gradient  text-center"
           value="{{ signupdata.invitationlink }}"
           disabled
@@ -100,7 +101,7 @@
         <div class="col-md-12 auto">
 
 
-        <p class="d-flex text-center">
+        <p class="d-flex text-center" style="font-family: Poppins, sans-serif;">
           <input class="form-check-input border border-1 border-dark p-1 text-black mx-2  "  [(ngModel)]="isChecked"
           [ngModelOptions]="{ standalone: true }" type="checkbox" />
           <label class="form-check-label m-auto text-black text-center text-white mx-1" style="font-size: 13px;" >
