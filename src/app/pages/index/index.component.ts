@@ -155,7 +155,6 @@ export class IndexComponent implements OnInit {
   }
 
   async activatePackage() {
-   
     const user: any = await check("user");
     const userData = JSON.parse(user);
     console.log(userData);

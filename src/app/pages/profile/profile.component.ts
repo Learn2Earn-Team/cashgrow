@@ -32,6 +32,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy{
 
   }
   ngOnInit() {
+    
     this.GetUserData();
     this.getUserProfiledataa();
     this.getRandomData();
@@ -46,6 +47,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy{
     this.apiCall.GetuserProfileData(userData.id).subscribe(profile=>{
       console.log(profile)
       this.userobj = profile[0];
+      console.log('usrimages',this.userobj.image);
     })
   }
 
@@ -115,7 +117,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy{
     const user: any = await check('user');
     const userData = JSON.parse(user);
     console.log(userData);
-    const url = `https://Cashgrow.cc/#/registrationform?id=${userData.username}`;
+    const url = `https://thecashgrow.com/#/registrationform?id=${userData.username}`;
     await Clipboard.write({
       string: url,
     }).then(

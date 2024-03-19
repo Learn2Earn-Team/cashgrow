@@ -59,6 +59,7 @@ public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage
 
   ngOnInit() {
     this.getUserData();
+   this.getCurrentDay();
     // this.getdata();
     this.userdata1();
     this.checkBalacne();
@@ -72,6 +73,15 @@ public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage
   //   })
   // }
   // promotionsocial.component.ts
+  getCurrentDay() {
+    const currentTime = new Date();
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long' // Specify 'long' for the full name of the day of the week
+    };
+    const currentDay = currentTime.toLocaleDateString('en-US', options);
+    console.log('Current Day:', currentDay);
+  }
+  
   open(content: any) {
 
     this.modalService.open(content,{ ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -98,9 +108,9 @@ public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage
     console.log('Current Time', this.activeTime);
   }
 
-  activep(item: any,modal:any) {
+  activep(item: any,ind:any,modal:any) {
     const data = {
-      pid:10,
+      pid:ind+1,
       days:item.days,
       username:this.userdataarray.username,
       balance:+this.balance,
