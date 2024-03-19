@@ -100,6 +100,9 @@
   font-family: "Poppins", sans-serif;
 
 }
+b{
+ font-family: "Poppins", sans-serif;
+}
   // background: linear-gradient(183deg, rgba(255,134,105,1) 0%, rgba(252,80,144,1) 44%, rgba(99,42,255,1) 84%);
     // background-color: var(--background-color);
   .icon-bo, h4, a,  p{
@@ -844,6 +847,8 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
+  font-family: "Poppins", sans-serif;
+
   text-align: center;
   // padding: 15px 20px;
   transition: all ease-in-out 0.3s;
@@ -898,6 +903,8 @@ height: 100%;
 .services .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+
   font-size: 20px;
 }
 
@@ -911,6 +918,8 @@ height: 100%;
   margin-bottom: 0;
   line-height: 18px;
   padding: 5px;
+  font-family: "Poppins", sans-serif;
+
 }
 
 // .services .icon-box:hover {
@@ -1725,6 +1734,18 @@ height: 100%;
 .about-cont{
   padding: 20px;
   color: #000000;
+  font-family: "Poppins", sans-serif;
+
+}
+.content-des span{
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+
+}
+.content-des p{
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+
 }
 
 .section-title{
@@ -1734,11 +1755,18 @@ height: 100%;
   #about {
     text-align: start;
     .content-des{
-      font-size: 17px;
+      font-size: 15px;
       text-align: start;
+
     }
     .section-title{
       text-align: start;
+
+    }
+    .content-des p{
+      font-size: 12px;
+      text-align: start;
+
     }
     }
 }
@@ -1746,7 +1774,7 @@ height: 100%;
   #about {
     text-align: center;
     .content-des{
-      font-size: 13px;
+      font-size: 10px;
       text-align: center;
     }
     .section-title{
@@ -1827,8 +1855,12 @@ box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   
   border-radius: 20px;
   background: rgba(31, 35, 68, 0.822);
-  
   padding: 5px;
+  }
+
+  .card-back p{
+    font-family: "Poppins", sans-serif;
+
   }
   .card-back:hover{
     border: 1px solid rgb(35, 149, 255);
@@ -1947,10 +1979,15 @@ height: 100%;
 
 // <-------------bitcoin moving-------------->
 
+.card-header{
+  font-family: "Poppins", sans-serif;
 
+}
 .drop-text{
     // text-transform: uppercase;
     // color: #231f40;
+    font-family: "Poppins", sans-serif;
+
     // font-family: "EuclidCircularAMedium";
     background:  rgb(27, 22, 73);
     border: 1px solid rgb(35, 149, 255);
@@ -2048,6 +2085,8 @@ color: #ffffff;
 
  .generic_content .generic_feature_list ul li{	
     color:  rgb(240, 240, 240);
+    font-family: "Poppins", sans-serif;
+
 	
 }
 
@@ -2444,13 +2483,19 @@ height: 50px;
   background:rgb(36, 42, 85);
   color: white;
 border-radius: none;
+font-family: "Poppins", sans-serif;
+
 }
 .card{
   border: none;
   background:rgb(36, 42, 85);
+  font-family: "Poppins", sans-serif;
 
 
 }
+.generic_feature_list ul li div span{
+font-family: "Poppins", sans-serif;
+               }
 
 .card-body:hover{
   border-bottom-left-radius: 6px;
@@ -2481,17 +2526,29 @@ border-radius: none;
   }
   .locate{
     font-size: 12px;
+    font-family: "Poppins", sans-serif;
+
   }
   .email-c{
     width: 180px;padding: 2px;
     height:22px; border-radius: 5px; color: white; text-align: center; margin: auto;font-size: 13px;
-  }
+    font-family: "Poppins", sans-serif;
 
+  }
+.font{
+  font-family: "Poppins", sans-serif;
+
+}
+button{
+  font-family: "Poppins", sans-serif;
+
+}
 
 
 // <<<<<<<<<<< counter- investment >>>>>>>>>>
 #counter-investment{
   background:  rgb(27, 22, 73);
+
 }
 
 .wid-count{
@@ -2501,7 +2558,10 @@ border-radius: none;
   justify-content: center;
   border: 1px solid rgb(35, 149, 255);
   background: rgba(31, 35, 68, 0.822);
-
+  font-family: "Poppins", sans-serif;
+}
+.wid-count p{
+  font-family: "Poppins", sans-serif;
 
 }
 @media (max-width: 990px) {
@@ -2520,6 +2580,7 @@ border-radius: none;
 // >>>>>>>faq>>>>>>>>>>>>
 #faq{
   background:  rgb(27, 22, 73);
+  
 }
 .number{
   width: 30px;
