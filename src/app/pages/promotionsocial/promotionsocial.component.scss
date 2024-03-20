@@ -131,7 +131,7 @@
 		}
 		.card:hover{
 		  border: 1px solid rgb(35, 149, 255);
-		  transition: all 0.3s ease-out 0s;
+		  transition: all 1s ease-out 1s;
 		  margin-top:-3px ;
 		}
 
@@ -714,4 +714,8 @@ input:focus{
 	100% {
 	  background-position: 180px;
 	}
+  }
+  *{
+	font-family: "Poppins", sans-serif;
+  
   }

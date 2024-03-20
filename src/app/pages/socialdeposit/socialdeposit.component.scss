@@ -180,7 +180,10 @@ table th {
     font-size: 15px;
   }
   
-
+  *{
+    font-family: "Poppins", sans-serif;
+  
+  }
   .button:hover::before {
     animation: shine 1.5s ease-out infinite;
   }

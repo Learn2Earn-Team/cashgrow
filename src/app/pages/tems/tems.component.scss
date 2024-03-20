@@ -256,7 +256,6 @@ a{
   }
   
   .education__content h5 {
-    color: #390041; /* White text color */
     font-size: 1rem;
     margin: 0;
   }
@@ -363,8 +362,11 @@ a{
   h5{
     padding: 10px;
     color: rgb(35, 149, 255);
-text-shadow: 1px 1px 1px rgb(255, 255, 255);
+    font-weight: bold;
   }
   p{
     padding:0 15px;
+  }
+  *{
+ font-family:"Poppins", sans-serif;
   }
