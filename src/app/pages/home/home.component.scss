@@ -2678,7 +2678,7 @@ flex-direction: column;}
   // transform: translate(-50%, -50%);
   // padding: 12px 48px;
   color: #fff;
-  background: linear-gradient(to right, #9f9f9f 0,   rgb(35, 149, 255) 20%,  rgb(242, 243, 243) 30%);
+  background: linear-gradient(to right, #ffd96f 0,   rgb(7, 133, 250) 20%,  rgb(255, 255, 255) 30%);
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2721,7 +2721,7 @@ flex-direction: column;}
     background-position: 180px;
   }
   100% {
-    background-position: 180px;
+    background-position: 0px;
   }
 }
 @keyframes shine {
@@ -2732,7 +2732,7 @@ flex-direction: column;}
     background-position: 180px;
   }
   100% {
-    background-position: 180px;
+    background-position: 0px;
   }
 }
 
