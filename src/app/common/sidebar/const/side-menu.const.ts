@@ -198,6 +198,11 @@ export const adminMenuItems: any[] = [
   ];
   export const SubadminMenuItems: any[] = [
     {
+      routerLink: 'default/profile',
+      icon: 'bi bi-person-circle',
+      label: 'Profile'
+    },
+    {
       routerLink: '/default/alluser',
       icon: 'bi bi-people-fill',
       label: 'All User'
@@ -207,16 +212,8 @@ export const adminMenuItems: any[] = [
         icon: 'bi bi-person-badge',
         label: 'New User'
       },
-      {
-        routerLink: 'default/profile',
-        icon: 'bi bi-person-circle',
-        label: 'Profile'
-      },
-      {
-        routerLink: '/default/internaltransfer',
-        icon: 'bi bi-globe2',
-        label: 'Internal Transfer'
-      },
+      
+    
      
       {
         routerLink: '/default/promotionsocial',
@@ -230,7 +227,11 @@ export const adminMenuItems: any[] = [
         icon: 'bi bi-bank',
         label: 'My Packages'
       },
-     
+      {
+        routerLink: '/default/internaltransfer',
+        icon: 'bi bi-globe2',
+        label: 'Internal Transfer'
+      },
       {
         routerLink: 'default/team',
         icon: 'bi bi-microsoft-teams',
