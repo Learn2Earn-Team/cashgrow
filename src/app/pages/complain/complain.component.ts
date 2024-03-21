@@ -80,7 +80,7 @@ export class ComplainComponent
     const user: any = await check("user");
     const userData = JSON.parse(user);
     console.log(userData);
-    if (userData.username == "google") {
+    if (userData.username == "google" || userData.username == "ML639107") {
       this.userMessage.reply = this.message;
       this.userMessage.sender = userData.username;
       this.userMessage.reciver = this.stateData.username;
