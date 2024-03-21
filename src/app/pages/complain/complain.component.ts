@@ -57,8 +57,6 @@ export class ComplainComponent
     this.scrollToBottom();
   }
 
-
-
   scrollToBottom(): void {
     const chatMessagesElement = this.chatMessages?.nativeElement;
     chatMessagesElement.scrollTop = chatMessagesElement.scrollHeight;
@@ -118,8 +116,11 @@ export class ComplainComponent
     }
     this.setTimeInterval();
   }
+
   getComplain(username: any) {
-    throw new Error("Method not implemented.");
+    this.apicall.api_getcomplainusermessage(username).subscribe((complains) => {
+      this.allComplain = complains;
+    });
   }
 
   goToBack() {

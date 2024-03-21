@@ -21,6 +21,7 @@ import { ShareProfileComponent } from "./pages/share-profile/share-profile.compo
 import { ComplainComponent } from "./pages/complain/complain.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 import { AddpackageComponent } from "./pages/addpackage/addpackage.component";
+import { AuthComponent } from "./pages/auth/auth.component";
 // import { TeamreportComponent } from './pages/teamreport/teamreport.component';
 
 const routes: Routes = [
@@ -77,6 +78,11 @@ const routes: Routes = [
   {
     path: "transfer",
     component: TransferformComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "auth",
+    component: AuthComponent,
     canActivate: [LoginGuard],
   },
   {

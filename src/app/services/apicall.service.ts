@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { GlobalService } from './global.service';
-import { Router } from '@angular/router';
-import { AuthService, apiUrl } from './auth.service';
-import { ToastService } from './toast.service';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { GlobalService } from "./global.service";
+import { Router } from "@angular/router";
+import { AuthService, apiUrl } from "./auth.service";
+import { ToastService } from "./toast.service";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, map } from "rxjs";
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ApicallService {
   TeamReports(res: any, id: any) {
-    throw new Error('Method not implemented.');
+    throw new Error("Method not implemented.");
   }
   getordercomplete(arg0: string) {
-    throw new Error('Method not implemented.');
+    throw new Error("Method not implemented.");
   }
 
   data: any;
@@ -27,19 +27,21 @@ export class ApicallService {
   // admin login
 
   public login(data: any): Observable<any> {
-    return this.http.post(apiUrl + 'login', data).pipe(
+    return this.http.post(apiUrl + "login", data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
+
   public getCountry(): Observable<any> {
-    return this.http.get(apiUrl + 'allcountry').pipe(
+    return this.http.get(apiUrl + "allcountry").pipe(
       map((res: any) => {
         return res;
       })
     );
   }
+
   public getProduct(type: any): Observable<any> {
     return this.http.get(apiUrl + `product/${type}`).pipe(
       map((res: any) => {
@@ -47,6 +49,40 @@ export class ApicallService {
       })
     );
   }
+  exchangeCodeForToken(code: string): Observable<any> {
+    const tokenEndpoint = "https://accounts.binance.com/oauth/token"; // Replace with Binance's token endpoint
+    const clientId = "775697127"; // Replace with your Binance OAuth client ID
+    const clientSecret =
+      "pWFvezQ89at8gHogKyEEREhJUyKKwPAPwxm3He53K1wciCo42xUNV9GfFpRcBmt9"; // Replace with your Binance OAuth client secret
+    const redirectUri = "http://localhost:4200/#/auth"; // Replace with your redirect URI configured in Binance
+
+    const params = new URLSearchParams();
+    params.append("grant_type", "authorization_code");
+    params.append("client_id", clientId);
+    params.append("client_secret", clientSecret);
+    params.append("code", code);
+    params.append("redirect_uri", redirectUri);
+
+    return this.http.post<any>(tokenEndpoint, params.toString(), {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    });
+  }
+  // public Authtoken(type: any): Observable<any> {
+  //   const authorizationEndpoint =
+  //     "https://accounts.binance.com/en/oauth/authorize";
+  //   const responseType = "code";
+  //   const clientId = "775697127";
+  //   const redirectUri = "http://localhost:4200/#/";
+  //   const state = Math.random().toString(36).substring(2);
+  //   const scopes = "read";
+  //   const url = `${authorizationEndpoint}?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scopes}`;
+  //   return this.http.get(apiUrl + `product/${type}`).pipe(
+  //     map((res: any) => {
+  //       return res;
+  //     })
+  //   );
+  // }
+
   public getuserOrders(id: any): Observable<any> {
     return this.http.get(apiUrl + `userorder/${id}`).pipe(
       map((res: any) => {
@@ -143,7 +179,7 @@ export class ApicallService {
     );
   }
   public getVideos(): Observable<any> {
-    return this.http.get(apiUrl + 'allvideos').pipe(
+    return this.http.get(apiUrl + "allvideos").pipe(
       map((res: any) => {
         return res;
       })
@@ -165,7 +201,7 @@ export class ApicallService {
     );
   }
   public weeklyReport(): Observable<any> {
-    return this.http.get(apiUrl + 'weeklyreport').pipe(
+    return this.http.get(apiUrl + "weeklyreport").pipe(
       map((res: any) => {
         return res;
       })
@@ -173,21 +209,21 @@ export class ApicallService {
   }
 
   public getZoom(): Observable<any> {
-    return this.http.get(apiUrl + 'zoom').pipe(
+    return this.http.get(apiUrl + "zoom").pipe(
       map((res: any) => {
         return res;
       })
     );
   }
   public getNewUser(): Observable<any> {
-    return this.http.get(apiUrl + 'newuser').pipe(
+    return this.http.get(apiUrl + "newuser").pipe(
       map((res: any) => {
         return res;
       })
     );
   }
   public getAllUser(): Observable<any> {
-    return this.http.get(apiUrl + 'alluser').pipe(
+    return this.http.get(apiUrl + "alluser").pipe(
       map((res: any) => {
         return res;
       })
@@ -388,7 +424,7 @@ export class ApicallService {
       })
     );
   }
-  public getdashboardData(uid: any, data:any): Observable<any> {
+  public getdashboardData(uid: any, data: any): Observable<any> {
     return this.http.post(apiUrl + `dashboard/${uid}`, data).pipe(
       map((res: any) => {
         return res;
@@ -605,35 +641,35 @@ export class ApicallService {
       })
     );
   }
-  public api_getTeamPosts(uid:any, data: any): Observable<any> {
+  public api_getTeamPosts(uid: any, data: any): Observable<any> {
     return this.http.post(apiUrl + `getteamposts/${uid}`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_getTeam(uid:any): Observable<any> {
+  public api_getTeam(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getteam/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_postLike(data:any): Observable<any> {
+  public api_postLike(data: any): Observable<any> {
     return this.http.post(apiUrl + `like`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_postComments(data:any): Observable<any> {
+  public api_postComments(data: any): Observable<any> {
     return this.http.post(apiUrl + `comment`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_getPostComments(postid:any): Observable<any> {
+  public api_getPostComments(postid: any): Observable<any> {
     return this.http.get(apiUrl + `getpostcomment/${postid}`).pipe(
       map((res: any) => {
         return res;
@@ -641,7 +677,7 @@ export class ApicallService {
     );
   }
 
-  public api_postStatus(data:any): Observable<any> {
+  public api_postStatus(data: any): Observable<any> {
     return this.http.post(apiUrl + `status`, data).pipe(
       map((res: any) => {
         return res;
@@ -649,7 +685,7 @@ export class ApicallService {
     );
   }
 
-  public api_createGroup(data:any): Observable<any> {
+  public api_createGroup(data: any): Observable<any> {
     return this.http.post(apiUrl + `group`, data).pipe(
       map((res: any) => {
         return res;
@@ -657,7 +693,7 @@ export class ApicallService {
     );
   }
 
-  public api_addGroupMember(data:any): Observable<any> {
+  public api_addGroupMember(data: any): Observable<any> {
     return this.http.post(apiUrl + `groupmember`, data).pipe(
       map((res: any) => {
         return res;
@@ -665,21 +701,21 @@ export class ApicallService {
     );
   }
 
-  public api_getUserGroup(uid:any): Observable<any> {
+  public api_getUserGroup(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getuserGroup/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_getGroup(uid:any): Observable<any> {
+  public api_getGroup(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getGroup/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_getTeamStatus(uid:any, data:any): Observable<any> {
+  public api_getTeamStatus(uid: any, data: any): Observable<any> {
     return this.http.post(apiUrl + `getteamStatus/${uid}`, data).pipe(
       map((res: any) => {
         return res;
@@ -687,7 +723,7 @@ export class ApicallService {
     );
   }
 
-  public api_getUserPost(uid:any): Observable<any> {
+  public api_getUserPost(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getuserpost/${uid}`).pipe(
       map((res: any) => {
         return res;
@@ -695,7 +731,7 @@ export class ApicallService {
     );
   }
 
-  public api_geUserStatus(uid:any): Observable<any> {
+  public api_geUserStatus(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getuserstatus/${uid}`).pipe(
       map((res: any) => {
         return res;
@@ -703,7 +739,7 @@ export class ApicallService {
     );
   }
 
-  public api_getActiveStatus(data:any): Observable<any> {
+  public api_getActiveStatus(data: any): Observable<any> {
     return this.http.post(apiUrl + `getActivestatus`, data).pipe(
       map((res: any) => {
         return res;
@@ -711,7 +747,7 @@ export class ApicallService {
     );
   }
 
-  public api_statusViews(data:any): Observable<any> {
+  public api_statusViews(data: any): Observable<any> {
     return this.http.post(apiUrl + `statusviews`, data).pipe(
       map((res: any) => {
         return res;
@@ -719,7 +755,7 @@ export class ApicallService {
     );
   }
 
-  public api_getstatusView(status_id:any): Observable<any> {
+  public api_getstatusView(status_id: any): Observable<any> {
     return this.http.get(apiUrl + `getstatusView/${status_id}`).pipe(
       map((res: any) => {
         return res;
@@ -733,7 +769,7 @@ export class ApicallService {
       })
     );
   }
-  public api_userUnfriend(data:any): Observable<any> {
+  public api_userUnfriend(data: any): Observable<any> {
     return this.http.post(apiUrl + `unfriend`, data).pipe(
       map((res: any) => {
         return res;
@@ -741,7 +777,7 @@ export class ApicallService {
     );
   }
 
-  public api_getGroupChat(data:any): Observable<any> {
+  public api_getGroupChat(data: any): Observable<any> {
     return this.http.post(apiUrl + `getGroupChat`, data).pipe(
       map((res: any) => {
         return res;
@@ -749,7 +785,7 @@ export class ApicallService {
     );
   }
 
-  public api_ggroupMessages(data:any): Observable<any> {
+  public api_ggroupMessages(data: any): Observable<any> {
     return this.http.post(apiUrl + `groupmessages`, data).pipe(
       map((res: any) => {
         return res;
@@ -757,7 +793,7 @@ export class ApicallService {
     );
   }
 
-  public api_getGroupMember(gid:any): Observable<any> {
+  public api_getGroupMember(gid: any): Observable<any> {
     return this.http.get(apiUrl + `getGroupmember/${gid}`).pipe(
       map((res: any) => {
         return res;
@@ -765,21 +801,21 @@ export class ApicallService {
     );
   }
 
-  public api_updateGroup(data:any): Observable<any> {
+  public api_updateGroup(data: any): Observable<any> {
     return this.http.post(apiUrl + `updategroup`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_postDelete(data:any): Observable<any> {
+  public api_postDelete(data: any): Observable<any> {
     return this.http.post(apiUrl + `postdelete`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_commentDelete(data:any): Observable<any> {
+  public api_commentDelete(data: any): Observable<any> {
     return this.http.post(apiUrl + `commentdelete`, data).pipe(
       map((res: any) => {
         return res;
@@ -787,7 +823,7 @@ export class ApicallService {
     );
   }
 
-  public api_updatePackage(data:any): Observable<any> {
+  public api_updatePackage(data: any): Observable<any> {
     return this.http.post(apiUrl + `updatePackage`, data).pipe(
       map((res: any) => {
         return res;
@@ -795,7 +831,7 @@ export class ApicallService {
     );
   }
 
-  public api_updateSocialOrder(data:any): Observable<any> {
+  public api_updateSocialOrder(data: any): Observable<any> {
     return this.http.post(apiUrl + `updateSocialOrder`, data).pipe(
       map((res: any) => {
         return res;
@@ -803,7 +839,7 @@ export class ApicallService {
     );
   }
 
-  public api_getmyteam(uid:any): Observable<any> {
+  public api_getmyteam(uid: any): Observable<any> {
     return this.http.get(apiUrl + `myteam/${uid}`).pipe(
       map((res: any) => {
         return res;
@@ -811,7 +847,7 @@ export class ApicallService {
     );
   }
 
-  public api_addComplain(data:any): Observable<any> {
+  public api_addComplain(data: any): Observable<any> {
     return this.http.post(apiUrl + `complain`, data).pipe(
       map((res: any) => {
         return res;
@@ -819,14 +855,14 @@ export class ApicallService {
     );
   }
   public api_getRandomData(): Observable<any> {
-    return this.http.get(apiUrl + `Random`,).pipe(
+    return this.http.get(apiUrl + `Random`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public api_getcomplainusermessage(uid:any): Observable<any> {
-    return this.http.get(apiUrl + `getcomplainusermessage/${uid}`,).pipe(
+  public api_getcomplainusermessage(uid: any): Observable<any> {
+    return this.http.get(apiUrl + `getcomplainusermessage/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
@@ -839,80 +875,82 @@ export class ApicallService {
       })
     );
   }
-  public getPackages(uid:any): Observable<any> {
+  public getPackages(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getPackages/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public postpackage(data:any): Observable<any> {
-    return this.http.post(apiUrl + `addpackage`,data).pipe(
+  public postpackage(data: any): Observable<any> {
+    return this.http.post(apiUrl + `addpackage`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public userteam(id:any): Observable<any> {
+  public userteam(id: any): Observable<any> {
     return this.http.get(apiUrl + `userteam/${id}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public orders(data:any): Observable<any> {
-    return this.http.post(apiUrl + `orders`,data).pipe(
+  public orders(data: any): Observable<any> {
+    return this.http.post(apiUrl + `orders`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
 
-  public myorders(uid:any): Observable<any> {
+  public myorders(uid: any): Observable<any> {
     return this.http.get(apiUrl + `myorders/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public Pendingorder(uid:any): Observable<any> {
+  public Pendingorder(uid: any): Observable<any> {
     return this.http.get(apiUrl + `pendingorder/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  
-  public activatePackafe(user_id:any): Observable<any> {
-    return this.http.post(apiUrl + `activatepackage`,{user_id:user_id}).pipe(
+
+  public activatePackafe(user_id: any): Observable<any> {
+    return this.http
+      .post(apiUrl + `activatepackage`, { user_id: user_id })
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
+  }
+  public adduserprofit(data: any): Observable<any> {
+    return this.http.post(apiUrl + `adduserprofit`, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public adduserprofit(data:any): Observable<any> {
-    return this.http.post(apiUrl +`adduserprofit`,data).pipe(
-      map((res: any) => {
-        return res;
-      })
-    );
-  }
-  public userdailyprofit(uid:any): Observable<any> {
+  public userdailyprofit(uid: any): Observable<any> {
     return this.http.get(apiUrl + `userdailyprofit/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public teamreport(uid:any,data:any): Observable<any> {
-    return this.http.post(apiUrl + `teamreport/${data}`,uid).pipe(
+  public teamreport(uid: any, data: any): Observable<any> {
+    return this.http.post(apiUrl + `teamreport/${data}`, uid).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public reward(data:any): Observable<any> {
-    return this.http.post(apiUrl + `reward`,data).pipe(
+  public reward(data: any): Observable<any> {
+    return this.http.post(apiUrl + `reward`, data).pipe(
       map((res: any) => {
         return res;
       })
@@ -946,7 +984,7 @@ export class ApicallService {
       })
     );
   }
-  public userrewad(uid:any): Observable<any> {
+  public userrewad(uid: any): Observable<any> {
     return this.http.get(apiUrl + `userrewadrequests/${uid}`).pipe(
       map((res: any) => {
         return res;
@@ -954,4 +992,3 @@ export class ApicallService {
     );
   }
 }
-
