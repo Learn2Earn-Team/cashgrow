@@ -54,7 +54,6 @@ import { AddchanelComponent } from "./pages/addchanel/addchanel.component";
 import { AllchanelComponent } from "./pages/allchanel/allchanel.component";
 import { AddvedioComponent } from "./pages/addvedio/addvedio.component";
 import { AllvedioComponent } from "./pages/allvedio/allvedio.component";
-import { AproveddepositComponent } from "./pages/aproveddeposit/aproveddeposit.component";
 import { AllaproveddepositComponent } from "./pages/allaproveddeposit/allaproveddeposit.component";
 import { BydatereporttotalComponent } from "./pages/bydatereporttotal/bydatereporttotal.component";
 import { NewuserComponent } from "./pages/newuser/newuser.component";
@@ -90,11 +89,10 @@ import { ComplainComponent } from "./pages/complain/complain.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 import { ComplainboxComponent } from "./pages/complainbox/complainbox.component";
 import { ChaticonComponent } from "./common/chaticon/chaticon.component";
-import { AddpackageComponent } from "./pages/addpackage/addpackage.component";
 import { TeamComponent } from "./pages/team/team.component";
 import { RewardComponent } from "./pages/reward/reward.component";
 import { GetrewardComponent } from "./pages/getreward/getreward.component";
-import { AuthComponent } from './pages/auth/auth.component';
+import { AuthComponent } from "./pages/auth/auth.component";
 // import { SearchFilter } from './pipes/search-filter.pipe';
 @NgModule({
   declarations: [
@@ -136,7 +134,6 @@ import { AuthComponent } from './pages/auth/auth.component';
     AllchanelComponent,
     AddvedioComponent,
     AllvedioComponent,
-    AproveddepositComponent,
     AllaproveddepositComponent,
     BydatereporttotalComponent,
     NewuserComponent,
@@ -168,7 +165,6 @@ import { AuthComponent } from './pages/auth/auth.component';
     ComplainComponent,
     PrivacyPolicyComponent,
     ComplainboxComponent,
-    AddpackageComponent,
     TeamComponent,
     RewardComponent,
     GetrewardComponent,

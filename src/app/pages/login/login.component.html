@@ -4,8 +4,8 @@
   <div class="header bg-head " >
     
         <h1 ><a href="#" class="fs-2" >
-          <img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span class="text-white mt-2"
-         >Cashgrow</span></a></h1>
+          <img src="../../../assets/maclink white png.png" alt="" style="width: 50px;height: 50px;"><span class="text-white mt-2 fs-5"
+         >CASHGROW</span></a></h1>
 
     </div>
 <!-- <div class="  form">
@@ -50,6 +50,7 @@
         <div class="col-md-12  " style="margin-top: 10px;  ">
           <label class="form-label text-white" > </label>
           <input
+          (keyup.enter)="Login()"
             class="rounded-2 input"
             [(ngModel)]="userdata.email"
             placeholder="Enter Email"
@@ -59,6 +60,7 @@
         <div class="col-md-12" style="margin-top: 10px;">
           <label class="form-label text-white"> </label>
           <input
+          (keyup.enter)="Login()"
             class=" input rounded-2"
             [(ngModel)]="userdata.password"
             type="password"
@@ -82,8 +84,9 @@
             <a href="#/forgetpassword" >Forget password?</a>
           </p>
         </div>
-            <button class=" rounded-2 m-auto m-3 p-2  button"   (click)="Login()">
-              <a  >Login</a>
+            <button class=" rounded-2 m-auto m-3 p-2  button"  (click)="Login()">
+          <a>Login</a>
+              
             </button>
 <div class="m-auto text-center mt-2"><span class="account text-white">Don't have an account? <a (click)="goToRegiester()"><span class="password sign"><b>Sign up</b></span></a></span></div>
       </div>

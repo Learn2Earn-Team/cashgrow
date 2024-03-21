@@ -82,6 +82,8 @@
   margin: 0;
   padding: 0;
   background:  rgb(27, 22, 73);
+  font-family: "Poppins", sans-serif;
+
 }
   // box-shadow: 0px 0px 30px rgba(18, 181, 245, 0.397);
 
@@ -95,6 +97,11 @@
 
 #services{
   background:  rgb(27, 22, 73);
+  font-family: "Poppins", sans-serif;
+
+}
+b{
+ font-family: "Poppins", sans-serif;
 }
   // background: linear-gradient(183deg, rgba(255,134,105,1) 0%, rgba(252,80,144,1) 44%, rgba(99,42,255,1) 84%);
     // background-color: var(--background-color);
@@ -108,6 +115,7 @@
 #pricing{
   background:  rgb(27, 22, 73);
   height: 100%;
+
 
   .section-title {
     h2 {
@@ -137,7 +145,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -229,8 +237,8 @@ h6 {
 }
 #topbar {
   background:  rgb(27, 22, 73);
-  font-size: 15px;
-  height: 60px;
+  font-size: 13px;
+  height: 40px;
   padding: 0;
   color: rgb(255, 255, 255);
   // border-top: 1px solid rgba(224, 221, 221, 0.678);
@@ -703,6 +711,8 @@ section {
 .section-title span {
   position: absolute;
   top: 30px;
+  font-family: "Poppins", sans-serif;
+
   color: #f4f4f4;
   left: 0;
   right: 0;
@@ -839,6 +849,8 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
+  font-family: "Poppins", sans-serif;
+
   text-align: center;
   // padding: 15px 20px;
   transition: all ease-in-out 0.3s;
@@ -893,6 +905,8 @@ height: 100%;
 .services .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+
   font-size: 20px;
 }
 
@@ -906,6 +920,8 @@ height: 100%;
   margin-bottom: 0;
   line-height: 18px;
   padding: 5px;
+  font-family: "Poppins", sans-serif;
+
 }
 
 // .services .icon-box:hover {
@@ -1639,7 +1655,7 @@ height: 100%;
 #footer .credits {
   padding-top: 5px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: #fff;
 }
 
@@ -1720,6 +1736,18 @@ height: 100%;
 .about-cont{
   padding: 20px;
   color: #000000;
+  font-family: "Poppins", sans-serif;
+
+}
+.content-des span{
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+
+}
+.content-des p{
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+
 }
 
 .section-title{
@@ -1729,11 +1757,18 @@ height: 100%;
   #about {
     text-align: start;
     .content-des{
-      font-size: 17px;
+      font-size: 15px;
       text-align: start;
+
     }
     .section-title{
       text-align: start;
+
+    }
+    .content-des p{
+      font-size: 12px;
+      text-align: start;
+
     }
     }
 }
@@ -1741,7 +1776,7 @@ height: 100%;
   #about {
     text-align: center;
     .content-des{
-      font-size: 13px;
+      font-size: 10px;
       text-align: center;
     }
     .section-title{
@@ -1823,6 +1858,11 @@ box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   border-radius: 20px;
   background: rgba(31, 35, 68, 0.822);
   padding: 5px;
+  }
+
+  .card-back p{
+    font-family: "Poppins", sans-serif;
+
   }
   .card-back:hover{
     border: 1px solid rgb(35, 149, 255);
@@ -1941,10 +1981,15 @@ height: 100%;
 
 // <-------------bitcoin moving-------------->
 
+.card-header{
+  font-family: "Poppins", sans-serif;
 
+}
 .drop-text{
     // text-transform: uppercase;
     // color: #231f40;
+    font-family: "Poppins", sans-serif;
+
     // font-family: "EuclidCircularAMedium";
     background:  rgb(27, 22, 73);
     border: 1px solid rgb(35, 149, 255);
@@ -2042,6 +2087,8 @@ color: #ffffff;
 
  .generic_content .generic_feature_list ul li{	
     color:  rgb(240, 240, 240);
+    font-family: "Poppins", sans-serif;
+
 	
 }
 
@@ -2397,31 +2444,28 @@ color: #ffffff;
 height: 50px;
 
 }
+.pay{
+  text-align: center;
+  margin: 5px auto;
+}
 .partner{
-  height:20px;
+  height:30px;
+
   width: auto;
-  margin: auto;
+  margin:10px auto;
   cursor: pointer;
+  float: center;
 }
 @media screen and (max-width: 768px) {
   .partner {
-    height:15px;
-    float: end;
-
+    height:20px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width: 768px) {
+  .pay {
+    text-align: center;
+  }
+}
 
 
 
@@ -2441,11 +2485,19 @@ height: 50px;
   background:rgb(36, 42, 85);
   color: white;
 border-radius: none;
+font-family: "Poppins", sans-serif;
+
 }
 .card{
   border: none;
+  background:rgb(36, 42, 85);
+  font-family: "Poppins", sans-serif;
+
 
 }
+.generic_feature_list ul li div span{
+font-family: "Poppins", sans-serif;
+               }
 
 .card-body:hover{
   border-bottom-left-radius: 6px;
@@ -2476,8 +2528,217 @@ border-radius: none;
   }
   .locate{
     font-size: 12px;
+    font-family: "Poppins", sans-serif;
+
   }
   .email-c{
     width: 180px;padding: 2px;
     height:22px; border-radius: 5px; color: white; text-align: center; margin: auto;font-size: 13px;
+    font-family: "Poppins", sans-serif;
+
   }
+.font{
+  font-family: "Poppins", sans-serif;
+
+}
+button{
+  font-family: "Poppins", sans-serif;
+
+}
+
+
+// <<<<<<<<<<< counter- investment >>>>>>>>>>
+#counter-investment{
+  background:  rgb(27, 22, 73);
+
+}
+
+.wid-count{
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid rgb(35, 149, 255);
+  background: rgba(31, 35, 68, 0.822);
+  font-family: "Poppins", sans-serif;
+}
+.wid-count p{
+  font-family: "Poppins", sans-serif;
+
+}
+@media (max-width: 990px) {
+  .wid-count {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 890px) {
+  .wid-count {
+    margin-top: 7px;
+    width: 90%;
+  }
+ 
+}
+
+// >>>>>>>faq>>>>>>>>>>>>
+#faq{
+  background:  rgb(27, 22, 73);
+  
+}
+.number{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+.accordion-button::after{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2'/%3E%3C/svg%3E");
+  background-color: rgb(35, 149, 255);
+  --color:white;
+  border-radius: 5px;
+  }
+.accordion-button:not(.collapsed)::after{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8'/%3E%3C/svg%3E");
+background-color: rgb(35, 149, 255);
+border-radius: 5px;
+--color:white;
+
+
+}
+
+
+.accordion-item{
+  color: white;
+  border: 1px solid rgb(35, 149, 255);
+  background: rgba(31, 35, 68, 0.822);
+
+}
+.accordion-button {
+  background-color: transparent;
+  color: white;
+  font-family: "Poppins", sans-serif;
+
+
+}
+.collapsed{
+  color: white;
+
+}
+.accordion-item:focus{
+box-shadow:none;
+outline:0;
+}
+
+.accordion{
+  color: white;
+}
+.accordion-button:focus{
+  box-shadow:none;
+  outline: 0;
+}
+.accordion-body{
+  color: white;
+  font-size: 13px;
+}
+
+.accordion-header:focus{
+  box-shadow:none}
+.accordion-body{
+  background: rgba(31, 35, 68, 0.822);
+
+}
+.foot-logo{
+  width: 200px;
+  height: auto;
+  margin: -35px 0;
+}
+@media (max-width: 990px) {
+  .foot-logo {
+display: none;  }
+}
+
+.footer-nav{
+  display: flex;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .footer-nav {
+flex-direction: column;}
+}
+
+
+
+.btn-shine {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // padding: 12px 48px;
+  color: #fff;
+  background: linear-gradient(to right, #ffd96f 0,   rgb(7, 133, 250) 20%,  rgb(255, 255, 255) 30%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+}
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 0px;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 0px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .btn-shine {
+  
+  font-size: 12px;}
+}

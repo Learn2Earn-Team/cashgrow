@@ -20,7 +20,6 @@ import { CalculatorComponent } from "./pages/calculator/calculator.component";
 import { ShareProfileComponent } from "./pages/share-profile/share-profile.component";
 import { ComplainComponent } from "./pages/complain/complain.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
-import { AddpackageComponent } from "./pages/addpackage/addpackage.component";
 import { AuthComponent } from "./pages/auth/auth.component";
 // import { TeamreportComponent } from './pages/teamreport/teamreport.component';
 
@@ -33,11 +32,7 @@ const routes: Routes = [
     component: BuysocialComponent,
     canActivate: [LoginGuard],
   },
-  {
-    path: "addpackage",
-    component: AddpackageComponent,
-    canActivate: [LoginGuard],
-  },
+
   { path: "forgetpassword", component: ForgetpasswordComponent },
 
   { path: "registrationform", component: RegistrationformComponent },

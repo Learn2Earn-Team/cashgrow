@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h1 class="text-white text-center p-3">All Users</h1>
+            <h1 class="text-white text-center p-3 fs-3 fw-bold" style="text-transform: uppercase;">All Users</h1>
             <div class="row" >
               <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-2 mb-1"   *ngFor="
               let item of userdata
@@ -128,7 +128,7 @@
                 ></pagination-controls>
               </div>
             </div> -->
-            <div class="mt-3">
+            <div class="mt-3 text-white">
               <pagination-controls
                 (pageChange)="p = $event"
               ></pagination-controls>

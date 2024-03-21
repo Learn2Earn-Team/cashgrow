@@ -61,7 +61,7 @@
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title text-white text-center fs-4">${{item.minprice}}
-                                &nbsp;&nbsp;<small>/&nbsp;&nbsp;&nbsp;${{item.minprice}}</small></h1>
+                                &nbsp;&nbsp;<small>/&nbsp;&nbsp;&nbsp;${{item.maxprice}}</small></h1>
                             <!-- <ul class="list-unstyled mt-3 mb-4">
                           <li>30 users included</li>
                           <li>15 GB of storage</li>
@@ -90,7 +90,7 @@
                                             placeholder="Invest Between Max and Min Price"
                                             [ngModelOptions]="{ standalone: true }" [(ngModel)]="balance">
                                         <div class="col-2 add ">
-                                            <button (click)="activep(item,modal)" class="packe btn"> Add </button>
+                                            <button (click)="activep(item,i,modal)" class="packe btn"> Add </button>
                                         </div>
                                         <!-- <div class="col-sm-3"></div> -->
                                         <div class="row mt-4 text-white">
@@ -123,7 +123,7 @@
                                               Daily Profit
 
                                         </div>
-                                        <div class="col-4"> <span class="text-center"> &nbsp;&nbsp; {{item.percentage}}.00 %</span></div>
+                                        <div class="col-4"> <span class="text-center"> &nbsp;&nbsp; {{item.percentage}} %</span></div>
 
                                     </li>
                                     <li class=" p-1 mt-3 d-flex">
@@ -140,14 +140,22 @@
                                         <div class="col-4 price-b text-center"> <span>{{item.days}}</span></div>
 
                                     </li>
+                                    <li class="d-flex p-2 mt-3">
+                                        <div class="col-2"></div>
+                                         <div class="col-8 text-center m-auto btn-shine fw-bold days ">Monday to Friday</div>
+                                         <div class="col-2"></div>
+              
+                                        
+                                    
+                                    </li>
                                 </ul>
                             </div>
                             <!-- <button type="button" class=" btn button">Invest Now</button> -->
                             <div class="m-auto text-center">
-                            <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
-                                class="btn  packe m-auto text-center">Activated</button>
-                            <button type="button" *ngIf="item.pstatus !== 'active'" (click)="open(content)"
-                                class="btn packe text-white ">Active</button>
+                            <!-- <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
+                                class="btn  packe m-auto text-center">Activated</button> -->
+                            <button type="button" (click)="open(content)"
+                                class="btn packe text-white " >Active</button>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { check } from 'src/app/localStorage/LocalStorage';
 import { ApicallService } from 'src/app/services/apicall.service';
-
+import { ToastService } from 'src/app/services/toast.service';
 @Component({
   selector: 'app-getreward',
   templateUrl: './getreward.component.html',
@@ -10,11 +10,11 @@ import { ApicallService } from 'src/app/services/apicall.service';
 export class GetrewardComponent {
   public userdata: any = [];
   userrewarde: any;
-  constructor(private apiCall: ApicallService) {
+  constructor(private apiCall: ApicallService,public toast:ToastService) {
     this.NewUserdata();
   }
   ngOnInit(): void {
-this.userreward();
+this.aprovereward();
   }
   public NewUserdata(): void {
     this.apiCall.rewadrequests().subscribe((res) => {
@@ -29,16 +29,17 @@ this.userreward();
       amount: item.amount,
     };
     this.apiCall.rewardstatus(status).subscribe((res) => {
+      if(res.error='false'){
+        this.toast.SuccessToast("Successfully!","Status Updated");
+      }
       this.NewUserdata();
+      this.aprovereward();
     });
   }
-  async userreward(){
-    const user: any = await check('user');
-    const userData = JSON.parse(user);
-    console.log(userData);
-    this.apiCall.userrewad(userData).subscribe(res=>{
+  async aprovereward(){
+    this.apiCall.approveReward().subscribe(res=>{
 this.userrewarde=res;
-console.log(this.userrewarde)
+console.log(this.userrewarde);
     })
   }
 }

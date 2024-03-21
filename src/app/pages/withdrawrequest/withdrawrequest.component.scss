@@ -155,7 +155,7 @@ body{margin-top:20px;
     border: 3px solid #ffffff4d;
     outline: none;
     overflow: hidden;
-    font-size: 15px;
+    font-size: 12px;
   }
   
 
@@ -191,4 +191,8 @@ body{margin-top:20px;
     to {
       left: 100%;
     }
+  }
+  *{
+    font-family: "Poppins", sans-serif;
+  
   }

@@ -49,15 +49,11 @@ export const adminMenuItems: any[] = [
     //   icon: 'bi bi-body-text',
     //   label: 'All Vedio'
     // },
-    {
-      routerLink: '/default/approveddeposite',
-      icon: 'bi bi-check-circle',
-      label: 'Aproved Deposit'
-    },
+  
     {
       routerLink: '/default/allapproveddeposite',
       icon: 'bi bi-body-text',
-      label: 'Total Approved Deposit'
+      label: 'All Deposits'
     },
     // {
     //   routerLink: '/default/bydatereport',
@@ -104,11 +100,7 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-bell-fill',
       label: 'Notification'
     },
-    {
-      routerLink: '/default/addpackage',
-      icon: 'bi bi-database-fill-add',
-      label: 'Add New Package'
-    },
+    
     // {
     //   routerLink: '/default/cashtowallet',
     //   icon: 'bi bi-wallet2',

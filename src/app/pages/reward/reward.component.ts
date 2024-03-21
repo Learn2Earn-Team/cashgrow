@@ -20,7 +20,7 @@ export class RewardComponent {
   constructor( public apiCall:ApicallService,public toast:ToastService){  }
   ngOnInit(): void {
     this.userteam();
-    this.aprovedreward();
+    this.userrewad();
   }
   public hundred:any=[{RewardName:'Bronze',direct:400,indirect:600,reward:50},{RewardName:'Silver',direct:1000,indirect:1500,reward:100},
     {RewardName:'Gold',direct:2000,indirect:3000,reward:300},{RewardName:'Platinum',direct:4000,indirect:6000,reward:500},{RewardName:'Daimond',direct:10000,indirect:15000,reward:1200},]
@@ -108,8 +108,11 @@ console.log(this.reward);
 this.toast.SuccessToast("Apply Succsessfully","Good Job!")
       });
 }
-aprovedreward(){
-  this.apiCall.approveReward().subscribe(res=>{
+ async userrewad(){
+  const user: any = await check('user');
+  const userData = JSON.parse(user);
+  console.log(userData);
+  this.apiCall.userrewad(userData.username).subscribe(res=>{
     this.rewardreq=res;
     console.log(this.rewardreq);
   })

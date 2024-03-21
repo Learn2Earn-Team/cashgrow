@@ -6,6 +6,7 @@ import Aos from "aos";
 import { ApicallService } from "src/app/services/apicall.service";
 import { check } from "src/app/localStorage/LocalStorage";
 import { ToastService } from "src/app/services/toast.service";
+import { interval, Subscription } from 'rxjs';
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -18,6 +19,7 @@ export class HomeComponent {
   userdataarray: any;
   balance: any;
   res: any;
+  
   constructor(
     public toast: ToastService,
     public apiCall: ApicallService,
@@ -29,7 +31,10 @@ export class HomeComponent {
   ngOnInit() {
     Aos.init();
     this.getdata(); // Initialize AOS when the component is initialized
+ 
+ 
   }
+  
   async getdata() {
     // const user: any = await check('user');
     // const userData = JSON.parse(user);
@@ -38,6 +43,8 @@ export class HomeComponent {
       console.log(this.alldata);
     });
   }
+     
+  
 
   goToRegiester() {
     this.router.navigate(["registrationform"], {
@@ -89,4 +96,5 @@ export class HomeComponent {
         console.error("Error downloading APK:", error);
       });
   }
+  
 }

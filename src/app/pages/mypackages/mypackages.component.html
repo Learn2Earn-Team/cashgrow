@@ -2,11 +2,9 @@
   <section class="intro mt-3">
     <div class="mask d-flex align-items-center h-100">
       <div class="container">
-        <h1 class="text-center list-group-item text-white fw-bold m-auto fs-2 p-4">My Activated Packages</h1>
-
-
-        <div class="row" >
-          <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-1 mb-1"  *ngFor="let item of myPackages" 
+        <h1 class="text-center list-group-item text-white fw-bold m-auto fs-4 p-4"style="text-transform: uppercase;">My Activated Packages</h1>
+        <div class="row"  >
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-1 mb-1 p-2"  *ngFor="let item of myPackages" 
           >
             <div class="card shadow-sm border " >
               <ul class="list-group list-group-flush rounded-2">
@@ -19,8 +17,6 @@
                       <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Username</p></div>
                     <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 text-success fw-bold" >{{item.username}}</p></div>
-
-                    <!-- <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fs-5 fw-bold" style="color: #00ff00;">{{item.maxprice}}$</p></div> -->
                   </div>
                 </li>
                 <li class="list-group-item">
@@ -39,14 +35,9 @@
                         <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Invest</p></div>
                     <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fw-bold" style="color: rgb(35, 149, 255)"> {{item.invest}}$</p></div>
                    </div>
-                  
-
-                </li>
-               
-                
-                
-                
+                </li>              
               </ul>
+
             </div>
             
           </div>
@@ -56,7 +47,7 @@
      
     </div>
 </section>
-<table class="table-responsive table-hover p-4 mt-4 m-auto text-center ">
+<!-- <table class="table-responsive container col-lg-12 col-md-12 table-hover mt-4 m-auto text-center ">
   <tr class="t-head text-white text-center">
     <th>Package Name</th>
     <th>Order Price</th>
@@ -75,7 +66,10 @@
     <td>{{item.activeDate}}</td>
     <td>{{item.expireDate}}</td>
   </tr>
-</table>
+</table> -->
+
+
+
 <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
   <!-- <i class="fa fa-whatsapp my-float"></i> -->
   <img class="float" src="../../../assets/images/whatsapp.png" alt="">

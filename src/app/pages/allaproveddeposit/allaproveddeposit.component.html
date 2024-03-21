@@ -2,13 +2,13 @@
   <section class="intro">
     <div class="mask d-flex align-items-center h-100">
       <div class="container p-3">
-        <h1 class="text-white text-center fs-2">All Approved Deposite Requests</h1>
+        <h1 class="text-white text-center fs-3 fw-bold" style="text-transform: uppercase;">All Deposits</h1>
         <p class="text-white text-center p-3 " >
           Total Aproved Amount: {{ this.userdata.length }}
         </p>
 
         <div class="row" >
-          <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-1 mb-1 "  *ngFor="
+          <div class=" col-sm-8 col-md-4 col-lg-4 mt-1 mb-1 m-auto "  *ngFor="
           let item of userdata
             | paginate : { itemsPerPage: pageSize, currentPage: p }
         "
@@ -16,7 +16,7 @@
             <div class="card shadow-sm border rounded-2 mt-2"  >
               <ul class="list-group list-group-flush rounded-2">
                 <li class="list-group-item heading text-center fw-bold" >
-                  <p>Approved Desposit Request</p>
+                  <p> Desposit </p>
                 </li>
                 <li class="list-group-item" >
                   <div class="row">

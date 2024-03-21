@@ -30,8 +30,13 @@ export class PromotionsocialComponent implements OnInit {
     InvitedLink: '',
   };
   buttonClicked: boolean = false;
-public alldata:any;
-
+// public alldata:any;
+public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage:1.00},
+{maxprice:1000,minprice:500,name:'PRIME',days:'120',percentage:1.50},
+{maxprice:5000,minprice:2000,name:'PRIME PLUS',days:'90',percentage:2.00},
+{maxprice:15000,minprice:10000,name:'PREMIUM',days:'72',percentage:2.50},
+{maxprice:25000,minprice:20000,name:'PREMIUMN PLUS',days:'60',percentage:3.00},
+]
 
   public userDeposits: any = {};
   userdataarray: any;
@@ -54,19 +59,29 @@ public alldata:any;
 
   ngOnInit() {
     this.getUserData();
-    this.getdata();
+   this.getCurrentDay();
+    // this.getdata();
     this.userdata1();
     this.checkBalacne();
   }
-  async getdata() {
-    const user: any = await check('user');
-    const userData = JSON.parse(user);
-    this.apiCall.getPackages(userData.username).subscribe((res: any) => {
-      this.alldata = res;
-      console.log(this.alldata);
-    })
-  }
+  // async getdata() {
+  //   const user: any = await check('user');
+  //   const userData = JSON.parse(user);
+  //   this.apiCall.getPackages(userData.username).subscribe((res: any) => {
+  //     this.alldata = res;
+  //     console.log(this.alldata);
+  //   })
+  // }
   // promotionsocial.component.ts
+  getCurrentDay() {
+    const currentTime = new Date();
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long' // Specify 'long' for the full name of the day of the week
+    };
+    const currentDay = currentTime.toLocaleDateString('en-US', options);
+    console.log('Current Day:', currentDay);
+  }
+  
   open(content: any) {
 
     this.modalService.open(content,{ ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -93,9 +108,9 @@ public alldata:any;
     console.log('Current Time', this.activeTime);
   }
 
-  activep(item: any,modal:any) {
+  activep(item: any,ind:any,modal:any) {
     const data = {
-      pid:item.pid,
+      pid:ind+1,
       days:item.days,
       username:this.userdataarray.username,
       balance:+this.balance,
