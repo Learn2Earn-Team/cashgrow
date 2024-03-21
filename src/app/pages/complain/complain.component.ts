@@ -20,7 +20,7 @@ import { ToastService } from "src/app/services/toast.service";
 export class ComplainComponent
   implements OnInit, AfterViewInit, AfterViewChecked
 {
-  @ViewChild("chatMessages") chatMessages!: ElementRef | undefined;
+  @ViewChild("chatMessages") chatMessages: ElementRef | undefined;
   public userMessage: any = { sender: "", message: "", reciver: "", reply: "" };
   allComplain: any;
   public other: any = "";

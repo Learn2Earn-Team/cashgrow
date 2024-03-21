@@ -10,7 +10,16 @@
   </div>
 </header>
 <div class="main">
-  <div class="container" #chatMessages>
+  <div class="container" 
+  data-mdb-perfect-scrollbar="true"
+    style="
+      position: relative;
+      overflow-y: scroll;
+      padding-top: 90px;
+      padding-bottom: 70px;
+      height:100vh;
+"
+  #chatMessages>
     <div class="chat-log" *ngFor="let item of allComplain">
       <div class="chat-log__item mt-2" *ngIf="item.reciver == other">
         <h3 class="chat-log__author">
@@ -46,7 +55,7 @@
     </div>
   </div>
   <br />
-  <br />
+
 
   <div class="chat-form" style="background: transparent; height: 95px">
     <div class="container" style="background: black; height: 100px">
@@ -54,28 +63,22 @@
         <div class="row">
           <div class="col-sm-10 col-8 col-xs-8 mt-2">
             <input
+              (keyup.enter)="addComplain()"
               class="input"
               style="background: transparent; border: none; color: white"
               type="text"
               class="form-control"
-              id=""
               placeholder="Message"
               [(ngModel)]="message"
               [ngModelOptions]="{ standalone: true }"
-              (keyup.enter)="addComplain()"
             />
           </div>
-          <div class="col-sm-2 col-4 col-xs-4 text-center mt-2">
-            <button
-              type="submit"
-              class="btn float-end button"
-              (click)="addComplain()"
-            >
-              Send
-            </button>
-          </div>
         </div>
+       
       </form>
+      <div style="float: right; " class="col-sm-2 col-4 col-xs-4 text-center mt-2">
+        <button type="submit" style="margin-top: -40px;" class="btn float-end button" (click)="addComplain()">Send</button>
+      </div>
     </div>
   </div>
 </div>
