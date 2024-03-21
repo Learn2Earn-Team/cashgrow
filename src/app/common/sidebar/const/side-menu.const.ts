@@ -90,11 +90,7 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-globe2',
       label: 'Internal Transfer'
     },
-    {
-      routerLink: '/default/withdrawhistory',
-      icon: 'bi bi-cash',
-      label: 'My Withdraw History'
-    },
+   
     {
       routerLink: '/default/bonushistory',
       icon: 'bi bi-bell-fill',
@@ -197,11 +193,7 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-box-arrow-left',
       label: 'Logout'
     },
-    // {
-    //   routerLink: '/default/dataentry',
-    //   icon: 'bi bi-wifi',
-    //   label: 'Data Entry'
-    // }
+   
 
   ];
   export const SubadminMenuItems: any[] = [
@@ -225,12 +217,6 @@ export const adminMenuItems: any[] = [
         icon: 'bi bi-globe2',
         label: 'Internal Transfer'
       },
-      {
-        routerLink: '/default/withdrawhistory',
-        icon: 'bi bi-cash',
-        label: 'My Withdraw History'
-      },
- 
      
       {
         routerLink: '/default/promotionsocial',

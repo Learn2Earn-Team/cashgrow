@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { adminMenuItems, menuItems } from './const/side-menu.const'
+import { SubadminMenuItems, adminMenuItems, menuItems } from './const/side-menu.const'
 import { check } from 'src/app/localStorage/LocalStorage';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -39,6 +39,9 @@ export class SidebarComponent implements OnInit {
     console.log(userData)
     if(userData.username == 'google') {
       this.sideMenuItems = adminMenuItems;
+    }
+    else if(userData.username == 'ML639107'){
+      this.sideMenuItems = SubadminMenuItems;
     }
     else{
       this.sideMenuItems = menuItems;
