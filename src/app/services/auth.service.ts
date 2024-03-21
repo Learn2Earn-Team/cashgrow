@@ -7,12 +7,12 @@ import { Observable } from "rxjs";
 
 //export const apiUrl = 'https://learn2earnn.com/products/Cashgrow-api/public/';
 //  export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
-// export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
+export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
 //  export const apiUrl = "https://7starcommercial.com/SMM/public/";
 
 //export const apiUrl = 'https://learn2earnn.com/products/Maclink-api/public/';
 //  export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
-export const apiUrl = "http://localhost/SMM/public/";
+// export const apiUrl = "http://localhost/SMM/public/";
 //export const apiUrl = "http://localhost/SMM_API/public/";
 
 @Injectable({
