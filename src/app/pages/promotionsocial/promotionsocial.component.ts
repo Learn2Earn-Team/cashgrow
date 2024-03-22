@@ -110,25 +110,26 @@ public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage
 
   activep(item: any,ind:any,modal:any) {
     const data = {
-      pid:ind+1,
+      pid:ind,
       days:item.days,
       username:this.userdataarray.username,
+      user_id:this.userdataarray.id,
       balance:+this.balance,
     }
     console.log(data,"data");
-    if(+item.maxprice>= +data.balance && +item.minprice<= +data.balance && +this.userdataarray.balnce >= +this.balance){
+    if(+item.maxprice>= +data.balance && +item.minprice<= +data.balance && +this.userdataarray.balnce >= +data.balance){
       this.apiCall.orders(data).subscribe((res)=>{
-        if(res.error === false){
-          modal.close();
-          this.toast.SuccessToast("Invest Succsessfully","Good Job!")
-          this.userdata1()
-        }else {
-          this.toast.ErrorToast("Somthing Went Wrong","Error")
-        }
     console.log(res);
-    this.res=res;
     console.log(this.userdataarray.balnce);
+    if(res.error === false){
+      modal.close();
+      this.toast.SuccessToast("Invest Succsessfully","Good Job!")
+      this.userdata1();
+    }else {
+      this.toast.ErrorToast("Somthing Went Wrong","Error")
+    }
      })    
+     
     }
     else{
       this.toast.ErrorToast("Somthing Went Wrong","Error")
