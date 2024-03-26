@@ -1,28 +1,28 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { check } from 'src/app/localStorage/LocalStorage';
-import { ApicallService } from 'src/app/services/apicall.service';
-import { ToastService } from 'src/app/services/toast.service';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { check } from "src/app/localStorage/LocalStorage";
+import { ApicallService } from "src/app/services/apicall.service";
+import { ToastService } from "src/app/services/toast.service";
 
 @Component({
-  selector: 'app-withdrawrequest',
-  templateUrl: './withdrawrequest.component.html',
-  styleUrls: ['./withdrawrequest.component.scss'],
+  selector: "app-withdrawrequest",
+  templateUrl: "./withdrawrequest.component.html",
+  styleUrls: ["./withdrawrequest.component.scss"],
 })
 export class WithdrawrequestComponent {
   public userdata: any = {};
   public userobj: any = {};
   public withdrawDetail: any = {
-    user_id: '',
-    amount: '',
-    contact: '',
-    jdetail: 'Wallet',
-    uname: '',
-    name: '',
-    services: '',
-    net: '',
+    user_id: "",
+    amount: "",
+    contact: "",
+    jdetail: "MetaMask",
+    uname: "",
+    name: "",
+    services: "",
+    net: "",
   };
-  public checkUserPin: any = { username: '', pin: '' };
+  public checkUserPin: any = { username: "", pin: "" };
   public user: any;
   public userBlanace: number | undefined;
   showBalanceMessage: any = null;
@@ -35,7 +35,7 @@ export class WithdrawrequestComponent {
 
   async checkBalacne($event: any) {
     console.log($event.target.value);
-    const user: any = await check('user');
+    const user: any = await check("user");
     const userData = JSON.parse(user);
     console.log(userData);
     this.apiCall.userdata(userData.username).subscribe((user) => {
@@ -44,15 +44,15 @@ export class WithdrawrequestComponent {
       console.log(typeof this.userBlanace, this.userBlanace);
       if ($event.target.value > this.userBlanace) {
         this.showBalanceMessage = `You have only Rs. ${this.userBlanace} balance`;
-        console.log('you have not balacne');
+        console.log("you have not balacne");
       } else {
-        this.showBalanceMessage = '';
+        this.showBalanceMessage = "";
       }
     });
   }
 
   public async NewUserdata() {
-    this.user = await check('user');
+    this.user = await check("user");
     this.userobj = JSON.parse(this.user);
 
     // this.withdrawDetail.contact = this.userobj.contactNumber;
@@ -68,50 +68,47 @@ export class WithdrawrequestComponent {
     console.log(this.withdrawDetail.net);
     this.apiCall.CheckWithdrawStatus(this.userobj.id).subscribe((res) => {
       if (
-        res.status === 'Approve' ||
-        (res.status === 'Rejected' && res.error === false)
+        res.status === "Approve" ||
+        (res.status === "Rejected" && res.error === false)
       ) {
         // this.apiCall.CheckUser(this.checkUserPin).subscribe((res) => {
         //   console.log(res);
-          // if (res.error == false) {
-            this.apiCall.userdata(this.userobj.username).subscribe((res) => {
-              console.log('test',res)
-              const varriable = +res.balnce;
-              console.log(varriable, 'test');
-              console.log(this.withdrawDetail.net);
-              if (varriable >= 10 && this.withdrawDetail.net >= 10) {
-                this.apiCall
-                  .withdrawrequest(this.withdrawDetail)
-                  .subscribe((res) => {
-                    if (res.error == false) {
-                      this.toast.SuccessToast(
-                        'Your Withdraw request has been sent',
-                        'Congratulations'
-                      );
-                      this.route.navigate(['default/withdrawhistory']);
-                    } else {
-                      this.toast.ErrorToast(
-                        'Your Withdraw request Faild',
-                        'You Enter invalid Amount'
-                      );
-                    }
-                  });
-              } else {
-                this.toast.ErrorToast(
-                  'Error',
-                  'You Have not Sufficent Balance'
-                );
-              }
-            });
-          // }
-          //  else {
-          //   this.toast.ErrorToast('Incorrect Pin Code', 'Error');
-          // }
+        // if (res.error == false) {
+        this.apiCall.userdata(this.userobj.username).subscribe((res) => {
+          console.log("test", res);
+          const varriable = +res.balnce;
+          console.log(varriable, "test");
+          console.log(this.withdrawDetail.net);
+          if (varriable >= 10 && this.withdrawDetail.net >= 10) {
+            this.apiCall
+              .withdrawrequest(this.withdrawDetail)
+              .subscribe((res) => {
+                if (res.error == false) {
+                  this.toast.SuccessToast(
+                    "Your Withdraw request has been sent",
+                    "Congratulations"
+                  );
+                  this.route.navigate(["default/withdrawhistory"]);
+                } else {
+                  this.toast.ErrorToast(
+                    "Your Withdraw request Faild",
+                    "You Enter invalid Amount"
+                  );
+                }
+              });
+          } else {
+            this.toast.ErrorToast("Error", "You Have not Sufficent Balance");
+          }
+        });
+        // }
+        //  else {
+        //   this.toast.ErrorToast('Incorrect Pin Code', 'Error');
+        // }
         // });
       } else {
         this.toast.ErrorToast(
-          'Withraw Request Not Submint',
-          'You Previus Request is Still Pending'
+          "Withraw Request Not Submint",
+          "You Previus Request is Still Pending"
         );
       }
     });
