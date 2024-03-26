@@ -958,4 +958,11 @@ export class ApicallService {
       })
     );
   }
+  public mydailyprofit(): Observable<any> {
+    return this.http.get(apiUrl + `mydailyprofit`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }

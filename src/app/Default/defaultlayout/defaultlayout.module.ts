@@ -72,6 +72,7 @@ import { TeamreportComponent } from 'src/app/pages/teamreport/teamreport.compone
 import { TeamComponent } from 'src/app/pages/team/team.component';
 import { GetrewardComponent } from 'src/app/pages/getreward/getreward.component';
 import { RewardComponent } from 'src/app/pages/reward/reward.component';
+import { DownloadappComponent } from 'src/app/downloadapp/downloadapp.component';
 
 const routes: Routes = [
     // { path: '', redirectTo: '/layout', pathMatch: 'full', data: { title: 'Layout' } },
@@ -137,6 +138,8 @@ const routes: Routes = [
           { path: 'default/complainbox', component:ComplainboxComponent, canActivate: [LoginGuard]},
           { path: 'default/reward', component: RewardComponent , canActivate: [LoginGuard]},
           { path: 'default/getreward', component: GetrewardComponent , canActivate: [LoginGuard]},
+          { path: 'default/downloadapp', component: DownloadappComponent , canActivate: [LoginGuard]},
+
 
 
 

@@ -18,6 +18,8 @@
 }
 
 
+
+
 :host {
   
   display:block;
@@ -239,6 +241,8 @@ h6 {
   background:  rgb(27, 22, 73);
   font-size: 13px;
   height: 40px;
+  font-family: "Poppins", sans-serif;
+
   padding: 0;
   color: rgb(255, 255, 255);
   // border-top: 1px solid rgba(224, 221, 221, 0.678);
@@ -1734,14 +1738,15 @@ height: 100%;
 
 }
 .about-cont{
-  padding: 20px;
+  padding: 15px;
   color: #000000;
   font-family: "Poppins", sans-serif;
 
 }
 .content-des span{
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
+  text-align: start;
 
 }
 .content-des p{
@@ -1954,7 +1959,7 @@ height: 100%;
 .hero-text{
   font-size: 3em;
   color: #f0f0f7;
-  text-shadow: 3px 3px 3px  #9f31c0;
+  text-shadow: 3px 3px 3px  #e0c005;
   text-transform: uppercase; 
   top: 0;
 
@@ -2648,6 +2653,12 @@ outline:0;
 .accordion-body{
   background: rgba(31, 35, 68, 0.822);
 
+}
+.foot a{
+  font-family: "Poppins", sans-serif;
+}
+.foot a:hover{
+  color: rgb(7, 133, 250)
 }
 .foot-logo{
   width: 200px;

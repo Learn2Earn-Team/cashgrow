@@ -90,11 +90,7 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-globe2',
       label: 'Internal Transfer'
     },
-    {
-      routerLink: '/default/withdrawhistory',
-      icon: 'bi bi-cash',
-      label: 'My Withdraw History'
-    },
+   
     {
       routerLink: '/default/bonushistory',
       icon: 'bi bi-bell-fill',
@@ -197,13 +193,63 @@ export const adminMenuItems: any[] = [
       icon: 'bi bi-box-arrow-left',
       label: 'Logout'
     },
-    // {
-    //   routerLink: '/default/dataentry',
-    //   icon: 'bi bi-wifi',
-    //   label: 'Data Entry'
-    // }
+   
 
   ];
+  export const SubadminMenuItems: any[] = [
+    {
+      routerLink: 'default/profile',
+      icon: 'bi bi-person-circle',
+      label: 'Profile'
+    },
+    {
+      routerLink: '/default/alluser',
+      icon: 'bi bi-people-fill',
+      label: 'All User'
+    },
+    {
+        routerLink: '/default/newuser',
+        icon: 'bi bi-person-badge',
+        label: 'New User'
+      },
+      
+    
+     
+      {
+        routerLink: '/default/promotionsocial',
+        icon: 'bi bi-bar-chart-line-fill',
+        label: 'Active Package'
+      },
+    
+    
+      {
+        routerLink: '/default/mypackages',
+        icon: 'bi bi-bank',
+        label: 'My Packages'
+      },
+      {
+        routerLink: '/default/internaltransfer',
+        icon: 'bi bi-globe2',
+        label: 'Internal Transfer'
+      },
+      {
+        routerLink: 'default/team',
+        icon: 'bi bi-microsoft-teams',
+        label: 'Teamreport'
+      },
+      {
+        routerLink: '/default/complainbox',
+        icon: 'bi bi-wifi',
+        label: 'Complains box'
+      },
+      
+      {
+        routerLink: '/login',
+        icon: 'bi bi-box-arrow-left',
+        label: 'Logout'
+      },
+  
+    ];
 export const menuItems: any[] = [
   {
     routerLink: '/default/index',

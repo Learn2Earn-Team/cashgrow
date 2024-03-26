@@ -93,6 +93,7 @@ import { TeamComponent } from "./pages/team/team.component";
 import { RewardComponent } from "./pages/reward/reward.component";
 import { GetrewardComponent } from "./pages/getreward/getreward.component";
 import { AuthComponent } from "./pages/auth/auth.component";
+import { DownloadappComponent } from './downloadapp/downloadapp.component';
 // import { SearchFilter } from './pipes/search-filter.pipe';
 @NgModule({
   declarations: [
@@ -169,6 +170,7 @@ import { AuthComponent } from "./pages/auth/auth.component";
     RewardComponent,
     GetrewardComponent,
     AuthComponent,
+    DownloadappComponent,
     // ChaticonComponent
     // SearchFilter,
     // LoadingOverlayComponent,

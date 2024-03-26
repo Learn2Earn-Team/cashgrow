@@ -53,27 +53,117 @@
       </div>
     </div>
 
-    <div class="container">
-      <!--BLOCK ROW START-->
-      <div class="row m-auto">
-        <div
-          class="col-12 col-md-4 col-sm-12 m-auto"
-          *ngFor="let item of alldata; let i = index"
-        >
-          <div class="card mb-4">
-            <div class="card-header py-3 packe">
-              <h4
-                class="my-0 fw-normal text-white pack head-c text-center fs-5 fw-bold"
-              >
-                {{ item.name }}
-              </h4>
-            </div>
-            <div class="card-body">
-              <h1
-                class="card-title pricing-card-title text-white text-center fs-4"
-              >
-                ${{ item.minprice }} &nbsp;&nbsp;<small
-                  >/&nbsp;&nbsp;&nbsp;${{ item.maxprice }}</small
+        <div class="container">
+
+            <!--BLOCK ROW START-->
+            <div class="row m-auto">
+                <div class="col-12 col-md-4 col-sm-12 m-auto" *ngFor="let item of alldata;let i=index">
+                    <div class="card mb-4 ">
+                        <div class="card-header py-3 packe">
+                            <h4 class="my-0 fw-normal text-white pack head-c  text-center fs-5 fw-bold">{{item.name}}</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title text-white text-center fs-4">${{item.minprice}}
+                                &nbsp;&nbsp;<small>/&nbsp;&nbsp;&nbsp;${{item.maxprice}}</small></h1>
+                            <!-- <ul class="list-unstyled mt-3 mb-4">
+                          <li>30 users included</li>
+                          <li>15 GB of storage</li>
+                          <li>Phone and email support</li>
+                          <li>Help center access</li>
+                        </ul> -->
+                            <ng-template #content let-modal>
+                                <div class="card-body">
+                                    <div class="row modal-body modalcolor mt-2">
+                                        <div class="col-9"></div>
+                                        <div class="col-3">
+                                            <i class="bi bi-x-lg text-white  float-end "
+                                                (click)="modal.close('Save click')"></i>
+                                        </div>
+                                        <div class="col-12 text-white">
+                                            <div class="row">
+                                                <div class="col-5 p-1">User Current Balance:</div>
+                                                <div class="col-7 p-1 text-primary text-white fw-bold float-end">
+                                                    {{this.userdataarray.balnce}}$</div>
+                                                <div class="col-5 p-1">Min-Price:</div>
+                                                <div class="col-7 p-1 text-white float-end fw-bold ">
+                                                    {{item.minprice}}$</div>
+                                            </div>
+                                        </div>
+                                        <input class="col-10 col-5 rounded-2 input border-1" type="number"
+                                            placeholder="Invest Between Max and Min Price"
+                                            [ngModelOptions]="{ standalone: true }" [(ngModel)]="balance">
+                                        <div class="col-2 add ">
+                                            <button (click)="activep(item,i,modal)" class="packe btn"> Add </button>
+                                        </div>
+                                        <!-- <div class="col-sm-3"></div> -->
+                                        <div class="row mt-4 text-white">
+                                            <div class="col-4"> Max-Price: </div>
+                                            <div class="col-4 fw-bold">
+                                                {{item.maxprice}}$
+                                            </div>
+                                            <div class="col-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <div class="generic_feature_list p-1 ">
+                                <ul class="row">
+
+                                    <!-- <li class="d-flex p-1 mt-3"><div class="col-2">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-check" icon-name="check-check" class="lucide lucide-check-check"><path d="M18 6 7 17l-5-5"></path><path d="m22 10-7.5 7.5L13 16"></path></svg></div>
+                                        <div class="col-6 text-start"> Profit </div>
+                                        <div class="col-5">  <span>{{item.percentage}}.00%</span></div>
+                                  
+                                    </li> -->
+                                    <li class=" p-1 mt-3 d-flex">
+                                        <div class="col-8 "> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                data-lucide="check-check" icon-name="check-check"
+                                                class="lucide lucide-check-check">
+                                                <path d="M18 6 7 17l-5-5"></path>
+                                                <path d="m22 10-7.5 7.5L13 16"></path>
+                                            </svg> 
+                                              Daily Profit
+
+                                        </div>
+                                        <div class="col-4"> <span class="text-center"> &nbsp;&nbsp; {{item.percentage}} %</span></div>
+
+                                    </li>
+                                    <li class=" p-1 mt-3 d-flex">
+                                        <div class="col-8 text-start "> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                data-lucide="check-check" icon-name="check-check"
+                                                class="lucide lucide-check-check">
+                                                <path d="M18 6 7 17l-5-5"></path>
+                                                <path d="m22 10-7.5 7.5L13 16"></path>
+                                            </svg>
+                                        Package Days
+                                        </div>
+                                        <div class="col-4 price-b text-center"> <span>{{item.days}}</span></div>
+
+                                    </li>
+                                    <li class="d-flex p-2 mt-3">
+                                        <div class="col-2"></div>
+                                         <div class="col-8 text-center m-auto btn-shine fw-bold days ">Monday to Friday</div>
+                                         <div class="col-2"></div>
+              
+                                        
+                                    
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <button type="button" class=" btn button">Invest Now</button> -->
+                            <div class="m-auto text-center">
+                            <!-- <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
+                                class="btn  packe m-auto text-center">Activated</button> -->
+                            <button type="button" (click)="open(content)"
+                                class="btn packe text-white " >Active</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 col-sm-10 m-auto  mb-3" *ngFor="let item of alldata;let i=index"
                 >
               </h1>
 

@@ -76,7 +76,7 @@ export class IndexComponent implements OnInit {
     { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
     {
       icon: "icon bi-person-lines-fill",
-      type: "Passive",
+      type: "totalpassive",
       subtype: "",
       today: "",
     },

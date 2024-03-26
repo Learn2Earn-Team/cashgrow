@@ -112,7 +112,7 @@ this.toast.SuccessToast("Apply Succsessfully","Good Job!")
   const user: any = await check('user');
   const userData = JSON.parse(user);
   console.log(userData);
-  this.apiCall.userrewad(userData.username).subscribe(res=>{
+  this.apiCall.userrewad(userData.id).subscribe(res=>{
     this.rewardreq=res;
     console.log(this.rewardreq);
   })
