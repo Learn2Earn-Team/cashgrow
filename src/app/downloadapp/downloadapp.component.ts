@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApicallService } from '../services/apicall.service';
+import { check } from '../localStorage/LocalStorage';
 @Component({
   selector: 'app-downloadapp',
   templateUrl: './downloadapp.component.html',
@@ -14,29 +15,14 @@ export class DownloadappComponent {
       constructor(public apiCall:ApicallService){
 
       }
-      mydailyprofit(){
-        this.apiCall.mydailyprofit().subscribe((res:any)=>{
-          console.log(res);
+    async  mydailyprofit(){
+        const user: any = await check('user');
+        const userData = JSON.parse(user);
+        this.apiCall.mydailyprofit(userData.username).subscribe((res:any)=>{
           this.data=res;
-        })
-       
+          console.log(this.data);
+        });
       }
-      pname(){
-          if(this.data.pid===0){
-           this.name='Basic'
-          }
-          else  if(this.data.pid===1){
-            this.name='Prime'
-           }
-           else  if(this.data.pid===2){
-            this.name='Prime Plus'
-           }
-           else  if(this.data.pid===3){
-            this.name='Premium'
-           }
-           else{
-            this.name='Premium Plus'
-           }
-      }
+ 
 }
 
