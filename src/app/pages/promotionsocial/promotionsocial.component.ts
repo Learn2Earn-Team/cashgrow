@@ -5,7 +5,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { check } from 'src/app/localStorage/LocalStorage';
 import { ApicallService } from 'src/app/services/apicall.service';
 import { ToastService } from 'src/app/services/toast.service';
-import { ApiService } from 'src/app/api.service';
 @Component({
   selector: 'app-promotionsocial',
   templateUrl: './promotionsocial.component.html',
@@ -52,7 +51,6 @@ public alldata:any=[{maxprice:100,minprice:10,name:'BASIC',days:'180',percentage
     // private apiCall: ApicallService,
     private route: Router,
     private toast: ToastService,
-    public apicall: ApiService,
     public apiCall: ApicallService
   ) {
   }
