@@ -49,39 +49,6 @@ export class ApicallService {
       })
     );
   }
-  exchangeCodeForToken(code: string): Observable<any> {
-    const tokenEndpoint = "https://accounts.binance.com/oauth/token"; // Replace with Binance's token endpoint
-    const clientId = "775697127"; // Replace with your Binance OAuth client ID
-    const clientSecret =
-      "pWFvezQ89at8gHogKyEEREhJUyKKwPAPwxm3He53K1wciCo42xUNV9GfFpRcBmt9"; // Replace with your Binance OAuth client secret
-    const redirectUri = "http://localhost:4200/#/auth"; // Replace with your redirect URI configured in Binance
-
-    const params = new URLSearchParams();
-    params.append("grant_type", "authorization_code");
-    params.append("client_id", clientId);
-    params.append("client_secret", clientSecret);
-    params.append("code", code);
-    params.append("redirect_uri", redirectUri);
-
-    return this.http.post<any>(tokenEndpoint, params.toString(), {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    });
-  }
-  // public Authtoken(type: any): Observable<any> {
-  //   const authorizationEndpoint =
-  //     "https://accounts.binance.com/en/oauth/authorize";
-  //   const responseType = "code";
-  //   const clientId = "775697127";
-  //   const redirectUri = "http://localhost:4200/#/";
-  //   const state = Math.random().toString(36).substring(2);
-  //   const scopes = "read";
-  //   const url = `${authorizationEndpoint}?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scopes}`;
-  //   return this.http.get(apiUrl + `product/${type}`).pipe(
-  //     map((res: any) => {
-  //       return res;
-  //     })
-  //   );
-  // }
 
   public getuserOrders(id: any): Observable<any> {
     return this.http.get(apiUrl + `userorder/${id}`).pipe(
