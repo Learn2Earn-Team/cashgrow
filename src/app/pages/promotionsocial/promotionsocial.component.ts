@@ -92,19 +92,11 @@ export class PromotionsocialComponent implements OnInit {
     this.userdata1();
     this.checkBalacne();
   }
-  // async getdata() {
-  //   const user: any = await check('user');
-  //   const userData = JSON.parse(user);
-  //   this.apiCall.getPackages(userData.username).subscribe((res: any) => {
-  //     this.alldata = res;
-  //     console.log(this.alldata);
-  //   })
-  // }
-  // promotionsocial.component.ts
+
   getCurrentDay() {
     const currentTime = new Date();
     const options: Intl.DateTimeFormatOptions = {
-      weekday: "long", // Specify 'long' for the full name of the day of the week
+      weekday: "long",
     };
     const currentDay = currentTime.toLocaleDateString("en-US", options);
     console.log("Current Day:", currentDay);
@@ -114,12 +106,8 @@ export class PromotionsocialComponent implements OnInit {
     this.modalService
       .open(content, { ariaLabelledBy: "modal-basic-title" })
       .result.then(
-        (result) => {
-          // this.closeResult = `Closed with: ${result}`;
-        },
-        (reason) => {
-          // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        }
+        (result) => {},
+        (reason) => {}
       );
   }
   getCurrentTime() {
@@ -167,48 +155,13 @@ export class PromotionsocialComponent implements OnInit {
     } else {
       this.toast.ErrorToast("Somthing Went Wrong", "Error");
     }
-
-    // console.log(days,pid)
-    //   this.userdata1();
-    //   this.getdata();
-    //   if (this.alldata[item].price <= 1000) {
-    //     this.persent = this.alldata[item].price / 100;
-    //     console.log('One Day Interest', this.persent);
-    // console.log(this.userdataarray.balnce);
-    //     // Calculate total yearly interest
-    //     this.persenttotal = this.persent * 365;
-    //     console.log('Total Yearly Interest', this.persenttotal);
-
-    //     // Set up a timer to add 1% of the price every 24 hours
-    //     setInterval(() => {
-    //       // Add 1% of the price to persenttotal
-    //       this.todaypersenttotal += this.alldata[item].price / 100;
-
-    //       // Log the updated total interest
-    //       console.log('Updated Total Yearly Interest', this.todaypersenttotal);
-    //     }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-
-    //     console.log('User Id', this.userData.username);
-    //     console.log('You have Successfully Activated Package');
-    //     this.buttonClicked = true;
-    //     this.getCurrentTime();
-    //   } else {
-    //     console.log('You have not successfully activated the package');
-    //   }
   }
 
-  // getcolor(index:number){
-  //  return index===1 ? 'black':'transparent'
-  // }
   async getUserData() {
     const user: any = await check("user");
     const userData = JSON.parse(user);
     this.userData = userData;
     console.log(this.userData);
-    // this.apiCall.getUserDepositAmount(this.userData?.id).subscribe((res) => {
-    //   this.userDeposits = res[0];
-    //   console.log(this.userDeposits);
-    // });
   }
 
   async checkBalacne() {
@@ -217,14 +170,6 @@ export class PromotionsocialComponent implements OnInit {
     console.log(userData);
     this.apiCall.userdata(userData.username).subscribe((user) => {
       console.log(user);
-      // this.userBlanace = +user.balnce;
-      // console.log(typeof this.userBlanace, this.userBlanace);
-      // if ($event.target.value > this.userBlanace) {
-      //   this.showBalanceMessage = `You have only Rs. ${this.userBlanace} balance`;
-      //   console.log('you have not balacne');
-      // } else {
-      //   this.showBalanceMessage = '';
-      // }
     });
   }
 
@@ -237,44 +182,4 @@ export class PromotionsocialComponent implements OnInit {
       console.log(this.userdataarray);
     });
   }
-
-  // public async ActivePackage(price: number, level1Amount: any, level2Amount: any, level3Amount: any, level4Amount: any, level5Amount: any, level6Amount: any) {
-  //   const user: any = await check('user');
-  //   const userData = JSON.parse(user);
-  //   console.log(userData);
-  //   console.log(price, level1Amount, level2Amount, level3Amount, level4Amount, level5Amount, level6Amount)
-  // this.PackageDetails.price = price;
-  // this.PackageDetails.level1 = level1Amount;
-  // this.PackageDetails.level2 = level2Amount;
-  // this.PackageDetails.level3 = level3Amount;
-  // this.PackageDetails.level4 = level4Amount;
-  // this.PackageDetails.level5 = level5Amount;
-  // this.PackageDetails.level6 = level6Amount;   assif
-  // this.PackageDetails.user_id = userData.id;
-  // this.PackageDetails.username = userData.username;
-  // console.log(this.PackageDetails)
-  // this.apiCall.userdata(userData.username).subscribe((user) => {
-  //   console.log(user);
-  //  const userBlanace = +user.balnce;
-  //   console.log(typeof userBlanace, userBlanace);
-  //   if(userBlanace >= price) {
-  //     console.log('you an buy package')
-  //     this.apiCall.ActivePackage(userData.id).subscribe((res) => {
-  //       console.log(res)
-  //       this.Users = res;
-  //       console.log(this.packageDetails)
-  //       this.apiCall.updateLevel(this.packageDetails).subscribe((levelRes) => {
-  //         console.log(levelRes)
-  //         if(levelRes.error == false) {
-  //           this.toast.SuccessToast('Package Activated Successfully', 'Good Job!')
-  //         }
-  //       });
-  //     });
-  //   }
-  //   else{
-  //     console.log('you connot buy package because you do not have anough balacne');
-  //     this.toast.ErrorToast('You do not have enough Balacne please deposite some amount', 'Sorry')
-  //   }
-  // });
-  // }
 }

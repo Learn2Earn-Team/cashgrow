@@ -1,27 +1,46 @@
 <link rel="stylesheet" href="/node_modules/aos/aos.css" />
 <div class="container-xl px-4 mt-4">
   <section>
-    <div >
+    <div>
       <div class="row">
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-          <div class="card text-bg-dark mt-2" >
+          <div class="card text-bg-dark mt-2">
             <div class="card-body text-black card">
               <div class="d-flex align-items-center">
-                <div class="flex-shrink-0" style="background: transparent;">
-                  <img src="{{userobj.image}}"
-                  onerror="this.onerror=null;this.src='../assets/boy-icon-png-10.jpg.png'"
-                  *ngIf="userobj.image != 'https://learn2earnn.com/products/cashgrow/images/0'"
-                  alt="" class="img-fluid rounded-circle border border-dark border-2"
-                  style="width: 90px; height: 90px;">
-              <img *ngIf="userobj.image === 0" style="width: 90px; height: 90px;" src="../assets/boy-icon-png-10.jpg.png" alt="">
-               </div>
+                <div class="flex-shrink-0" style="background: transparent">
+                  <img
+                    src="{{ userobj.image }}"
+                    onerror="this.onerror=null;this.src='../assets/boy-icon-png-10.jpg.png'"
+                    alt=""
+                    class="img-fluid rounded-circle border border-dark border-2"
+                    style="width: 90px; height: 90px"
+                  />
+                  <img
+                    *ngIf="
+                      userobj.image ===
+                      'https://learn2earnn.com/products/cashgrow/0'
+                    "
+                    style="width: 90px; height: 90px"
+                    src="../assets/boy-icon-png-10.jpg.png"
+                    alt=""
+                  />
+                </div>
                 <div class="flex-grow-1 ms-3">
                   <div class="d-flex flex-row align-items-center mb-2">
-                    <p class="mb-0 text-light">{{userData.name}}</p>
-                    <span class="text-info" style="margin-left: 4px;font-size: 10px;">ID {{userDashboardData?.username }}</span>
+                    <p class="mb-0 text-light">{{ userData?.name }}</p>
+                    <span
+                      class="text-info"
+                      style="margin-left: 4px; font-size: 10px"
+                      >ID {{ userDashboardData?.username }}</span
+                    >
                   </div>
                   <div>
-                    <p class="text-light">Invited by <span class="text-info" style="font-size: 10px; ">ID {{userDashboardData.sponserid | uppercase}}</span> </p> 
+                    <p class="text-light">
+                      Invited by
+                      <span class="text-info" style="font-size: 10px"
+                        >ID {{ userDashboardData?.sponserid | uppercase }}</span
+                      >
+                    </p>
                   </div>
                 </div>
               </div>
@@ -41,22 +60,26 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-        <div class="card  mt-2 p-2" >
-          <div class="card-body text-black">
-            <h5 class="card-title text-light mt-2">My Personal Link</h5> 
-            <p class="card-text text-info">https://thecashgrow.com/./././.{{userDashboardData.username}} </p>
-            <a class="btn button" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
-            <a class="btn   btn-info " (click)="downloadApkFromAssets('thecashgrow.apk')">Download App</a>
+          <div class="card mt-2 p-2">
+            <div class="card-body text-black">
+              <h5 class="card-title text-light mt-2">My Personal Link</h5>
+              <p class="card-text text-info">
+                https://thecashgrow.com/{{ userDashboardData?.username }}
+              </p>
+              <a class="btn button" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
+              <a
+                class="btn btn-info"
+                (click)="downloadApkFromAssets('thecashgrow.apk')"
+                >Download App</a
+              >
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </section>
 
-
-
-<!-- <div class="body">
+  <!-- <div class="body">
   <div class="body1">
     <div class="uknow">
       <img src="{{userobj.image}}"
@@ -83,8 +106,8 @@
     </div>
   </div>
 </div> -->
- 
-<!-- <div class="row mt-2">
+
+  <!-- <div class="row mt-2">
     <div class="col-xl-12">
       <div class="row">
         <div class="col-xl-12" data-aos="fade-right">
@@ -118,7 +141,7 @@
         </div>
       </div>
     </div> -->
-    <!-- <div class="col-xl-8" style="padding-bottom: 50px">
+  <!-- <div class="col-xl-8" style="padding-bottom: 50px">
       <div class="card mb-4" data-aos="fade-left">
         <div class="card-header">Account Details</div>
         <div class="card-body">
@@ -287,32 +310,35 @@
     </div> -->
   <!-- </div> -->
 
-  <div class="list-group mb-3" style="width: 100%; margin-left:  0px; padding-bottom: 50px; border-radius: 15px; ">
-    <a class="list-group-item list-group-item-action "  aria-current="true" *ngFor="let item of randomData" >
-      <div class="d-flex w-100 justify-content-between py-1 " >
-        <h5 class="mb-1"><i class="bi text-success bi-patch-check-fill"></i>
-          <span class="badge rounded-pill  id" >Id:{{item.randomId}}</span> </h5>
-        <small class="text-white">{{item.randomtime}} minutess ago</small>
+  <div
+    class="list-group mb-3"
+    style="
+      width: 100%;
+      margin-left: 0px;
+      padding-bottom: 50px;
+      border-radius: 15px;
+    "
+  >
+    <a
+      class="list-group-item list-group-item-action"
+      aria-current="true"
+      *ngFor="let item of randomData"
+    >
+      <div class="d-flex w-100 justify-content-between py-1">
+        <h5 class="mb-1">
+          <i class="bi text-success bi-patch-check-fill"></i>
+          <span class="badge rounded-pill id">Id:{{ item.randomId }}</span>
+        </h5>
+        <small class="text-white">{{ item.randomtime }} minutess ago</small>
       </div>
-      <p class="mb-1  " style="font-size: 14px;">Has buy package of <span class="dollar fw-bold ">{{item.randomamount}}$</span></p>
-      <!-- <small>And some small print.</small> -->
+      <p class="mb-1" style="font-size: 14px">
+        Has buy package of
+        <span class="dollar fw-bold">{{ item.randomamount }}$</span>
+      </p>
     </a>
   </div>
-  <!-- <div class="row mt-3 mb-3" style="padding-bottom: 50px;">
-    <div class="col-12 col-md-4 col-sm-6 mb-3" *ngFor="let item of randomData">
-      <div class="card text-bg-dark">
-        <div class="card-body">
-          <h5 class="card-title"><i class="bi text-success bi-patch-check-fill"></i> <span class="badge rounded-pill text-bg-info" style="margin-left: 4px;">Id:{{item.randomId}}</span>  has buy package of {{item.randomamount}}$</h5>
-        </div>
-        <div class="card-footer text-body-light text-end">
-       {{item.randomtime}} minutes
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
 <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
   <!-- <i class="fa fa-whatsapp my-float"></i> -->
   <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
 </a>
-
