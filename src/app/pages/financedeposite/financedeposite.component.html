@@ -1,85 +1,59 @@
 <div class="container-xl px-4 mt-4">
   <div class="row bottompx">
-    <div class="col-xl-6 col-md-12 col-sm-12 col-12">
+    <div *ngIf="auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
       <div class="row justify-content-center">
         <div class="col-xl-12">
-          <div (click)="forEasyPaisa()" class="card mb-4 mb-xl-0">
-            <div class="card-header">Binance</div>
+          <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
+            <div style="color: white" class="card-header">Meta Mask</div>
             <div class="card-body text-center">
-              <h3>payment Method</h3>
-              <h3>Title:Binance</h3>
-              <p>TVEsHQpTtKAVwajyn3bxdNmxnDAuiCMNxu</p>
+              <h3 style="cursor: pointer">Deposit Now</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
+      <div class="row justify-content-center">
+        <div class="col-xl-12">
+          <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
+            <div style="color: white" class="card-header">
+              MetaMask Not Fount
+            </div>
+            <div class="card-body text-center">
+              <h3 style="cursor: pointer">
+                Please Install MetaMask Extention For Deposit
+              </h3>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row" (click)="Auth()">Login With Binance</div>
-    <div class="col-xl-12">
+    <!-- <div class="row" (click)="sendEthButton()">send to Money</div> -->
+    <div *ngIf="acountaccess" class="col-xl-12">
       <div class="card mb-4" style="margin-top: 30px">
-        <div class="card-header">Cash To Wallet</div>
+        <div style="color: white" class="card-header">Enter Amount</div>
         <div class="card-body">
           <form>
-            <div class="mb-3">
-              <label class="small mb-1">Select Gateway</label>
-              <select
-                [(ngModel)]="depositdetail.getawey"
-                [ngModelOptions]="{ standalone: true }"
-                class="form-control"
-              >
-                <option value="JazzCash">JazzCash</option>
-                <option value="Easypaisa">Easypaisa</option>
-              </select>
-            </div>
             <div class="mb-3">
               <label class="small mb-1" for="inputUsername">Amount</label>
               <input
                 class="form-control"
                 type="text"
-                placeholder="Enter Amount"
-                readonly="true"
-                value="PKR 950"
-              />
-            </div>
-            <div class="mb-3">
-              <label class="small mb-1" for="inputUsername"
-                >Transection ID</label
-              >
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Enter ID"
-                [(ngModel)]="depositdetail.tid"
+                [(ngModel)]="depositdetail.depositAmount"
                 [ngModelOptions]="{ standalone: true }"
+                placeholder="Enter Amount"
               />
             </div>
-            <div class="row gx-3 mb-3">
-              <div class="col-md-12">
-                <label class="small mb-1">Screen Shoot</label>
-                <input
-                  class="form-control"
-                  type="file"
-                  placeholder="Choose File"
-                  [(ngModel)]="uploadedImage"
-                  [ngModelOptions]="{ standalone: true }"
-                  (change)="handleUpload($event)"
-                />
-              </div>
-            </div>
-            <div class="col-md-6 col-12"></div>
+
             <div class="col-md-6 col-12 mt-4">
               <button
                 class="btn btn-color"
-                (click)="DepositReq()"
+                (click)="sendEthButton()"
                 type="button"
-                [disabled]="
-                  depositdetail.getawey == '' ||
-                  depositdetail.tid == '' ||
-                  uploadedImage == ''
-                "
+                [disabled]="depositdetail.depositAmount == ''"
               >
-                Submit
+                Deposit
               </button>
             </div>
           </form>
@@ -87,7 +61,13 @@
       </div>
     </div>
 
-    <h1 class="text-center m-3" style="color: black">My Deposite Request</h1>
+    <h1
+      *ngIf="userDeposits.length > 0"
+      class="text-center m-3"
+      style="color: black"
+    >
+      Deposit History
+    </h1>
 
     <div class="row">
       <div
@@ -102,17 +82,17 @@
                   <p class="p">Amount</p>
                 </div>
                 <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                  <p class="text-end text-truncate">{{ item.amount }}</p>
+                  <p class="text-end text-truncate">{{ item.amount }}$</p>
                 </div>
               </div>
             </li>
             <li class="list-group-item">
               <div class="row">
                 <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                  <p class="p">TID</p>
+                  <p class="p">WalletId</p>
                 </div>
                 <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                  <p class="text-end text-truncate">{{ item.tid }}</p>
+                  <p class="text-end">{{ item.tid }}</p>
                 </div>
               </div>
             </li>

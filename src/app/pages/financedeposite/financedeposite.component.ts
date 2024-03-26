@@ -1,9 +1,11 @@
+declare var window: any;
 import { Component } from "@angular/core";
 import { check } from "src/app/localStorage/LocalStorage";
 import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
 import { Clipboard } from "@capacitor/clipboard";
 import { Router } from "@angular/router";
+import detectEthereumProvider from "@metamask/detect-provider";
 
 @Component({
   selector: "app-financedeposite",
@@ -11,13 +13,18 @@ import { Router } from "@angular/router";
   styleUrls: ["./financedeposite.component.scss"],
 })
 export class FinancedepositeComponent {
+  private web3: any;
   public userobj: any = {};
   public user: any;
   public uploadedImage: any = "";
   public image: any = "";
+  public accoun: any;
+
+  public auth: any = false;
+  public acountaccess: any = false;
   public depositdetail: any = {
-    depositAmount: "950",
-    getawey: "",
+    depositAmount: "",
+    getawey: "MetaMask",
     tid: "",
   };
   public userDeposits: any = {};
@@ -27,7 +34,24 @@ export class FinancedepositeComponent {
     private route: Router,
     public toast: ToastService
   ) {
+    this.Auth();
     this.GetUserData();
+  }
+
+  async getAccounts() {
+    const data = window.ethereum;
+    try {
+      const provider: any = await data.request({
+        method: "eth_requestAccounts",
+      });
+      console.log(provider, "user");
+      this.accoun = provider;
+      if (this.accoun.length > 0) {
+        this.acountaccess = true;
+      }
+    } catch (er) {
+      console.log(er, "Connecting error");
+    }
   }
 
   public async GetUserData() {
@@ -39,32 +63,42 @@ export class FinancedepositeComponent {
   }
 
   public async Auth() {
-    const authorizationEndpoint =
-      "https://accounts.binance.com/en/oauth/authorize";
-    const responseType = "code";
+    const provider: any = await detectEthereumProvider();
 
-    const clientId = "1123";
-    const redirectUri = encodeURIComponent(
-      "http://http://localhost:4200/oauth/callback"
-    );
-    const state = "377f36a4557ab5935b36";
-    const scopes = "read";
-    const url = `${authorizationEndpoint}?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scopes}`;
-
-    window.location.href = url;
+    if (provider) {
+      this.auth = true;
+    } else {
+      this.auth = false;
+      this.toast.ErrorToast("Please install MetaMask!", "");
+    }
   }
 
-  handleUpload($event: any) {
-    const file = $event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const base64String = reader.result?.toString().split(",")[1];
-      this.userobj.img = base64String;
-    };
+  public async sendEthButton() {
+    const provider: any = await detectEthereumProvider();
+    provider
+      .request({
+        method: "eth_sendTransaction",
+        params: [
+          {
+            from: this.accoun[0],
+            to: "0xda2eD321763EA95f6Fcf2DEb8C53efb375685B6F",
+            value: this.depositdetail.depositAmount,
+          },
+        ],
+      })
+      .then((txHash: any) => {
+        console.log(txHash, "res");
+        this.depositdetail.tid = this.accoun[0];
+        this.acountaccess = false;
+        this.DepositReq();
+      })
+      .catch((error: any) => {
+        this.acountaccess = false;
+        this.toast.ErrorToast("Payment Failed", "Rejected");
+      });
   }
+
   public DepositReq() {
-    // this.userobj.img = this.image;
     this.userobj.depositdata = this.depositdetail;
     this.apiCall
       .CheckdepositStatus({ user_id: this.userobj.id })
@@ -73,7 +107,7 @@ export class FinancedepositeComponent {
         if (res.status != "Pending" && res.error === false) {
           this.apiCall.deposit(this.userobj).subscribe((res) => {
             this.GetUserData();
-            this.depositdetail = { getawey: "", tid: "" };
+            this.depositdetail = { depositAmount: "" };
             this.uploadedImage = "";
             if (res.error === false) {
               this.toast.SuccessToast("Deposit Successfully", "Good Job!");
@@ -88,35 +122,5 @@ export class FinancedepositeComponent {
           );
         }
       });
-  }
-
-  async forEasyPaisa() {
-    await Clipboard.write({
-      string: "0280565",
-    }).then(
-      () => {
-        this.toast.SuccessToast("Linked Copied to clipboard", "Successfully!");
-      },
-      () => {
-        console.error("Failed to copy");
-      }
-    );
-    const { type, value } = await Clipboard.read();
-    console.log(`Got ${type} from clipboard: ${value}`);
-  }
-
-  async forJazCash() {
-    await Clipboard.write({
-      string: "00436181",
-    }).then(
-      () => {
-        this.toast.SuccessToast("Linked Copied to clipboard", "Successfully!");
-      },
-      () => {
-        console.error("Failed to copy");
-      }
-    );
-    const { type, value } = await Clipboard.read();
-    console.log(`Got ${type} from clipboard: ${value}`);
   }
 }

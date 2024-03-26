@@ -14,25 +14,5 @@ export class AuthComponent {
     private authService: ApicallService
   ) {}
 
-  ngOnInit(): void {
-    // Extract the authorization code from the URL query parameters
-    const code = this.route.snapshot.queryParamMap.get("code");
-    if (code) {
-      // If authorization code is present, exchange it for an access token
-      this.authService.exchangeCodeForToken(code).subscribe(
-        (response) => {
-          // Handle successful token exchange
-          console.log("Access token:", response.access_token);
-          // Here you can save the access token to use it for subsequent API calls
-        },
-        (error) => {
-          // Handle error
-          console.error("Error exchanging code for token:", error);
-        }
-      );
-    } else {
-      // Handle error: No authorization code found in the URL
-      console.error("No authorization code found in URL.");
-    }
-  }
+  ngOnInit(): void {}
 }

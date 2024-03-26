@@ -1,8 +1,10 @@
 <div class="container-xl px-4 mt-4">
   <div class="row">
-    <div class="col-xl-12" style="margin-bottom: 30px; " >
-      <div class="card mb-4 ">
-        <div class="card-header text-start text-white fs-5 rounded-0 ">For Withdraw Request</div>
+    <div class="col-xl-12" style="margin-bottom: 30px">
+      <div class="card mb-4">
+        <div class="card-header text-start text-white fs-5 rounded-0">
+          For Withdraw Request
+        </div>
         <div class="card-body">
           <form>
             <div class="mb-3">
@@ -13,16 +15,18 @@
                 placeholder="Enter Amount"
                 [(ngModel)]="withdrawDetail.amount"
                 (input)="checkBalacne($event)"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
-              <p class="text-danger" *ngIf="this.showBalanceMessage">{{this.showBalanceMessage}}</p>
+              <p class="text-danger" *ngIf="this.showBalanceMessage">
+                {{ this.showBalanceMessage }}
+              </p>
             </div>
             <div class="mb-3">
               <label class="small mb-1">Payment Gateway</label>
               <input
                 class="form-control"
                 placeholder="Trust Wallet"
-                value="Wallet"
+                value="MetaMask"
                 readonly="true"
               />
             </div>
@@ -33,25 +37,17 @@
                 type="text"
                 placeholder="Wallet Id"
                 [(ngModel)]="withdrawDetail.contact"
-                [ngModelOptions]="{standalone: true}"
+                [ngModelOptions]="{ standalone: true }"
               />
             </div>
-            <!-- <div class="mb-3">
-              <label class="small mb-1" for="inputUsername"
-                >Enter Security Code</label
-              >
-              <input
-                class="form-control"
-                [(ngModel)]="checkUserPin.pin"
-                type="text"
-                placeholder="Enter Pin"
-                [ngModelOptions]="{standalone: true}"
-              />
-            </div> -->
+
             <div class="col-md-6 col-12 mt-4">
               <button
-              [disabled]="this.showBalanceMessage != '' || withdrawDetail.jdetail == '' ||
-              withdrawDetail.contact == ''"
+                [disabled]="
+                  this.showBalanceMessage != '' ||
+                  withdrawDetail.jdetail == '' ||
+                  withdrawDetail.contact == ''
+                "
                 (click)="NewUserdata()"
                 class="btn btn-color button"
                 type="button"
@@ -60,7 +56,7 @@
               </button>
             </div>
             <div class="col-md-12 col-12 mt-4">
-              <p >
+              <p>
                 Note: Service Will Applied 5% Deduction on every Withdrawal
                 Request.
               </p>
@@ -71,7 +67,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- <svg class="wave" width="100%" height="110px" fill="">
     <path fill=var(--background-color)>
