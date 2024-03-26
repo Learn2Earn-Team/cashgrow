@@ -5,7 +5,7 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { check } from "src/app/localStorage/LocalStorage";
 import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
-import { ApiService } from "src/app/api.service";
+// import { ApiService } from "src/app/api.service";
 @Component({
   selector: "app-promotionsocial",
   templateUrl: "./promotionsocial.component.html",
