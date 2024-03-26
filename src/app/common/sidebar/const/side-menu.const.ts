@@ -9,6 +9,11 @@ export const adminMenuItems: any[] = [
     icon: "bi bi-cash",
     label: "Pay Withdraw",
   },
+  {
+    routerLink: "/default/downloadapp",
+    icon: "bi bi-cash-coin",
+    label: "Profit History",
+  },
   // {
   //   routerLink: '/default/updatemetting',
   //   icon: 'bi bi-share',
@@ -250,11 +255,7 @@ export const menuItems: any[] = [
     icon: "bi bi-collection-fill",
     label: "Dashboard",
   },
-  {
-    routerLink: "/default/downloadapp",
-    icon: "bi bi-cash-coin",
-    label: "Profit History",
-  },
+  
   // {
   //   routerLink: '/default/zoommeeting',
   //   icon: 'bi bi-share',
