@@ -17,7 +17,7 @@
     <td *ngIf="item.pid === 3" class="text-black">Premium</td>
     <td *ngIf="item.pid === 4" class="text-black">Premium Plus</td>
     <td *ngIf="item.pid > 4" class="text-black">Basic</td>
-    <td class="text-black">{{ item.date }}</td>
+    <td class="text-black">{{ item.date | date : "MMM d, y, h:mm:ss a" }}</td>
     <td class="text-black">{{ item.status }}</td>
   </tr>
 </table>

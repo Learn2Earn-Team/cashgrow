@@ -61,7 +61,7 @@ export class WithdrawrequestComponent {
     this.checkUserPin.username = this.userobj.username;
     this.withdrawDetail.user_id = this.userobj.id;
     console.log(this.checkUserPin);
-    this.withdrawDetail.services = this.withdrawDetail.amount * (5 / 100);
+    this.withdrawDetail.services = this.withdrawDetail.amount * (6 / 100);
     console.log(this.withdrawDetail.amount);
     this.withdrawDetail.net =
       this.withdrawDetail.amount - this.withdrawDetail.services;
@@ -100,11 +100,6 @@ export class WithdrawrequestComponent {
             this.toast.ErrorToast("Error", "You Have not Sufficent Balance");
           }
         });
-        // }
-        //  else {
-        //   this.toast.ErrorToast('Incorrect Pin Code', 'Error');
-        // }
-        // });
       } else {
         this.toast.ErrorToast(
           "Withraw Request Not Submint",

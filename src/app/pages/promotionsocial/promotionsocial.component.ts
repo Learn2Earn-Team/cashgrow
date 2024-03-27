@@ -134,7 +134,7 @@ export class PromotionsocialComponent implements OnInit {
       balance: +this.balance,
       user_id: this.userdataarray.id,
     };
-    console.log(data, "data");
+
     if (
       +item.maxprice >= +data.balance &&
       +item.minprice <= +data.balance &&
@@ -143,6 +143,7 @@ export class PromotionsocialComponent implements OnInit {
       this.apiCall.orders(data).subscribe((res) => {
         if (res.error === false) {
           modal.close();
+          this.balance = "";
           this.toast.SuccessToast("Invest Succsessfully", "Good Job!");
           this.userdata1();
         } else {
