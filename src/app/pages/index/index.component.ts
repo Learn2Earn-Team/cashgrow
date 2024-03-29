@@ -6,8 +6,7 @@ import { ToastService } from "src/app/services/toast.service";
 import { ApicallService } from "src/app/services/apicall.service";
 import { Clipboard } from "@capacitor/clipboard";
 import Swiper from "swiper";
-import SwiperCore from "swiper";
-import Autoplay from "swiper";
+
 const swiper = new Swiper(".swiper", {
   autoplay: {
     delay: 1000,
@@ -15,29 +14,7 @@ const swiper = new Swiper(".swiper", {
   },
   loop: true,
 });
-// import SwiperCore , {
-//   Navigation,
-//   Pagination,
-//   Scrollbar,
-//   A11y,
-//   Virtual,
-//   Zoom,
-//   Autoplay,
-//   Thumbs,
-//   Controller,
-// } from 'swiper';
-// install Swiper components
-// SwiperCore.use([
-//   Navigation,
-//   Pagination,
-//   Scrollbar,
-//   A11y,
-//   Virtual,
-//   Zoom,
-//   Autoplay,
-//   Thumbs,
-//   Controller
-// ]);
+
 @Component({
   selector: "app-index",
   templateUrl: "./index.component.html",
@@ -104,7 +81,7 @@ export class IndexComponent implements OnInit {
   };
   userData: any;
   userobj: any;
-  userTeem: any; 
+  userTeem: any;
   pendingorders: any;
   userdataarray: any;
   pasiveincom: any;
@@ -129,13 +106,22 @@ export class IndexComponent implements OnInit {
       },
     });
   }
-  async getrefstatus(){
+  async getrefstatus() {
     const user: any = await check("user");
     const userData = JSON.parse(user);
-    this.apicall.getrefstatus(userData.username).subscribe((res:any)=>{
-      this.status=res;
-      console.log(this.status)
-    })
+    this.apicall.myorders(userData.username).subscribe((res3) => {
+      if (res3.length > 0) {
+        this.apicall.getrefstatus(userData.username).subscribe((res2: any) => {
+          this.apicall.userdata(userData.username).subscribe((res: any) => {
+            if (+res.balnce > res2) {
+              this.status = [1, 2];
+            } else {
+              this.status = [];
+            }
+          });
+        });
+      }
+    });
   }
   async reward() {
     const user: any = await check("user");
@@ -205,10 +191,10 @@ export class IndexComponent implements OnInit {
         this.card[4].today = res.todayDirectJoing;
         this.card[5].subtype = res.totalIndirectJoining;
         this.card[5].today = res.IndirectJoining;
-        if( res.totaldeposit > 0) {
+        if (res.totaldeposit > 0) {
           this.card[6].subtype = Math.max(0, res.totaldeposit - res.netBalance);
           this.card[6].today = Math.max(0, res.totaldeposit - res.netBalance);
-        }else {
+        } else {
           this.card[6].subtype = 0;
           this.card[6].today = 0;
         }

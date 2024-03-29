@@ -40,13 +40,22 @@ export class TeamComponent {
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
-  async getrefstatus(){
+  async getrefstatus() {
     const user: any = await check("user");
     const userData = JSON.parse(user);
-    this.apiCall.getrefstatus(userData.username).subscribe((res:any)=>{
-      this.status=res;
-      console.log(this.status);
-    })
+    this.apiCall.myorders(userData.username).subscribe((res3) => {
+      if (res3.length > 0) {
+        this.apiCall.getrefstatus(userData.username).subscribe((res2: any) => {
+          this.apiCall.userdata(userData.username).subscribe((res: any) => {
+            if (+res.balnce > res2) {
+              this.status = [1, 2];
+            } else {
+              this.status = [];
+            }
+          });
+        });
+      }
+    });
   }
   public async NewUserdata() {
     this.user = await check("user");

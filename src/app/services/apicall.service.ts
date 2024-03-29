@@ -944,6 +944,13 @@ export class ApicallService {
       })
     );
   }
+  public Renew(data: any): Observable<any> {
+    return this.http.post(apiUrl + `renew`, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
   public approveReward(): Observable<any> {
     return this.http.get(apiUrl + `approveReward`).pipe(
       map((res: any) => {
@@ -958,14 +965,14 @@ export class ApicallService {
       })
     );
   }
-  public mydailyprofit(uid:any): Observable<any> {
+  public mydailyprofit(uid: any): Observable<any> {
     return this.http.get(apiUrl + `mydailyprofit/${uid}`).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
-  public getrefstatus(uid:any): Observable<any> {
+  public getrefstatus(uid: any): Observable<any> {
     return this.http.get(apiUrl + `getrefstatus/${uid}`).pipe(
       map((res: any) => {
         return res;
