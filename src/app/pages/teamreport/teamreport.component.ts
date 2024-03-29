@@ -28,14 +28,18 @@ export class TeamreportComponent implements OnInit {
   interval: any;
   p = 1;
   public userdetails: any = [];
+  status: any;
   constructor(private apiCall: ApicallService) {
     this.NewUserdata();
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  
+  }
 
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
+ 
   public async NewUserdata() {
     this.user = await check('user');
     this.userobj = JSON.parse(this.user);

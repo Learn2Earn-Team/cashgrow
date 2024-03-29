@@ -29,13 +29,24 @@ export class TeamComponent {
   interval: any;
   p = 1;
   public userdetails: any = [];
+  status: any;
   constructor(private apiCall: ApicallService) {
     this.NewUserdata();
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getrefstatus();
+  }
 
   ngOnDestroy(): void {
     clearInterval(this.interval);
+  }
+  async getrefstatus(){
+    const user: any = await check("user");
+    const userData = JSON.parse(user);
+    this.apiCall.getrefstatus(userData.username).subscribe((res:any)=>{
+      this.status=res;
+      console.log(this.status);
+    })
   }
   public async NewUserdata() {
     this.user = await check("user");

@@ -965,4 +965,11 @@ export class ApicallService {
       })
     );
   }
+  public getrefstatus(uid:any): Observable<any> {
+    return this.http.get(apiUrl + `getrefstatus/${uid}`).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }

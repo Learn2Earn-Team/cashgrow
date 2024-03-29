@@ -104,11 +104,12 @@ export class IndexComponent implements OnInit {
   };
   userData: any;
   userobj: any;
-  userTeem: any;
+  userTeem: any; 
   pendingorders: any;
   userdataarray: any;
   pasiveincom: any;
   ddd: any;
+  status: any;
 
   constructor(
     private route: Router,
@@ -120,12 +121,21 @@ export class IndexComponent implements OnInit {
     console.log(this.card);
   }
   ngOnInit() {
+    this.getrefstatus();
     const swiper = new Swiper(".swiper-container", {
       // Your Swiper configuration options here
       autoplay: {
         delay: 1000, // Set your desired autoplay delay
       },
     });
+  }
+  async getrefstatus(){
+    const user: any = await check("user");
+    const userData = JSON.parse(user);
+    this.apicall.getrefstatus(userData.username).subscribe((res:any)=>{
+      this.status=res;
+      console.log(this.status)
+    })
   }
   async reward() {
     const user: any = await check("user");
