@@ -1,0 +1,144 @@
+#countries-part {
+    background: url(../images/bg/countries-bg.jpg) no-repeat center;
+    background-size: cover;
+    @include overlay(rgba($dark, .9));
+    .container {
+        position: relative;
+        z-index: 5;
+        color: $white;
+    }
+}
+
+.country {
+    margin-bottom: 30px;
+    h3 {
+        color: $brand-color;
+        span {
+            font-weight: 400;
+            margin-left: 10px;
+            color: $white;
+        }
+    }
+    p {
+        font-weight: 400;
+        max-width: 240px;
+        margin-top: 5px;
+    }
+}
+
+.global-map {
+    position: relative;
+    background: url(../image/bgglobal-map.png) no-repeat cover;
+    background: center;
+    img {
+        width: 100%;
+        opacity: .9;
+    }
+    .map-maker {
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        background: $facebook;
+        border-radius: 50%;
+        line-height: 31px;
+        text-align: center;
+        @include transition($trans-4);
+        z-index: 6;
+        cursor: crosshair;
+        img {
+            width: 80%;
+            opacity: 1;
+        }
+
+        &:hover {
+            background: red;
+        }
+    }
+    .maker-1 {
+        bottom: 13%;
+        right: 8%;
+    }
+    .maker-2 {
+        top: 5%;
+        left: 19%;
+    }
+    .maker-3 {
+        bottom: 11%;
+        left: 24%;
+    }
+    .maker-4 {
+        top: 20%;
+        right: 25%;
+    }
+    .parent {
+        position: relative;
+        z-index: 0;
+    }
+    .country-geter {
+        position: absolute;
+        top: -34px;
+        left: 46%;
+        transform: translateX(-50%);
+        background: #fff;
+        border-radius: 50%;
+        height: 34px;
+        width: 34px;
+        line-height: 32px;
+        text-align: center;
+        span {
+            font-size: 20px;
+            color: $dark;
+            font-weight: 700;
+            position: relative;
+            .shape {
+                position: absolute;
+                top: 82%;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 0;
+                border-top: 30px solid #fff;
+                border-left: 18px solid transparent;
+                border-right: 14px solid transparent;
+            }
+        }
+    }
+}
+
+@include mq(768px, 991px) {
+    .country h3 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@include mq-max(767px) {
+    #countries-part {
+        .section-head {
+            h2 {
+                max-width: 486px;
+                margin: auto;
+            }
+        }
+    }
+    .country {
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        float: left;
+        p {
+            margin: 5px auto 0;
+        }
+    }
+}
+
+@include mq-max(575px) {
+    .country {
+        width: 100%;
+        display: block;
+        float: inherit;
+        text-align: center;
+        p {
+            margin: 5px auto 0;
+        }
+    }
+}

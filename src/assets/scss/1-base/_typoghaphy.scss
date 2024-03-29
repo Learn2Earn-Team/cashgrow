@@ -1,0 +1,121 @@
+.family-1 {
+	font-family: $family-1;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+body {
+	@extend .family-1;
+	font-size: 15px;
+}
+
+h1 {
+	font-size: 48px;
+	line-height: 60px;
+	@extend .bold;
+}
+
+.h2,
+h2 {
+	font-size: 36px;
+	line-height: 44px;
+	@extend .bold;
+}
+
+.h3,
+h3 {
+	font-size: 26px;
+	line-height: 34px;
+	@extend .bold;
+}
+
+.h4,
+h4 {
+	font-size: 18px;
+	line-height: 26px;
+	@extend .bold;
+}
+
+.h5,
+h5 {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.h6,
+h6 {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	color: $p-color;
+}
+
+@include mq-max(1199px) {
+	.h2,
+	h2 {
+		font-size: 33px;
+		line-height: 41px;
+	}
+}
+
+@include mq-max(991px) {
+	h1 {
+		font-size: 45px;
+		line-height: 53px;
+	}
+
+	.h2,
+	h2 {
+		font-size: 30px;
+		line-height: 38px;
+	}
+
+	.h3,
+	h3 {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.h4,
+	h4 {
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+
+	p {
+		font-size: 15px;
+		line-height: 23px;
+	}
+}
+
+@include mq-max(767px) {
+	h1 {
+		font-size: 40px;
+		line-height: 48px;
+	}
+
+	.h2,
+	h2 {
+		font-size: 30px;
+		line-height: 38px;
+	}
+
+	.h4,
+	h4 {
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+	.h5,
+	h5 {
+		font-size: 15px;
+		line-height: 24px;
+	}
+}

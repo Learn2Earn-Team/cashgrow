@@ -1,0 +1,278 @@
+#service-part {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '';
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: #1a1f22;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url(../images/bg/service-bg.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .container {
+        position: relative;
+        z-index: 4;
+    }
+}
+
+
+.service-left {
+    padding: 60px 30px;
+    position: relative;
+    z-index: 5;
+    background: $white;
+    border-radius: 5px;
+    @include box-shadow($shadow-1);
+    h2 {
+        span {
+            color: $brand-color;
+        }
+    }
+    form {
+        input,
+        textarea {
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid rgba($dark, .2);
+            font-size: 16px;
+            margin-bottom: 10px;
+            position: relative;
+            &:focus {
+                box-shadow: none
+            }
+        }
+        .form-item {
+            position: relative;
+            &::after {
+                // not working
+                position: absolute;
+                content: '';
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 20px;
+                width: 20px;
+                z-index: 5;
+                background: red;
+            }
+        }
+    }
+}
+
+.whyus {
+    .section-head {
+        h4 {
+            color: $brand-color;
+        }
+        h2 {
+            color: $white;
+            span {
+                color: $brand-color;
+            }
+        }
+    }
+    .why-item {
+        padding-left: 160px;
+        position: relative;
+        margin-bottom: 30px;
+        .why-item-img {
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            height: 130px;
+            width: 130px;
+            background: #fff;
+            margin-top: 6px;
+            img {
+                width: 100%;
+                margin: -7px 0 0 7px;
+            }
+        }
+        h3 {
+            color: $white;
+            @include transition($trans-4);
+            font-size: 22px;
+            line-height: 28px;
+        }
+        p {
+            color: #d9d8d6;
+            max-width: 390px;
+            padding: 6px 0 6px;
+        }
+        a {
+            font-weight: 700;
+            text-transform: uppercase;
+            position: relative;
+            color: $brand-color;
+            &:hover {
+                color: $white;
+            }
+        }
+        &:hover {
+            h3 {
+                color: $brand-color;
+            }
+        }
+    }
+}
+
+
+
+.service-left {
+    //  padding: 30px 20px;
+    margin-right: -60px;
+}
+
+@include mq(992px, 1199px) {
+    .service-left {
+        margin-right: -135px;
+    }
+    .why-item-des {
+        h3 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        a.font-size-15 {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+    #service-part {
+        .section-head {
+            margin-bottom: 28px;
+        }
+    }
+}
+
+@include mq-min(992px) {
+
+    .whyus {
+        padding-left: 60px;
+    }
+    .service-left {
+        margin-right: -55px;
+    }
+    .whyus .why-item a {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+@include mq-min(768px) {
+    #service-part {
+        .section-head {
+            margin-bottom: 20px;
+        }
+    }
+    .service-left {
+        padding: 50px 30px 60px;
+    }
+    .whyus .why-item {
+        padding-left: 130px;
+        .why-item-img {
+            height: 100px;
+            width: 100px;
+        }
+    }
+}
+
+@include mq-max(991px) {
+    .service-left {
+        margin-right: 0;
+    }
+    .why-item-des {
+        p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        a {
+            font-size: 14px;
+        }
+    }
+}
+
+@include mq-max(767px) {
+    #service-part {
+        background: url(../images/bg/service-bg.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        &::after {
+            display: none;
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .service-left {
+        padding: 50px 15px 60px;
+    }
+    .whyus {
+        height: 100%;
+        padding: 15px 15px 20px 15px;
+        background: #1a1f22;
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .why-item {
+            margin-bottom: 50px;
+            padding-left: 135px;
+            .why-item-img {
+                height: 95px;
+                width: 95px;
+            }
+        }
+    }
+}
+
+@include mq-max(575px) {
+    .service-left {
+        h2 {
+            font-size: 28px;
+            line-height: 38px;
+        }
+    }
+
+    .why-item-des {
+        h3 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            padding: 2px 0 8px;
+        }
+    }
+    .whyus .why-item .why-item-img {
+        height: 70px;
+        width: 70px;
+    }
+    .whyus .why-item .why-item-img img {
+        width: 100%;
+        margin: -5px 0 0 5px;
+    }
+    .whyus .why-item {
+        padding-left: 90px;
+        margin-bottom: 25px;
+    }
+    .whyus .why-item h3 {
+        font-size: 19px;
+        line-height: 26px;
+    }
+}

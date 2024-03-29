@@ -1,0 +1,117 @@
+#calculator-part {
+
+    background-position: center;
+}
+
+.calculator-left {
+    h2 {
+        margin-top: -10px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 500;
+        margin: 20px 0 46px;
+    }
+}
+
+.buy-btn .btn-4 {
+    @extend .btn-5
+}
+
+.exchange {
+    img {
+        width: 100%;
+    }
+}
+
+
+
+/* inside on Calculator api  */
+
+.cryptonatorwidget {
+    padding: 0!important;
+    margin: 0!important;
+    border: 0!important;
+
+    select,
+    input {
+        padding: 17px 12px;
+        font-family: $family-1;
+        border-radius: 3px;
+        border: 1px solid #bbbbbb;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #727272;
+    }
+    select {
+        margin-left: 20px!important;
+    }
+    select,
+    input {
+        margin-bottom: 10px;
+    }
+    table tr td:last-child {
+        width: 25%!important;
+    }
+}
+
+.calculator-left .cryptonatorwidget {
+    div {
+        display: none;
+    }
+}
+
+@include mq-max(991px) {
+    .calculator-left {
+        h2 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 36px;
+        }
+    }
+    .cryptonatorwidget select,
+    .cryptonatorwidget input {
+        padding: 12px 7px;
+        font-size: 15px!important;
+    }
+}
+
+@include mq-max(767px) {
+    .cryptonatorwidget table {
+        width: 90%!important;
+        tr td {
+            width: 50%!important;
+        }
+    }
+    .cryptonatorwidget table tr td:last-child {
+        width: 50%!important;
+    }
+    .cryptonatorwidget select,
+    .cryptonatorwidget input {
+        padding: 11px 9px;
+        font-size: 14px!important;
+    }
+}
+
+@include mq-max(575px) {
+    .calculator-left {
+        h2 {
+            font-size: 26px;
+        }
+        p {
+            margin-bottom: 23px;
+        }
+    }
+    .cryptonatorwidget select {
+        margin-left: 6px!important;
+    }
+    .cryptonatorwidget select,
+    .cryptonatorwidget input {
+        padding: 9px 9px;
+        font-size: 14px !important;
+    }
+}

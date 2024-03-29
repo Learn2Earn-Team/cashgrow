@@ -1,0 +1,145 @@
+/* Price one */
+
+#price-part {
+    padding-top: 30px;
+}
+
+.price-item {
+    position: relative;
+    text-align: center;
+    border: 1px solid $border-color;
+    border-radius: 13px;
+    padding: 30px 0 50px;
+    margin-top: 60px;
+    .coin-type {
+        position: absolute;
+        transform: rotate(-90deg);
+        @include transition($trans-4);
+        top: 31px;
+        left: -33px;
+        padding: 0 15px;
+        border-radius: 0 13px 0 0px;
+        background: $brand-color;
+        h5 {
+            @include transition($trans-3);
+            font-weight: 600;
+            color: $dark;
+        }
+    }
+    p {
+        font-size: 20px;
+        padding: 10px 0 15px;
+    }
+    h3 {
+        @extend .h2;
+    }
+    h2 {
+        color: $brand-color;
+    }
+    a {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 50%)
+    }
+    &:hover {
+        .coin-type {
+            background: $brand-color;
+            h4 {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/* ------------- Price Two -------------- */
+
+#price-two-part {
+    background: #313131;
+}
+
+.price-two-item {
+    padding: 0 15px;
+    .item-img {
+        box-shadow: inset 0px -51px 45px -22px rgba(8, 8, 8, 0.27);
+        -webkit-box-shadow: inset 0px -51px 45px -22px rgba(8, 8, 8, 0.27);
+        img {
+            width: 100%;
+        }
+        position: relative;
+        .title {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: $white;
+        }
+        .rate {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: $white;
+            background: rgba($dark, .2);
+            padding: 0 10px;
+            border-radius: 3px;
+        }
+    }
+}
+
+.price-two-des {
+    text-align: center;
+    background: $dark;
+    padding: 10px 0 15px;
+    h3 {
+        color: #66cc33;
+    }
+    ul li {
+        color: $white;
+        padding: 0 5px;
+        &:first-child {
+            color: $brand-color;
+        }
+    }
+    .buy-btn {
+        text-align: center;
+        padding: 0px 15px 0 15px;
+        margin-top: 15px
+    }
+    a {
+        width: 100%;
+    }
+}
+
+@include mq-max(991px) {
+    .price-item .btn-4 {
+        padding: 4px 15px;
+    }
+}
+
+@include mq-max(767px) {
+    .price-item .coin-type {
+        top: 29px;
+        left: -31px;
+    }
+    .price-item {
+        padding: 20px 0 45px;
+        h2,
+        h3 {
+            font-size: 26px;
+            line-height: 36px;
+        }
+    }
+}
+
+@include mq-max(575px) {
+    .price-item .coin-type {
+        left: -32px;
+    }
+}

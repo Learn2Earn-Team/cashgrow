@@ -1,0 +1,84 @@
+/*------------------------------------------------------------------
+
+ * Author      : Wditsolution
+ * Project     : Dialer
+ * Version     : 1.0.0
+ * developer   : MD.SAJAL MIA
+
+ * -----------------------------------------------------------------*/
+
+/*
+       Table of Content
+-------------------------------
+0. 0-Helper
+	0.1. 0-helpers-dir - // Folder Directory Not Visiable in css file).
+    0.2. variabales - // Included colors, font-family, shadows (Not Visiable in css files).
+    0.3. Mixins - // (Not Visiable in css files).
+
+1. 1-Base
+    1.1. 1-base-dir - // Folder Directory Not Visiable in css file).
+    1.4. reset - // Tags Reset.
+    1.4. typoghaphy
+
+2. 2-Component
+    1. 2-component-dir - // Folder Directory (Not Visiable in css file).
+    3. global // - global common css
+    2. button
+    4. section
+
+3. 3-layout
+    3.1. Header Part
+    3.2. Banner Part
+    3.3. About Part
+    3.4. Service Part
+    3.5. Countries Part
+    3.6. Token Part
+    3.7. Currency-calculator Part
+    3.8. Presention Part
+	3.9. Counter Part
+	3.10. Interface Part
+	3.11. Price Part
+	3.12. Newsletter Part
+	3.13. Price-chart Part
+	3.14. Why-digital-currency Part
+	3.15. Blog Part
+	3.16. Current-rate Part
+	3.17. Footer Part
+*/
+/* ---------------------------------- Import Third part css ---------------------------------- */
+@import "../css/bootstrap.min.css";
+@import "../css/font-awesome.min.css";
+@import "../css/owl.carousel.min.css";
+@import "../css/animate.min.css";
+@import "../css/venobox.css";
+@import "../css/plyr.css";
+@import "../css/magnific-popup.css";
+
+/* --------------------- Font -------------------- */
+
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i";
+
+
+// 0-Helper 
+@import "0-helpers/0-helpers-dir";
+
+/* -----------------------  1-Base -------------------- */
+
+@import "1-base/1-base-dir";
+
+/* -----------------------  2-Component -------------------- */
+
+@import "2-components/2-components-dir";
+
+/* -----------------------  3-layout -------------------- */
+
+@import "3-layouts/3-layouts-dir";
+
+/* -----------------------  4-Pages -------------------- */
+
+@import "4-pages/contact";
+@import "4-pages/service";
+@import "4-pages/about";
+@import "4-pages/blog";
+@import "4-pages/blog-single";
+@import "4-pages/signin-out";

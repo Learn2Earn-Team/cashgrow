@@ -1,0 +1,169 @@
+#footer-widget {
+	background: url(../images/bg/footer-bg.png) #282828 no-repeat;
+	background-position: center, center;
+	color: $white;
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+// footer about us
+.footer-about {
+	position: relative; //	padding-top: 158px;
+	ul li {
+		padding: 0 8px;
+	}
+}
+
+.footer-logo {
+	padding: 20px 21px 25px;
+	background: #111;
+	border-radius: 3px;
+	a {
+		font-size: 16px;
+		color: $brand-color;
+		margin-top: 10px;
+		display: block;
+		i {
+			font-size: 14px;
+			margin-right: 5px;
+			@include transition($trans-5);
+		}
+		&:hover {
+			i {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+// common
+.footer-widget-item {
+	h4 {
+		margin-bottom: 15px;
+		color: rgba($white, .9);
+	}
+	ul li {
+		a {
+			font-size: 15px;
+			padding: 7px 0px;
+			display: block;
+			color: rgba($white, .4);
+			@include transition($trans-4);
+		}
+		&:hover {
+			a {
+				color: $white;
+			}
+		}
+	}
+	.contact {
+		margin-bottom: 15px;
+		ul li {
+			color: rgba($white, .4);
+			position: relative;
+			padding: 0px 0;
+			padding-left: 35px;
+			i {
+				position: absolute;
+				left: 0px;
+				top: 50%;
+				transform: translateY(-50%);
+				color: $brand-color;
+				height: 20px;
+				width: 20px;
+				line-height: 20px;
+				text-align: center;
+				&.fa-map-marker {
+					top: 17px;
+				}
+			}
+		}
+	}
+}
+
+/* copyright Footer*/
+
+.copyright-footer {
+	padding: 30px 0;
+	background: $dark;
+	p {
+		font-size: 16px;
+		color: rgba($white, .6);
+		a {
+			color: $white;
+			margin-left: 5px;
+			&:hover {
+				color: $brand-color;
+			}
+		}
+	}
+}
+
+@include mq-min(992px) {
+	.footer-widget-item ul li a {
+		font-size: 16px;
+		padding: 8px 0;
+	}
+	.footer-logo {
+		position: absolute;
+		top: -120px;
+		left: 0;
+		background: #111;
+		padding: 20px 21px 25px;
+		border-radius: 3px;
+		a {
+			font-size: 16px;
+			color: $brand-color;
+			margin-top: 10px;
+			display: block;
+			i {
+				font-size: 14px;
+				margin-right: 5px;
+				@include transition($trans-5);
+			}
+			&:hover {
+				i {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	.footer-about {
+		position: relative;
+		padding-top: 158px;
+		ul li {
+			padding: 0 8px;
+		}
+	}
+}
+
+@include mq-max(575px) {
+	.footer-widget-item ul li a {
+		font-size: 14px;
+	}
+	.footer-widget-item {
+		text-align: center;
+		h4{
+			margin-bottom: 5px;
+		}
+	}
+	.footer-widget-item .contact ul li {
+		padding-left: 0;
+		&:not(:last-child){
+			margin-bottom: 10px;
+		}
+		i{
+		display: block;
+		position: inherit;
+		transform: inherit;
+		text-align: center;
+		width: auto;
+		&.fa-map-marker{
+			top: 0;
+		}
+		}
+	}
+}

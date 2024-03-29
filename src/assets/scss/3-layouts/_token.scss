@@ -1,0 +1,366 @@
+#token-part {
+    background: url(../images/bg/token-bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .container {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+// Right Part
+.country-short {
+    margin-bottom: 40px;
+    ul {
+        li {
+            color: $white;
+            padding: 3px 11px;
+            @include transition($trans-4);
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: 1px solid $brand-color;
+            float: left;
+            &.active,
+            &:hover {
+                border: 1px solid $brand-color;
+                border-bottom-color: transparent;
+            }
+        }
+    }
+}
+
+.token-right {
+    color: $white;
+    padding-left: 30px;
+    .points {
+        margin: 28px 0 38px;
+        li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        i {
+            font-size: 15px;
+            height: 20px;
+            width: 20px;
+            line-height: 17px;
+            color: $brand-color;
+            border: 1px solid;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 07px;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+    }
+
+    .buttons-group {
+        display: inline-block;
+        li {
+            a {
+                background: transparent;
+                margin-left: 5px;
+                color: $brand-color;
+                padding: 7px 22px;
+                &:hover {
+                    background: $brand-color;
+                    color: #fff;
+                }
+            }
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    .flat-list.social-icon {
+        margin-left: 20px;
+        display: inline-block;
+        li a {
+            i {
+                background: transparent;
+                color: $dark;
+                font-size: 18px;
+                margin-right: 0;
+                border-radius: 3px;
+                color: $brand-color;
+                height: 44px;
+                line-height: 42px;
+            }
+            i:not(last-child) {
+                margin-right: 5px;
+            }
+            &:hover {
+                i {
+                    color: $white;
+                    background: $brand-color;
+                }
+            }
+        }
+    }
+    .points-1 {
+        position: relative;
+        padding-left: 70px;
+        margin-top: 30px;
+        .img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            img {
+                width: 100%;
+            }
+        }
+        a {
+            color: $brand-color;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+}
+
+.tab-content {
+    .tab-item {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+// Left part
+.token-left {
+    color: $white;
+    border-radius: 3px;
+    text-align: center;
+    .buy-btn {
+        margin: 30px 0;
+        width: 100%;
+        a {
+            padding: 13px 40px;
+            background: $brand-color;
+            color: $white;
+            font-size: 20px;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: 900;
+            text-transform: uppercase;
+            &:hover {
+                background: $white;
+                color: $brand-color;
+            }
+        }
+    }
+    .payment {
+        padding-top: 30px;
+        .method {
+            padding-top: 5px;
+            a:not(:last-child) {
+                margin-right: 10px;
+            }
+            a.box-mth {
+                padding: 7px 8px;
+                color: $white;
+                border: 1px solid $border-color;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+.token-left-bg {
+    background: url(../images/token-left.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 30px 25px 38px;
+}
+
+.offer {
+    padding-bottom: 32px;
+    border-bottom: 2px solid $border-color;
+    h2 {
+        font-size: 30px;
+        padding-top: 16px
+    }
+}
+
+.sold {
+    padding-top: 20px;
+    p {
+        color: rgba($white, .5);
+    }
+}
+
+.collection-details {
+    width: 100%;
+    margin-top: 10px;
+    p {
+        font-size: 16px;
+        i {
+            color: gold;
+            margin-right: 5px;
+        }
+        span {
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+    >span {
+        color: rgba($white, .5);
+    }
+}
+
+.sin-counter {
+    text-align: center;
+    color: #fff
+}
+
+.sin-counter p {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.sin-counter span {
+    font-size: 20px;
+}
+
+.cdown {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0 10px;
+    .cdown-tex {
+        font-size: 15px;
+        line-height: 25px;
+        padding-bottom: 12px;
+        color: #fff;
+    }
+    .time-count {
+        border: 1px solid $brand-color;
+        height: 42px;
+        width: 42px;
+        line-height: 39px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 3px;
+    }
+}
+
+@include mq-max(1199px) {
+    .token-right .buttons-group li a {
+        padding: 7px 17px;
+        font-size: 15px;
+    }
+    .token-right .points {
+        .h5 {
+            font-size: 14px;
+        }
+    }
+    .token-left-bg {
+        background-size: cover;
+    }
+}
+
+@include mq-max(991px) {
+
+    .token-right .points {
+        margin: 0;
+    }
+    .tab-content .tab-item {
+        h3 {
+            padding-bottom: 30px
+        }
+    }
+    .tab-content .flat-list {
+        margin-top: 33px;
+    }
+    .token-right .points i {
+        top: 10px;
+    }
+    .token-left-bg {
+        background-size: content;
+    }
+    .token-right {
+        padding-left: 115px;
+    }
+}
+
+@include mq-max(767px) {
+    .token-right .buttons-group li a {
+        padding: 7px 14px;
+    }
+    .token-right .flat-list.social-icon {
+        margin-left: 13px;
+    }
+    .tab-content .flat-list {
+        margin-top: 30px;
+    }
+    .tab-content .tab-item h3 {
+        padding-bottom: 18px;
+    }
+    .token-right {
+        padding-left: 20px;
+    }
+    .offer h2 {
+        font-size: 26px;
+        padding-top: 16px;
+    }
+    .token-left .buy-btn{
+    	margin: 23px 0;
+    	a {
+        padding: 12px 44px;
+        font-size: 16px;
+
+    }
+    }
+}
+
+@include mq-max(575px) {
+    .token-left-bg {
+        background-size: cover;
+    }
+    .token-right {
+        padding-left: 0;
+    }
+    .country-short ul li {
+        padding: 3px 6px;
+    }
+    .tab-content .tab-item {
+        h2 {
+            font-size: 27px;
+        }
+        h3 {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+    .token-right {
+        padding-left: 0;
+        .buttons-group {
+            display: block;
+            li a {
+                font-size: 14px;
+                padding: 6px;
+            }
+        }
+        .flat-list.social-icon {
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+
+    .cdown {
+        font-size: 23px;
+        padding: 0 4px;
+        .cdown-tex {
+            font-size: 14px;
+            line-height: 24px;
+            padding-bottom: 5px;
+        }
+    }
+    .token-right .buttons-group i {
+        margin-right: 3px;
+    }
+}

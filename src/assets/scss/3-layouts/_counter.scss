@@ -1,0 +1,32 @@
+#counter-part {
+	background: url(../images/bg/counter-bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+	@include overlay(rgba($dark, .2));
+	.container {
+		position: relative;
+		z-index: 5;
+	}
+}
+
+.counter-item {
+	color: $white;
+	h2 {
+		position: relative;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background: $brand-color;
+			height: 2px;
+			width: 20px;
+		}
+	}
+	h5 {
+		font-weight: 600;
+	}
+}

@@ -1,0 +1,106 @@
+#why-digital-part {
+	border-bottom: 1px solid #ebebeb;
+}
+
+.why-digital-currency {
+	h2 {
+		position: relative;
+		padding-bottom: 23px;
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: -5px;
+			height: 5px;
+			width: 220px;
+			background: url(../images/interface-text.png);
+			background-size: cover;
+			background-position: left;
+		}
+	}
+	p {
+		color: #646464;
+		font-weight: 400;
+		&:not(:last-child){
+			margin-top: 5px;
+		}
+	}
+	a.btn-3 {
+		color: #212529;
+	}
+}
+
+.why img {
+	width: 100%;
+}
+
+// Clint Logo
+.clint-logo-item {
+	text-align: center;
+	margin: 0 20px;
+	display: flex;
+	align-items: center;
+}
+
+.clint-logo {
+	img {
+		opacity: .5;
+		@include transition($trans-4);
+	}
+	&:hover {
+		img {
+			opacity: 1;
+		}
+	}
+}
+
+.clint-logo-active {
+	.center {
+		.clint-logo {
+			img {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+@include mq-max(1199px) {
+	.why-digital-currency {
+		h2 {
+			font-size: 29px;
+			line-height: 39px;
+		}
+	}
+}
+
+@include mq-max(991px) {
+	.why-digital-currency {
+		h2 {
+			font-size: 22px;
+			line-height: 32px;
+			max-width: 400px;
+		}
+		p {
+			font-size: 14px;
+		}
+		.btn-2 {
+			font-size: 14px;
+		}
+	}
+}
+
+
+@include mq-max(575px) {
+	.why-digital-currency h2 {
+		margin: auto;
+		text-align: center;
+		padding-bottom: 15px;
+		&::after {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	.why-digital-currency{
+		text-align: center;
+	}
+}

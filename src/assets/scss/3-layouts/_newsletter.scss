@@ -1,0 +1,79 @@
+#newsletter {
+	background: $brand-color;
+	padding: 50px 0 53px;
+}
+
+.subscribe-text {
+	p {
+		color: #696864;
+		font-size: 18px;
+	}
+}
+
+.subscribe-form {
+	form {
+		button,
+		input {
+			display: inline-block;
+		}
+		input {
+			padding: 7px 20px;
+			border: 1px solid transparent;
+			font-size: 20px;
+			width: 75%;
+		}
+		button {
+			background: $dark;
+			border-color: $dark;
+			padding: 7px 22px;
+			width: 20%;
+			margin-left: 20px;
+			&:hover {
+				border-color: $brand-color;
+			}
+		}
+	}
+}
+
+@include mq-max(1199px) {
+	.subscribe-form form input {
+		width: 72%;
+	}
+}
+
+@include mq-max(991px) {
+		.subscribe-text {
+		h2 {
+			font-size: 23px;
+			line-height: 33px;
+		}
+	}
+	.subscribe-form form {
+		input {
+			width: 67%;
+			font-size: 18px;
+		}
+		button {
+			width: 30%;
+			margin-left: 5px;
+			padding: 5px 10px;
+		}
+	}
+}
+
+
+@include mq-max(767px) {
+	.subscribe-form form {
+		input {
+			width: 64%;
+		}
+		button {
+			width: 24%;
+			margin-left: 10px;
+		}
+	}
+	.subscribe-text p{
+		font-size: 15px;
+	}
+}
+

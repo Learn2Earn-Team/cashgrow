@@ -1,0 +1,24 @@
+.current-rate-item {
+	.cryptonatorwidget > div {
+		font {
+			display: block;
+		}
+		b font {
+			display: inline-block;
+		}
+	}
+	.cryptonatorwidget div {
+		display: none;
+		&:first-child{
+			display: block;
+		}
+	}
+	// chart 
+	#chart-multi{
+		height: 100px;
+		width: 100%;
+		.canvasjs-chart-credit{
+			display: none;
+		}
+	}
+}
