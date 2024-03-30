@@ -47,8 +47,8 @@
 /* ---------------------------------- Import Third part css ---------------------------------- */
 @import url(../css/bootstrap.min.css);
 @import url(../css/font-awesome.min.css);
-@import url(../css/owl.carousel.min.css);
-@import url(../css/animate.min.css);
+/* @import url(../css/owl.carousel.min.css); */
+/* @import url(../css/animate.min.css); */
 @import url(../css/venobox.css);
 @import url(../css/plyr.css);
 @import url(../css/magnific-popup.css);
@@ -213,9 +213,11 @@ p {
     margin: auto; }
 
 .section-p {
-  padding: 80px 0; }
+  padding: 80px 0;
+ }
   .section-p .section-head h2 {
-    margin-top: -6px; }
+    margin-top: -6px; 
+  }
 
 .padding-110 {
   padding-bottom: 120px; }
@@ -579,7 +581,6 @@ h4 {
     margin-top: 8px; } }
 /* 3.2. Banner Part */
 .banner {
-  background: url(../images/bg/banner-bg.png) no-repeat;
   background-size: contain;
   background-position: center;
   position: relative; }
@@ -636,7 +637,9 @@ h4 {
       margin-left: 2px; }
 
 .banner-right img {
-  width: 100%; }
+  width: 100%;background-position: center;
+background-repeat: no-repeat;
+background-size: cover; }
 
 .banner .owl-dots {
   padding-bottom: 25px;
@@ -810,7 +813,7 @@ h4 {
     height: 100%;
     top: 0;
     left: 0;
-    background: url(../images/bg/service-bg.png) no-repeat;
+    background: url(../../assets/images/service-bg.png) no-repeat;
     background-position: center;
     background-size: cover; }
   #service-part .container {
@@ -1123,7 +1126,7 @@ h4 {
       margin: 5px auto 0; } }
 /* 3.6. Token Part */
 #token-part {
-  background: url(../images/bg/token-bg.jpg) no-repeat;
+  background: url(../../assets/images/token-bg.jpg) no-repeat;
   background-position: center;
   background-size: cover; }
   #token-part .container {
@@ -1215,9 +1218,10 @@ h4 {
       font-weight: 700; }
 
 .tab-content .tab-item {
-  display: none; }
+  display: none; color: white;}
   .tab-content .tab-item.active {
-    display: block; }
+    display: block; 
+  color: white;}
 
 .token-left {
   color: #fff;
@@ -1670,7 +1674,7 @@ h4 {
     font-size: 45px; } }
 /* 3.9. Counter Part */
 #counter-part {
-  background: url(../images/bg/counter-bg.jpg) no-repeat;
+  background: url(../../assets/images/counter-bg.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   position: relative; }
@@ -2351,7 +2355,7 @@ h4 {
     max-width: 399px;
     margin: auto; } }
 /* 3.20 Preloader*/
-#prelaoder {
+/* #prelaoder {
   position: fixed;
   top: 0;
   left: 0;
@@ -2447,7 +2451,7 @@ h4 {
   50% {
     -moz-transform: perspective(117px) rotateX(-180.1deg) rotateY(0deg); }
   100% {
-    -moz-transform: perspective(117px) rotateX(-180deg) rotateY(-179.9deg); } }
+    -moz-transform: perspective(117px) rotateX(-180deg) rotateY(-179.9deg); } } */
 /* -----------------------  4-Pages -------------------- */
 .contact #service-part::after {
   display: none; }

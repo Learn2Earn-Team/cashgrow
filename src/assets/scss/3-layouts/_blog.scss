@@ -18,9 +18,8 @@
 		@include transition($trans-4);
 	}
 	&:hover {
-		&::after {
-			background: $brand-color;
-		}
+		
+		
 		.blog-img {
 			img {
 				transform: scale(1.15);
