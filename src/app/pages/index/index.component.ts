@@ -100,9 +100,8 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     this.getrefstatus();
     const swiper = new Swiper(".swiper-container", {
-      // Your Swiper configuration options here
       autoplay: {
-        delay: 1000, // Set your desired autoplay delay
+        delay: 1000,
       },
     });
   }
@@ -113,7 +112,7 @@ export class IndexComponent implements OnInit {
       if (res3.length > 0) {
         this.apicall.getrefstatus(userData.username).subscribe((res2: any) => {
           this.apicall.userdata(userData.username).subscribe((res: any) => {
-            if (+res.balnce > res2) {
+            if (+res.balnce > +res2) {
               this.status = [1, 2];
             } else {
               this.status = [];

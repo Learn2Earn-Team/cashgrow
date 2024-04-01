@@ -3,7 +3,6 @@ import { Component } from "@angular/core";
 import { check } from "src/app/localStorage/LocalStorage";
 import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
-import { Clipboard } from "@capacitor/clipboard";
 import { Router } from "@angular/router";
 import detectEthereumProvider from "@metamask/detect-provider";
 
@@ -100,27 +99,16 @@ export class FinancedepositeComponent {
 
   public DepositReq() {
     this.userobj.depositdata = this.depositdetail;
-    this.apiCall
-      .CheckdepositStatus({ user_id: this.userobj.id })
-      .subscribe((res) => {
-        console.log(res);
-        if (res.status != "Pending" && res.error === false) {
-          this.apiCall.deposit(this.userobj).subscribe((res) => {
-            this.GetUserData();
-            this.depositdetail = { depositAmount: "" };
-            this.uploadedImage = "";
-            if (res.error === false) {
-              this.toast.SuccessToast("Deposit Successfully", "Good Job!");
-              this.GetUserData();
-              this.route.navigate(["default/index"]);
-            }
-          });
-        } else {
-          this.toast.ErrorToast(
-            "Deposit Request Not Submint",
-            "You Previus Request is Still Pending"
-          );
-        }
-      });
+    console.log(this.userobj, "data");
+    this.apiCall.deposit(this.userobj).subscribe((res) => {
+      this.GetUserData();
+      this.depositdetail = { depositAmount: "" };
+      this.uploadedImage = "";
+      if (res.error === false) {
+        this.toast.SuccessToast("Deposit Successfully", "Good Job!");
+        this.GetUserData();
+        this.route.navigate(["default/index"]);
+      }
+    });
   }
 }
