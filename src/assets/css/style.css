@@ -1004,7 +1004,7 @@ background-size: cover; }
     line-height: 26px; } }
 /* 3.5. Countries Part */
 #countries-part {
-  background: url(../images/bg/countries-bg.jpg) no-repeat center;
+  background: url(../Lahore_Map.png) no-repeat center;
   background-size: cover;
   position: relative; }
   #countries-part::after {

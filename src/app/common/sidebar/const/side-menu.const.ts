@@ -96,11 +96,7 @@ export const adminMenuItems: any[] = [
     label: "Internal Transfer",
   },
 
-  {
-    routerLink: "/default/bonushistory",
-    icon: "bi bi-bell-fill",
-    label: "Notification",
-  },
+
 
   // {
   //   routerLink: '/default/cashtowallet',
@@ -276,11 +272,7 @@ export const menuItems: any[] = [
     icon: "bi bi-cash",
     label: "My Withdraw History",
   },
-  {
-    routerLink: "/default/bonushistory",
-    icon: "bi bi-bell-fill",
-    label: "Notification",
-  },
+
   // {
   //   routerLink: '/default/cashtowallet',
   //   icon: 'bi bi-wallet2',

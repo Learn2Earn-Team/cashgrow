@@ -3,7 +3,6 @@ import { Component } from "@angular/core";
 import { check } from "src/app/localStorage/LocalStorage";
 import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
-import { Clipboard } from "@capacitor/clipboard";
 import { Router } from "@angular/router";
 import detectEthereumProvider from "@metamask/detect-provider";
 

@@ -66,9 +66,9 @@
               <p class="card-text text-info">
                 https://thecashgrow.com/{{ userDashboardData?.username }}
               </p>
-              <a class="btn button" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
+              <a class="btn button" style="color: white;" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
               <a
-                class="btn btn-info"
+                class="btn" style= " color:white; height: 40px;width: auto; background-color: #fab915;"
                 (click)="downloadApkFromAssets('thecashgrow.apk')"
                 >Download App</a
               >
@@ -333,7 +333,7 @@
       </div>
       <p class="mb-1" style="font-size: 14px">
         Has buy package of
-        <span class="dollar fw-bold">{{ item.randomamount }}$</span>
+        <span class="dollar  fw-bold" style="color: #fab915;">{{ item.randomamount }}$</span>
       </p>
     </a>
   </div>

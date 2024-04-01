@@ -27,7 +27,7 @@
   }
   :root {
     --primary-color: #0e154b;
-    --background-color:rgb(27, 22, 73)!important;
+    --background-color:#1a1f22!important;
     //  --background-color:#1e4356;
     --text-color: #020202d7;
 
@@ -128,7 +128,7 @@
   margin-bottom: 60px;
  }
 /* Importing Bootstrap SCSS file. */
-// @import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
 a {
   text-decoration: none;
