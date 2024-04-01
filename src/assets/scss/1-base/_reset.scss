@@ -1,0 +1,65 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	position: relative;
+	line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@extend *;
+	line-height: normal;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	@extend *;
+}
+
+p {
+	@extend *;
+}
+
+a {
+	@extent *;
+	line-height: normal;
+	@include transition($trans-4);
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+
+ul,
+ol,
+dl {
+	@extend *;
+	list-style-type: none;
+}
+
+button {
+	@extend *;
+	line-height: normal;
+}
+
+.form-control {
+	&:focus {
+		box-shadow: none;
+		outline: none;
+		border-color: $brand-color;
+	}
+}

@@ -1,0 +1,25 @@
+.contact #service-part {
+	&::after {
+		display: none;
+	}
+	&::before {
+		width: 100%;
+	}
+	.service-left {
+		margin-left: 0!important;
+		h2 {
+			text-align: center;
+		}
+		p {
+			max-width: 500px;
+			margin: auto;
+			text-align: center;
+		}
+	}
+}
+
+@include mq-min(992px) {
+	.contact .service-left {
+		margin-right: 0;
+	}
+}

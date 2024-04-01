@@ -57,23 +57,22 @@ p{
 
 // <--------------Alter Css-------------->
 .container{
-  background:  rgba(16,14,60,1);
+  background:  #1a1f22;
 }
 .card{
-  background:  rgb(37, 34, 102);
+  background: #1a1f22;
 
 }
 
 .list-group-item{
-  background:  rgb(37, 34, 102);
-  color: rgb(0, 0, 0);
+  background:  rgb(255, 255, 255);
   border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
   ;
 }
 
 
 .list-group-item p{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding-top: 5px;
 
 }
@@ -83,14 +82,14 @@ p{
 
 }
 .heading{
- background: rgba(35, 149, 255);
-
-
+ background: #1a1f22;
 }
+
 .t-head{
-    background:  rgb(37, 34, 102);
+    background:  #1a1f22;
 }
 th{
+  width:470px;
   padding: 10px;
   border: 1px solid  rgba(116, 114, 114, 0.603);
 
@@ -108,28 +107,3 @@ padding: auto;
 // display: grid;
 
 }
-
-@media screen and (max-width: 900px) {
- table {
-  justify-content: center;
-  text-align: center;
-font-size: 10px; 
-width:auto;
-height: auto;
-margin: auto;
-display: flex;  
-padding: auto;
-}
-
-td{
-display: flex;
-flex-direction: row;
-padding:auto;
-}
-th{
-display: flex;
-flex-direction: row;
-font-size: 8px;
-padding: auto;
-
-}}

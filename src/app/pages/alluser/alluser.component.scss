@@ -49,16 +49,15 @@ p{
 //  <---------------alter css------------->
 
 .container{
-  background:  rgba(16,14,60,1);
+  background:  #1a1915;
 }
 .card{
-  background:  rgb(37, 34, 102);
+  background:  white;
 
 }
 
 .list-group-item{
-  background:  rgb(37, 34, 102);
-  color: rgb(0, 0, 0);
+  background:  #ffffff;
   border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
   font-size: 12px
   ;
@@ -66,7 +65,7 @@ p{
 
 
 .list-group-item p{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding-top: 2px;
 
 }
@@ -76,7 +75,7 @@ p{
 
 }
 .heading{
-  background-color: rgb(35, 149, 255);
+  background-color: #fab915;
   }
   *{
     font-family: "Poppins", sans-serif;

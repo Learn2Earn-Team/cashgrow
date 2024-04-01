@@ -4,7 +4,7 @@
 // }
 .card-body{
     border-radius: 8%;
-    background:  rgb(37, 34, 102);
+    background:  #1a1f22;
     color: rgb(255, 255, 255);
     border-radius: 0px;
     }
@@ -22,7 +22,7 @@
      -webkit-transform: scale(1.02, 1.02);
       backface-visibility: hidden;
      will-change: transform;
-     border: 1px solid rgb(35, 149, 255);
+     border: 1px solid #fab915;
      }
      .card-body:hover::after {
      opacity: 1;
@@ -51,7 +51,7 @@
      }
     
     .nav-pills .nav-item .nav-link.active {
-    background: rgba(35, 149, 255);
+    background: #fab915;
     color: white;
     }
     table {
@@ -83,7 +83,7 @@
     }
     
     .t-heading{
-      background:  rgb(37, 34, 102);
+      background:  #1a1f22;
     }
     th{
       color: white;

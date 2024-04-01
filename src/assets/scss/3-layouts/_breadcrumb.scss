@@ -1,0 +1,62 @@
+#breadcrumb {
+	background: url(../images/bg/counter-bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+	@include overlay(rgba($dark, .3));
+	padding: 50px 0;
+	position: relative;
+	h2 {
+		color: #fff;
+	}
+	.container {
+		position: relative;
+		z-index: 5;
+	}
+	.breadcrumb-link {
+		//		margin-top: 20px;
+		//		position: absolute;
+		//		bottom: 23px;
+		//		left: 0;
+		li {
+			font-size: 16px;
+			color: #fff;
+			position: relative;
+			padding: 0 15px;
+			&:not(:last-child)::after {
+				position: absolute;
+				content: '\f105';
+				right: 0;
+				top: 50%;
+				transform: translate(100%, -50%);
+				font-family: 'FontAwesome';
+				font-size: 20px;
+			}
+			a {
+				color: $brand-color;
+			}
+			&:first-child {
+				a {
+					text-transform: uppercase;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+@include mq-min(768px) {
+	#breadcrumb {
+		padding: 0;
+		h2 {
+			padding: 70px 0 110px;
+		}
+		.breadcrumb-link {
+			position: absolute;
+			bottom: 23px;
+			left: 0;
+			li{
+				font-size: 18px;
+			}
+		}
+	}
+}

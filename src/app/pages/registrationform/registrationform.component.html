@@ -8,13 +8,10 @@
         <h1>
           <a href="#" class="fs-2"
             ><img
-              src="../../../assets/maclink white png.png"
+              src="../../../assets/images/bg/Cash.png"
               alt=""
-              style="width: 50px; height: 50px"
-            /><span class="fs-5" style="text-transform: uppercase; color: white"
-              >Cashgrow</span
-            ></a
-          >
+              style="width: 180px; height: 90px"
+          /></a>
         </h1>
       </div>
     </div>
@@ -38,7 +35,7 @@
         class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash"
       >
         <form>
-          <h2 class="text-center mb-3 fs-4">
+          <h2 class="text-center mb-3 fs-4 mt-5">
             <span class="sign-head text-white"> Sign Up To Register</span>
           </h2>
           <br />
@@ -47,142 +44,125 @@
               <label class="form-label"> </label>
               <input
                 class="rounded-2 input"
-                placeholder="First Name"
-                [(ngModel)]="userFirstName"
+                placeholder="Contact Number"
+                type="text"
+                maxlength="11"
+                [(ngModel)]="signupdata.contactno"
+                [ngModelOptions]="{ standalone: true }"
+                pattern="[0-11]{11}"
+                maxlength="11"
+                min="0"
+                max="9999"
+                step="1"
+                required
+              />
+            </div>
+            <div class="col-md-12">
+              <label class="form-label mt-1"></label>
+              <input
+                class="rounded-2 input"
+                placeholder="Email"
+                [(ngModel)]="signupdata.email"
                 [ngModelOptions]="{ standalone: true }"
                 required
               />
             </div>
-            <div class="col-md-6">
-              <label class="form-label"> </label>
+            <div class="col-md-12">
+              <label class="form-label mt-1"></label>
               <input
                 class="rounded-2 input"
-                [(ngModel)]="signupdata.lastname"
-                placeholder="Last Name"
-                [ngModelOptions]="{ standalone: true }"
+                placeholder="Password"
+                (input)="password($event)"
+                required
               />
             </div>
-          </div>
-          <div class="col-md-12">
-            <label class="form-label"></label>
-            <input
-              class="rounded-2 input"
-              placeholder="Contact Number"
-              type="text"
-              maxlength="11"
-              [(ngModel)]="signupdata.contactno"
-              [ngModelOptions]="{ standalone: true }"
-              pattern="[0-11]{11}"
-              maxlength="11"
-              min="0"
-              max="9999"
-              step="1"
-              required
-            />
-          </div>
-          <div class="col-md-12">
-            <label class="form-label mt-1"></label>
-            <input
-              class="rounded-2 input"
-              placeholder="Email"
-              [(ngModel)]="signupdata.email"
-              [ngModelOptions]="{ standalone: true }"
-              required
-            />
-          </div>
-          <div class="col-md-12">
-            <label class="form-label mt-1"></label>
-            <input
-              class="rounded-2 input"
-              placeholder="Password"
-              (input)="password($event)"
-              required
-            />
-          </div>
-          <div class="col-md-12">
-            <label class="form-label"></label>
-            <input
-              class="rounded-2 input"
-              placeholder="Confirm"
-              (input)="confirmpassword($event)"
-              required
-            />
-          </div>
-
-          <span
-            class=""
-            *ngIf="this.showmessage != ''"
-            [ngClass]="
-              this.showmessage == 'Correct Password'
-                ? 'text-success'
-                : 'text-danger'
-            "
-            >{{ this.showmessage }}
-          </span>
-
-          <div class="col-md-12">
-            <label
-              class="form-label"
-              style="color: grey; font-family: Poppins, sans-serif"
-              >Referral-link</label
-            >
-            <input
-              class="font-family: Poppins, sans-serif;"
-              class="form-control input text-black gradient text-center"
-              value="{{ signupdata.invitationlink }}"
-              disabled
-            />
-          </div>
-          <br />
-          <div class="col-md-12 auto">
-            <p
-              class="d-flex text-center"
-              style="font-family: Poppins, sans-serif"
-            >
+            <div class="col-md-12">
+              <label class="form-label"></label>
               <input
-                class="form-check-input border border-1 border-dark p-1 text-black mx-2"
-                [(ngModel)]="isChecked"
-                [ngModelOptions]="{ standalone: true }"
-                type="checkbox"
+                class="rounded-2 input"
+                placeholder="Confirm"
+                (input)="confirmpassword($event)"
+                required
               />
+            </div>
+
+            <span
+              class=""
+              *ngIf="this.showmessage != ''"
+              [ngClass]="
+                this.showmessage == 'Correct Password'
+                  ? 'text-success'
+                  : 'text-danger'
+              "
+              >{{ this.showmessage }}
+            </span>
+
+            <div class="col-md-12">
               <label
-                class="form-check-label m-auto text-black text-center text-white mx-1"
-                style="font-size: 13px"
+                class="form-label"
+                style="color: grey; font-family: Poppins, sans-serif"
+                >Referral-link</label
               >
-                I have read and agree to the
-                <a class="term text-white" style="font-size: 13px" href="#/tems"
-                  >Terms and Condition</a
+              <input
+                class="font-family: Poppins, sans-serif;"
+                class="form-control input text-black gradient text-center"
+                value="{{ signupdata.invitationlink }}"
+                disabled
+              />
+            </div>
+            <br />
+            <div class="col-md-12 auto">
+              <p
+                class="d-flex text-center"
+                style="font-family: Poppins, sans-serif"
+              >
+                <input
+                  class="form-check-input border border-1 border-dark p-1 text-black mx-2"
+                  [(ngModel)]="isChecked"
+                  [ngModelOptions]="{ standalone: true }"
+                  type="checkbox"
+                />
+                <label
+                  class="form-check-label m-auto text-black text-center text-white mx-1"
+                  style="font-size: 13px"
                 >
-              </label>
-            </p>
-          </div>
-          <div class="row">
-            <div class="col-12 m-auto text-center">
-              <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
-              <button
-                class="m-auto text-center w-100 btn button navbtn"
-                (click)="submit()"
-                [disabled]="
-                  userFirstName == '' ||
-                  signupdata.lastname == '' ||
-                  signupdata.contactno == '' ||
-                  signupdata.email == '' ||
-                  signupdata.password == '' ||
-                  signupdata.invitationlink == '' ||
-                  this.showmessage != 'Correct Password' ||
-                  isChecked == false
-                "
-              >
-                Submit
-              </button>
+                  I have read and agree to the
+                  <a
+                    class="term text-white"
+                    style="font-size: 13px"
+                    href="#/tems"
+                    >Terms and Condition</a
+                  >
+                </label>
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-12 m-auto text-center">
+                <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
+                <button
+                  class="m-auto text-center w-100 btn button navbtn"
+                  (click)="submit()"
+                  [disabled]="
+                    userFirstName == '' ||
+                    signupdata.lastname == '' ||
+                    signupdata.contactno == '' ||
+                    signupdata.email == '' ||
+                    signupdata.password == '' ||
+                    signupdata.invitationlink == '' ||
+                    this.showmessage != 'Correct Password' ||
+                    isChecked == false
+                  "
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
-</div>
-<!-- <footer
+  <!-- <footer
   id="footer"
   data-aos="fade-up"
   data-aos-easing="ease-in-out"
@@ -195,3 +175,4 @@
     </div>
   </div>
 </footer> -->
+</div>

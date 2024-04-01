@@ -103,7 +103,7 @@ table th {
     width: 60px;
     height: 60px;
     bottom: 30px;
-    background-color: #25d366;
+    background-color: #fab915;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
@@ -129,7 +129,7 @@ table th {
 
 
 .container{
-  background:  rgba(16,14,60,1);
+  background:  #1a1f22;
   height: 100%;
 }
 // .card{
@@ -138,20 +138,19 @@ table th {
 // }
 
 .list-group-item{
-  background:  rgb(37, 34, 102);
-  color: rgb(0, 0, 0);
+  background:  #f3f4f5;
   border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
   ;
 }
 
 
 .list-group-item p{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding-top: 5px;
 
 }
 .t-h{
-      background-color: rgb(35, 149, 255)!important;
+      background-color: #fab915!important;
 }
 .card:hover{
   margin:-3px 0;
@@ -159,7 +158,7 @@ table th {
 
 }
 .heading{
-  background:  rgb(37, 34, 102);
+  background: #1a1f22;
 }
   .button {
     position: relative;
@@ -167,7 +166,7 @@ table th {
     box-shadow: 0px 10px 20px rgba(37, 37, 37, 0.2);
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-    background-color: rgb(35, 149, 255);
+    background-color: #fab915;
     display: flex;
     align-items: center;
     justify-content: center;

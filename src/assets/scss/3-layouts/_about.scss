@@ -1,0 +1,59 @@
+#about-part {
+	padding: 72px 0 80px;
+}
+
+.about-item {
+	h2 {
+		@include transition($trans-4);
+	}
+	img {
+		margin: 30px 0;
+	}
+	p {
+		font-size: 16px;
+		line-height: 26px;
+		max-width: 320px;
+		margin: auto;
+	}
+	a {
+		background: $white;
+		color: $brand-color;
+		margin-top: 15px;
+		&:hover {
+			background: $brand-color;
+			Color: #fff;
+		}
+	}
+	&:hover {
+		h2 {
+			color: $brand-color;
+		}
+	}
+}
+
+@include mq-max(991px) {
+	.about-item {
+		margin-bottom: 55px;
+	}
+}
+
+@include mq-max(767px) {
+	.about-item {
+		a {
+			margin-top: 20px;
+		}
+	}
+	.about-item img {
+    	margin: 16px 0;
+	}
+}
+
+@include mq-max(575px) {
+	.about-item a {
+    	margin-top: 15px;
+	}
+	.about-item {
+    	margin-bottom: 35px;
+	}
+	
+}

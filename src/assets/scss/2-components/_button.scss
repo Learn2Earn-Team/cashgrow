@@ -1,0 +1,93 @@
+.btn-1 {
+    font-size: 17px;
+    background: $brand-color;
+    color: $white;
+    padding: 4px 20px;
+    border: 1px solid $brand-color;
+    @include transition($trans-4);
+    border-radius: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+        color: $brand-color;
+        background: $white;
+    }
+}
+
+.btn-2 {
+    @extend .btn-1;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 12px;
+    padding: 4px 22px;
+}
+
+.btn-4 {
+    @extend .btn-1;
+    font-size: 18px;
+    line-height: 28px;
+    border-radius: 4px;
+    padding: 4px 22px;
+}
+
+.btn-5 {
+    @extend .btn-1;
+    font-size: 22px;
+    line-height: 28px;
+    border-radius: 4px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+}
+
+.btn-3 {
+    color: $brand-color;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    i {
+        font-size: 14px;
+        margin-left: 5px;
+        @include transition($trans-3);
+    }
+    &:hover {
+        color: $dark;
+        i {
+            margin-left: 10px;
+            color: $brand-color;
+        }
+    }
+}
+
+@include mq-max(1199px) {
+    .btn-4 {
+        font-size: 16px
+    }
+    .btn-5 {
+        font-size: 19px;
+        line-height: 29px;
+        padding: 8px 36px
+    }
+}
+
+@include mq-max(991px) {
+    .btn-5 {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 7px 35px;
+    }
+}
+
+@include mq-max(991px) {
+    .btn-4 {
+        padding: 5px 25px;
+        font-size: 15px;
+    }
+    .btn-5 {
+        font-size: 15px;
+        line-height: 25px;
+        padding: 4px 28px;
+    }
+}

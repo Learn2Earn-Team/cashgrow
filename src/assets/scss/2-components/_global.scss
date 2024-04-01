@@ -1,0 +1,26 @@
+.brand-color {
+	color: $brand-color;
+}
+
+// font size
+.font-size-15 {
+	font-size: 15px;
+}
+
+// font weight
+.semi-bold {
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.btcwdgt-headlines.btcwdgt-light .btcwdgt-footer {
+	a.logo{
+		display: none!important;
+	}
+	a.embed {
+		display: none!important;
+	}
+}

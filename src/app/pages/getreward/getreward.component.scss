@@ -29,7 +29,7 @@ table th {
   height: 60px;
   bottom: 30px;
   right: 5px;
-  background-color: #25d366;
+  background-color: #fab915;
   color: #FFF;
   border-radius: 50px;
   text-align: center;
@@ -48,24 +48,22 @@ table th {
 
 
   .container{
-    background:  rgba(16,14,60,1);
+    background:  #1a1f22;
   }
   .card{
-    background:  rgb(37, 34, 102);
+    background:  #1a1f22;
   
   }
   
   .list-group-item{
-    background:  rgb(37, 34, 102);
-    color: rgb(0, 0, 0);
-    border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
-    ;
+    background:  white;
+    border-bottom: 1px solid  rgba(255, 255, 255, 0.603);;
     font-size: 11px;
   }
   
   
   .list-group-item p{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding-top:2px;
   
   }
@@ -75,13 +73,14 @@ table th {
   
   }
   .heading{
-    background: rgba(35, 149, 255);
+    background: #fab915;
   
   }
   .t-head{
-    background:  rgb(37, 34, 102);
+    background:  #1a1f22;
   }
   th{
+    width:470px;
     padding: 3px;
     border: 1px solid  rgba(116, 114, 114, 0.603);
 
@@ -99,31 +98,6 @@ padding: auto;
 // display: grid;
 
 }
-
-  @media screen and (max-width: 900px) {
-   table {
-    justify-content: center;
-    text-align: center;
-font-size: 10px; 
-width:auto;
-height: auto;
-margin: auto;
-display: flex;  
-padding: auto;
-}
-
-td{
-  display: flex;
-  flex-direction: row;
-padding:auto;
-}
-th{
-  display: flex;
-  flex-direction: row;
-  font-size: 8px;
-  padding: auto;
-
-}}
 *{
   font-family: "Poppins", sans-serif;
 

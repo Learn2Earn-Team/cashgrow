@@ -23,9 +23,10 @@ const swiper = new Swiper(".swiper", {
 export class IndexComponent implements OnInit {
   public card: any = [
     {
-      icon: "icon bi bi-person-heart",
-      type: "My Id",
+      icon: "icon bi-share-fill ",
+      type: "Direct Bonus",
       subtype: "",
+         rs: "Rs",
       today: "",
     },
     {
@@ -53,17 +54,17 @@ export class IndexComponent implements OnInit {
     { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
     {
       icon: "icon bi-person-lines-fill",
-      type: "totalpassive",
+      type: "Passive Income",
       subtype: "",
       today: "",
     },
+  
   ];
 
   public directBonous: any = {
-    icon: "icon bi-share-fill",
-    type: "Direct Bonus",
+    icon: " icon bi bi-person-heart",
+    type: "My ID",
     subtype: "",
-    rs: "Rs",
     today: "",
   };
   public interval: any;
@@ -104,6 +105,25 @@ export class IndexComponent implements OnInit {
         delay: 1000,
       },
     });
+  }
+  async copyUserId() {
+    console.log(window.location.origin);
+    const user: any = await check("user");
+    const userData = JSON.parse(user);
+    console.log(userData);
+    const url = `https://thecashgrow.com/#/registrationform?id=${userData.username}`;
+    await Clipboard.write({
+      string: url,
+    }).then(
+      () => {
+        this.toast.SuccessToast("Linked Copied to clipboard", "Successfully!");
+      },
+      () => {
+        console.error("Failed to copy");
+      }
+    );
+    const { type, value } = await Clipboard.read();
+    console.log(`Got ${type} from clipboard: ${value}`);
   }
   async getrefstatus() {
     const user: any = await check("user");
@@ -178,11 +198,11 @@ export class IndexComponent implements OnInit {
       console.log("gettt", team);
       this.apicall.getdashboardData(userData.id, team).subscribe((res) => {
         console.log("dfadsda", res);
-        this.card[0].subtype = res.username;
+        this.card[0].subtype =  res.directBalance.toFixed(2);
         this.card[1].subtype = res.netBalance;
         this.card[2].subtype = res.earning;
         this.card[2].today = res.todayearning;
-        this.directBonous.subtype = res.directBalance;
+        this.directBonous.subtype = res.username;
         this.directBonous.today = res.todaydirectBalance;
         this.card[3].subtype = res.Rewards;
         this.card[3].today = res.todayRewards;
@@ -247,36 +267,7 @@ export class IndexComponent implements OnInit {
     this.route.navigate(["/default/instagramagency"]);
   }
   //      <h6 class="text-muted">{{ item.today }}</h6>
-  async copyUserId() {
-    console.log(window.location.origin);
-    const user: any = await check("user");
-    const userData = JSON.parse(user);
-    console.log(userData);
-    const url = `https://Cashgrow.cc/#/registrationform?id=${userData.username}`;
-    await Clipboard.write({
-      string: url,
-    }).then(
-      () => {
-        this.toast.SuccessToast("Linked Copied to clipboard", "Successfully!");
-      },
-      () => {
-        console.error("Failed to copy");
-      }
-    );
-    const { type, value } = await Clipboard.read();
-    console.log(`Got ${type} from clipboard: ${value}`);
-    // navigator.clipboard.writeText(url).then(() => {
-    //   console.log(`${url} copied to clipboard`);
-    //   this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!')
-    // },() => {
-    //   console.error('Failed to copy');
-    // })
 
-    // this.route.navigate(['registrationform'], {
-    //   state: { data: userData},
-    //   queryParams: { id: userData.username },
-    // });
-  }
   async goToComplain() {
     const user: any = await check("user");
     const userData = JSON.parse(user);
