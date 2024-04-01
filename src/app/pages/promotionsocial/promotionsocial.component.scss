@@ -105,10 +105,10 @@
         }
     }
 	.packe{
-		background:  rgb(35, 149, 255);
+		background:  #fab915;
 	  }
 	  .card-body{
-		background:rgb(36, 42, 85);
+		background:#1a1f22;
 		color: white;
 		border-bottom-left-radius: 6px;
 		border-bottom-right-radius: 6px;
@@ -130,7 +130,7 @@
 		padding: 5px;
 		}
 		.card:hover{
-		  border: 1px solid rgb(35, 149, 255);
+		  border: 1px solid #fab915;
 		  transition: all 1s ease-out 1s;
 		  margin-top:-3px ;
 		}
@@ -569,8 +569,8 @@
   
   .button:hover{
 	color: white;
-	background:  rgb(35, 149, 255);
-	background: linear-gradient(221deg, rgb(35, 149, 255) 0%, rgb(35, 149, 255));
+	background:  #fab915;
+	background: linear-gradient(221deg, #fab915 0%, #fab915);
   box-shadow: 0px 0px 10px rgba(35, 149, 255, 0.5);
   }
   
@@ -658,7 +658,7 @@ input:focus{
 	// transform: translate(-50%, -50%);
 	// padding: 12px 48px;
 	color: #fff;
-	background: linear-gradient(to right, #9f9f9f 0,   rgb(35, 149, 255) 20%,  rgb(242, 243, 243) 30%);
+	background: linear-gradient(to right, #9f9f9f 0,   #fab915 20%,  rgb(242, 243, 243) 30%);
 	background-position: 0;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
