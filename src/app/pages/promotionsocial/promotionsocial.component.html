@@ -19,12 +19,12 @@
       <!--BLOCK ROW START-->
       <div class="row m-auto">
         <div
-          class="col-12 col-md-4 col-sm-12 m-auto"
+          class="col-12 col-md-4 col-sm-4 m-auto"
           *ngFor="let item of alldata; let i = index"
         >
           <div class="card mb-4">
             <div class="card-header py-3 packe">
-              <h4
+              <h4 
                 class="my-0 fw-normal text-white pack head-c text-center fs-5 fw-bold"
               >
                 {{ item.name }}
@@ -32,61 +32,14 @@
             </div>
             <div class="card-body">
               <h1
-                class="card-title pricing-card-title text-white text-center fs-4"
+                class="card-title pricing-card-title text-black text-center fs-4"
               >
                 ${{ item.minprice }} &nbsp;&nbsp;<small
                   >/&nbsp;&nbsp;&nbsp;${{ item.maxprice }}</small
                 >
               </h1>
 
-              <ng-template #content let-modal>
-                <div class="card-body">
-                  <div class="row modal-body modalcolor mt-2">
-                    <div class="col-9"></div>
-                    <div class="col-3">
-                      <i
-                        class="bi bi-x-lg text-white float-end"
-                        (click)="modal.close('Save click')"
-                      ></i>
-                    </div>
-                    <div class="col-12 text-white">
-                      <div class="row">
-                        <div class="col-5 p-1">User Current Balance:</div>
-                        <div
-                          class="col-7 p-1 text-primary text-white fw-bold float-end"
-                        >
-                          {{ this.userdataarray.balnce }}$
-                        </div>
-                        <div class="col-5 p-1">Min-Price:</div>
-                        <div class="col-7 p-1 text-white float-end fw-bold">
-                          {{ item.minprice }}$
-                        </div>
-                      </div>
-                    </div>
-                    <input
-                      class="col-10 col-5 rounded-2 input border-1"
-                      type="text"
-                      placeholder="Invest Between Max and Min Price"
-                      [ngModelOptions]="{ standalone: true }"
-                      [(ngModel)]="balance"
-                    />
-                    <div class="col-2 add">
-                      <button
-                        (click)="activep(item, i, modal)"
-                        class="packe btn"
-                      >
-                        Add
-                      </button>
-                    </div>
-                    <!-- <div class="col-sm-3"></div> -->
-                    <div class="row mt-4 text-white">
-                      <div class="col-4">Max-Price:</div>
-                      <div class="col-4 fw-bold">{{ item.maxprice }}$</div>
-                      <div class="col-4"></div>
-                    </div>
-                  </div>
-                </div>
-              </ng-template>
+           
               <div class="generic_feature_list p-1">
                 <ul class="row">
                   <li class="p-1 mt-3 d-flex">
@@ -144,7 +97,7 @@
                   <li class="d-flex p-2 mt-3">
                     <div class="col-2"></div>
                     <div
-                      class="col-8 text-center m-auto btn-shine fw-bold days"
+                      class="col-8 text-center m-auto fw-bold days"
                     >
                       Monday to Friday
                     </div>
@@ -152,6 +105,54 @@
                   </li>
                 </ul>
               </div>
+              <ng-template #content let-modal>
+                <div class="card-body text-black">
+                  <div class="row modal-body modalcolor mt-2 text-black">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                      <i
+                        class="bi bi-x-lg text-black float-end"
+                        (click)="modal.close('Save click')"
+                      ></i>
+                    </div>
+                    <div class="col-12 text-black">
+                      <div class="row">
+                        <div class="col-5 p-1">User Current Balance:</div>
+                        <div
+                          class="col-7 p-1 text-primary text-black fw-bold float-end"
+                        >
+                          {{ userdataarray?.balnce }}$
+                        </div>
+                        <div class="col-5 p-1">Min-Price:</div>
+                        <div class="col-7 p-1 text-black float-end fw-bold">
+                          {{ item?.minprice }}$
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      class="col-10 col-5 rounded-2 input border-1"
+                      type="text"
+                      placeholder="Invest Between Max and Min Price"
+                      [ngModelOptions]="{ standalone: true }"
+                      [(ngModel)]="balance"
+                    />
+                    <div class="col-2 add">
+                      <button
+                        (click)="activep(item, i, modal)"
+                        class="packe btn"
+                      >
+                        Add
+                      </button>
+                    </div>
+                    <!-- <div class="col-sm-3"></div> -->
+                    <div class="row mt-4 text-black">
+                      <div class="col-4">Max-Price:</div>
+                      <div class="col-4 fw-bold">{{ item?.maxprice }}$</div>
+                      <div class="col-4"></div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
               <!-- <button type="button" class=" btn button">Invest Now</button> -->
               <div class="m-auto text-center">
                 <!-- <button type="button " *ngIf="item.pstatus === 'active'" [disabled]="true"
@@ -159,7 +160,7 @@
                 <button
                   type="button"
                   (click)="open(content)"
-                  class="btn packe text-white"
+                  class="btn packe text-black"
                 >
                   Active
                 </button>
