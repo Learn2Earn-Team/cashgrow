@@ -41,22 +41,39 @@
           <br />
           <div class="row">
             <div class="col-md-6">
-              <label class="form-label"> </label>
               <input
-                class="rounded-2 input"
-                placeholder="Contact Number"
-                type="text"
-                maxlength="11"
-                [(ngModel)]="signupdata.contactno"
-                [ngModelOptions]="{ standalone: true }"
-                pattern="[0-11]{11}"
-                maxlength="11"
-                min="0"
-                max="9999"
-                step="1"
-                required
-              />
+              class="rounded-2 input"
+              placeholder="First Name"
+              [(ngModel)]="signupdata.firstname"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+            </div> 
+            <div class="col-md-6">
+              <input
+              class="rounded-2 input"
+              placeholder="Last Name"
+              [(ngModel)]="signupdata.lastname"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            /> 
+            </div> <div class="col-md-12">
+              <input
+              class="rounded-2 input"
+              placeholder="Contact Number"
+              type="text"
+              maxlength="11"
+              [(ngModel)]="signupdata.contactno"
+              [ngModelOptions]="{ standalone: true }"
+              pattern="[0-11]{11}"
+              maxlength="11"
+              min="0"
+              max="9999"
+              step="1"
+              required
+            />
             </div>
+         
             <div class="col-md-12">
               <label class="form-label mt-1"></label>
               <input
