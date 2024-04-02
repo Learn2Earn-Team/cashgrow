@@ -3,7 +3,6 @@ swiper-container {
   width: 100%;
   height: 100%;
 }
-
 swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -14,9 +13,7 @@ swiper-slide {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
 }
-
 swiper-slide img {
   display: block;
   width: 100%;
@@ -56,7 +53,6 @@ swiper-slide img {
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
   background: red !important;
