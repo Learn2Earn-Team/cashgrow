@@ -236,9 +236,6 @@ export class IndexComponent implements OnInit {
         } else if (res.mypackage === 4) {
           this.card[7].subtype = "PREMIUMN PLUS";
           this.card[7].today = res.invest;
-        } else {
-          this.card[7].subtype = "BASIC";
-          this.card[7].today = res.invest;
         }
       });
     });

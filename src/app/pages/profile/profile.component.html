@@ -15,6 +15,10 @@
                 </div>
                 <!-- <div class="flex-shrink-0" style="background: transparent">
                   <img
+                    *ngIf="
+                      userobj.image !==
+                      'https://learn2earnn.com/products/cashgrow/0'
+                    "
                     src="{{ userobj.image }}"
                     onerror="this.onerror=null;this.src='../assets/boy-icon-png-10.jpg.png'"
                     alt=""
@@ -44,7 +48,7 @@
                     <p class="text-light">
                       Invited by
                       <span class="text-info" style="font-size: 10px"
-                        >ID {{ userDashboardData?.sponserid | uppercase }}</span
+                        >ID {{ userDashboardData?.InvitedLink | uppercase }}</span
                       >
                     </p>
                   </div>
@@ -72,9 +76,17 @@
               <p class="card-text text-info">
                 https://thecashgrow.com/{{ userDashboardData?.username }}
               </p>
-              <a class="btn button" style="color: white;" (click)="copyUserId()">Copy</a>&nbsp;&nbsp;
+              <a class="btn button" style="color: white" (click)="copyUserId()"
+                >Copy</a
+              >&nbsp;&nbsp;
               <a
-                class="btn" style= " color:white; height: 40px;width: auto; background-color: #fab915;"
+                class="btn"
+                style="
+                  color: white;
+                  height: 40px;
+                  width: auto;
+                  background-color: #fab915;
+                "
                 (click)="downloadApkFromAssets('thecashgrow.apk')"
                 >Download App</a
               >
@@ -339,7 +351,9 @@
       </div>
       <p class="mb-1" style="font-size: 14px">
         Has buy package of
-        <span class="dollar  fw-bold" style="color: #fab915;">{{ item.randomamount }}$</span>
+        <span class="dollar fw-bold" style="color: #fab915"
+          >{{ item.randomamount }}$</span
+        >
       </p>
     </a>
   </div>
