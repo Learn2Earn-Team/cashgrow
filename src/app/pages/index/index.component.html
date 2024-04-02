@@ -21,10 +21,9 @@
               {{ directBonous.subtype }}<span class="text-white"></span>
             </h4>
             <h6 class="text-muted text-white">
-              <span *ngIf="directBonous.today != null" class="text-white"
-                >{{ directBonous.today }}</span
-              >
-             
+              <span *ngIf="directBonous.today != null" class="text-white">{{
+                directBonous.today
+              }}</span>
             </h6>
           </div>
         </div>
@@ -43,20 +42,17 @@
             <br />
             <h4 class="text-white">{{ item.type }}</h4>
             <h4 class="text-white">
-              {{ item.subtype
-              }}<span  class="text-white"
-                >$</span
-              >
+              {{ item.subtype }}<span *ngIf="i != 7" class="text-white">$</span>
             </h4>
             <h6 class="text-muted text-white">
               <i class="bi bi-arrow-up text-white" *ngIf="i > 1"></i
               ><span *ngIf="item.today != null" class="text-white"
                 >{{ item.today
-                }}<span *ngIf=" i == 2 || i == 3" class="text-white"
+                }}<span *ngIf="i == 2 || i == 3 || i != 7" class="text-white"
                   >$</span
                 ></span
               >
-              <span *ngIf="item.today == null " class="text-white">0$</span>
+              <span *ngIf="item.today == null" class="text-white">0$</span>
             </h6>
           </div>
         </div>
@@ -67,18 +63,13 @@
     </div>
   </section>
 
-    
-          <div style="margin-top: -40px; "
-                      class="card-body text-center shadow rounded-3 heading text-white"
-                      (click)="copyUserId()"
-          >
-          <i class=" icon bi bi-link-45deg"></i>
-            <br />
-            <h4 class="text-white">Referral Link</h4>
-           
-          </div>
-        
-  
-   
-
+  <div
+    style="margin-top: -40px; cursor: pointer"
+    class="card-body text-center shadow rounded-3 heading text-white"
+    (click)="copyUserId()"
+  >
+    <i class="icon bi bi-link-45deg"></i>
+    <br />
+    <h4 class="text-white">Referral Link</h4>
+  </div>
 </div>

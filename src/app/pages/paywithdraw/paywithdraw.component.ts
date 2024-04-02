@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-
+declare var window: any;
 import { Router } from "@angular/router";
 import detectEthereumProvider from "@metamask/detect-provider";
 
@@ -12,6 +12,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
   styleUrls: ["./paywithdraw.component.scss"],
 })
 export class PaywithdrawComponent implements OnInit {
+  public accoun: any;
   public Paycards: any = [
     {
       No: "02",
@@ -44,6 +45,7 @@ export class PaywithdrawComponent implements OnInit {
   ];
   public auth: any = false;
   allWithdrawRequest: any;
+  metaconnect: any = false;
   pageSize = 20;
   p = 1;
   constructor(
@@ -54,32 +56,54 @@ export class PaywithdrawComponent implements OnInit {
   ) {
     this.Auth();
   }
+  async getAccounts() {
+    const data = window.ethereum;
+    try {
+      const provider: any = await data.request({
+        method: "eth_requestAccounts",
+      });
+      console.log(provider, "user");
+      this.accoun = provider;
+      if (this.accoun.length > 0) {
+        this.toast.SuccessToast("Connected With MetaMask", "Error");
+      }
+    } catch (er) {
+      console.log(er, "Connecting error");
+    }
+  }
   public async Pay(request: any) {
     if (this.auth) {
-      const provider: any = await detectEthereumProvider();
-      provider
-        .request({
-          method: "eth_sendTransaction",
-          params: [
-            {
-              from: "0x02B38cfc2637C951D7F9219ead8ca12B109Fc604",
-              to: request.contact,
-              value: +request.net,
-            },
-          ],
-        })
-        .then((txHash: any) => {
-          console.log(txHash, "res");
-          this.changeWidthrawStatus("Approve", request);
-        })
-        .catch((error: any) => {
-          console.log(error, "Error");
-          if (error.code === -32602) {
-            this.toast.ErrorToast("Invalid User Address", "Error");
-          }
-          this.changeWidthrawStatus("Rejected", request);
-          this.toast.ErrorToast("Payment Failed", "Rejected");
-        });
+      if (this.metaconnect) {
+        const provider: any = await detectEthereumProvider();
+        provider
+          .request({
+            method: "eth_sendTransaction",
+            params: [
+              {
+                from: this.accoun[0],
+                to: request?.contact,
+                value: request?.net,
+              },
+            ],
+          })
+          .then((txHash: any) => {
+            console.log(txHash, "res");
+            this.changeWidthrawStatus("Approve", request);
+          })
+          .catch((error: any) => {
+            console.log(error, "Error");
+            if (error.code === -32602) {
+              this.toast.ErrorToast("Invalid User Address", "Error");
+            }
+            this.changeWidthrawStatus("Rejected", request);
+            this.toast.ErrorToast("Payment Failed", "Rejected");
+          });
+      } else {
+        this.toast.ErrorToast(
+          "Please Connect Your MetaMAst To give WithDraw",
+          "Error"
+        );
+      }
     } else {
       this.toast.ErrorToast("Please Install MetaMast Extenstion", "Error");
     }

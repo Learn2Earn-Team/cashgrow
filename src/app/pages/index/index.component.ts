@@ -26,7 +26,7 @@ export class IndexComponent implements OnInit {
       icon: "icon bi-share-fill ",
       type: "Direct Bonus",
       subtype: "",
-         rs: "Rs",
+      rs: "Rs",
       today: "",
     },
     {
@@ -58,7 +58,12 @@ export class IndexComponent implements OnInit {
       subtype: "",
       today: "",
     },
-  
+    {
+      icon: "icon bi-person-lines-fill",
+      type: "My Package",
+      subtype: "",
+      today: "",
+    },
   ];
 
   public directBonous: any = {
@@ -107,10 +112,9 @@ export class IndexComponent implements OnInit {
     });
   }
   async copyUserId() {
-    console.log(window.location.origin);
     const user: any = await check("user");
     const userData = JSON.parse(user);
-    console.log(userData);
+
     const url = `https://thecashgrow.com/#/registrationform?id=${userData.username}`;
     await Clipboard.write({
       string: url,
@@ -198,7 +202,7 @@ export class IndexComponent implements OnInit {
       console.log("gettt", team);
       this.apicall.getdashboardData(userData.id, team).subscribe((res) => {
         console.log("dfadsda", res);
-        this.card[0].subtype =  res.directBalance.toFixed(2);
+        this.card[0].subtype = res.directBalance.toFixed(2);
         this.card[1].subtype = res.netBalance;
         this.card[2].subtype = res.earning;
         this.card[2].today = res.todayearning;
@@ -216,6 +220,25 @@ export class IndexComponent implements OnInit {
         } else {
           this.card[6].subtype = 0;
           this.card[6].today = 0;
+        }
+        if (res.mypackage === 0) {
+          this.card[7].subtype = "BASIC";
+          this.card[7].today = res.invest;
+        } else if (res.mypackage === 1) {
+          this.card[7].subtype = "PRIME";
+          this.card[7].today = res.invest;
+        } else if (res.mypackage === 2) {
+          this.card[7].subtype = "PRIME PLUS";
+          this.card[7].today = res.invest;
+        } else if (res.mypackage === 3) {
+          this.card[7].subtype = "PREMIUM";
+          this.card[7].today = res.invest;
+        } else if (res.mypackage === 4) {
+          this.card[7].subtype = "PREMIUMN PLUS";
+          this.card[7].today = res.invest;
+        } else {
+          this.card[7].subtype = "BASIC";
+          this.card[7].today = res.invest;
         }
       });
     });

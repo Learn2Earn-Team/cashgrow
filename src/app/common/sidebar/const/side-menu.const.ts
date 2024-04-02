@@ -96,8 +96,6 @@ export const adminMenuItems: any[] = [
     label: "Internal Transfer",
   },
 
-
-
   // {
   //   routerLink: '/default/cashtowallet',
   //   icon: 'bi bi-wallet2',
@@ -143,16 +141,16 @@ export const adminMenuItems: any[] = [
   //   icon: 'bi bi-chat-heart',
   //   label: 'My Social Order'
   // },
-  {
-    routerLink: "/default/socialdeposit",
-    icon: "bi bi-building-fill-check",
-    label: "Deposit Amount",
-  },
   // {
-  //   routerLink: '/default/financedeposit',
-  //   icon: 'bi bi-bag-heart-fill',
-  //   label: 'Deposit'
+  //   routerLink: "/default/socialdeposit",
+  //   icon: "bi bi-building-fill-check",
+  //   label: "Deposit Amount",
   // },
+  {
+    routerLink: "/default/financedeposit",
+    icon: "bi bi-bag-heart-fill",
+    label: "Deposit",
+  },
   {
     routerLink: "/default/promotionsocial",
     icon: "bi bi-bar-chart-line-fill",
@@ -251,7 +249,7 @@ export const menuItems: any[] = [
     icon: "bi bi-collection-fill",
     label: "Dashboard",
   },
-  
+
   // {
   //   routerLink: '/default/zoommeeting',
   //   icon: 'bi bi-share',

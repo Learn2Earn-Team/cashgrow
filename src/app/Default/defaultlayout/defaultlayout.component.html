@@ -15,16 +15,14 @@
   
    -->
 
-      <div class="left">
-        <app-sidebar (sideMenu)="getSideMenu($event)"></app-sidebar>
-        
-      </div>
-      <div class="left1">
-        <app-header [path]="headerPath"></app-header>
-        <div class="content " style="margin-top: 60px;">
-          <app-chaticon></app-chaticon>
-          <app-tabbar></app-tabbar>
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-  
+<div class="left">
+  <app-sidebar (sideMenu)="getSideMenu($event)"></app-sidebar>
+</div>
+<div class="left1">
+  <app-header [path]="headerPath"></app-header>
+  <div class="content" style="margin-top: 60px">
+    <app-chaticon></app-chaticon>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
