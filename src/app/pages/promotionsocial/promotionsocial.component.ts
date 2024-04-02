@@ -154,9 +154,9 @@ export class PromotionsocialComponent implements OnInit {
         console.log(this.userdataarray.balnce);
       });
     } else {
-      this.toast.ErrorToast("Enter Valid Amount", "Error");
-    }
-  }
+      this.toast.ErrorToast("Somthing Went Wrong", "Error");
+    }
+  }
 
   async getUserData() {
     const user: any = await check("user");
