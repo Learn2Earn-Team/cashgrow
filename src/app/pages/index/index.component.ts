@@ -23,15 +23,15 @@ const swiper = new Swiper(".swiper", {
 export class IndexComponent implements OnInit {
   public card: any = [
     {
-      icon: "icon bi-share-fill ",
-      type: "Direct Bonus",
+      icon: "icon bi bi-wallet2",
+      type: "Cash Balances",
       subtype: "",
       rs: "Rs",
       today: "",
     },
     {
-      icon: "icon bi bi-wallet2",
-      type: "Cash Balances",
+      icon: "icon bi-share-fill ",
+      type: "Direct Bonus",
       subtype: "",
       rs: "Rs",
       today: "",
