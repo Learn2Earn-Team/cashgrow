@@ -40,7 +40,7 @@ export class SidebarComponent implements OnInit {
     if(userData.username == 'google') {
       this.sideMenuItems = adminMenuItems;
     }
-    else if(userData.username == 'ML639107'){
+    else if(userData.username == 'ML905820'){
       this.sideMenuItems = SubadminMenuItems;
     }
     else{
