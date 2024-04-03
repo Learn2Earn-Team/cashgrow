@@ -30,34 +30,25 @@ export class IndexComponent implements OnInit {
       today: "",
     },
     {
-      icon: "icon bi-share-fill ",
-      type: "Direct Bonus",
-      subtype: "",
-      rs: "Rs",
-      today: "",
-    },
-    {
       icon: "icon bi bi-cash-stack",
       type: "Profits",
       subtype: "",
       rs: "Rs",
       today: "",
     },
+ { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
+ 
+ {
+  icon: "icon bi-person-lines-fill",
+  type: "Passive Income",
+  subtype: "",
+  today: "",
+},
 
     { icon: "icon bi bi-trophy", type: "Rewards", subtype: "", today: "" },
-    {
-      icon: "icon bi bi-person-lines-fill",
-      type: "Direct",
-      subtype: "",
-      today: "",
-    },
-    { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
-    {
-      icon: "icon bi-person-lines-fill",
-      type: "Passive Income",
-      subtype: "",
-      today: "",
-    },
+   
+   
+  
     {
       icon: "icon bi-person-lines-fill",
       type: "My Package",
@@ -202,40 +193,40 @@ export class IndexComponent implements OnInit {
       console.log("gettt", team);
       this.apicall.getdashboardData(userData.id, team).subscribe((res) => {
         console.log("dfadsda", res);
-        this.card[0].subtype = res.directBalance.toFixed(2);
-        this.card[1].subtype = res.netBalance;
-        this.card[2].subtype = res.earning;
-        this.card[2].today = res.todayearning;
+        this.card[0].subtype = res.netBalance.toFixed(2);
+     
+        this.card[1].subtype = res.earning;
+        this.card[1].today = res.todayearning;
         this.directBonous.subtype = res.username;
         this.directBonous.today = res.todaydirectBalance;
-        this.card[3].subtype = res.Rewards;
-        this.card[3].today = res.todayRewards;
-        this.card[4].subtype = res.totalDirectJoing;
-        this.card[4].today = res.todayDirectJoing;
-        this.card[5].subtype = res.totalIndirectJoining;
-        this.card[5].today = res.IndirectJoining;
+        this.card[2].subtype = res.totalIndirectJoining;
+        this.card[2].today = res.IndirectJoining;
+        this.card[4].subtype = res.Rewards;
+        this.card[4].today = res.todayRewards;
+    
+      
         if (res.totaldeposit > 0) {
-          this.card[6].subtype = Math.max(0, res.totaldeposit - res.netBalance);
-          this.card[6].today = Math.max(0, res.totaldeposit - res.netBalance);
+          this.card[3].subtype = Math.max(0, res.totaldeposit - res.netBalance);
+          this.card[3].today = Math.max(0, res.totaldeposit - res.netBalance);
         } else {
-          this.card[6].subtype = 0;
-          this.card[6].today = 0;
+          this.card[3].subtype = 0;
+          this.card[3].today = 0;
         }
         if (res.mypackage === 0) {
-          this.card[7].subtype = "BASIC";
-          this.card[7].today = res.invest;
+          this.card[5].subtype = "BASIC";
+          this.card[5].today = res.invest;
         } else if (res.mypackage === 1) {
-          this.card[7].subtype = "PRIME";
-          this.card[7].today = res.invest;
+          this.card[5].subtype = "PRIME";
+          this.card[5].today = res.invest;
         } else if (res.mypackage === 2) {
-          this.card[7].subtype = "PRIME PLUS";
-          this.card[7].today = res.invest;
+          this.card[5].subtype = "PRIME PLUS";
+          this.card[5].today = res.invest;
         } else if (res.mypackage === 3) {
           this.card[7].subtype = "PREMIUM";
           this.card[7].today = res.invest;
         } else if (res.mypackage === 4) {
-          this.card[7].subtype = "PREMIUMN PLUS";
-          this.card[7].today = res.invest;
+          this.card[5].subtype = "PREMIUMN PLUS";
+          this.card[5].today = res.invest;
         }
       });
     });

@@ -316,16 +316,16 @@ export const menuItems: any[] = [
   //   icon: 'bi bi-chat-heart',
   //   label: 'My Social Order'
   // },
-  {
-    routerLink: "/default/socialdeposit",
-    icon: "bi bi-building-fill-check",
-    label: "Deposit Amount",
-  },
   // {
-  //   routerLink: '/default/financedeposit',
-  //   icon: 'bi bi-bag-heart-fill',
-  //   label: 'Deposit'
+  //   routerLink: "/default/socialdeposit",
+  //   icon: "bi bi-building-fill-check",
+  //   label: "Deposit Amount",
   // },
+  {
+    routerLink: '/default/financedeposit',
+    icon: 'bi bi-bag-heart-fill',
+    label: 'Deposit'
+  },
   {
     routerLink: "/default/promotionsocial",
     icon: "bi bi-bar-chart-line-fill",
@@ -346,7 +346,11 @@ export const menuItems: any[] = [
     icon: "bi bi-bank",
     label: "My Packages",
   },
-
+  {
+    routerLink: "/default/downloadapp",
+    icon: "bi bi-cash-coin",
+    label: "Profit History",
+  },
   // {
   //   routerLink: '/default/mynetwork',
   //   icon: 'bi bi-wifi',
