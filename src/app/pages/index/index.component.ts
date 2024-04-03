@@ -36,19 +36,17 @@ export class IndexComponent implements OnInit {
       rs: "Rs",
       today: "",
     },
- { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
- 
- {
-  icon: "icon bi-person-lines-fill",
-  type: "Passive Income",
-  subtype: "",
-  today: "",
-},
+    { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
+
+    {
+      icon: "icon bi-person-lines-fill",
+      type: "Passive Income",
+      subtype: "",
+      today: "",
+    },
 
     { icon: "icon bi bi-trophy", type: "Rewards", subtype: "", today: "" },
-   
-   
-  
+
     {
       icon: "icon bi-person-lines-fill",
       type: "My Package",
@@ -193,8 +191,9 @@ export class IndexComponent implements OnInit {
       console.log("gettt", team);
       this.apicall.getdashboardData(userData.id, team).subscribe((res) => {
         console.log("dfadsda", res);
-        this.card[0].subtype = res.netBalance.toFixed(2);
-     
+        this.card[0].subtype = +res.netBalance;
+        this.card[0].today = +res.netBalance;
+
         this.card[1].subtype = res.earning;
         this.card[1].today = res.todayearning;
         this.directBonous.subtype = res.username;
@@ -203,8 +202,7 @@ export class IndexComponent implements OnInit {
         this.card[2].today = res.IndirectJoining;
         this.card[4].subtype = res.Rewards;
         this.card[4].today = res.todayRewards;
-    
-      
+
         if (res.totaldeposit > 0) {
           this.card[3].subtype = Math.max(0, res.totaldeposit - res.netBalance);
           this.card[3].today = Math.max(0, res.totaldeposit - res.netBalance);
@@ -222,8 +220,8 @@ export class IndexComponent implements OnInit {
           this.card[5].subtype = "PRIME PLUS";
           this.card[5].today = res.invest;
         } else if (res.mypackage === 3) {
-          this.card[7].subtype = "PREMIUM";
-          this.card[7].today = res.invest;
+          this.card[5].subtype = "PREMIUM";
+          this.card[5].today = res.invest;
         } else if (res.mypackage === 4) {
           this.card[5].subtype = "PREMIUMN PLUS";
           this.card[5].today = res.invest;

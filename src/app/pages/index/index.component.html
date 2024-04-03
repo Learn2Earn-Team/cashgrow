@@ -42,13 +42,13 @@
             <br />
             <h4 class="text-white">{{ item.type }}</h4>
             <h4 class="text-white">
-              {{ item.subtype }}<span *ngIf="i != 7" class="text-white">$</span>
+              {{ item.subtype }}<span *ngIf="i != 5" class="text-white">$</span>
             </h4>
             <h6 class="text-muted text-white">
               <i class="bi bi-arrow-up text-white" *ngIf="i > 1"></i
               ><span *ngIf="item.today != null" class="text-white"
                 >{{ item.today
-                }}<span *ngIf="i == 2 || i == 3 || i != 7" class="text-white"
+                }}<span *ngIf="i == 2 || i == 3 || i == 5" class="text-white"
                   >$</span
                 ></span
               >
@@ -61,7 +61,8 @@
         <div class="col-lg-3 d-flex align-items-stretch mt-4 text-center"></div>
       </div>
     </div>
-  </section><br>
+  </section>
+  <br />
 
   <div
     style="margin-top: -40px; cursor: pointer"
