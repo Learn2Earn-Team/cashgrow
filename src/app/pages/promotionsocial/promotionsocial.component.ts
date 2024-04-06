@@ -128,7 +128,7 @@ export class PromotionsocialComponent implements OnInit {
 
   activep(item: any, ind: any, modal: any) {
     const data = {
-      pid: ind + 1,
+      pid: ind,
       days: item.days,
       username: this.userdataarray.username,
       balance: +this.balance,
