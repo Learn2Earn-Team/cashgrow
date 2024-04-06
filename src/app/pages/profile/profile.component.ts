@@ -55,6 +55,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
     this.apiCall.GetuserProfileData(userData.id).subscribe((profile) => {
       console.log(profile);
       this.userobj = profile[0];
+      console.log('adf',profile[0]);
     });
   }
   public updateuser(): void {

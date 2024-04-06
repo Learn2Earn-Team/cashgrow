@@ -17,6 +17,7 @@ export class HeaderComponent {
   public userobj :any = {};
   public user :any;
   public name :any = '';
+  interval: any;
   constructor(
     public router: Router,
     private formBuilder: FormBuilder,private apiCall : ApicallService,) {
@@ -31,10 +32,21 @@ export class HeaderComponent {
     this.user = await check("user");
     const userData = JSON.parse(this.user)
     this.apiCall.GetuserProfileData(userData.id).subscribe(profile => {
-   
       this.userobj = profile[0];
-    console.log(this.userobj.name)
+    console.log(this.userobj.name);
     })
+  }
+  ngAfterViewInit(): void {
+    this.interval = setInterval(async () => {
+      console.log(this.interval);
+      const user: any = await check("user");
+      const userData = JSON.parse(user);
+      console.log(userData);
+    this.GetUserData();
+    }, 7000);
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
   downloadApkFromAssets(apkName: string) {
     // Construct the path to the APK file in the assets folder
