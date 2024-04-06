@@ -80,15 +80,15 @@ export class TeamComponent {
               this.teamReposrt = res1;
               console.log(this.teamReposrt, "Team Data");
               this.yesterday =
-                res1[0]?.previusday.toFixed(1) != null
-                  ? res1[0]?.previusday.toFixed(1)
+                res1[0]?.previusday.toFixed(3) != null
+                  ? res1[0]?.previusday.toFixed(3)
                   : 0;
               this.passive =
-                res1[0]?.totalPassive.toFixed(1) != null
-                  ? res1[0]?.totalPassive.toFixed(1)
+                res1[0]?.totalPassive.toFixed(3) != null
+                  ? res1[0]?.totalPassive.toFixed(3)
                   : 0;
-              console.log(res1[0]?.previusday.toFixed(1));
-              this.today = res1[0]?.todayearning.toFixed(1);
+              console.log(res1[0]?.previusday.toFixed(3));
+              this.today = res1[0]?.todayearning.toFixed(3);
 
               this.totalOrders = res1.reduce(
                 (i: any, j: any) => i + j.todayOrders,
