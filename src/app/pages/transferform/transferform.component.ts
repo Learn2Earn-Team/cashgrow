@@ -77,11 +77,7 @@ export class TransferformComponent {
       console.log(this.transectionData.sender_balance);
       console.log(this.voucherBalance);
       console.log(this.transectionData.userids);
-      // this.apiCall.CheckUser(this.userAuth).subscribe((res) => {
-      //   if (res.error) {
-      //     this.toast.ErrorToast('Invelid Credentials', 'Error');
-      //   }
-        //  else {
+ 
 
           this.apiCall
             .InternalTranster(this.transectionData)
@@ -89,10 +85,9 @@ export class TransferformComponent {
               if (res.error) {
                 this.toast.ErrorToast('Transection Not Completed', 'Error');
               } else {
+                this.route.navigate(['default/index']);
                 this.toast.SuccessToast('Transection Completed', 'Good Job');
-                setTimeout(() => {
-                  this.route.navigate(['default/index']);
-                }, 1500);
+             
               }
             });
         // }
