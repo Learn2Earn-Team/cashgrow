@@ -43,7 +43,7 @@ export class WithdrawrequestComponent {
       this.userBlanace = +user.balnce;
       console.log(typeof this.userBlanace, this.userBlanace);
       if ($event.target.value > this.userBlanace) {
-        this.showBalanceMessage = `You have only Rs. ${this.userBlanace} balance`;
+        this.showBalanceMessage = `You have only  ${this.userBlanace}$ balance`;
         console.log("you have not balacne");
       } else {
         this.showBalanceMessage = "";

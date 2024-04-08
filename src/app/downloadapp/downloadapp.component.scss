@@ -9,37 +9,14 @@ th{
     border: 1px solid  rgba(116, 114, 114, 0.603);
     background-color: white;
   }
+
 table{
   margin: 5px auto;
 width: 100%;
 padding: auto;
-
 // display: grid;
-
 }
-
-  @media screen and (max-width: 900px) {
-   table {
-    justify-content: center;
-    text-align: center;
-font-size: 10px; 
-width:auto;
-height: auto;
-margin: auto;
-display: flex;  
-padding: auto;
-}
-
-td{
-  display: flex;
-  flex-direction: row;
-    padding:auto;
-}
-th{
-  display: flex;
-  flex-direction: row;
-  font-size: 8px;
-  padding: auto;
-  background:  rgb(37, 34, 102);
-}}
+.pagination::ng-deep .ngx-pagination .current{
+  background-color: #fab915;
+  }
 

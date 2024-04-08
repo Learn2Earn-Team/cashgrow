@@ -10,7 +10,9 @@ table th {
   white-space: nowrap;
   overflow: hidden;
 }
-
+.pagination::ng-deep .ngx-pagination .current{
+  background-color: #fab915;
+  }
 .card {
   border-radius: .5rem;
 }
