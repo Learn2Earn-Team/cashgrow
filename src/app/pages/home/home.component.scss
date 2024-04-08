@@ -65,5 +65,13 @@ swiper-slide img {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
   background: red !important;
 }
-
+.offer{
+  padding-bottom: 20px;
+  border: none;
+}
+.sold{
+  border-top: 2px solid gray;
+  width: 332px;
+  margin: auto;
+}
 
