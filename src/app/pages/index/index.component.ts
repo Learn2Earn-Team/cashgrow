@@ -88,6 +88,7 @@ export class IndexComponent implements OnInit {
     private toast: ToastService,
     private apicall: ApicallService
   ) {
+    this.activatePackage();
     this.getUserData();
     this.getUserDashoardData();
     console.log(this.card);
@@ -153,7 +154,7 @@ export class IndexComponent implements OnInit {
       console.log(userData);
       this.notification();
       this.activatePackage();
-    }, 10000);
+    }, 5000);
   }
   ngOnDestroy(): void {
     clearInterval(this.interval);

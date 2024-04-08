@@ -22,9 +22,9 @@ export class FinancedepositeComponent {
   public auth: any = false;
   public acountaccess: any = false;
   public depositdetail: any = {
-    depositAmount: "",
+    depositAmount: "10",
     getawey: "MetaMask",
-    tid: "",
+    tid: "21242342342342343",
   };
   public userDeposits: any = {};
 
@@ -100,15 +100,18 @@ export class FinancedepositeComponent {
   public DepositReq() {
     this.userobj.depositdata = this.depositdetail;
     console.log(this.userobj, "data");
-    this.apiCall.deposit(this.userobj).subscribe((res) => {
-      this.GetUserData();
-      this.depositdetail = { depositAmount: "" };
-      this.uploadedImage = "";
-      if (res.error === false) {
-        this.toast.SuccessToast("Deposit Successfully", "Good Job!");
+    this.apiCall.activatePackafe(this.userobj.id).subscribe((res) => {
+      this.userobj.users = res;
+      this.apiCall.deposit(this.userobj).subscribe((res) => {
         this.GetUserData();
-        this.route.navigate(["default/index"]);
-      }
+        this.depositdetail = { depositAmount: "" };
+        this.uploadedImage = "";
+        if (res.error === false) {
+          this.toast.SuccessToast("Deposit Successfully", "Good Job!");
+          this.GetUserData();
+          this.route.navigate(["default/index"]);
+        }
+      });
     });
   }
 }
