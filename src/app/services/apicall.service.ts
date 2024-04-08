@@ -9,13 +9,6 @@ import { Observable, map } from "rxjs";
   providedIn: "root",
 })
 export class ApicallService {
-  TeamReports(res: any, id: any) {
-    throw new Error("Method not implemented.");
-  }
-  getordercomplete(arg0: string) {
-    throw new Error("Method not implemented.");
-  }
-
   data: any;
   constructor(
     public global: GlobalService,

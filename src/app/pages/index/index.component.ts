@@ -192,18 +192,18 @@ export class IndexComponent implements OnInit {
       this.apicall.getdashboardData(userData.id, team).subscribe((res) => {
         console.log("dfadsda", res);
         this.card[0].subtype = +res.netBalance;
-        this.card[0].today = +res.netBalance;
+        this.card[0].today = +res.netBalance + "$";
         this.card[1].subtype = res.totalprofit;
-        this.card[1].today = res.todayprofit;
+        this.card[1].today = res.todayprofit + "$";
         this.directBonous.subtype = res.username;
-        this.directBonous.today = res.todaydirectBalance;
+        this.directBonous.today = null;
         this.card[2].subtype = team.length;
         this.card[2].today = res.IndirectJoining;
         this.card[4].subtype = res.Rewards;
         this.card[4].today = res.todayRewards;
         if (res.totaldeposit > 0) {
-          this.card[3].subtype = Math.max(0, res.totaldeposit - res.netBalance);
-          this.card[3].today = Math.max(0, res.totaldeposit - res.netBalance);
+          this.card[3].subtype = res.totalpassive;
+          this.card[3].today = res.todaypassive;
         } else {
           this.card[3].subtype = 0;
           this.card[3].today = 0;

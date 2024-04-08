@@ -72,7 +72,7 @@ export class TeamComponent {
         this.l5 = this.userdetails.filter((res: any) => res?.level === 5);
         this.l6 = this.userdetails.filter((res: any) => res?.level === 6);
         this.l7 = this.userdetails.filter((res: any) => res?.level === 7);
-        console.log(this.l7);
+
         if (this.userdetails.length > 0) {
           this.apiCall
             .teamreport(this.userdetails, this.userobj.id)
@@ -80,15 +80,12 @@ export class TeamComponent {
               this.teamReposrt = res1;
               console.log(this.teamReposrt, "Team Data");
               this.yesterday =
-                res1[0]?.previusday.toFixed(3) != null
-                  ? res1[0]?.previusday.toFixed(3)
-                  : 0;
+                res1[0]?.previusday != null ? res1[0]?.previusday : 0;
               this.passive =
-                res1[0]?.totalPassive.toFixed(3) != null
-                  ? res1[0]?.totalPassive.toFixed(3)
-                  : 0;
-              console.log(res1[0]?.previusday.toFixed(3));
-              this.today = res1[0]?.todayearning.toFixed(3);
+                res1[0]?.totalPassive != null ? res1[0]?.totalPassive : 0;
+              console.log(res1[0]?.todayearning);
+              this.today =
+                res1[0]?.todayearning != null ? res1[0]?.todayearning : 0;
 
               this.totalOrders = res1.reduce(
                 (i: any, j: any) => i + j.todayOrders,
