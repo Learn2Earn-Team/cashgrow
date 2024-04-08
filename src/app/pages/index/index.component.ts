@@ -194,7 +194,7 @@ export class IndexComponent implements OnInit {
         this.card[0].subtype = +res.netBalance;
         this.card[0].today = +res.netBalance + "$";
         this.card[1].subtype = res.totalprofit;
-        this.card[1].today = res.todayprofit + "$";
+        this.card[1].today = res.todayprofit != null ? res.todayprofit : 0;
         this.directBonous.subtype = res.username;
         this.directBonous.today = null;
         this.card[2].subtype = team.length;
