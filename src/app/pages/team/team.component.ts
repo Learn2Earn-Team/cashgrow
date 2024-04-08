@@ -65,14 +65,14 @@ export class TeamComponent {
       .subscribe((res) => {
         this.userdetails = res?.allteam;
         console.log(this.userdetails);
-        this.l1 = this.userdetails.filter((res: any) => res?.level === 1);
+        this.l1 = this.userdetails?.filter((res: any) => res?.level === 1);
         this.l2 = this.userdetails.filter((res: any) => res?.level === 2);
         this.l3 = this.userdetails.filter((res: any) => res?.level === 3);
         this.l4 = this.userdetails.filter((res: any) => res?.level === 4);
         this.l5 = this.userdetails.filter((res: any) => res?.level === 5);
         this.l6 = this.userdetails.filter((res: any) => res?.level === 6);
         this.l7 = this.userdetails.filter((res: any) => res?.level === 7);
-
+console.log(this.l1)
         if (this.userdetails.length > 0) {
           this.apiCall
             .teamreport(this.userdetails, this.userobj.id)

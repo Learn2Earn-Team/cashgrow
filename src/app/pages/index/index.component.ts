@@ -37,7 +37,7 @@ export class IndexComponent implements OnInit {
       today: "",
     },
     { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
-
+    { icon: "icon bi bi-diagram-3-fill", type: "Team Commissions", subtype: "", today: "" },
     {
       icon: "icon bi-person-lines-fill",
       type: "Passive Income",
@@ -200,30 +200,32 @@ export class IndexComponent implements OnInit {
         this.directBonous.today = null;
         this.card[2].subtype = team.length;
         this.card[2].today = res.IndirectJoining;
-        this.card[4].subtype = res.Rewards;
-        this.card[4].today = res.todayRewards;
+        this.card[3].subtype = team.todaydirectBalance != null ? team.todaydirectBalance : 0  ;
+        this.card[3].today = res.directBalance;
+        this.card[5].subtype = res.reward;
+        this.card[5].today = res.todayRewards;
         if (res.totaldeposit > 0) {
-          this.card[3].subtype = res.totalpassive;
-          this.card[3].today = res.todaypassive;
+          this.card[4].subtype = res.totalpassive;
+          this.card[4].today = res.todaypassive;
         } else {
-          this.card[3].subtype = 0;
-          this.card[3].today = 0;
+          this.card[4].subtype = 0;
+          this.card[4].today = 0;
         }
         if (res.mypackage === 0) {
-          this.card[5].subtype = "BASIC";
-          this.card[5].today = res.invest;
+          this.card[6].subtype = "BASIC";
+          this.card[6].today = res.mypackageamount;
         } else if (res.mypackage === 1) {
-          this.card[5].subtype = "PRIME";
-          this.card[5].today = res.invest;
+          this.card[6].subtype = "PRIME";
+          this.card[6].today = res.mypackageamount;
         } else if (res.mypackage === 2) {
-          this.card[5].subtype = "PRIME PLUS";
-          this.card[5].today = res.invest;
+          this.card[6].subtype = "PRIME PLUS";
+          this.card[6].today = res.mypackageamount;
         } else if (res.mypackage === 3) {
-          this.card[5].subtype = "PREMIUM";
-          this.card[5].today = res.invest;
+          this.card[6].subtype = "PREMIUM";
+          this.card[6].today = res.mypackageamount;
         } else if (res.mypackage === 4) {
-          this.card[5].subtype = "PREMIUMN PLUS";
-          this.card[5].today = res.invest;
+          this.card[6].subtype = "PREMIUMN PLUS";
+          this.card[6].today = res.mypackageamount;
         }
       });
     });
