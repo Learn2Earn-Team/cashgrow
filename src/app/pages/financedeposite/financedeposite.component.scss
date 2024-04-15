@@ -122,3 +122,94 @@ table th {
   p{
     margin: 0;
   }
+  .deposit:hover{
+    background-color: #fab915!important;
+cursor: pointer;
+color: white;
+
+  }
+  .icon{
+    width: 50px ;
+    height: auto;
+  }
+  .icon2{
+    width: 30px ;
+    height: auto;
+  }
+  option{
+    padding: 40px;
+  }
+
+
+  .list-group-item p{
+    color: rgb(0, 0, 0);
+    padding-top: 5px;
+  
+  }
+  .t-h{
+        background-color: #fab915!important;
+  }
+  .card:hover{
+    margin:-3px 0;
+    transition: all 0.2s;
+  
+  }
+  .heading{
+    background: #1a1f22;
+  }
+    .button {
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 10px 20px rgba(37, 37, 37, 0.2);
+      padding-block: 0.5rem;
+      padding-inline: 1.25rem;
+      background-color: #fab915;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffff;
+      gap: 10px;
+      font-weight: bold;
+      border: 3px solid #ffffff4d;
+      outline: none;
+      overflow: hidden;
+      font-size: 15px;
+    }
+    
+    *{
+      font-family: "Poppins", sans-serif;
+    
+    }
+    .button:hover::before {
+      animation: shine 1.5s ease-out infinite;
+    }
+    
+    .button::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0) 70%
+      );
+      top: 0;
+      left: -100px;
+      opacity: 0.6;
+    }
+    
+    @keyframes shine {
+      0% {
+        left: -100px;
+      }
+    
+      60% {
+        left: 100%;
+      }
+    
+      to {
+        left: 100%;
+      }
+    }
