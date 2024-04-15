@@ -77,6 +77,7 @@ export class PromotionsocialComponent implements OnInit {
   currentT: any;
   todaypersenttotal = 0;
   res: any;
+  team: any = [];
   constructor(
     public modalService: NgbModal,
     // private apiCall: ApicallService,
@@ -133,6 +134,7 @@ export class PromotionsocialComponent implements OnInit {
       username: this.userdataarray.username,
       balance: +this.balance,
       user_id: this.userdataarray.id,
+      users: this.team,
     };
 
     if (
@@ -162,6 +164,10 @@ export class PromotionsocialComponent implements OnInit {
     const user: any = await check("user");
     const userData = JSON.parse(user);
     this.userData = userData;
+    this.apiCall.activatePackafe(userData.id).subscribe((res) => {
+      console.log(res, "team");
+      this.team = res;
+    });
     console.log(this.userData);
   }
 
