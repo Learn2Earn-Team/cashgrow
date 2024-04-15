@@ -52,7 +52,7 @@ public NewUserdata():void {
     
   this.apiCall.transferhistory().subscribe(res => {
    this.userdata = res;
-   console.log(this.NewUserdata)
+   console.log(this.NewUserdata);
   })
 }
 }

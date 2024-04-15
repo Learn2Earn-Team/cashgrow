@@ -29,7 +29,7 @@
                           <div
                             class="col-4 col-md-6 col-lg-6 justify-content-start"
                           >
-                            <p class="p">Order No</p>
+                            <p class="p">No</p>
                           </div>
                           <div
                             class="col-8 col-md-6 col-lg-6 justify-content-end"
@@ -45,12 +45,12 @@
                           <div
                             class="col-4 col-md-6 col-lg-6 justify-content-start"
                           >
-                            <p class="p">Name</p>
+                            <p class="p"> Sender Name</p>
                           </div>
                           <div
                             class="col-8 col-md-6 col-lg-6 justify-content-end"
                           >
-                            <p class="text-end text-truncate">{{ item.name }}</p>
+                            <p class="text-end text-truncate">{{ item.sender }}</p>
                           </div>
                         </div>
                       </li>
@@ -59,13 +59,13 @@
                           <div
                             class="col-4 col-md-6 col-lg-6 justify-content-start"
                           >
-                            <p class="p">User Id</p>
+                            <p class="p">Reciever Name</p>
                           </div>
                           <div
                             class="col-8 col-md-6 col-lg-6 justify-content-end"
                           >
                             <p class="text-end text-truncate">
-                              {{ item.username }}
+                                {{ item.receiver}}
                             </p>
                           </div>
                         </div>
@@ -75,12 +75,12 @@
                           <div
                             class="col-4 col-md-6 col-lg-6 justify-content-start"
                           >
-                            <p class="p">PIN</p>
+                            <p class="p">Amount</p>
                           </div>
                           <div
                             class="col-8 col-md-6 col-lg-6 justify-content-end"
                           >
-                            <p class="text-end text-truncate">{{ item.pin }}</p>
+                            <p class="text-end text-truncate">{{ item.amount }}</p>
                           </div>
                         </div>
                       </li>
@@ -89,70 +89,10 @@
                           <div
                             class="col-4 col-md-6 col-lg-6 justify-content-start"
                           >
-                            <p class="p">Sponsor</p>
+                            <p class="p">Dated</p>
                           </div>
                           <div
                             class="col-8 col-md-6 col-lg-6 justify-content-end"
-                          >
-                            <p class="text-end text-truncate">
-                              {{ item.sponsor }}
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="row">
-                          <div
-                            class="col-4 col-md-6 col-lg-6 justify-content-start"
-                          >
-                            <p class="p">Email</p>
-                          </div>
-                          <div
-                            class="col-8 col-md-6 col-lg-6 justify-content-end"
-                          >
-                            <p class="text-end text-truncate">{{ item.email }}</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="row">
-                          <div
-                            class="col-4 col-md-6 col-lg-6 justify-content-start"
-                          >
-                            <p class="p">Contact</p>
-                          </div>
-                          <div
-                            class="col-8 col-md-6 col-lg-6 justify-content-end"
-                          >
-                            <p class="text-end text-truncate">{{ item.c_id }}</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="row">
-                          <div
-                            class="col-4 col-md-6 col-lg-6 justify-content-start"
-                          >
-                            <p class="p">Whatsapp</p>
-                          </div>
-                          <div
-                            class="col-8 col-md-6 col-lg-6 justify-content-end"
-                          >
-                            <p class="text-end text-truncate">
-                              {{ item.w_number }}
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="row">
-                          <div
-                            class="col-4 col-md-6 col-lg-4 justify-content-start"
-                          >
-                            <p class="p">Joining</p>
-                          </div>
-                          <div
-                            class="col-8 col-md-6 col-lg-8 justify-content-end"
                           >
                             <p class="text-end text-truncate">
                               {{ item.created_at }}
