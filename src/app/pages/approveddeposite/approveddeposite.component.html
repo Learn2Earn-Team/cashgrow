@@ -1,0 +1,164 @@
+<div class="container-fluid p-0 h-100">
+  <app-main-header></app-main-header>
+
+  <div class="container">
+    <section class="intro">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container ">
+          <h1 style="text-align: center; color: white !important">
+            My Deposite  <span style="color: #fab915;">Requests</span>
+          </h1>
+          <div class="row bg-color">
+            <div
+              class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1 "
+              *ngFor="let item of userdata"
+            >
+              <div class="card shadow-sm border ">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start "
+                      >
+                        <p class="p">Name</p>
+                      </div>
+                      
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">{{ item.name }}</p>
+                      </div>
+                    </div>
+                  </li>  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">userName</p>
+                      </div>
+                      
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">{{ item.username }}</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">Amount</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">{{ item.amount }}</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">TID</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end">{{ item.tid }}</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">Status</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">{{ item.status }}</p>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">Date</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">
+                          {{ item.created_at |date }}
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">image</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">
+                          <a href="{{ item.image }}" target="_blank">Open</a>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li *ngIf="item.status === 'Pending'" class="list-group-item bg-color">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">Action</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            (change)="depositeStatusupdate($event, item)"
+                          >
+                            <option selected>Select Status</option>
+                            <option value="Aproved">Aproved</option>
+                            <option value="Rejected">Rejected</option>
+                          </select>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li *ngIf="item.status !== 'Pending'" class="list-group-item">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p">Action</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate">
+                          <select
+                            disabled
+                            class="form-select"
+                            aria-label="Default select example"
+                            (change)="depositeStatusupdate($event, item)"
+                          >
+                            <option selected>{{ item.status }}</option>
+                            <option value="Aproved">Aproved</option>
+                            <option value="Rejected">Rejected</option>
+                          </select>
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+               
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div style="width: 100%; height: 100px"></div>
+</div>

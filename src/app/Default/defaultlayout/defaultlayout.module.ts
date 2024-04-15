@@ -74,6 +74,7 @@ import { GetrewardComponent } from 'src/app/pages/getreward/getreward.component'
 import { RewardComponent } from 'src/app/pages/reward/reward.component';
 import { DownloadappComponent } from 'src/app/downloadapp/downloadapp.component';
 import { TransferhistoryComponent } from 'src/app/pages/transferhistory/transferhistory.component';
+import { ApproveddepositeComponent } from 'src/app/pages/approveddeposite/approveddeposite.component';
 const routes: Routes = [
     // { path: '', redirectTo: '/layout', pathMatch: 'full', data: { title: 'Layout' } },
     {
@@ -85,6 +86,7 @@ const routes: Routes = [
           { path: '', redirectTo: '/default/dashboard', pathMatch: 'full' },
           // { path: 'default/dashboard', component: DashboardComponent , canActivate: [LoginGuard]},
           { path: 'default/profile', component: ProfileComponent , canActivate: [LoginGuard]},
+          { path: 'default/Approveddeposite', component:ApproveddepositeComponent },
           { path: 'default/transferhistory', component: TransferhistoryComponent },
           { path: 'default/cashdetails', component: CashwalletdetailsComponent , canActivate: [LoginGuard]},
           { path: 'default/withdrawhistory', component: WithdrawhistoryComponent , canActivate: [LoginGuard]},
