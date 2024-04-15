@@ -19,8 +19,8 @@
   <br />
   <br />
   <div class="m-auto text-start bg-cash">
-    <div class="p-3 container m-auto row">
-      <div class="col-lg-7 col-sm-12 m-auto mt-5 bg-cash float">
+    <div class="p-1 container m-auto row">
+      <div class="col-lg-7 col-sm-12  bg-cash float">
         <div class="cssanimation hu__hu__">
           <h1 class="pop">Cashgrow</h1>
           <button
@@ -129,7 +129,7 @@
               />
             </div>
             <br />
-            <div class="col-md-12 auto">
+            <div class="col-md-12 mt-3">
               <p
                 class="d-flex text-center"
                 style="font-family: Poppins, sans-serif"
@@ -139,26 +139,25 @@
                   [(ngModel)]="isChecked"
                   [ngModelOptions]="{ standalone: true }"
                   type="checkbox"
-                />
-                <label
-                  class="form-check-label m-auto text-black text-center text-white mx-1"
-                  style="font-size: 13px"
+                /> 
+                <label 
+                  class="form-check-label m-auto text-black text-center text-white mx-1 mt-2"
+                  style="font-size: 12px"
                 >
-                  I have read and agree to the
+                &nbsp;&nbsp;&nbsp; I have read and agree to the
                   <a
                     class="term text-white"
-                    style="font-size: 13px"
+                    style="font-size: 12px"
                     href="#/tems"
                     >Terms and Condition</a
                   >
                 </label>
               </p>
             </div>
-            <div class="row">
               <div class="col-12 m-auto text-center">
                 <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
                 <button
-                  class="m-auto text-center w-100 btn button navbtn"
+                  class=" w-100 btn button navbtn"
                   (click)="submit()"
                   [disabled]="
                     userFirstName == '' ||
@@ -174,7 +173,6 @@
                   Submit
                 </button>
               </div>
-            </div>
           </div>
         </form>
       </div>
