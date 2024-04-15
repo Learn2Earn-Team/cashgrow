@@ -156,7 +156,7 @@ export const adminMenuItems: any[] = [
     label: "Deposit",
   },  {
     routerLink: "/default/Approveddeposite",
-    icon: "bi bi-clock-history",
+    icon: "bi bi-hourglass-split",
     label: "Pending Deposit",
   },
   {
