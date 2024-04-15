@@ -29,6 +29,18 @@
                 </li>
                 <li class="list-group-item">
                   <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                      <p class="p py-1">Gateway</p>
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                      <p class="text-end text-truncate py-1">
+                        {{ item.gateway}}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
                     <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">User ID</p></div>
                     <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{ item.username }}</p></div>
                    </div>
@@ -54,7 +66,7 @@
                 <li class="list-group-item">
                   <div class="row">
                     <div class="col-5 col-md-6 col-lg-4  justify-content-start" > <p class="p py-1">Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-8 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.created_at }}</p></div>
+                    <div class="col-7 col-md-6 col-lg-8 justify-content-end"><p  class="text-end text-truncate py-1">{{ item.created_at |date}}</p></div>
                    </div>
                 </li>
                 
