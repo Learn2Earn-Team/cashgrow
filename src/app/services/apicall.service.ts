@@ -972,4 +972,11 @@ export class ApicallService {
       })
     );
   }
+  public transferhistory(): Observable<any> {
+    return this.http.get(apiUrl + "transferhistory").pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }
