@@ -1,18 +1,24 @@
 <div class="container-xl px-4 mt-4">
+  <div  *ngFor="let i"></div>
   <div class="row bottompx">
-    <div *ngIf="auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
+    <div *ngIf="auth" class="col-xl-6 col-md-6 col-sm-12 ">
       <div class="row justify-content-center">
-        <div class="col-xl-12">
+        <div class="col-12">
           <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
-            <div style="color: white" class="card-header">Meta Mask</div>
-            <div class="card-body text-center">
-              <h3 style="cursor: pointer">Deposit Now</h3>
+            <div style="color: white" class="card-header"> <img src="../../../assets/MetaMask Fox Icon in Flat Style.png" alt="" class="icon"> Meta Mask</div>
+            <div class="card-body text-center deposit"  
+            data-bs-toggle="pill"
+            data-bs-target="#pills-About"
+            role="tab"
+            aria-controls="pills-About"
+            aria-selected="false">
+              <h3 >Deposit Now {{ l1?.length }}</h3> 
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="!auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
+    <!-- <div *ngIf="!auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
       <div class="row justify-content-center">
         <div class="col-xl-12">
           <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
@@ -27,10 +33,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="row" (click)="DepositReq()">send to Money</div>
-    <div *ngIf="acountaccess" class="col-xl-12">
+    <!-- <div *ngIf="acountaccess" class="col-xl-12">
       <div class="card mb-4" style="margin-top: 30px">
         <div style="color: white" class="card-header">Enter Amount</div>
         <div class="card-body">
@@ -59,17 +64,17 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <h1
+    <!-- <h1
       *ngIf="userDeposits.length > 0"
       class="text-center m-3"
       style="color: black"
     >
       Deposit History
     </h1>
-
-    <div class="row">
+<br> -->
+    <!-- <div class="row">
       <div
         class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"
         *ngFor="let item of userDeposits"
@@ -119,6 +124,81 @@
           </ul>
         </div>
       </div>
+    </div> -->
+    <div *ngIf="auth" class="col-xl-6 col-md-6 col-sm-12 ">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
+            <div style="color: white" class="card-header"><img src="../../../assets/pngwing.com.png" alt="" class="icon"> Binance</div>
+            <div class="card-body text-center deposit"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-About"
+            role="tab"
+            aria-controls="pills-About"
+            aria-selected="false" >
+              <h3 >Deposit Now {{ l2?.length }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- <h1
+    *ngIf="userDeposits.length > 0"
+    class="text-center m-3"
+    style="color: black"
+  >
+    Deposit History
+  </h1>
+    <div class="row">
+      <div
+        class="col-12 col-sm-12 col-md-4 col-lg-4 mt-1 mb-1"
+        *ngFor="let item of userDeposits"
+      >
+        <div class="card shadow-sm border">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                  <p class="p">Amount</p>
+                </div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                  <p class="text-end text-truncate">{{ item.amount }}$</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                  <p class="p">WalletId</p>
+                </div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                  <p class="text-end">{{ item.tid }}</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                  <p class="p">Status</p>
+                </div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                  <p class="text-end">{{ item.status }}</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                  <p class="p">Date</p>
+                </div>
+                <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                  <p class="text-end text-truncate">{{ item.created_at }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </div>-->
   </div>
 </div>

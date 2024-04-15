@@ -27,6 +27,11 @@ export class FinancedepositeComponent {
     tid: "2uhshedhej",
   };
   public userDeposits: any = {};
+  teamReposrt: any;
+  yesterday: any;
+  userdetails: any;
+  l1: any;
+  l2: any;
 
   constructor(
     private apiCall: ApicallService,
@@ -113,5 +118,29 @@ export class FinancedepositeComponent {
         }
       });
     });
+  }
+  public async NewUserdata() {
+    this.user = await check("user");
+    this.userobj = JSON.parse(this.user);
+    await this.apiCall
+      .api_getUserTeam(this.userobj.username)
+      .subscribe((res) => {
+        this.userdetails = res?.allteam;
+        console.log(this.userdetails);
+        this.l1 = this.userdetails?.filter((res: any) => res?.level === 1);
+        this.l2 = this.userdetails.filter((res: any) => res?.level === 2);
+        console.log(this.l1);
+        if (this.userdetails.length > 0) {
+          this.apiCall
+            .teamreport(this.userdetails, this.userobj.id)
+            .subscribe((res1) => {
+              this.teamReposrt = res1;
+              console.log(this.teamReposrt, "Team Data");
+              this.yesterday =
+                res1[0]?.previusday != null ? res1[0]?.previusday : 0;
+            
+            });
+        }
+      });
   }
 }
