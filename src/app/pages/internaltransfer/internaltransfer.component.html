@@ -27,13 +27,13 @@
           <li class="list-group-item">
             <div class="row">
               <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Amount</p></div>
-              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.amount }}</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end "> {{ item.amount }}</p></div>
              </div>
           </li>
           <li class="list-group-item">
             <div class="row">
               <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Sender</p></div>
-              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{item.sender}}</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end "> {{item.sender}}</p></div>
              </div>
           </li>
           <li class="list-group-item">
@@ -45,16 +45,16 @@
           <li class="list-group-item">
             <div class="row">
               <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Date</p></div>
-              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate"> {{ item.created_at }}</p></div>
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end "> {{ item.created_at }}</p></div>
              </div>
           </li>
           <li class="list-group-item">
             <div class="row">
               <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p">Recepate</p></div>
-              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate">
+              <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end ">
                  <button (click)="open(content, item.amount)" type="button" class="btn btn-color" data-toggle="modal"
                 data-target="#exampleModalCenter">
-                Show
+                <p class="text-white">Show</p>
               </button></p></div>
              </div>
           </li>
