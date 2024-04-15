@@ -3,7 +3,7 @@
 *ngFor="let item of outputAry"  -->
 <div class="card shadow-sm border rounded-2">
   <ul class="list-group list-group-flush rounded-2">
-    <li  class="list-group-item  text-center heading fw-bold">
+    <li class="list-group-item text-center heading fw-bold">
       <p class="text-white">Current Recode</p>
     </li>
     <li class="list-group-item">
@@ -12,7 +12,7 @@
           <p class="p py-1">Direct</p>
         </div>
         <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-          <p class="text-end text-truncate py-1">{{ this.directdata }}</p>
+          <p class="text-end text-truncate py-1">{{ this.directdata }}$</p>
         </div>
       </div>
       <div class="row">
@@ -20,7 +20,7 @@
           <p class="p py-1">Indirect</p>
         </div>
         <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-          <p class="text-end text-truncate py-1">{{ this.indirectdata }}</p>
+          <p class="text-end text-truncate py-1">{{ this.indirectdata }}$</p>
         </div>
       </div>
     </li>
@@ -33,7 +33,7 @@
   >
     <div class="card shadow-sm border rounded-2">
       <ul class="list-group list-group-flush rounded-2">
-        <li   class="list-group-item heading text-white text-center fw-bold">
+        <li class="list-group-item heading text-white text-center fw-bold">
           <p class="text-white">{{ item.RewardName }}</p>
         </li>
         <li class="list-group-item">
@@ -42,7 +42,7 @@
               <p class="p py-1">Direct</p>
             </div>
             <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-              <p class="text-end text-truncate py-1">{{ item?.direct }}</p>
+              <p class="text-end text-truncate py-1">{{ item?.direct }}$</p>
             </div>
           </div>
           <div class="row">
@@ -50,9 +50,7 @@
               <p class="p py-1">Indirect</p>
             </div>
             <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-              <p class="text-end text-truncate py-1">
-                {{ item?.indirect }}
-              </p>
+              <p class="text-end text-truncate py-1">{{ item?.indirect }}$</p>
             </div>
           </div>
           <div class="row">
@@ -64,7 +62,8 @@
             </div>
           </div>
 
-          <button style="background-color: #fab915;"
+          <button
+            style="background-color: #fab915"
             type="button"
             class="btn heading text-white"
             (click)="bbb(item)"
@@ -76,9 +75,17 @@
     </div>
   </div>
 
-  <h1 style="height: 100px; margin-top: 20px; font-size: 35px;" class=" t-head  text-center text-white">Approved Rewards</h1>
+  <h1
+    style="height: 100px; margin-top: 20px; font-size: 35px"
+    class="t-head text-center text-white"
+  >
+    Approved Rewards
+  </h1>
 
-  <table style="margin-top: 20px;" class="table-responsive table-hover  mt-4 m-auto text-center">
+  <table
+    style="margin-top: 20px"
+    class="table-responsive table-hover mt-4 m-auto text-center"
+  >
     <tr class="t-head text-white text-center">
       <th>Package Name</th>
       <th>User Id</th>

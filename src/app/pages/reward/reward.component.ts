@@ -37,9 +37,47 @@ export class RewardComponent {
     this.apiCall.userteam(userData.username).subscribe((res) => {
       this.userTeem = res;
       console.log("user", this.userTeem);
-      this.indirectdata = res?.indirect.length;
-      this.directdata = res?.direct.length;
-      this.formatdata(res);
+
+      const total = res?.direct?.reduce(
+        (prevValue: any, currentValue: any) =>
+          prevValue + currentValue.totalref,
+        0
+      );
+      const tota2 = res?.direct?.reduce(
+        (prevValue: any, currentValue: any) => prevValue + currentValue.total,
+        0
+      );
+      const tota3 = res?.direct?.reduce(
+        (prevValue: any, currentValue: any) =>
+          prevValue + currentValue.totalpassive,
+        0
+      );
+      const tota32 = res?.direct?.reduce(
+        (prevValue: any, currentValue: any) =>
+          prevValue + currentValue.totalrefpasive,
+        0
+      );
+      this.directdata = total + tota2 + tota3 + tota32;
+      const total2 = res?.indirect?.reduce(
+        (prevValue: any, currentValue: any) =>
+          prevValue + currentValue.totalref,
+        0
+      );
+      const tota23 = res?.indirect?.reduce(
+        (prevValue: any, currentValue: any) => prevValue + currentValue.total,
+        0
+      );
+      const tota223 = res?.indirect?.reduce(
+        (prevValue: any, currentValue: any) =>
+          prevValue + currentValue.totalrefpasive,
+        0
+      );
+      const tota2w23 = res?.indirect?.reduce(
+        (prevValue: any, currentValue: any) =>
+          prevValue + currentValue.totalpassive,
+        0
+      );
+      this.indirectdata = total2 + tota23 + tota223 + tota2w23;
     });
   }
 
@@ -49,33 +87,7 @@ export class RewardComponent {
     direct_userId: number;
     indirect_userId: number;
   }[] = [];
-  formatdata(res: any) {
-    let maxLength =
-      res.direct.length >= res.indirect.length
-        ? res.direct.length
-        : res.indirect.length;
-    for (let i = 0; i < maxLength; i++) {
-      let temp = {
-        direct_total: res.direct[i]?.total,
-        indirect_total: res.indirect[i]?.total,
-        direct_userId: res.direct[i]?.userId,
-        indirect_userId: res.indirect[i]?.userId,
-      };
-      this.outputAry.push(temp);
-      const arr1 = [this.outputAry[i].indirect_total];
-      const indirect = arr1.reduce((a: number, b: number) => {
-        return a + b;
-      }, 0);
-      // this.indirectdata=indirect;
-      console.log("Indirect", this.indirectdata);
-      const arr = [this.outputAry[i].indirect_total];
-      const direct = arr.reduce((a: number, b: number) => {
-        return a + b;
-      }, 0);
-      // this.directdata=direct;
-      console.log("direct", this.directdata);
-    }
-  }
+
   async bbb(item: any) {
     console.log(item);
     if (this.directdata >= 400 && this.indirectdata >= 600) {
