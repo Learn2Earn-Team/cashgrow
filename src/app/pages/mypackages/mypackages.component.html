@@ -1,53 +1,93 @@
-<div >
+<div>
   <section class="intro mt-3">
     <div class="mask d-flex align-items-center h-100">
       <div class="container">
-        <h1 class="text-center list-group-item text-white fw-bold m-auto fs-4 p-4" style="background-color: #1a1f22;">My Activated Packages</h1>
-        <div class="row"  >
-          <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-1 mb-1 p-2"  *ngFor="let item of myPackages" 
+        <h1
+          class="text-center list-group-item text-white fw-bold m-auto fs-4 p-4"
+          style="background-color: #1a1f22"
+        >
+          My Activated Packages
+        </h1>
+        <div class="row">
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 mt-1 mb-1 p-2"
+            *ngFor="let item of myPackages"
           >
-            <div class="card shadow-sm border " >
+            <div class="card shadow-sm border">
               <ul class="list-group list-group-flush rounded-2">
-                <li class="list-group-item  heading">
+                <li class="list-group-item heading">
                   <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1 text-white">Package</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1  fw-bold text-white"  >{{item.packageName}}</p></div>
-                  </div></li>
-                    <li class="list-group-item">
-                      <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Username</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 text-success fw-bold" >{{item.username}}</p></div>
+                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                      <p class="p py-1 text-white">Package</p>
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                      <p class="text-end text-truncate py-1 fw-bold text-white">
+                        {{ item.packageName }}
+                      </p>
+                    </div>
                   </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row">
-
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Activated Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1"> {{item.activeDate}}</p></div>
-                  </div></li>
-                    <li class="list-group-item">
-                      <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Expire Date</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 "> {{item.expire}}</p></div>
-                      </div></li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-5 col-md-6 col-lg-6  justify-content-start" > <p class="p py-1">Invest</p></div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end"><p  class="text-end text-truncate py-1 fw-bold" style="color: rgb(35, 149, 255)"> {{item.invest}}$</p></div>
-                   </div>
-                </li>              
+                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                      <p class="p py-1">Username</p>
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                      <p
+                        class="text-end text-truncate py-1 text-success fw-bold"
+                      >
+                        {{ item.username }}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                      <p class="p py-1">Activated Date</p>
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                      <p class="text-end py-1">
+                        {{ item.activeDate | date : "MMM d, y, h:mm" }}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                      <p class="p py-1">Expire Date</p>
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                      <p class="text-end py-1">
+                        {{ item.expire | date : "MMM d, y, h:mm" }}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
+                      <p class="p py-1">Invest</p>
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                      <p
+                        class="text-end text-truncate py-1 fw-bold"
+                        style="color: rgb(35, 149, 255)"
+                      >
+                        {{ item.invest }}$
+                      </p>
+                    </div>
+                  </div>
+                </li>
               </ul>
-
             </div>
-            
           </div>
         </div>
-
       </div>
-     
     </div>
-</section>
-<!-- <table class="table-responsive container col-lg-12 col-md-12 table-hover mt-4 m-auto text-center ">
+  </section>
+  <!-- <table class="table-responsive container col-lg-12 col-md-12 table-hover mt-4 m-auto text-center ">
   <tr class="t-head text-white text-center">
     <th>Package Name</th>
     <th>Order Price</th>
@@ -68,11 +108,8 @@
   </tr>
 </table> -->
 
-
-
-<a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank" > 
-  <!-- <i class="fa fa-whatsapp my-float"></i> -->
-  <img class="float" src="../../../assets/images/whatsapp.png" alt="">
-</a>
-
+  <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+    <!-- <i class="fa fa-whatsapp my-float"></i> -->
+    <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+  </a>
 </div>
