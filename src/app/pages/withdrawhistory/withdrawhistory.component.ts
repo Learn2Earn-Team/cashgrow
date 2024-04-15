@@ -32,7 +32,7 @@ open(content: any, item:any) {
 public async NewUserdata() {
   this.user = await  check("user");
   this.userobj = JSON.parse(this.user)
-  this.apiCall.withdrawHistory(this.userobj.id).subscribe(res => {
+  this.apiCall.allwithdraw().subscribe(res => {
    this.userdata = res;
 
   })

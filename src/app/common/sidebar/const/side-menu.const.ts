@@ -154,6 +154,10 @@ export const adminMenuItems: any[] = [
     routerLink: "/default/financedeposit",
     icon: "bi bi-bag-heart-fill",
     label: "Deposit",
+  },  {
+    routerLink: "/default/Approveddeposite",
+    icon: "bi bi-clock-history",
+    label: "Pending Deposit",
   },
   {
     routerLink: "/default/promotionsocial",
@@ -169,6 +173,10 @@ export const adminMenuItems: any[] = [
     routerLink: "/default/withdrawrequest",
     icon: "bi bi-chat-dots-fill",
     label: "Withdraw Request",
+  },  {
+    routerLink: "/default/withdrawhistory",
+    icon: "bi bi-chat-dots-fill",
+    label: "Withdraw History",
   },
   {
     routerLink: "/default/mypackages",
@@ -219,7 +227,16 @@ export const SubadminMenuItems: any[] = [
     icon: "bi bi-bar-chart-line-fill",
     label: "Active Package",
   },
-
+  {
+    routerLink: "/default/allapproveddeposite",
+    icon: "bi bi-body-text",
+    label: "All Deposits",
+  },
+  {
+    routerLink: "/default/withdrawhistory",
+    icon: "bi bi-cash",
+    label: "Withdraw History",
+  },
   {
     routerLink: "/default/mypackages",
     icon: "bi bi-bank",
