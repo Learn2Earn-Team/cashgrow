@@ -3,7 +3,10 @@
   style="background-color: red"
   *ngIf="status?.length > 0"
 >
-  <span *ngFor="let item of status"> {{ item.message }}</span>
+  <span *ngFor="let item of status">
+    <p>{{ item.message }}</p>
+    <br />
+  </span>
 </p>
 
 <div class="mobileapk">
