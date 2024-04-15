@@ -1,0 +1,181 @@
+<div class="container bottompx">
+    <section class="intro">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h1
+                class="text-white text-center p-3 fs-3 fw-bold"
+                style="text-transform: uppercase"
+              >
+                All Users
+              </h1>
+              <div class="row">
+                <div
+                  class="col-12 col-sm-12 col-md-6 col-lg-4 mt-2 mb-1"
+                  *ngFor="
+                    let item of userdata
+                      | paginate : { itemsPerPage: pageSize, currentPage: p };
+                    let i = index
+                  "
+                >
+                  <div class="card shadow-sm border rounded-2">
+                    <ul class="list-group list-group-flush rounded-2">
+                      <li class="list-group-item heading text-center fw-bold">
+                        <p class="text-white">User All Details</p>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row rounded-3">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">Order No</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">
+                              <b> {{ i + 1 }}</b>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">Name</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">{{ item.name }}</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">User Id</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">
+                              {{ item.username }}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">PIN</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">{{ item.pin }}</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">Sponsor</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">
+                              {{ item.sponsor }}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">Email</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">{{ item.email }}</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">Contact</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">{{ item.c_id }}</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-6 justify-content-start"
+                          >
+                            <p class="p">Whatsapp</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-6 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">
+                              {{ item.w_number }}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="row">
+                          <div
+                            class="col-4 col-md-6 col-lg-4 justify-content-start"
+                          >
+                            <p class="p">Joining</p>
+                          </div>
+                          <div
+                            class="col-8 col-md-6 col-lg-8 justify-content-end"
+                          >
+                            <p class="text-end text-truncate">
+                              {{ item.created_at }}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 text-white pagination">
+                <pagination-controls
+                  (pageChange)="p = $event"
+                ></pagination-controls>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <a href="https://chat.whatsapp.com/KUwuknHAlcELJncih9DHmD" target="_blank">
+    <img class="float" src="../../../assets/images/whatsapp.png" alt="" />
+  </a>
+  
