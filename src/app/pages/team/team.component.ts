@@ -45,14 +45,14 @@ export class TeamComponent {
     const userData = JSON.parse(user);
     this.apiCall.myorders(userData.username).subscribe((res3) => {
       if (res3.length > 0) {
-        this.apiCall.getrefstatus(userData.username).subscribe((res2: any) => {
-          this.apiCall.userdata(userData.username).subscribe((res: any) => {
-            if (+res.balnce > res2) {
-              this.status = [1, 2];
-            } else {
-              this.status = [];
+        this.apiCall.getrefstatus(res3).subscribe((res2: any) => {
+          if (res2?.length > 0) {
+            for (let i = 0; i < res2.length; i++) {
+              this.status.push({
+                message: `Please Renew Your ${res2[i]}$ Package For Team Commissions And Passive Income `,
+              });
             }
-          });
+          }
         });
       }
     });
@@ -72,7 +72,7 @@ export class TeamComponent {
         this.l5 = this.userdetails.filter((res: any) => res?.level === 5);
         this.l6 = this.userdetails.filter((res: any) => res?.level === 6);
         this.l7 = this.userdetails.filter((res: any) => res?.level === 7);
-console.log(this.l1)
+        console.log(this.l1);
         if (this.userdetails.length > 0) {
           this.apiCall
             .teamreport(this.userdetails, this.userobj.id)

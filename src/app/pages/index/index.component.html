@@ -3,7 +3,7 @@
   style="background-color: red"
   *ngIf="status?.length > 0"
 >
-  Please Renew Your Package For team commission and Passive Income
+  <span *ngFor="let item of status"> {{ item.message }}</span>
 </p>
 
 <div class="mobileapk">

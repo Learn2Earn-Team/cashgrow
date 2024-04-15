@@ -37,7 +37,12 @@ export class IndexComponent implements OnInit {
       today: "",
     },
     { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
-    { icon: "icon bi bi-diagram-3-fill", type: "Team Commissions", subtype: "", today: "" },
+    {
+      icon: "icon bi bi-diagram-3-fill",
+      type: "Team Commissions",
+      subtype: "",
+      today: "",
+    },
     {
       icon: "icon bi-person-lines-fill",
       type: "Passive Income",
@@ -81,7 +86,7 @@ export class IndexComponent implements OnInit {
   userdataarray: any;
   pasiveincom: any;
   ddd: any;
-  status: any;
+  status: any = [];
 
   constructor(
     private route: Router,
@@ -124,14 +129,14 @@ export class IndexComponent implements OnInit {
     const userData = JSON.parse(user);
     this.apicall.myorders(userData.username).subscribe((res3) => {
       if (res3.length > 0) {
-        this.apicall.getrefstatus(userData.username).subscribe((res2: any) => {
-          this.apicall.userdata(userData.username).subscribe((res: any) => {
-            if (+res.balnce > +res2) {
-              this.status = [1, 2];
-            } else {
-              this.status = [];
+        this.apicall.getrefstatus(res3).subscribe((res2: any) => {
+          if (res2?.length > 0) {
+            for (let i = 0; i < res2.length; i++) {
+              this.status.push({
+                message: `Please Renew Your ${res2[i]}$ Package For Team Commissions And Passive Income `,
+              });
             }
-          });
+          }
         });
       }
     });
@@ -200,8 +205,9 @@ export class IndexComponent implements OnInit {
         this.directBonous.today = null;
         this.card[2].subtype = team.length;
         this.card[2].today = res.IndirectJoining;
-        this.card[3].subtype = team.todaydirectBalance != null ? team.todaydirectBalance : 0  ;
-        this.card[3].today = res.directBalance;
+        this.card[3].subtype =
+          res.directBalance != null ? res.directBalance : 0;
+        this.card[3].today = res.todaydirectBalance;
         this.card[5].subtype = res.reward;
         this.card[5].today = res.todayRewards;
         if (res.totaldeposit > 0) {
