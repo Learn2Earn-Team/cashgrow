@@ -8,7 +8,7 @@
                 class="text-white text-center p-3 fs-3 fw-bold"
                 style="text-transform: uppercase"
               >
-                All Users
+                Transfer History
               </h1>
               <div class="row">
                 <div
@@ -22,7 +22,7 @@
                   <div class="card shadow-sm border rounded-2">
                     <ul class="list-group list-group-flush rounded-2">
                       <li class="list-group-item heading text-center fw-bold">
-                        <p class="text-white">User All Details</p>
+                        <p class="text-white">Transfer Details</p>
                       </li>
                       <li class="list-group-item">
                         <div class="row rounded-3">
@@ -89,13 +89,13 @@
                           <div
                             class="col-4 col-md-6 col-lg-6 justify-content-start"
                           >
-                            <p class="p">Dated</p>
+                            <p class="p">Date</p>
                           </div>
                           <div
                             class="col-8 col-md-6 col-lg-6 justify-content-end"
                           >
                             <p class="text-end text-truncate">
-                              {{ item.created_at }}
+                              {{ item.created_at | date }}
                             </p>
                           </div>
                         </div>

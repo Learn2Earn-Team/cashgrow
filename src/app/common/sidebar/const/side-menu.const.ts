@@ -95,7 +95,11 @@ export const adminMenuItems: any[] = [
     icon: "bi bi-globe2",
     label: "Internal Transfer",
   },
-
+  {
+    routerLink: "/default/transferhistory",
+    icon: "bi bi-clock-history",
+    label: "Transfer History",
+  },
   // {
   //   routerLink: '/default/cashtowallet',
   //   icon: 'bi bi-wallet2',

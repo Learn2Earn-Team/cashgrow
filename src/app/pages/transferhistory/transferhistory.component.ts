@@ -49,7 +49,6 @@ constructor( private apiCall : ApicallService){
     this.NewUserdata();
 }
 public NewUserdata():void {
-    
   this.apiCall.transferhistory().subscribe(res => {
    this.userdata = res;
    console.log(this.NewUserdata);
