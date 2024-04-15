@@ -242,11 +242,7 @@ export const SubadminMenuItems: any[] = [
     icon: "bi bi-bank",
     label: "My Packages",
   },
-  {
-    routerLink: "/default/internaltransfer",
-    icon: "bi bi-globe2",
-    label: "Internal Transfer",
-  },
+
   {
     routerLink: "default/team",
     icon: "bi bi-microsoft-teams",
