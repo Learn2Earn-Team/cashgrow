@@ -74,3 +74,17 @@ swiper-slide img {
   width: 332px;
   margin: auto;
 }
+
+@media only screen and (max-width: 880px) {
+  /* CSS rules that will apply when the screen width is 600px or less */
+  .btc {
+    margin-left: -40px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* CSS rules that will apply when the screen width is 600px or less */
+  #clint-part {
+   
+  display: none;
+}
+}
