@@ -1,14 +1,3 @@
-<p
-  class="card-body text-center shadow rounded-3 text-white"
-  style="background-color: red"
-  *ngIf="status?.length > 0"
->
-  <span *ngFor="let item of status">
-    <p>{{ item.message }}</p>
-    <br />
-  </span>
-</p>
-
 <div class="mobileapk">
   <section class="services" id="mainCards">
     <div class="container">
@@ -40,7 +29,10 @@
           class="col-md-6 col-lg-3 col-sm-4 col-6 d-flex align-items-stretch mt-1"
           *ngFor="let item of card; let i = index"
         >
-          <div class="card-body text-center shadow heading text-white">
+          <div
+            routerLink="{{ item.routerLink }}"
+            class="card-body text-center shadow heading text-white"
+          >
             <i class="{{ item.icon }} mainicon text-white"></i>
             <br />
             <h4 class="text-white">{{ item.type }}</h4>

@@ -1,105 +1,111 @@
-
 <!-- Your content goes here -->
-<div class="content" >
-<div class="header bg-head " >
-  
-  <div><a href="#" class="fs-2" >
-    <img style="height: 90px; width: 180px;"
-					src="../../../assets/images/bg/Cash.png" alt="LOGO"></a></div>
-    
+<div class="content">
+  <div class="header bg-head">
+    <div>
+      <a href="#" class="fs-2">
+        <img
+          style="height: 90px; width: 180px"
+          src="../../../assets/images/bg/Cash.png"
+          alt="LOGO"
+      /></a>
+    </div>
   </div>
   <!-- <div class="  form">
     <div class="  m-auto   "> -->
-      <!-- <h2 class="text-center fs-2 hero-text"  ><span >Cashgrow</span></h2> -->
-      <!-- <h6 class="text-center fs-4 "  >  Login in to your account.</h6> -->
-      <div class=" row m-0">
-      <div class="col-lg-6 col-md-6 mt-5 m-auto  " >
-        
-        <img   class="img-bg"  src="../../../assets/kindpng_743475.png" alt="">
-        <p class="text-center locate  ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-pin-map-fill text-white"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z "
-            />
-          </svg>
-          <span class="py-1 px-2 text-white locate  "  style="color: rgb(35, 149, 255);
-          ;">
-            A108 Adam Street, New York, NY 535022</span>
-                 
-        </p>
-      </div>
-   
-<div class=" m-auto col-lg-4 mt-2 py-5 col-md-5 col-sm-10 p-0 form" >
+  <!-- <h2 class="text-center fs-2 hero-text"  ><span >Cashgrow</span></h2> -->
+  <!-- <h6 class="text-center fs-4 "  >  Login in to your account.</h6> -->
+  <div class="row m-0">
+    <div class="col-lg-6 col-md-6 mt-5 m-auto">
+      <img class="img-bg" src="../../../assets/kindpng_743475.png" alt="" />
+      <p class="text-center locate">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-pin-map-fill text-white"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z "
+          />
+        </svg>
+        <span
+          class="py-1 px-2 text-white locate"
+          style="color: rgb(35, 149, 255)"
+        >
+          A108 Adam Street, New York, NY 535022</span
+        >
+      </p>
+    </div>
+
+    <div class="m-auto col-lg-4 mt-2 py-5 col-md-5 col-sm-10 p-0 form">
       <!-- <h2 class="text-center fs-2 hero-text"  ><span >Maclink</span></h2> -->
-      <div class="text-center fs-5 fw-bold p-1 text-white m-auto cssanimation hu__hu__ "  >  Login into your account.</div>
-<br>
-      <div class=" p-4">
-        <div class="  " style="margin-top: 10px;  ">
-          <label class="form-label text-white" > </label>
+      <div
+        class="text-center fs-5 fw-bold p-1 text-white m-auto cssanimation hu__hu__"
+      >
+        Login into your account.
+      </div>
+      <br />
+      <div class="p-4">
+        <div class="  " style="margin-top: 10px">
+          <label class="form-label text-white"> </label>
           <input
-          (keyup.enter)="Login()"
+            (keyup.enter)="Login()"
             class="rounded-2 input"
             [(ngModel)]="userdata.email"
             placeholder="Enter Email"
             required
           />
         </div>
-        <div class="" style="margin-top: 10px;">
+        <div class="" style="margin-top: 10px">
           <label class="form-label text-white"> </label>
           <input
-          (keyup.enter)="Login()"
-            class=" input rounded-2"
+            (keyup.enter)="Login()"
+            class="input rounded-2"
             [(ngModel)]="userdata.password"
             type="password"
             placeholder="Password"
             required
           />
         </div>
-      
-          <p class="password text-end"  >
-            <a href="#/forgetpassword" >Forget password?</a>
-          </p>
-            <button class=" rounded-2 m-auto m-3 p-2  button"  (click)="Login()">
+
+        <p class="password text-end">
+          <a href="#/forgetpassword">Forget password?</a>
+        </p>
+        <button class="rounded-2 m-auto m-3 p-2 button" (click)="Login()">
           <a>Login</a>
-              
-            </button>
-<div class="m-auto text-center mt-2"><span class="account text-white">Don't have an account? <a (click)="goToRegiester()"><span class="password sign"><b>Sign up</b></span></a></span></div>
+        </button>
+        <div class="m-auto text-center mt-2">
+          <span class="account text-white"
+            >Don't have an account?
+            <a (click)="goToRegiester()"
+              ><span class="password sign"><b>Sign up</b></span></a
+            ></span
+          >
+        </div>
       </div>
     </div>
   </div>
-<!-- </div>
+  <!-- </div>
         </div> -->
 
-
-
-
-
-
-
-
-<div class="my-container">
-  <ngx-loading
-    [show]="loading"
-    
-    [config]="{
-      animationType: ngxLoadingAnimationTypes.threeBounce,
-      fullScreenBackdrop: true ,
-      primaryColour: '#007bff',
-      secondaryColour: '#007bff',
-      tertiaryColour: '#007bff',
-      backdropBorderRadius: '3px' }"
-
-  ></ngx-loading>
+  <div class="my-container">
+    <ngx-loading
+      [show]="loading"
+      [config]="{
+        animationType: ngxLoadingAnimationTypes.threeBounce,
+        fullScreenBackdrop: true,
+        primaryColour: '#007bff',
+        secondaryColour: '#007bff',
+        tertiaryColour: '#007bff',
+        backdropBorderRadius: '3px'
+      }"
+    ></ngx-loading>
+  </div>
 </div>

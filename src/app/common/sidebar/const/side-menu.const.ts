@@ -154,7 +154,8 @@ export const adminMenuItems: any[] = [
     routerLink: "/default/financedeposit",
     icon: "bi bi-bag-heart-fill",
     label: "Deposit",
-  },  {
+  },
+  {
     routerLink: "/default/Approveddeposite",
     icon: "bi bi-hourglass-split",
     label: "Pending Deposit",
@@ -173,7 +174,8 @@ export const adminMenuItems: any[] = [
     routerLink: "/default/withdrawrequest",
     icon: "bi bi-chat-dots-fill",
     label: "Withdraw Request",
-  },  {
+  },
+  {
     routerLink: "/default/withdrawhistory",
     icon: "bi bi-chat-dots-fill",
     label: "Withdraw History",
@@ -198,13 +200,13 @@ export const adminMenuItems: any[] = [
     icon: "bi bi-wifi",
     label: "Complains box",
   },
-
   {
     routerLink: "/login",
     icon: "bi bi-box-arrow-left",
     label: "Logout",
   },
 ];
+
 export const SubadminMenuItems: any[] = [
   {
     routerLink: "default/profile",
@@ -339,9 +341,9 @@ export const menuItems: any[] = [
   //   label: "Deposit Amount",
   // },
   {
-    routerLink: '/default/financedeposit',
-    icon: 'bi bi-bag-heart-fill',
-    label: 'Deposit'
+    routerLink: "/default/financedeposit",
+    icon: "bi bi-bag-heart-fill",
+    label: "Deposit",
   },
   {
     routerLink: "/default/promotionsocial",
@@ -349,7 +351,7 @@ export const menuItems: any[] = [
     label: "Active Package",
   },
   {
-    routerLink: "default/reward",
+    routerLink: "/default/reward",
     icon: "bi bi-coin",
     label: "Reward",
   },
@@ -374,7 +376,7 @@ export const menuItems: any[] = [
   //   label: 'My Network'
   // },
   {
-    routerLink: "default/team",
+    routerLink: "/default/team",
     icon: "bi bi-microsoft-teams",
     label: "Teamreport",
   },
