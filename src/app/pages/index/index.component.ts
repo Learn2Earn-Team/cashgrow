@@ -28,6 +28,7 @@ export class IndexComponent implements OnInit {
       subtype: "",
       rs: "Rs",
       today: "",
+      routerLink: "/default/promotionsocial",
     },
     {
       icon: "icon bi bi-cash-stack",
@@ -35,28 +36,44 @@ export class IndexComponent implements OnInit {
       subtype: "",
       rs: "Rs",
       today: "",
+      routerLink: "/default/downloadapp",
     },
-    { icon: "icon bi bi-diagram-3-fill", type: "Team", subtype: "", today: "" },
+    {
+      icon: "icon bi bi-diagram-3-fill",
+      type: "Team",
+      subtype: "",
+      today: "",
+      routerLink: "/default/team",
+    },
     {
       icon: "icon bi bi-diagram-3-fill",
       type: "Team Commissions",
       subtype: "",
       today: "",
+      routerLink: "/default/team",
     },
     {
       icon: "icon bi-person-lines-fill",
       type: "Passive Income",
       subtype: "",
       today: "",
+      routerLink: "/default/team",
     },
 
-    { icon: "icon bi bi-trophy", type: "Rewards", subtype: "", today: "" },
+    {
+      icon: "icon bi bi-trophy",
+      type: "Rewards",
+      subtype: "",
+      today: "",
+      routerLink: "/default/reward",
+    },
 
     {
       icon: "icon bi-person-lines-fill",
       type: "My Package",
       subtype: "",
       today: "",
+      routerLink: "/default/mypackages",
     },
   ];
 
@@ -131,11 +148,6 @@ export class IndexComponent implements OnInit {
       if (res3.length > 0) {
         this.apicall.getrefstatus(res3).subscribe((res2: any) => {
           if (res2?.length > 0) {
-            for (let i = 0; i < res2.length; i++) {
-              this.status.push({
-                message: `Please Renew Your ${res2[i]}$ Package For Team Commissions And Passive Income `,
-              });
-            }
           }
         });
       }

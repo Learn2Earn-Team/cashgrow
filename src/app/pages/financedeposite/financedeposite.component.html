@@ -238,6 +238,22 @@
       role="tabpanel"
       aria-labelledby="pills-home-tab"
     >
+      <div *ngIf="!auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
+              <div style="color: white" class="card-header">
+                MetaMask Not Fount
+              </div>
+              <div class="card-body text-center">
+                <h3 style="cursor: pointer">
+                  Please Install MetaMask Extention For Deposit
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div *ngIf="auth" class="col-xl-12 col-md-12 col-sm-12 mt-4 float-center">
         <div class="row justify-content-center">
           <div class="col-12">
@@ -261,6 +277,38 @@
                 <h3 class="text-black">Deposit Now</h3>
               </div>
             </div>
+            <div *ngIf="acountaccess" class="col-xl-12">
+              <div class="card mb-4" style="margin-top: 30px">
+                <div style="color: white" class="card-header">Enter Amount</div>
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label class="small mb-1" for="inputUsername"
+                        >Amount</label
+                      >
+                      <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="depositdetail.depositAmount"
+                        [ngModelOptions]="{ standalone: true }"
+                        placeholder="Enter Amount"
+                      />
+                    </div>
+
+                    <div class="col-md-6 col-12 mt-4">
+                      <button
+                        class="btn btn-color text-white"
+                        (click)="sendEthButton()"
+                        type="button"
+                        [disabled]="depositdetail.depositAmount == ''"
+                      >
+                        Deposit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -271,7 +319,7 @@
       role="tabpanel"
       aria-labelledby="pills-profile-tab"
     >
-      <div *ngIf="auth" class="col-xl-12 col-md-12 col-sm-12 mt-4">
+      <div class="col-xl-12 col-md-12 col-sm-12 mt-4">
         <div class="row justify-content-center">
           <div class="col-12">
             <div (click)="forJazCash()" class="card mb-4 mb-xl-0">

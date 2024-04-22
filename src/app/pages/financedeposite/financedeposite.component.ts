@@ -18,7 +18,7 @@ export class FinancedepositeComponent {
   public user: any;
   public uploadedImage: any = "";
   public image: any = "";
-  public accoun: any;
+  public accoun: any = [];
 
   public auth: any = false;
   public acountaccess: any = false;
@@ -48,9 +48,9 @@ export class FinancedepositeComponent {
   }
 
   async getAccounts() {
-    const data = window.ethereum;
+    const data = window?.ethereum;
     try {
-      const provider: any = await data.request({
+      const provider: any = await data?.request({
         method: "eth_requestAccounts",
       });
       console.log(provider, "user");
