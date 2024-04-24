@@ -16,7 +16,7 @@ export class WithdrawrequestComponent {
     user_id: "",
     amount: "",
     contact: "",
-    jdetail: "MetaMask",
+    jdetail: "'",
     uname: "",
     name: "",
     services: "",
@@ -49,6 +49,9 @@ export class WithdrawrequestComponent {
         this.showBalanceMessage = "";
       }
     });
+  }
+  depositeStatusupdate($event: any) {
+    this.withdrawDetail.jdetail = $event.target.value;
   }
 
   public async NewUserdata() {
