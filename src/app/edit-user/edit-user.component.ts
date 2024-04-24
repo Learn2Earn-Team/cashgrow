@@ -18,8 +18,11 @@ table(){
     console.log(this.data)
   })
 }
-delete(){
-  
+delete(item:any){
+  this.apicall.deleteuser(item).subscribe(res=>{
+    this.data=res
+    console.log(this.data)
+  })
 }
 
 }

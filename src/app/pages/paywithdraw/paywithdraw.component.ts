@@ -13,6 +13,8 @@ import detectEthereumProvider from "@metamask/detect-provider";
 })
 export class PaywithdrawComponent implements OnInit {
   public accoun: any;
+  public userdata: any={};
+
   public Paycards: any = [
     {
       No: "02",

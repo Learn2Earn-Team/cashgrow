@@ -986,4 +986,14 @@ export class ApicallService {
       })
     );
   }
+
+  public deleteuser(data:any): Observable<any> {
+    return this.http.post(apiUrl + "deleteuser",data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+
 }
