@@ -274,7 +274,7 @@
                 aria-controls="pills-About"
                 aria-selected="false"
               >
-                <h3 class="text-black">Deposit Now</h3>
+                <h3 (click)="getAccounts()" class="text-black">Deposit Now</h3>
               </div>
             </div>
             <div *ngIf="acountaccess" class="col-xl-12">
@@ -382,7 +382,7 @@
 
                   <div class="mb-3">
                     <label class="small mb-1" for="inputUsername"
-                      >Transection ID</label
+                      >User ID</label
                     >
                     <input
                       class="form-control"
@@ -457,7 +457,7 @@
                         <div
                           class="col-5 col-md-6 col-lg-5 justify-content-start"
                         >
-                          <p class="p">TID</p>
+                          <p class="p">User ID</p>
                         </div>
                         <div
                           class="col-7 col-md-6 col-lg-7 justify-content-end"

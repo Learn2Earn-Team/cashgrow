@@ -65,7 +65,8 @@ export class PaywithdrawComponent implements OnInit {
       console.log(provider, "user");
       this.accoun = provider;
       if (this.accoun.length > 0) {
-        this.toast.SuccessToast("Connected With MetaMask", "Error");
+        this.metaconnect = true;
+        this.toast.SuccessToast("Connected With MetaMask", "Good Job!");
       }
     } catch (er) {
       console.log(er, "Connecting error");
@@ -94,8 +95,10 @@ export class PaywithdrawComponent implements OnInit {
             console.log(error, "Error");
             if (error.code === -32602) {
               this.toast.ErrorToast("Invalid User Address", "Error");
+            } else if (error.code === 4001) {
+              this.changeWidthrawStatus("Rejected", request);
             }
-            this.changeWidthrawStatus("Rejected", request);
+
             this.toast.ErrorToast("Payment Failed", "Rejected");
           });
       } else {
@@ -160,6 +163,35 @@ export class PaywithdrawComponent implements OnInit {
             this.toast.SuccessToast(mesg, "Congratulation!");
           }
           if ($event.target.value == "Rejected") {
+            const mesg = `Your have Rejected withdraw of Rs. ${item.amount}`;
+            this.toast.WarningToast(mesg, "Good Job!!");
+          }
+        }
+      });
+    } else {
+      console.log("other");
+    }
+  }
+
+  changeWidthrawStatusfo(data: any, item: any) {
+    console.log(data);
+    console.log(item);
+    if (data != "Select Status") {
+      const status = {
+        status: data,
+        id: item.id,
+        user_id: item.user_id,
+        amount: item.amount,
+      };
+      this.apicall.allWithDrawStatusUpdate(status).subscribe((res) => {
+        console.log(res);
+        this.getAllRequests();
+        if (res.error == false) {
+          if (data == "Approve") {
+            const mesg = `Your have sucessfully paid Rs. ${item.amount}`;
+            this.toast.SuccessToast(mesg, "Congratulation!");
+          }
+          if (data == "Rejected") {
             const mesg = `Your have Rejected withdraw of Rs. ${item.amount}`;
             this.toast.WarningToast(mesg, "Good Job!!");
           }

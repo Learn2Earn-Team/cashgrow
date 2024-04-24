@@ -22,13 +22,16 @@
               </p>
             </div>
             <div class="mb-3">
-              <label class="small mb-1">Payment Gateway</label>
-              <input
-                class="form-control"
-                placeholder="Trust Wallet"
-                value="MetaMask"
-                readonly="true"
-              />
+              <label class="small mb-1">Payment </label>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                (change)="depositeStatusupdate($event)"
+              >
+                <option selected>Select Gateway</option>
+                <option value="binance">Binance</option>
+                <option value="metamask">MetaMask</option>
+              </select>
             </div>
             <div class="mb-3">
               <label class="small mb-1" for="inputUsername">Wallet Id</label>

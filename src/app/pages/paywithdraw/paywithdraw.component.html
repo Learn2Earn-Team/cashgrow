@@ -10,13 +10,15 @@
             >
               All Withdrawal Request History
             </h1>
-            <div class="row justify-center mb-2 col-lg-6 col-md-10 col-sm-10 m-auto meta">
+            <div
+              class="row justify-center mb-2 col-lg-6 col-md-10 col-sm-10 m-auto meta"
+            >
               <button
                 (click)="getAccounts()"
                 type="button"
                 class="btn btn-warning"
               >
-                Conntect With MetaMask
+                Connect With MetaMask
               </button>
             </div>
 
@@ -28,7 +30,7 @@
                 let i = index
               "
             >
-              <div class="card shadow-sm border mt-2 ">
+              <div class="card shadow-sm border mt-2">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item heading text-center fw-bold">
                     <p class="text-white fs-6">Withdraw Request</p>
@@ -80,11 +82,11 @@
                       <div
                         class="col-5 col-md-6 col-lg-6 justify-content-start"
                       >
-                        <p class="p">Amount Rs</p>
+                        <p class="p">Amount</p>
                       </div>
                       <div class="col-7 col-md-6 col-lg-6 justify-content-end">
                         <p class="text-end text-truncate">
-                          {{ request.amount }}
+                          {{ request.amount }}$
                         </p>
                       </div>
                     </div>
@@ -99,7 +101,7 @@
                       </div>
                       <div class="col-7 col-md-6 col-lg-6 justify-content-end">
                         <p class="text-end text-truncate">
-                          {{ request.services }}
+                          {{ request.services }}$
                         </p>
                       </div>
                     </div>
@@ -112,9 +114,7 @@
                         <p class="p">Payable Amount</p>
                       </div>
                       <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                        <p class="text-end text-truncate">
-                          {{ request.net }}
-                        </p>
+                        <p class="text-end text-truncate">{{ request.net }}$</p>
                       </div>
                     </div>
                   </li>
@@ -127,7 +127,7 @@
                         <p class="p" style="margin-top: 5px">WalletID</p>
                       </div>
                       <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                        <p class="text-end text-truncate">
+                        <p class="text-end">
                           {{ request.contact }}
                         </p>
                       </div>
@@ -156,6 +156,33 @@
                       </div>
                       <div class="col-7 col-md-6 col-lg-6 justify-content-end">
                         <p class="text-end">{{ request.created_at }}</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item list-group-item">
+                    <div class="row">
+                      <div
+                        class="col-5 col-md-6 col-lg-6 justify-content-start"
+                      >
+                        <p class="p" style="margin-top: 5px">Status</p>
+                      </div>
+                      <div class="col-7 col-md-6 col-lg-6 justify-content-end">
+                        <p class="text-end text-truncate my-1">
+                          <button
+                            *ngIf="request.status == 'Pending'"
+                            type="button"
+                            (click)="
+                              changeWidthrawStatusfo('Rejected', request)
+                            "
+                            class="btn btn-danger"
+                          >
+                            Reject
+                          </button>
+                          <span *ngIf="request.status == 'Approve'">Paid</span>
+                          <span *ngIf="request.status == 'Rejected'"
+                            >Rejected</span
+                          >
+                        </p>
                       </div>
                     </div>
                   </li>
