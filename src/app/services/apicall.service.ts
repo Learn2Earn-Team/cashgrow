@@ -979,5 +979,11 @@ export class ApicallService {
       })
     );
   }
-
+  public Allusers(): Observable<any> {
+    return this.http.get(apiUrl + "Allusers").pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }

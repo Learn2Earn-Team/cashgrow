@@ -75,6 +75,7 @@ import { RewardComponent } from 'src/app/pages/reward/reward.component';
 import { DownloadappComponent } from 'src/app/downloadapp/downloadapp.component';
 import { TransferhistoryComponent } from 'src/app/pages/transferhistory/transferhistory.component';
 import { ApproveddepositeComponent } from 'src/app/pages/approveddeposite/approveddeposite.component';
+import { EditUserComponent } from 'src/app/edit-user/edit-user.component';
 const routes: Routes = [
     // { path: '', redirectTo: '/layout', pathMatch: 'full', data: { title: 'Layout' } },
     {
@@ -142,6 +143,8 @@ const routes: Routes = [
           { path: 'default/reward', component: RewardComponent , canActivate: [LoginGuard]},
           { path: 'default/getreward', component: GetrewardComponent , canActivate: [LoginGuard]},
           { path: 'default/downloadapp', component: DownloadappComponent , canActivate: [LoginGuard]},
+          { path: 'default/edit-user', component:EditUserComponent , canActivate: [LoginGuard]},
+
 
 
 

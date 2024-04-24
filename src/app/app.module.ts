@@ -96,6 +96,7 @@ import { AuthComponent } from "./pages/auth/auth.component";
 import { DownloadappComponent } from './downloadapp/downloadapp.component';
 import { TransferhistoryComponent } from './pages/transferhistory/transferhistory.component';
 import { ApproveddepositeComponent } from './pages/approveddeposite/approveddeposite.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 // import { SearchFilter } from './pipes/search-filter.pipe';
 @NgModule({
   declarations: [
@@ -175,6 +176,7 @@ import { ApproveddepositeComponent } from './pages/approveddeposite/approveddepo
     DownloadappComponent,
     TransferhistoryComponent,
     ApproveddepositeComponent,
+    EditUserComponent,
     // ChaticonComponent
     // SearchFilter,
     // LoadingOverlayComponent,

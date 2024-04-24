@@ -185,6 +185,11 @@ export const adminMenuItems: any[] = [
     icon: "bi bi-bank",
     label: "My Packages",
   },
+  {
+    routerLink: "/default/edit-user",
+    icon: "bi bi-pencil-square",
+    label: "Edit User",
+  },
   // {
   //   routerLink: '/default/mynetwork',
   //   icon: 'bi bi-wifi',
@@ -262,6 +267,11 @@ export const SubadminMenuItems: any[] = [
     label: "Logout",
   },
 ];
+
+
+
+
+
 export const menuItems: any[] = [
   {
     routerLink: "/default/index",

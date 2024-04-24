@@ -105,7 +105,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
             "Your Profile Picture has been updated",
             "Congratulations!"
           );
-        }
+        }        
       });
     };
   }
