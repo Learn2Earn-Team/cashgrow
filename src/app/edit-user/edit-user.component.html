@@ -1,34 +1,28 @@
-
-
 <table class="table">
-    <thead class="thead-dark">
-      <tr >
-        <th>Username</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Total Passive</th>
-        <th>Total Profit</th>
-        <th>Direct Balance</th>
-        <th>Delete</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of data">
-        <td>{{item.Allusers}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.password}}</td>
-        <td>{{item.totalpassive}}</td>
-        <td>{{item.totalprofit}}</td>
-        <td>{{item.directBalance}}</td>      
-        <td (click)="delete(item)"><i class="bi bi-trash"></i> Delete</td>      
-</tr>
-    </tbody>
-  </table>
-
-
-
-
-
+  <thead class="thead-dark">
+    <tr>
+      <th>Sr.</th>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Total Passive</th>
+      <th>Total Profit</th>
+      <th>Direct Balance</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.username }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.password }}</td>
+      <td>{{ item.totalpassive }}</td>
+      <td>{{ item.totalprofit }}</td>
+      <td>{{ item.directBalance }}</td>
+      <td (click)="delete(item)"><i class="bi bi-trash"></i> Delete</td>
+    </tr>
+  </tbody>
+</table>
