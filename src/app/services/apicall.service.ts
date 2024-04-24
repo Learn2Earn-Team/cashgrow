@@ -979,5 +979,21 @@ export class ApicallService {
       })
     );
   }
+  public Allusers(): Observable<any> {
+    return this.http.get(apiUrl + "Allusers").pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  public deleteuser(data:any): Observable<any> {
+    return this.http.post(apiUrl + "deleteuser",data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
 
 }

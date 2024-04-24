@@ -85,3 +85,97 @@ p{
   transition: all 0.2s ease-in-out;
 
 }
+
+
+html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: .5rem;
+}
+.wave{
+  position: absolute;
+  bottom: 0;
+}
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 5px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: 2px 2px 3px #999;
+ 
+ }
+ @media screen and (max-width: 480px) {
+  .float {
+      display: none;
+  }
+}
+.modalcolor {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bgclr{
+  background-color: var(--background-color);
+}
+.p{
+  font-weight: 600;
+  color:  var(--background-color);
+}
+p{
+  margin: 0;
+}
+
+
+
+// <--------------alter css------------->
+
+
+.container{
+  background: #1a1f22;
+}
+.card{
+
+}
+
+.list-group-item{
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.603);
+  font-size: 10px;
+  color: black;
+}
+
+
+.list-group-item p{
+color: black;
+}
+.card:hover{
+  margin:-3px 0;
+  transition: all 0.2s;
+
+}
+.heading{
+  background-color: #fab915;
+}
+*{
+  font-family: "Poppins", sans-serif;
+
+}
