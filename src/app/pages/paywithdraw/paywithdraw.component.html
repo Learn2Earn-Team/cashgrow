@@ -1,158 +1,111 @@
 
-<div class="container">
-  <section class="intro">
-    <div class="mask d-flex align-items-center h-100">
-      <div class="container p-3">
-        <h1
-          class="text-white text-center fs-3 fw-bold"
-          style="text-transform: uppercase"
-        >
-          Withdraw History
-        </h1>
 
-        <div class="row">
-          <div
-            class="col-12 col-sm-12 col-md-4 col-lg-4 mt-2 mb-1"
-            *ngFor="let item of userdata"
-          >
-            <div class="card shadow-sm border rounded-2 mt-2">
-              <ul class="list-group list-group-flush rounded-2">
-                <li class="list-group-item heading text-center fw-bold">
-                  <p>Recent Withdraw</p>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1 fw-bold">ID</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end fw-bold text-truncate py-1">
-                        {{ item.user_id }}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Amount</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        {{ item.amount }}
-                      </p>
-                    </div>
-                  </div>
-                </li>  
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Gateway</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        {{ item.jdetail }}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">WalletID</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        {{ item.contact }}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Servies</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        {{ item.services }}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Net</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">{{ item.net }}</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Date</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        {{ item.created_at }}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Status</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        {{ item.status }}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item" *ngIf="item.status == 'Approve'">
-                  <div class="row">
-                    <div class="col-5 col-md-6 col-lg-6 justify-content-start">
-                      <p class="p py-1">Recepate</p>
-                    </div>
-                    <div class="col-7 col-md-6 col-lg-6 justify-content-end">
-                      <p class="text-end text-truncate py-1">
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          data-toggle="modal"
-                          data-target="#exampleModalCenter"
-                        >
-                          Show
-                        </button>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+
+
+
+
+<div>
+  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+    <li class="nav-item text-center col-6" role="presentation ">
+      <p
+        class="p1 nav-link border active"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-home"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+      >
+        MetaMask Deposit
+      </p>
+    </li>
+    <li class="nav-item text-center col-6" role="presentation">
+      <p
+        class="p1 border nav-link"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-profile"
+        role="tab"
+        aria-controls="pills-profile"
+        aria-selected="false"
+      >
+        Binance Deposit
+      </p>
+    </li>
+  </ul>
+</div>
+<div class="tab-content" id="pills-tabContent">
+  <div
+    class="d tab-pane fade show active"
+    id="pills-home"
+    role="tabpanel"
+    aria-labelledby="pills-home-tab"
+  >
+    <div *ngIf="!auth" class="col-xl-12 col-md-12 col-sm-12 col-12">
+      <div class="row justify-content-center">
+        <div class="col-xl-12">
+          <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
+            <div style="color: white" class="card-header">
+              MetaMask Not Fount
+            </div>
+            <div class="card-body text-center">
+              <h3 style="cursor: pointer">
+                Please Install MetaMask Extention For Deposit
+              </h3>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <div *ngIf="auth" class="col-xl-12 col-md-12 col-sm-12 mt-4 float-center">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div (click)="getAccounts()" class="card mb-4 mb-xl-0">
+            <div style="color: white" class="card-header">
+              <img
+                src="../../../assets/MetaMask Fox Icon in Flat Style.png"
+                alt=""
+                class="icon"
+              />
+              Meta Mask
+            </div>
+            <div
+              class="card-body text-center deposit"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-About"
+              role="tab"
+              aria-controls="pills-About"
+              aria-selected="false"
+            >
+              <h3 class="text-black">Deposit Now</h3>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="d tab-pane fade"
+    id="pills-profile"
+    role="tabpanel"
+    aria-labelledby="pills-profile-tab"
+  >
+  
+    <div class="container-xl px-4 mt-4 bottompx">
+     
+    </div>
+  </div>
 </div>
 
 
 
 
+
+
+
 <div class="container bottompx" style="margin-top: 60px">
-
-
-
-
   <section class="intro">
     <div class="mask d-flex align-items-center h-100">
-      <div class="container">
+      <div wclass="container">
         <div class="row justify-content-center">
           <div class="col-12">
             <h1
