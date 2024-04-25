@@ -381,11 +381,7 @@ export const menuItems: any[] = [
     label: "My Packages",
   },
 
-  {
-    routerLink: "/default/Package-history",
-    icon: "bi bi-clock-history",
-    label: "Packages History",
-  },
+  
   {
     routerLink: "/default/downloadapp",
     icon: "bi bi-cash-coin",
