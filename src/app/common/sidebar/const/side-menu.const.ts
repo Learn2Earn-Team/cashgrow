@@ -233,7 +233,11 @@ export const SubadminMenuItems: any[] = [
     icon: "bi bi-person-badge",
     label: "New User",
   },
-
+  {
+    routerLink: "/default/Package-history",
+    icon: "bi bi-clock-history",
+    label: "Packages History",
+  },
   {
     routerLink: "/default/promotionsocial",
     icon: "bi bi-bar-chart-line-fill",
@@ -272,10 +276,6 @@ export const SubadminMenuItems: any[] = [
     label: "Logout",
   },
 ];
-
-
-
-
 
 export const menuItems: any[] = [
   {
@@ -381,7 +381,6 @@ export const menuItems: any[] = [
     label: "My Packages",
   },
 
-  
   {
     routerLink: "/default/downloadapp",
     icon: "bi bi-cash-coin",
