@@ -6,8 +6,8 @@ import { remove } from "../localStorage/LocalStorage";
 import { Observable } from "rxjs";
 
 // export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
-export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
-// export const apiUrl = "http://localhost/SMM/public/";
+// export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
+export const apiUrl = "http://localhost/SMM/public/";
 
 @Injectable({
   providedIn: "root",
