@@ -1,0 +1,45 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: black;
+    text-align: left;
+  }
+  
+  
+  @media (min-width:767px) {
+    .g{
+    
+      margin-right: auto;
+    }
+  }
+  @media (max-width:991px) {
+    .g{
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .t-heading{
+    background:  #1a1f22;
+  }
+  th{
+    color: white;
+
+  }
+  tr{
+    width: 100%;
+  }
+  .nav-item{
+    justify-content: space-between;
+    padding-left: 10px;
+  }
+  ul{
+     height: 100%;
+  }

@@ -995,5 +995,14 @@ export class ApicallService {
     );
   }
 
+  public AllPackages(): Observable<any> {
+    return this.http.get(apiUrl + "AllPackages").pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+
 
 }
