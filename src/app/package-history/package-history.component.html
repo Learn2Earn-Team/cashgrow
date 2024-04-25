@@ -1,0 +1,31 @@
+
+
+
+
+  <table class="table text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th>Sr.</th>
+        <th>OID</th>
+        <th>Price</th>
+        <th>Active date</th>
+        <th>Expire</th>
+        <th>Name</th>
+        <th>PID</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.oid }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.activedate }}</td>
+        <td>{{ item.expire }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.pid }}</td>
+        <td>{{ item.username }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

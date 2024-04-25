@@ -186,6 +186,11 @@ export const adminMenuItems: any[] = [
     label: "My Packages",
   },
   {
+    routerLink: "/default/Package-history",
+    icon: "bi bi-clock-history",
+    label: "Packages History",
+  },
+  {
     routerLink: "/default/edit-user",
     icon: "bi bi-pencil-square",
     label: "Edit User",
@@ -372,8 +377,14 @@ export const menuItems: any[] = [
   },
   {
     routerLink: "/default/mypackages",
-    icon: "bi bi-bank",
+    icon: "bi bi-clock-history",
     label: "My Packages",
+  },
+
+  {
+    routerLink: "/default/Package-history",
+    icon: "icon bi-person-lines",
+    label: "Packages History",
   },
   {
     routerLink: "/default/downloadapp",
