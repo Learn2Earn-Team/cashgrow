@@ -383,7 +383,7 @@ export const menuItems: any[] = [
 
   {
     routerLink: "/default/Package-history",
-    icon: "icon bi-person-lines",
+    icon: "bi bi-clock-history",
     label: "Packages History",
   },
   {
