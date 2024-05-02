@@ -76,6 +76,7 @@ import { DownloadappComponent } from 'src/app/downloadapp/downloadapp.component'
 import { TransferhistoryComponent } from 'src/app/pages/transferhistory/transferhistory.component';
 import { ApproveddepositeComponent } from 'src/app/pages/approveddeposite/approveddeposite.component';
 import { EditUserComponent } from 'src/app/edit-user/edit-user.component';
+
 import { PackageHistoryComponent } from 'src/app/package-history/package-history.component';
 const routes: Routes = [
     // { path: '', redirectTo: '/layout', pathMatch: 'full', data: { title: 'Layout' } },
