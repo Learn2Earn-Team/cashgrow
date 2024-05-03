@@ -2,6 +2,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+padding: 20px;
   }
   
   th, td {
@@ -10,7 +11,9 @@ table {
     color: black;
     text-align: left;
   }
-  
+  .pagination::ng-deep .ngx-pagination .current{
+    background-color: #fab915;
+    }
   
   @media (min-width:767px) {
     .g{

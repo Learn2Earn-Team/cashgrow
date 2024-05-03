@@ -9,7 +9,8 @@ import { ToastService } from "../services/toast.service";
 })
 export class EditUserComponent {
   data: any;
-
+  pageSize = 10;
+  p = 1;
   constructor(public apicall: ApicallService, private toast: ToastService) {
     this.table();
   }
