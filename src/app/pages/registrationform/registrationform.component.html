@@ -1,17 +1,10 @@
 <div class="background m-0">
-  <div
-    id="header container-fluid"
-    class="fixed-top d-flex align-items-center headerclr"
-  >
+  <div id="header container-fluid" class="fixed-top d-flex align-items-center headerclr">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo">
         <h1>
-          <a href="#" class="fs-2"
-            ><img
-              src="../../../assets/images/bg/Cash.png"
-              alt=""
-              style="width: 180px; height: 90px"
-          /></a>
+          <a href="#" class="fs-2"><img src="../../../assets/images/bg/Cash.png" alt=""
+              style="width: 180px; height: 90px" /></a>
         </h1>
       </div>
     </div>
@@ -23,17 +16,37 @@
       <div class="col-lg-7 col-sm-12  bg-cash float">
         <div class="cssanimation hu__hu__">
           <h1 class="pop">Cashgrow</h1>
-          <button
-            class="btn button navbtn text-white m-auto px-5"
-            [routerLink]="['/login']"
-          >
+          <button class="btn button navbtn text-white m-auto px-5" [routerLink]="['/login']">
             <a class="text-center m-auto text-white">Login</a>
           </button>
         </div>
       </div>
-      <div
-        class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash"
-      >
+      <div *ngIf="!authemail" class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash">
+        <form>
+          <br>
+          <br>
+          <div class="col-md-12">
+            <label class="form-label mt-1">Email</label>
+            <input class="rounded-2 input" placeholder="Email" [(ngModel)]="signupdata.email"
+              [ngModelOptions]="{ standalone: true }" required />
+          </div>
+          <br />
+          <div class="row">
+            <br />
+            <div class="col-12 m-auto text-center">
+
+              <button class=" w-100 btn button navbtn" (click)="sendvarifyEmail()" [disabled]="
+                
+                    signupdata.email == '' 
+                  
+                  ">
+                Varify
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="authemail" class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash">
         <form>
           <h2 class="text-center mb-3 fs-4 mt-5">
             <span class="sign-head text-white"> Sign Up To Register</span>
@@ -41,125 +54,61 @@
           <br />
           <div class="row">
             <div class="col-md-6">
-              <input
-                class="rounded-2 input"
-                placeholder="First Name"
-                [(ngModel)]="userFirstName"
-                [ngModelOptions]="{ standalone: true }"
-                required
-              />
+              <input class="rounded-2 input" placeholder="First Name" [(ngModel)]="userFirstName"
+                [ngModelOptions]="{ standalone: true }" required />
             </div>
             <div class="col-md-6">
-              <input
-                class="rounded-2 input"
-                placeholder="Last Name"
-                [(ngModel)]="signupdata.lastname"
-                [ngModelOptions]="{ standalone: true }"
-                required
-              />
+              <input class="rounded-2 input" placeholder="Last Name" [(ngModel)]="signupdata.lastname"
+                [ngModelOptions]="{ standalone: true }" required />
             </div>
             <div class="col-md-12">
-              <input
-                class="rounded-2 input"
-                placeholder="Contact Number"
-                type="text"
-                maxlength="11"
-                [(ngModel)]="signupdata.contactno"
-                [ngModelOptions]="{ standalone: true }"
-                pattern="[0-11]{11}"
-                maxlength="11"
-                min="0"
-                max="9999"
-                step="1"
-                required
-              />
+              <input class="rounded-2 input" placeholder="Contact Number" type="text" maxlength="11"
+                [(ngModel)]="signupdata.contactno" [ngModelOptions]="{ standalone: true }" pattern="[0-11]{11}"
+                maxlength="11" min="0" max="9999" step="1" required />
             </div>
 
             <div class="col-md-12">
               <label class="form-label mt-1"></label>
-              <input
-                class="rounded-2 input"
-                placeholder="Email"
-                [(ngModel)]="signupdata.email"
-                [ngModelOptions]="{ standalone: true }"
-                required
-              />
+              <input class="rounded-2 input" disabled="true" placeholder="Email" [(ngModel)]="signupdata.email"
+                [ngModelOptions]="{ standalone: true }" required />
             </div>
             <div class="col-md-12">
               <label class="form-label mt-1"></label>
-              <input
-                class="rounded-2 input"
-                placeholder="Password"
-                (input)="password($event)"
-                required
-              />
+              <input class="rounded-2 input" placeholder="Password" (input)="password($event)" required />
             </div>
             <div class="col-md-12">
               <label class="form-label"></label>
-              <input
-                class="rounded-2 input"
-                placeholder="Confirm"
-                (input)="confirmpassword($event)"
-                required
-              />
+              <input class="rounded-2 input" placeholder="Confirm" (input)="confirmpassword($event)" required />
             </div>
 
-            <span
-              class=""
-              *ngIf="this.showmessage != ''"
-              [ngClass]="
+            <span class="" *ngIf="this.showmessage != ''" [ngClass]="
                 this.showmessage == 'Correct Password'
                   ? 'text-success'
                   : 'text-danger'
-              "
-              >{{ this.showmessage }}
+              ">{{ this.showmessage }}
             </span>
 
             <div class="col-md-12">
-              <label
-                class="form-label"
-                style="color: grey; font-family: Poppins, sans-serif"
-                >Referral-link</label
-              >
-              <input
-                class="font-family: Poppins, sans-serif;"
-                class="form-control input text-black gradient text-center"
-                value="{{ signupdata.invitationlink }}"
-                disabled
-              />
+              <label class="form-label" style="color: grey; font-family: Poppins, sans-serif">Referral-link</label>
+              <input class="font-family: Poppins, sans-serif;"
+                class="form-control input text-black gradient text-center" value="{{ signupdata.invitationlink }}"
+                disabled />
             </div>
             <br />
             <div class="col-md-12 mt-3">
-              <p
-                class="d-flex text-center"
-                style="font-family: Poppins, sans-serif"
-              >
-                <input
-                  class="form-check-input border border-1 border-dark p-1 text-black mx-2"
-                  [(ngModel)]="isChecked"
-                  [ngModelOptions]="{ standalone: true }"
-                  type="checkbox"
-                /> 
-                <label 
-                  class="form-check-label m-auto text-black text-center text-white mx-1 mt-2"
-                  style="font-size: 12px"
-                >
-                &nbsp;&nbsp;&nbsp; I have read and agree to the
-                  <a
-                    class="term text-white"
-                    style="font-size: 12px"
-                    href="#/tems"
-                    >Terms and Condition</a
-                  >
+              <p class="d-flex text-center" style="font-family: Poppins, sans-serif">
+                <input class="form-check-input border border-1 border-dark p-1 text-black mx-2" [(ngModel)]="isChecked"
+                  [ngModelOptions]="{ standalone: true }" type="checkbox" />
+                <label class="form-check-label m-auto text-black text-center text-white mx-1 mt-2"
+                  style="font-size: 12px">
+                  &nbsp;&nbsp;&nbsp; I have read and agree to the
+                  <a class="term text-white" style="font-size: 12px" href="#/tems">Terms and Condition</a>
                 </label>
               </p>
             </div>
-              <div class="col-12 m-auto text-center">
-                <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
-                <button
-                  class=" w-100 btn button navbtn"
-                  (click)="submit()"
-                  [disabled]="
+            <div class="col-12 m-auto text-center">
+              <!-- <button class="btn btn-clr mt-3" (click)="submit()">Submit</button> -->
+              <button class=" w-100 btn button navbtn" (click)="submit()" [disabled]="
                     userFirstName == '' ||
                     signupdata.lastname == '' ||
                     signupdata.contactno == '' ||
@@ -168,27 +117,15 @@
                     signupdata.invitationlink == '' ||
                     this.showmessage != 'Correct Password' ||
                     isChecked == false
-                  "
-                >
-                  Submit
-                </button>
-              </div>
+                  ">
+                Submit
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </div>
   </div>
-  <!-- <footer
-  id="footer"
-  data-aos="fade-up"
-  data-aos-easing="ease-in-out"
-  data-aos-duration="500"
->
-  <div class="container-fluid">
-    <div class="copyright">
-      <strong><span>Cashgrow SHOP © 2023 |</span></strong
-      >. All Rights Reserved
-    </div>
-  </div>
-</footer> -->
+
+
 </div>

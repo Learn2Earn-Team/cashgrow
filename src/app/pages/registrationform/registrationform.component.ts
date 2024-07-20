@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { check, set } from "src/app/localStorage/LocalStorage";
 import { ApicallService } from "src/app/services/apicall.service";
+import { AuthService } from "src/app/services/auth.service";
 import { ToastService } from "src/app/services/toast.service";
 
 @Component({
@@ -12,6 +13,7 @@ import { ToastService } from "src/app/services/toast.service";
 export class RegistrationformComponent {
   public userobj: any = {};
   public user: any;
+  public authemail: boolean = false;
   public signupdata: any = {
     firstname: "",
     lastname: "",
@@ -24,9 +26,12 @@ export class RegistrationformComponent {
   public showmessage: any;
   public isChecked: any = false;
   public userFirstName: any;
+  private intervalId: any;
+
   constructor(
     private apiCall: ApicallService,
     private route: Router,
+    private authservice: AuthService,
     private activateRoute: ActivatedRoute,
     private toast: ToastService
   ) {
@@ -46,6 +51,33 @@ export class RegistrationformComponent {
     this.user = await check("user");
     this.userobj = JSON.parse(this.user);
     console.log(this.userobj);
+  }
+  async sendvarifyEmail() {
+    const value = await this.authservice.register(
+      this.signupdata.email,
+      "776656"
+    );
+    if (value) {
+      console.log("sends");
+      this.IsEmailVarify();
+    } else {
+    }
+  }
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+  async IsEmailVarify() {
+    console.log("isVarify");
+    this.intervalId = setInterval(async () => {
+      const value = await this.authservice.checkEmailVerification();
+      console.log("varify Status", value);
+      if (value) {
+        this.authemail = true;
+        clearInterval(this.intervalId);
+      }
+    }, 3000);
   }
 
   password($event: any) {

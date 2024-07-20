@@ -89,15 +89,18 @@ import { ComplainComponent } from "./pages/complain/complain.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 import { ComplainboxComponent } from "./pages/complainbox/complainbox.component";
 import { ChaticonComponent } from "./common/chaticon/chaticon.component";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { TeamComponent } from "./pages/team/team.component";
 import { RewardComponent } from "./pages/reward/reward.component";
 import { GetrewardComponent } from "./pages/getreward/getreward.component";
 import { AuthComponent } from "./pages/auth/auth.component";
-import { DownloadappComponent } from './downloadapp/downloadapp.component';
-import { TransferhistoryComponent } from './pages/transferhistory/transferhistory.component';
-import { ApproveddepositeComponent } from './pages/approveddeposite/approveddeposite.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { PackageHistoryComponent } from './package-history/package-history.component';
+import { DownloadappComponent } from "./downloadapp/downloadapp.component";
+import { TransferhistoryComponent } from "./pages/transferhistory/transferhistory.component";
+import { ApproveddepositeComponent } from "./pages/approveddeposite/approveddeposite.component";
+import { EditUserComponent } from "./edit-user/edit-user.component";
+import { PackageHistoryComponent } from "./package-history/package-history.component";
+import { environment } from "src/environments/environment";
 // import { SearchFilter } from './pipes/search-filter.pipe';
 @NgModule({
   declarations: [
@@ -191,6 +194,8 @@ import { PackageHistoryComponent } from './package-history/package-history.compo
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
     NgxPrintModule,

@@ -233,11 +233,7 @@ export const SubadminMenuItems: any[] = [
     icon: "bi bi-person-badge",
     label: "New User",
   },
-  {
-    routerLink: "/default/edit-user",
-    icon: "bi bi-pencil-square",
-    label: "Edit User",
-  },
+
   {
     routerLink: "/default/Package-history",
     icon: "bi bi-clock-history",

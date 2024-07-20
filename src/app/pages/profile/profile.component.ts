@@ -4,6 +4,7 @@ import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
 
 import { Clipboard } from "@capacitor/clipboard";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-profile",
   templateUrl: "./profile.component.html",
@@ -16,7 +17,11 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
   randomData: any;
   interval: any;
   userDashboardData: any;
-  constructor(private apiCall: ApicallService, private toast: ToastService) {
+  constructor(
+    private apiCall: ApicallService,
+    private toast: ToastService,
+    public modalService: NgbModal
+  ) {
     this.GetUserData();
     this.getUserProfiledataa();
     this.getRandomData();
@@ -36,7 +41,14 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
     this.getUserProfiledataa();
     this.getRandomData();
   }
-
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: "modal-basic-title" })
+      .result.then(
+        (result) => {},
+        (reason) => {}
+      );
+  }
   async getUserProfiledataa() {
     const user: any = await check("user");
     const userData = JSON.parse(user);
@@ -45,7 +57,6 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
     this.apiCall.GetuserProfileData(userData.id).subscribe((profile) => {
       console.log(profile);
       this.userobj = profile[0];
-      console.log("usrimages", this.userobj.image);
     });
   }
 
@@ -55,10 +66,10 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
     this.apiCall.GetuserProfileData(userData.id).subscribe((profile) => {
       console.log(profile);
       this.userobj = profile[0];
-      console.log('adf',profile[0]);
+      console.log("adf", profile[0]);
     });
   }
-  public updateuser(): void {
+  public updateuser(modal: any): void {
     this.apiCall.UpdateUser(this.userobj).subscribe((res) => {
       this.GetUserData();
       if (res.error === false) {
@@ -66,6 +77,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
           "Your Profile has been updated",
           "Congratulations!"
         );
+        modal.close();
       }
     });
   }
@@ -105,7 +117,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, OnDestroy {
             "Your Profile Picture has been updated",
             "Congratulations!"
           );
-        }        
+        }
       });
     };
   }

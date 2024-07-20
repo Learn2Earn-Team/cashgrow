@@ -153,6 +153,20 @@ export class ApicallService {
       })
     );
   }
+  public PinUser(data: any): Observable<any> {
+    return this.http.post(apiUrl + `pin/user`, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  public UpdateUserStatus(data: any): Observable<any> {
+    return this.http.post(apiUrl + `update/userStatus`, data).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
   public ReportByDate(data: any): Observable<any> {
     return this.http.post(apiUrl + `reportbydate`, data).pipe(
       map((res: any) => {
@@ -987,8 +1001,8 @@ export class ApicallService {
     );
   }
 
-  public deleteuser(data:any): Observable<any> {
-    return this.http.post(apiUrl + "deleteuser",data).pipe(
+  public deleteuser(data: any): Observable<any> {
+    return this.http.post(apiUrl + "deleteuser", data).pipe(
       map((res: any) => {
         return res;
       })
@@ -1002,7 +1016,4 @@ export class ApicallService {
       })
     );
   }
-
-
-
 }
