@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { check } from "src/app/localStorage/LocalStorage";
 import { ApicallService } from "src/app/services/apicall.service";
 import { ToastService } from "src/app/services/toast.service";
 
@@ -11,10 +12,13 @@ export class NewuserComponent {
   public userdata: any = {};
   pageSize = 20;
   p = 1;
+  user: any;
   constructor(private apiCall: ApicallService, private toast: ToastService) {
     this.NewUserdata();
   }
-  public NewUserdata(): void {
+  public async NewUserdata() {
+    const user: any = await check("user");
+    this.user = JSON.parse(user);
     this.apiCall.getNewUser().subscribe((res) => {
       this.userdata = res;
       console.log(this.NewUserdata);

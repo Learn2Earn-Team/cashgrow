@@ -2,17 +2,15 @@
 <div class="container-xl px-4 mt-4">
   <section>
     <div>
+      <div style="text-align: center; color: red;" *ngIf="this.userobj.status === 'block'" class="row">
+        <h1>You Block By Admin</h1>
+      </div>
       <div class="row">
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
           <div class="card text-bg-dark mt-2">
             <div class="card-body text-black card">
               <div class="d-flex align-items-center">
-                <!-- <div class="flex-shrink-0">
-                  <img src="{{userobj.image}}"
-                  onerror="this.onerror=null;this.src='../assets/boy-icon-png-10.jpg.png';"
-                    alt="" class="img-fluid rounded-circle border border-dark border-3"
-                    style="width: 90px; height: 90px;">
-                </div> -->
+
                 <div class="flex-shrink-0" style="background: transparent">
                   <img *ngIf="
                       userobj.image !=

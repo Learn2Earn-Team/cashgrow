@@ -82,7 +82,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="list-group-item">
+                <li *ngIf="user.username === 'google'" class="list-group-item">
                   <div class="row">
                     <div class="col-4 col-md-6 col-lg-4 justify-content-start">
                       <p class="p">Pin</p>
@@ -99,7 +99,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="list-group-item">
+                <li *ngIf="user.username === 'google'" class="list-group-item">
                   <div class="row">
                     <div class="col-4 col-md-6 col-lg-4 justify-content-start">
                       <p class="p">Status</p>
