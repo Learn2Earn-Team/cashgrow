@@ -21,32 +21,8 @@
           </button>
         </div>
       </div>
-      <div *ngIf="!authemail" class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash">
-        <form>
-          <br>
-          <br>
-          <div class="col-md-12">
-            <label class="form-label mt-1">Email</label>
-            <input class="rounded-2 input" placeholder="Email" [(ngModel)]="signupdata.email"
-              [ngModelOptions]="{ standalone: true }" required />
-          </div>
-          <br />
-          <div class="row">
-            <br />
-            <div class="col-12 m-auto text-center">
 
-              <button class=" w-100 btn button navbtn" (click)="sendvarifyEmail()" [disabled]="
-                
-                    signupdata.email == '' 
-                  
-                  ">
-                Varify
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div *ngIf="authemail" class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash">
+      <div class="col-lg-5 col-md-8 col-sm-12 mx-auto m-3 p-3 rounded-2 bg-cash">
         <form>
           <h2 class="text-center mb-3 fs-4 mt-5">
             <span class="sign-head text-white"> Sign Up To Register</span>
@@ -69,7 +45,7 @@
 
             <div class="col-md-12">
               <label class="form-label mt-1"></label>
-              <input class="rounded-2 input" disabled="true" placeholder="Email" [(ngModel)]="signupdata.email"
+              <input class="rounded-2 input" placeholder="Email" [(ngModel)]="signupdata.email"
                 [ngModelOptions]="{ standalone: true }" required />
             </div>
             <div class="col-md-12">

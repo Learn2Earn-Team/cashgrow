@@ -197,10 +197,8 @@ import { environment } from "src/environments/environment";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     BrowserAnimationsModule,
-    Ng2SearchPipeModule,
     NgxPrintModule,
     NgxPaginationModule,
-    NgMultiSelectDropDownModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
       closeButton: true,
@@ -223,4 +221,4 @@ import { environment } from "src/environments/environment";
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }
