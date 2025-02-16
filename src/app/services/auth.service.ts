@@ -7,8 +7,8 @@ import { remove } from "../localStorage/LocalStorage";
 import { Observable } from "rxjs";
 import { ToastService } from "./toast.service";
 
-export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
-// export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
+// export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
+export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
 // export const apiUrl = "http://localhost/cashgrow-API/public/";
 
 @Injectable({
@@ -20,7 +20,7 @@ export class AuthService {
     private fireauth: AngularFireAuth,
     public router: Router,
     private toast: ToastService
-  ) {}
+  ) { }
 
   con(data: any, type: any) {
     return new Promise((resolve, reject) => {

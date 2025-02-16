@@ -48,7 +48,7 @@ export class SocialdepositComponent {
         if (res.status != 'Pending' && res.error === false) {
           this.apiCall.deposit(this.userobj).subscribe((res) => {
             this.GetUserData();
-            this.depositdetail = { tid: '', depositAmount: '', getawey: 'Trust Wallet',};
+            this.depositdetail = { tid: '', depositAmount: '', getawey: 'Trust Wallet', };
             this.uploadedImage = '';
             if (res.error === false) {
               this.toast.SuccessToast('Deposit Successfully', 'Good Job!');
@@ -83,16 +83,16 @@ export class SocialdepositComponent {
 
   async forJazCash() {
     await Clipboard.write({
-      string: '0x95d728942EcC7bafa3279aD29dE80642dE1Dfb12',
+      string: 'TC5uvcfnJKBsR3RrcQAaJ9XFmFZd1vcmtR',
     })
-    .then(
-      () => {
-        this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!');
-      },
-      () => {
-        console.error('Failed to copy');
-      }
-    );
+      .then(
+        () => {
+          this.toast.SuccessToast('Linked Copied to clipboard', 'Successfully!');
+        },
+        () => {
+          console.error('Failed to copy');
+        }
+      );
     const { type, value } = await Clipboard.read();
     console.log(`Got ${type} from clipboard: ${value}`);
   }
