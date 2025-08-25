@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 import { ToastService } from "./toast.service";
 
 // export const apiUrl = "https://learn2earnn.com/products/cashgrow/public/";
-export const apiUrl = "https://thecodingverse.com/L2E/cashgrow/public/";
+export const apiUrl = "https://learn2earntech.com/products/cashgrow/public/";
 // export const apiUrl = "http://localhost/cashgrow-API/public/";
 
 @Injectable({
